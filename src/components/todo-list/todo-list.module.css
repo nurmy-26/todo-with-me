@@ -1,0 +1,17 @@
+.card {
+  min-height: 240px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: span 3;
+
+  background-color: burlywood;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

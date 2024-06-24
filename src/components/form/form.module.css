@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #464646;
+  padding: 10px;
+  border-radius: 5px;
+
+  grid-column: span 6;
+  background-color: lightgreen;
+}
+
+.form input {
+  width: 60%;
+}

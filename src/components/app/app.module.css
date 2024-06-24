@@ -1,0 +1,55 @@
+.header {
+  grid-column: span 12; /* занимает 12 колонок */
+  background-color: lightblue;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #464646;
+  padding: 10px;
+  border-radius: 5px;
+
+  grid-column: span 6;
+  background-color: lightgreen;
+}
+
+.lists_section {
+  grid-column: span 12;
+  background-color: yellowgreen;
+}
+
+/* вариант без грида */
+/* .cont_1_col {
+  width: calc(100% - 40px);
+}
+
+.cont_2_col {
+  width: calc(50% - 40px);
+}
+
+.cont_3_col {
+  width: calc(33% - 40px);
+} */
+
+.input {
+  width: 60%;
+}
+
+.select {
+  margin: 12px 0;
+  width: 100%;
+}
