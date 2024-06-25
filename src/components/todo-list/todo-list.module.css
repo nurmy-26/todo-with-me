@@ -1,12 +1,13 @@
-.card {
+.list_container {
   min-height: 240px;
   padding: 20px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-column: span 3;
 
+  grid-column: span 3;
+  align-self: start;
   background-color: burlywood;
 }
 

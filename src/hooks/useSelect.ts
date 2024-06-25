@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // T - объект со строковыми ключами и любыми типами значений
 // принимает аргументы: массив объектов; ключ объекта, для которого нужно извлечь значения
-export const useSelect = <T extends Record<string, any>>(objArray: T[], key: keyof T) => {
+export const useSelect = <T extends Record<string, any>>(objArray: T[], key: string | number) => {
   // извлекаем массив значений для указанного ключа
   const valueList = objArray.map(obj => obj[key]);
 

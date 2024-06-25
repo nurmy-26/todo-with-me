@@ -7,6 +7,7 @@
   padding: 10px;
   border-radius: 5px;
 
+  /* align-self: start; */
   grid-column: span 6;
   background-color: lightgreen;
 }
