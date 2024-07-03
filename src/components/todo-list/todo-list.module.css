@@ -1,4 +1,5 @@
 .list_container {
+  position: relative;
   min-height: 240px;
   padding: 20px;
 
@@ -11,8 +12,28 @@
   background-color: burlywood;
 }
 
+.list_container:hover .del_btn {
+  visibility: visible;
+  opacity: 1;
+}
+
 .list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.del_btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  /* border-color: aliceblue; */
+  background-color: transparent;
+
+  /* visibility: visible;
+  opacity: 0; */
+}
+
+.del_btn:hover {
+  /* border-color: aliceblue; */
 }

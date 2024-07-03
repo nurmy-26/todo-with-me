@@ -4,14 +4,25 @@ import cn from 'classnames';
 
 type InputProps = {
   extraClass?: string;
+  type?: React.InputHTMLAttributes<HTMLInputElement>['type'];
+  name: string;
   placeholder: string;
   value?: string;
+  disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ extraClass, placeholder, value, onChange }: InputProps) => {
+const Input = ({ extraClass, type = 'text', name, placeholder, value, disabled, onChange }: InputProps) => {
   return (
-    <input className={cn(styles.input, extraClass)} placeholder={placeholder} value={value} onChange={onChange} />
+    <input 
+    className={cn(styles.input, extraClass)} 
+    type={type}
+    name={name}
+    placeholder={placeholder} 
+    value={value} 
+    disabled={disabled}
+    onChange={onChange} 
+    />
   );
 };
 

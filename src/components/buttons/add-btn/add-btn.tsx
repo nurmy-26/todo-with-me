@@ -6,13 +6,14 @@ import { ListIcon } from '../../icons/list-icon';
 
 type AddBtnProps = {
   children: React.ReactNode;
+  disabled?: boolean;
   extraClass?: string;
   icon?: 'list' | 'plus';
   type?: 'button' | 'submit' | 'reset';
   onClick?: (event: React.FormEvent) => void;
 };
 
-const AddBtn = ({ children, extraClass, icon, type = 'button', onClick }: AddBtnProps) => {
+const AddBtn = ({ children, disabled, extraClass, icon, type = 'button', onClick }: AddBtnProps) => {
   let iconComponent;
   switch (icon) {
     case 'plus':
@@ -27,7 +28,7 @@ const AddBtn = ({ children, extraClass, icon, type = 'button', onClick }: AddBtn
   }
 
   return (
-    <button type={type} className={cn(styles.add_button, extraClass)} onClick={onClick}>
+    <button type={type} className={cn(styles.add_button, extraClass)} onClick={onClick} disabled={disabled}>
       {icon && iconComponent}
 
       {children}

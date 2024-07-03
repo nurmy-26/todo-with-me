@@ -10,10 +10,13 @@ type FormProps = {
 
 const Form = ({ children, extraClass, onSubmit }: FormProps) => {
   return (
-    <form className={cn(
-      styles.form,
-      extraClass
-    )} onSubmit={onSubmit}>
+    <form
+      className={cn(
+        styles.form,
+        extraClass
+      )}
+      onSubmit={onSubmit}
+    >
       {children}
     </form>
   );

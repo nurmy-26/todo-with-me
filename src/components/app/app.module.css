@@ -31,3 +31,8 @@
 .cont_3_col {
   width: calc(33% - 40px);
 } */
+
+.tags {
+  grid-column: span 4;
+  justify-self: start;
+}
