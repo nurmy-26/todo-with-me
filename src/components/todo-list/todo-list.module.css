@@ -2,6 +2,7 @@
   position: relative;
   min-height: 240px;
   padding: 20px;
+  border-radius: 20px;
 
   display: flex;
   flex-direction: column;
@@ -27,13 +28,8 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  /* border-color: aliceblue; */
   background-color: transparent;
 
   /* visibility: visible;
   opacity: 0; */
-}
-
-.del_btn:hover {
-  /* border-color: aliceblue; */
 }

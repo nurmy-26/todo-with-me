@@ -7,7 +7,7 @@
   align-items: center;
   border: 1px solid #464646;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-base);
 
   /* чтоб форма не растягивалась по высоте в грид-сетке */
   align-self: start;
