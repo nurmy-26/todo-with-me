@@ -1,18 +1,19 @@
 import cn from 'classnames';
 import styles from './delete-btn.module.css';
 import { DeleteIcon } from '../../icons/delete-icon';
+import { MouseEventHandler } from 'react';
 
 
 type DeleteBtnProps = {
   disabled?: boolean;
   extraClass?: string;
-  onDelete?: (event: React.FormEvent) => void;
+  handleDeleteList?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const DeleteBtn = ({ disabled, extraClass, onDelete }: DeleteBtnProps) => {
+const DeleteBtn = ({ disabled, extraClass, handleDeleteList }: DeleteBtnProps) => {
 
   return (
-    <button className={cn(styles.del_btn, extraClass)} onClick={onDelete} disabled={disabled}>
+    <button className={cn(styles.del_btn, extraClass)} onClick={handleDeleteList} disabled={disabled}>
       <DeleteIcon />
     </button>
   );
