@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import styles from './list-item.module.css';
-import { TItem, TList, testList } from '../../utils/data';
+import { TItem, TList, testList } from '../../utils/mock-data';
 import { useLoading } from '../../hooks/useLoading';
 import setDelay, { loadFromLocalStorage, removeListItemFromLocalStorage } from '../../utils/helpers';
 import { useState } from 'react';

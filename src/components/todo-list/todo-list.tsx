@@ -2,7 +2,7 @@ import cn from 'classnames';
 import styles from './todo-list.module.css';
 import ListItem from '../list-item/list-item';
 import AddBtn from '../buttons/add-btn/add-btn';
-import { TItem } from '../../utils/data';
+import { TItem } from '../../utils/mock-data';
 import DeleteBtn from '../buttons/delete-btn/delete-btn';
 import { MouseEventHandler } from 'react';
 

@@ -1,4 +1,4 @@
-import { TItem, TList } from "./data";
+import { TItem, TList } from "./mock-data";
 
 // запись массива объектов
 export const saveToLocalStorage = (key: string, value: any) => {
@@ -8,7 +8,6 @@ export const saveToLocalStorage = (key: string, value: any) => {
 // const users = [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }];
 // saveToLocalStorage('users', users);
 
-
 // чтение массива объектов
 export const loadFromLocalStorage = <T>(key: string): T | null => {
   const item = localStorage.getItem(key);
@@ -16,7 +15,11 @@ export const loadFromLocalStorage = <T>(key: string): T | null => {
 };
 
 // найти элемент в объекте массива arr (например, 'todo-list'), зная имя списка и id элемента, и удалить
-export const removeListItemFromLocalStorage = <T>(arrKey: string, itemId: string, listTitle: string): T | null => {
+export const removeListItemFromLocalStorage = <T>(
+  arrKey: string,
+  itemId: string,
+  listTitle: string
+): T | null => {
   const todoListString = localStorage.getItem(arrKey);
 
   if (!todoListString) {
@@ -33,9 +36,14 @@ export const removeListItemFromLocalStorage = <T>(arrKey: string, itemId: string
     return null;
   }
 
-  console.log("Before deletion, items:", JSON.stringify(todoList[listIndex].items));
+  console.log(
+    "Before deletion, items:",
+    JSON.stringify(todoList[listIndex].items)
+  );
 
-  const updatedItems = todoList[listIndex].items.filter((item: any) => item.id !== itemId);
+  const updatedItems = todoList[listIndex].items.filter(
+    (item: any) => item.id !== itemId
+  );
 
   todoList[listIndex] = { ...todoList[listIndex], items: updatedItems };
 
@@ -66,14 +74,17 @@ export const updateLocalStorageArray = <T>(key: string, newValue: T) => {
 
   // мохраняем обновленный массив обратно в localStorage
   localStorage.setItem(key, JSON.stringify(dataArray));
-}
-
+};
 
 // обновление объекта в массиве
-export const updateItemInLocalStorage = (key: string, itemId: string, updatedData: Partial<{ id: string; title: string }>) => {
+export const updateItemInLocalStorage = (
+  key: string,
+  itemId: string,
+  updatedData: Partial<{ id: string; title: string }>
+) => {
   const arr = loadFromLocalStorage<{ id: string; name: string }[]>(key);
   if (arr) {
-    const updatedItems = arr.map(item =>
+    const updatedItems = arr.map((item) =>
       item.id === itemId ? { ...item, ...updatedData } : item
     );
     saveToLocalStorage(key, updatedItems);
@@ -82,12 +93,11 @@ export const updateItemInLocalStorage = (key: string, itemId: string, updatedDat
 // пример использования
 // updateUserInLocalStorage('users', 1, { name: 'Johnny' });
 
-
 // удаление объекта из массива
 export const deleteUserFromLocalStorage = (key: string, userId: number) => {
   const users = loadFromLocalStorage<{ id: number; name: string }[]>(key);
   if (users) {
-    const filteredUsers = users.filter(user => user.id !== userId);
+    const filteredUsers = users.filter((user) => user.id !== userId);
     saveToLocalStorage(key, filteredUsers);
   }
 };
@@ -104,7 +114,7 @@ export const addItemToArrayInLocalStorage = (
   const arr = loadFromLocalStorage<TList[]>(key);
 
   if (arr) {
-    const updatedLists = arr.map(list =>
+    const updatedLists = arr.map((list) =>
       list.id === listId ? { ...list, items: [...list.items, newItem] } : list
     );
     saveToLocalStorage(key, updatedLists);
@@ -113,7 +123,7 @@ export const addItemToArrayInLocalStorage = (
 
 // выставить задержку перед каким-либо действием
 const setDelay = (ms: number) => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 export default setDelay;

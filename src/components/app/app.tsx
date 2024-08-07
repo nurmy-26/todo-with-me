@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './app.module.css';
 import { useSelect } from '../../hooks/useSelect';
-import { TItem, TList, testList } from '../../utils/data';
+import { TItem, TList, testList } from '../../utils/mock-data';
 import Header from '../header/header';
 import TodoList from '../todo-list/todo-list';
 import AddBtn from '../buttons/add-btn/add-btn';
