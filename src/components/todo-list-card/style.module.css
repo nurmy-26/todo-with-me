@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  grid-column: span 3;
+  grid-column: var(--grid-child-quarter);
   align-self: start;
   background-color: burlywood;
 }

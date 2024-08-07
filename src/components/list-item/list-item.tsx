@@ -10,11 +10,11 @@ type ListItemProps = {
   children?: React.ReactNode;
   extraClass?: string;
   item: TItem;
-  listTitle: string;
-  onDelete: (event: React.MouseEvent<HTMLButtonElement>, deletedItem: TItem, listTitle: string) => Promise<void>;
+  listId: string;
+  onDelete: (event: React.MouseEvent<HTMLButtonElement>, deletedItem: TItem, listId: string) => Promise<void>;
 };
 
-const ListItem = ({ children, extraClass, item, listTitle, onDelete }: ListItemProps) => {
+const ListItem = ({ children, extraClass, item, listId, onDelete }: ListItemProps) => {
   const { loading, setLoading } = useLoading();
 
   const handleComplete = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -52,7 +52,7 @@ const ListItem = ({ children, extraClass, item, listTitle, onDelete }: ListItemP
           aria-label="Delete task"
           className={styles.emoji_button}
           disabled={loading}
-          onClick={(event) => onDelete(event, item, listTitle)}
+          onClick={(event) => onDelete(event, item, listId)}
         >
           ❌
         </button>

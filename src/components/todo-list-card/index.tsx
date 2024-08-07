@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './todo-list.module.css';
+import style from './style.module.css';
 import ListItem from '../list-item/list-item';
 import AddBtn from '../buttons/add-btn/add-btn';
 import { TItem } from '../../utils/mock-data';
@@ -7,8 +7,9 @@ import DeleteBtn from '../buttons/delete-btn/delete-btn';
 import { MouseEventHandler } from 'react';
 
 
-type TodoListProps = {
+type TodoListCardProps = {
   title?: string;
+  listId: string;
   extraClass?: string;
   list?: TItem[];
   onClick?: (event: React.FormEvent) => void;
@@ -16,16 +17,23 @@ type TodoListProps = {
   handleDeleteList: MouseEventHandler<HTMLButtonElement>;
 };
 
-const TodoList = ({ title = 'Список', extraClass, list = [], onClick, handleDeleteItem, handleDeleteList }: TodoListProps) => {
+const TodoListCard = ({
+  title = 'Список',
+  listId, extraClass,
+  list = [],
+  onClick,
+  handleDeleteItem,
+  handleDeleteList
+}: TodoListCardProps) => {
   return (
-    <article className={cn(styles.list_container, extraClass)}>
-      <DeleteBtn extraClass={styles.del_btn} handleDeleteList={handleDeleteList} />
+    <article className={cn(style.list_container, extraClass)}>
+      <DeleteBtn extraClass={style.del_btn} handleDeleteList={handleDeleteList} />
 
       <h2>{title}</h2>
-      <ul className={styles.list}>
+      <ul className={style.list}>
         {list.map((item: TItem, key: number) =>
           <li key={key}>
-            <ListItem item={item} listTitle={title} onDelete={handleDeleteItem} />
+            <ListItem item={item} listId={listId} onDelete={handleDeleteItem} />
           </li>
         )}
       </ul>
@@ -36,4 +44,4 @@ const TodoList = ({ title = 'Список', extraClass, list = [], onClick, hand
   );
 };
 
-export default TodoList;
+export default TodoListCard;

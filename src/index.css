@@ -6,6 +6,18 @@
 }
 
 :root {
+  /* для использования внутри css-переменных */
+  --columns-max: 12;
+  --columns-four: 4;
+  --columns-three: 3;
+
+  --grid-parent-full: repeat(var(--columns-max), 1fr);
+  --grid-child-full: span var(--columns-max);
+  /* third - треть так как 12/4 */
+  --grid-child-third: span var(--columns-four);
+  /* quarter - четверть так как 12/3 */
+  --grid-child-quarter: span var(--columns-three);
+
   --color-text-dark: #213547;
   --color-dark: #242424;
   --color-light: #f9f9f9;
@@ -51,7 +63,9 @@ h1 {
   line-height: 1.1;
 }
 
-button, input, select {
+button,
+input,
+select {
   border-radius: var(--border-radius-base);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -61,10 +75,13 @@ button, input, select {
   background-color: #1a1a1a;
   transition: border-color 0.25s;
 }
-button, select {
+button,
+select {
   cursor: pointer;
 }
-button:hover, input:hover, select:hover {
+button:hover,
+input:hover,
+select:hover {
   border-color: #646cff;
 }
 button:focus,
@@ -80,7 +97,9 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button, input, select {
+  button,
+  input,
+  select {
     background-color: var(--color-light);
   }
 }

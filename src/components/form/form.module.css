@@ -11,7 +11,7 @@
 
   /* чтоб форма не растягивалась по высоте в грид-сетке */
   align-self: start;
-  grid-column: span 4;
+  grid-column: var(--grid-child-third);
   background-color: lightgreen;
 }
 

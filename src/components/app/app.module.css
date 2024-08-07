@@ -1,5 +1,5 @@
 .header {
-  grid-column: span 12; /* занимает 12 колонок */
+  grid-column: var(--grid-child-full); /* занимает 12 колонок */
   background-color: lightblue;
 }
 
@@ -8,14 +8,16 @@
   margin: 0 auto;
 }
 
+/* является грид-родителем для дочерних элементов */
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: var(--grid-parent-full);
   gap: 16px;
 }
 
+/* сколько занимает колонок как дочерний элемент грид-сетки, в которой расположен */
 .lists_section {
-  grid-column: span 12;
+  grid-column: var(--grid-child-full);
   background-color: yellowgreen;
 }
 
@@ -33,6 +35,6 @@
 } */
 
 .tags {
-  grid-column: span 4;
+  grid-column: var(--grid-child-third);
   justify-self: start;
 }
