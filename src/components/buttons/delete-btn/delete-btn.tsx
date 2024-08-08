@@ -7,13 +7,15 @@ import { MouseEventHandler } from 'react';
 type DeleteBtnProps = {
   disabled?: boolean;
   extraClass?: string;
-  handleDeleteList?: MouseEventHandler<HTMLButtonElement>;
+  listId: string;
+  // handleDeleteList: MouseEventHandler<HTMLButtonElement>;
+  handleDeleteList: (event: React.MouseEvent<HTMLButtonElement>, listId: string) => Promise<void>;
 };
 
-const DeleteBtn = ({ disabled, extraClass, handleDeleteList }: DeleteBtnProps) => {
+const DeleteBtn = ({ disabled, extraClass, handleDeleteList, listId }: DeleteBtnProps) => {
 
   return (
-    <button className={cn(styles.del_btn, extraClass)} onClick={handleDeleteList} disabled={disabled}>
+    <button className={cn(styles.del_btn, extraClass)} onClick={(e) => handleDeleteList(e, listId)} disabled={disabled}>
       <DeleteIcon />
     </button>
   );

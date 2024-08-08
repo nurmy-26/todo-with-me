@@ -7,6 +7,8 @@ import style from './style.module.css';
 const MainPage = () => {
   return (
     <>
+      {/* todo - сделать компонент заголовка чтоб не задавать стили тут */}
+      <h1 className={style.header}>Читальные планы</h1>
       <Section ariaLabel='Добавление и дополнение списков'>
         <ListForm />
 

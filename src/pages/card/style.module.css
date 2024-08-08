@@ -1,0 +1,8 @@
+.page_wrapper {
+  margin-top: 20px;
+  grid-column: var(--grid-child-full);
+
+  display: grid;
+  grid-template-columns: var(--grid-parent-full);
+  gap: 16px;
+}

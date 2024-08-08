@@ -13,7 +13,8 @@ const BaseList = ({
   listData,
   isLoading,
   handleDeleteItem,
-  handleDeleteList
+  handleDeleteList,
+  ...rest
 }: BaseListProps) => {
 
   return isLoading ?
@@ -24,9 +25,9 @@ const BaseList = ({
         key={list.id}
         title={list.title}
         listId={list.id}
-        list={list.items}
         handleDeleteItem={handleDeleteItem}
         handleDeleteList={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteList(e, list.id)}
+        {...rest}
       />
     ))
 }
