@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './form.module.css';
+import style from './style.module.css';
 
 
 type FormProps = {
@@ -12,7 +12,7 @@ const Form = ({ children, extraClass, onSubmit }: FormProps) => {
   return (
     <form
       className={cn(
-        styles.form,
+        style.form,
         extraClass
       )}
       onSubmit={onSubmit}

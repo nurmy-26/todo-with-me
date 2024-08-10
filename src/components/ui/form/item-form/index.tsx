@@ -1,14 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useForm } from "../../hooks/useForm";
-import { useGetReadingsQuery, useUpdateReadingMutation } from "../../redux";
-import { initialItemForm } from "../../utils/constants";
-import AddBtn from "../buttons/add-btn/add-btn";
-import Form from "../form/form";
-import Input from "../input/input";
-import Select from '../select/select';
-import CollapsibleTags from '../collapsible-section/collapsible-tags/collapsible-tags';
-import { useSelect } from '../../hooks/useSelect';
-import { TItem, TList } from '../../utils/mock-data';
+import { useForm } from "../../../../hooks/useForm";
+import { useGetReadingsQuery, useUpdateReadingMutation } from "../../../../redux";
+import { initialItemForm } from "../../../../utils/constants";
+import AddBtn from "../../buttons/add-btn";
+import Form from "..";
+import Input from "../../input";
+import Select from '../../select';
+import CollapsibleTags from '../../../collapsible-section/collapsible-tags/collapsible-tags';
+import { useSelect } from '../../../../hooks/useSelect';
+import { TItem, TList } from '../../../../utils/mock-data';
 
 const ItemForm = () => {
   // todo - вместо пустого массива - сделать дефолтную константу

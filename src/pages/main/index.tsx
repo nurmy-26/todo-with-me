@@ -1,5 +1,5 @@
-import ItemForm from '../../components/item-form';
-import ListForm from '../../components/list-form';
+import ItemForm from '../../components/ui/form/item-form';
+import ListForm from '../../components/ui/form/list-form';
 import ListOfTodoLists from '../../components/list-of-todo-lists';
 import Section from '../../components/section';
 import style from './style.module.css';

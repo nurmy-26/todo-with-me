@@ -12,6 +12,10 @@
   gap: 16px;
 }
 
+.list a {
+  color: var(--color-text-dark);
+}
+
 .list_item {
   /* каждый элемент списка занимает четверть от общего числа колонок и прижат к верхней части*/
   grid-column: var(--grid-child-quarter);

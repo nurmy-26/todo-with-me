@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useForm } from "../../hooks/useForm";
-import { useAddReadingMutation } from "../../redux";
-import { initialListForm } from "../../utils/constants";
-import AddBtn from "../buttons/add-btn/add-btn";
-import Form from "../form/form";
-import Input from "../input/input";
+import { useForm } from "../../../../hooks/useForm";
+import { useAddReadingMutation } from "../../../../redux";
+import { initialListForm } from "../../../../utils/constants";
+import AddBtn from "../../buttons/add-btn";
+import Form from "..";
+import Input from "../../input";
 
 const ListForm = () => {
   const { values: listValues, setValues: setListValues, handleChange: handleListChange } = useForm(initialListForm);

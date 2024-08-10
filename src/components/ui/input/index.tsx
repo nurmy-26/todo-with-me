@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './input.module.css';
+import style from './style.module.css';
 import cn from 'classnames';
 
 type InputProps = {
@@ -14,14 +14,14 @@ type InputProps = {
 
 const Input = ({ extraClass, type = 'text', name, placeholder, value, disabled, onChange }: InputProps) => {
   return (
-    <input 
-    className={cn(styles.input, extraClass)} 
-    type={type}
-    name={name}
-    placeholder={placeholder} 
-    value={value} 
-    disabled={disabled}
-    onChange={onChange} 
+    <input
+      className={cn(style.input, extraClass)}
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      value={value}
+      disabled={disabled}
+      onChange={onChange}
     />
   );
 };

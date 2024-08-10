@@ -1,4 +1,4 @@
-import { XMarkIcon } from "../../icons/xmark-icon";
+import { XMarkIcon } from "../../ui/icons/xmark-icon";
 import style from "./style.module.css";
 
 

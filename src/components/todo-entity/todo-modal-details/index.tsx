@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
-import TodoListCard from '../todo-list-card';
 import style from './style.module.css';
 
-const TodoListDetails = () => {
+const TodoModalDetails = () => {
   const { id } = useParams(); // извлекаем id из url
 
   if (!id) {
@@ -10,8 +9,8 @@ const TodoListDetails = () => {
   }
 
   return (
-    <TodoListCard listId={id} extraClass={style.details} />
+    <article className={style.content}></article>
   );
 };
 
-export default TodoListDetails;
+export default TodoModalDetails;

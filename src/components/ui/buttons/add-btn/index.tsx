@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './add-btn.module.css';
+import style from './style.module.css';
 import { PlusIcon } from '../../icons/plus-icon';
 import { ListIcon } from '../../icons/list-icon';
 
@@ -28,7 +28,7 @@ const AddBtn = ({ children, disabled, extraClass, icon, type = 'button', onClick
   }
 
   return (
-    <button type={type} className={cn(styles.add_button, extraClass)} onClick={onClick} disabled={disabled}>
+    <button type={type} className={cn(style.add_button, extraClass)} onClick={onClick} disabled={disabled}>
       {icon && iconComponent}
 
       {children}

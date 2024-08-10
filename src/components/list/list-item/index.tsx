@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import styles from './list-item.module.css';
-import { TItem } from '../../utils/mock-data';
-import { useGetReadingsQuery, useUpdateReadingMutation } from '../../redux';
+import style from './style.module.css';
+import { TItem, TList } from '../../../utils/mock-data';
+import { useGetReadingsQuery, useUpdateReadingMutation } from '../../../redux';
 
 
 type ListItemProps = {
@@ -38,24 +38,24 @@ const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
 
   return (
     // todo - заменить на норм теги, когда будет ясно содержимое
-    <article className={cn(styles.card, extraClass)}>
+    <article className={cn(style.card, extraClass)}>
       {/* <h2>{bookItem.title}</h2> */}
       <p>{item.title}</p>
       {/* <p>Rating: {bookItem.rating}</p> */}
       {/* <p>Pages: {bookItem.pages}</p> */}
       {/* Другие характеристики */}
 
-      <div className={styles.overlay}>
+      <div className={style.overlay}>
         <button
           aria-label="Complete task"
-          className={styles.emoji_button}
+          className={style.emoji_button}
           onClick={handleComplete}
         >
           ✅
         </button>
         <button
           aria-label="Delete task"
-          className={styles.emoji_button}
+          className={style.emoji_button}
           onClick={() => handleDeleteItem(item, listId)}
         >
           ❌

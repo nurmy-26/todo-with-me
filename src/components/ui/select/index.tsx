@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './select.module.css';
+import style from './style.module.css';
 import cn from 'classnames';
 
 type SelectProps = {
@@ -13,12 +13,12 @@ type SelectProps = {
 
 const Select = ({ extraClass, name, value, options, disabled, onChange }: SelectProps) => {
   return (
-    <select 
-    className={cn(styles.select, extraClass)} 
-    name={name} 
-    value={value} 
-    disabled={disabled}
-    onChange={onChange}
+    <select
+      className={cn(style.select, extraClass)}
+      name={name}
+      value={value}
+      disabled={disabled}
+      onChange={onChange}
     >
       {options.map((option, index) => (
         <option key={index} value={option}>
