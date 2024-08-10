@@ -2,7 +2,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { MainPage } from '../../pages';
 import CardPage from '../../pages/card';
 import TodoListDetails from '../todo-list-details';
-// import Modal from "../UI/modal";
+import Modal from '../modal';
 
 
 const AppRouter = () => {
@@ -33,11 +33,11 @@ const AppRouter = () => {
       {/* когда background задан, откроет модалку (с подложкой в виде роута, записанного в background) вместо CharDetails */}
       {background &&
         <Routes>
-          {/* <Route path="/reading/:id" element={ */}
-          {/* <Modal header="Детали списка" onClose={closeTooltip}> */}
-          {/* <TodoListDetails /> */}
-          {/* </Modal> */}
-          {/* } /> */}
+          <Route path="/:id" element={
+            <Modal onClose={closeTooltip}>
+              <TodoListDetails />
+            </Modal>
+          } />
         </Routes>
       }
     </>

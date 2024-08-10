@@ -1,9 +1,7 @@
 import cn from 'classnames';
 import styles from './list-item.module.css';
-import { TItem, TList, testList } from '../../utils/mock-data';
-import { useLoading } from '../../hooks/useLoading';
-import setDelay, { loadFromLocalStorage, removeListItemFromLocalStorage } from '../../utils/helpers';
-import { useState } from 'react';
+import { TItem } from '../../utils/mock-data';
+import { useGetReadingsQuery, useUpdateReadingMutation } from '../../redux';
 
 
 type ListItemProps = {
@@ -11,23 +9,31 @@ type ListItemProps = {
   extraClass?: string;
   item: TItem;
   listId: string;
-  onDelete: (event: React.MouseEvent<HTMLButtonElement>, deletedItem: TItem, listId: string) => Promise<void>;
 };
 
-const ListItem = ({ children, extraClass, item, listId, onDelete }: ListItemProps) => {
-  const { loading, setLoading } = useLoading();
+const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
+  // todo - вынести логику работы с data !!! (оставить в handleDeleteItem только updateReading)
+  const { data = [] } = useGetReadingsQuery();
+  const [updateReading] = useUpdateReadingMutation();
 
-  const handleComplete = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleComplete = async () => {
     console.log(item);
     // todo - сделать выполнение
   };
 
   // todo - сделать кнопки галочки и крестика по бокам а не над элементом (?)
-  const handleDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    // event.preventDefault();
-    // console.log(item);
+  const handleDeleteItem = async (deletedItem: TItem, listId: string) => {
+    const listIndex = data.findIndex((list: TList) => list.id === listId);
+    const updatedItems = data[listIndex].items.filter(
+      (item: TItem) => item.id !== deletedItem.id
+    );
 
-    // todo - сделать локальную логику удаления без проброса onDelete
+    const updatedList = {
+      ...data[listIndex],
+      items: updatedItems
+    };
+
+    await updateReading({ listId, ...updatedList }).unwrap();
   };
 
   return (
@@ -43,7 +49,6 @@ const ListItem = ({ children, extraClass, item, listId, onDelete }: ListItemProp
         <button
           aria-label="Complete task"
           className={styles.emoji_button}
-          disabled={loading}
           onClick={handleComplete}
         >
           ✅
@@ -51,8 +56,7 @@ const ListItem = ({ children, extraClass, item, listId, onDelete }: ListItemProp
         <button
           aria-label="Delete task"
           className={styles.emoji_button}
-          disabled={loading}
-          onClick={(event) => onDelete(event, item, listId)}
+          onClick={() => handleDeleteItem(item, listId)}
         >
           ❌
         </button>

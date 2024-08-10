@@ -8,8 +8,6 @@
   flex-direction: column;
   justify-content: space-between;
 
-  grid-column: var(--grid-child-quarter);
-  align-self: start;
   background-color: burlywood;
 }
 

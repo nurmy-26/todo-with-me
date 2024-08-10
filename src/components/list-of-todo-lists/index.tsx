@@ -1,43 +1,28 @@
-import { useDeleteReadingMutation, useGetReadingsQuery, useUpdateReadingMutation } from "../../redux";
-import BaseList from '../base-list';
-import { TItem, TList } from '../../utils/mock-data';
+import { Link, useLocation } from "react-router-dom";
+import { useGetReadingsQuery } from "../../redux";
+import { TList } from '../../utils/mock-data';
 import TodoListCard from "../todo-list-card";
+import style from './style.module.css';
 
 const ListOfTodoLists = () => {
   const { data = [], isLoading } = useGetReadingsQuery(); // get-запрос к "серверу" за данными "reading"
-  const [updateReading] = useUpdateReadingMutation();
-  const [deleteReading] = useDeleteReadingMutation();
+  const location = useLocation();
 
-  const handleDeleteList = async (event: React.FormEvent, id: string) => {
-    await deleteReading(id).unwrap();
-  }
-
-  const handleDeleteItem = async (event: React.MouseEvent<HTMLButtonElement>, deletedItem: TItem, listId: string) => {
-    event.preventDefault();
-
-    const listIndex = data.findIndex((list: TList) => list.id === listId);
-    const updatedItems = data[listIndex].items.filter(
-      (item: TItem) => item.id !== deletedItem.id
-    );
-
-    const updatedList = {
-      ...data[listIndex],
-      items: updatedItems
-    };
-
-    await updateReading({ listId, ...updatedList }).unwrap();
-  };
-
-  return (
-    <BaseList
-      itemComponent={TodoListCard}
-      listData={data}
-      isLoading={isLoading}
-      handleDeleteItem={handleDeleteItem}
-      handleDeleteList={handleDeleteList}
-    />
-
-  )
+  return isLoading ?
+    <p>Loading...</p>
+    :
+    <ul className={style.list}>
+      {data.map((list: TList) => (
+        <li key={list.id} className={style.list_item}>
+          <Link to={`/${list.id}`} state={{ background: location }}>
+            <TodoListCard
+              title={list.title}
+              listId={list.id}
+            />
+          </Link>
+        </li>
+      ))}
+    </ul>
 }
 
 export default ListOfTodoLists;

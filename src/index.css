@@ -27,6 +27,7 @@
 
   --font-size-base: 1em;
   --border-radius-base: 8px;
+  --border-radius-modal: 20px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
