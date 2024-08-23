@@ -6,3 +6,8 @@
   grid-template-columns: var(--grid-parent-full);
   gap: 16px;
 }
+
+.page_wrapper article {
+  width: 100%;
+  grid-column: 3/11;
+}

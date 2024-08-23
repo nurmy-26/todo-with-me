@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { MainPage } from '../../pages';
+import { MainPage, NotFound404Page } from '../../pages';
 import CardPage from '../../pages/card';
-import TodoPageDetails from '../todo-entity/todo-page-details';
 import TodoModalDetails from '../todo-entity/todo-modal-details';
 import Modal from '../modal';
 
@@ -26,9 +25,9 @@ const AppRouter = () => {
       {/* передавая location в Routes, мы не позволим ему использовать фактическое location, если задан background */}
       <Routes location={background || location}>
         <Route path="/" element={<MainPage />} />
-        <Route path="/:id" element={<CardPage component={<TodoPageDetails />} />} />
+        <Route path="/:id" element={<CardPage />} />
 
-        {/* <Route path="*" element={<NotFound404Page />} /> */}
+        <Route path="*" element={<NotFound404Page />} />
       </Routes>
 
       {/* когда background задан, откроет модалку (с подложкой в виде роута, записанного в background) вместо CharDetails */}

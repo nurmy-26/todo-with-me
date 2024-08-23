@@ -2,6 +2,7 @@ import cn from 'classnames';
 import style from './style.module.css';
 import { TItem, TList } from '../../../utils/mock-data';
 import { useGetReadingsQuery, useUpdateReadingMutation } from '../../../redux';
+import { CheckIcon } from '../../ui/icons/check-icon';
 
 
 type ListItemProps = {
@@ -22,12 +23,15 @@ const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
   };
 
   // todo - сделать кнопки галочки и крестика по бокам а не над элементом (?)
-  const handleDeleteItem = async (deletedItem: TItem, listId: string) => {
+  const handleDeleteItem = async (event: React.MouseEvent<HTMLButtonElement>, deletedItem: TItem, listId: string) => {
+    event.preventDefault();
+
+    // находим нужный список
     const listIndex = data.findIndex((list: TList) => list.id === listId);
+    // фильтруем его чтоб убрать удаляемый элемент
     const updatedItems = data[listIndex].items.filter(
       (item: TItem) => item.id !== deletedItem.id
     );
-
     const updatedList = {
       ...data[listIndex],
       items: updatedItems
@@ -40,6 +44,7 @@ const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
     // todo - заменить на норм теги, когда будет ясно содержимое
     <article className={cn(style.card, extraClass)}>
       {/* <h2>{bookItem.title}</h2> */}
+      <CheckIcon />
       <p>{item.title}</p>
       {/* <p>Rating: {bookItem.rating}</p> */}
       {/* <p>Pages: {bookItem.pages}</p> */}
@@ -56,7 +61,7 @@ const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
         <button
           aria-label="Delete task"
           className={style.emoji_button}
-          onClick={() => handleDeleteItem(item, listId)}
+          onClick={(e) => handleDeleteItem(e, item, listId)}
         >
           ❌
         </button>

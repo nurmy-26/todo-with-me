@@ -1,6 +1,9 @@
 .card {
   position: relative;
   background-color: mistyrose;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .overlay {
@@ -15,13 +18,13 @@
   justify-content: center;
   gap: 20px;
 
-  opacity: .8;
+  opacity: 0.8;
   visibility: hidden;
   /* transition-duration:.3s; */
   /* transform: scale(.8); */
   /* transition: .35 all ease-in; */
 
-  pointer-events:none; /* убираем события мыши, пока слой не виден */
+  pointer-events: none; /* убираем события мыши, пока слой не виден */
 }
 
 .emoji_button {
@@ -31,9 +34,9 @@
 .card:hover .overlay {
   visibility: visible;
   transform: none;
-  pointer-events:auto;
+  pointer-events: auto;
 }
 
 .emoji_button:hover {
-  border-color: #646cff;;
+  border-color: #646cff;
 }

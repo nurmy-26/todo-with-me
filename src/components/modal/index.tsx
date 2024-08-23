@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import style from "./style.module.css";
 import ModalHeader from "./modal-header";
 import ModalOverlay from "./modal-overlay";
+import CloseBtn from "../ui/buttons/close-button";
 
 
 type Props = {
@@ -28,9 +29,10 @@ function Modal({ children, header, onClose }: Props) {
     (
       <>
         <div className={style.modal}>
-          <ModalHeader onClose={onClose}>
+          <CloseBtn onClose={onClose} extraClass={style.close_modal} />
+          {/* <ModalHeader onClose={onClose}>
             {header ? header : "# Info"}
-          </ModalHeader>
+          </ModalHeader> */}
           {children}
         </div>
 

@@ -1,42 +1,35 @@
-import cn from 'classnames';
-import style from './style.module.css';
 import { TList } from '../../utils/mock-data';
 import TodoCardDetails from './todo-card-details';
-import TodoModalDetails from './todo-modal-details';
 import TodoPageDetails from './todo-page-details';
-import { useDeleteReadingMutation } from '../../redux';
-import { Link, useLocation } from 'react-router-dom';
+import { useDelete } from '../../hooks/rtk-query/useDelete';
 
-// один раз прописать логику работы карточки (onAdd, onDelete) и пробрасывать её на нужный рендер
+// один раз прописать логику работы карточки (onAdd, onDelete) и пробрасывать для нужного рендера (card/modal/page)
 type TodoEntityProps = {
-  type: 'card' | 'modal' | 'page';
+  type: 'card' | 'details';
   title?: string;
   listInfo: TList;
 };
 
 const TodoEntity = ({ listInfo, title, type }: TodoEntityProps) => {
-  const location = useLocation();
-  const [deleteReading] = useDeleteReadingMutation();
+  const { deleteList } = useDelete();
 
-  const handleDeleteList = async (id: string) => {
-    await deleteReading(id).unwrap();
+  const handleDeleteList = async (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    e.preventDefault();
+    deleteList(id);
   }
+
+  // todo - логику взаимодействия с ListItem тоже вынести сюда! (и вынести в хуки одинаковую логику?)
 
 
   if (type === 'card') {
     return (
-      <Link to={`/${listInfo.id}`} state={{ background: location }}>
-        <TodoCardDetails title={title || listInfo.title} listInfo={listInfo} onDelete={() => handleDeleteList(listInfo.id)} />
-      </Link>
+      <TodoCardDetails title={title || listInfo.title} listInfo={listInfo} onDelete={(e) => handleDeleteList(e, listInfo.id)} />
     )
   }
 
-  if (type === 'modal') {
-    return <TodoModalDetails />
-  }
 
-  if (type === 'page') {
-    return <TodoPageDetails />
+  if (type === 'details') {
+    return <TodoPageDetails listInfo={listInfo} onDelete={handleDeleteList} />
   }
 };
 

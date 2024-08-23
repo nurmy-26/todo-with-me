@@ -11,7 +11,7 @@ type TodoCardDetailsProps = {
   listInfo: TList;
   extraClass?: string;
   onAdd?: (event: React.FormEvent) => void;
-  onDelete: (id: string) => Promise<void>;
+  onDelete: (event: React.MouseEvent<HTMLButtonElement>, id: string) => Promise<void>;
 };
 
 const TodoCardDetails = ({
@@ -22,7 +22,7 @@ const TodoCardDetails = ({
   onDelete
 }: TodoCardDetailsProps) => {
   return (
-    <article className={cn(style.list_container, extraClass)}>
+    <article className={cn(style.card, extraClass)}>
       <DeleteBtn extraClass={style.del_btn} onDelete={onDelete} />
 
       <h2>{title}</h2>

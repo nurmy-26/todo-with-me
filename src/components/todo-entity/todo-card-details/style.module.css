@@ -1,4 +1,4 @@
-.list_container {
+.card {
   position: relative;
   min-height: 240px;
   padding: 20px;
@@ -11,7 +11,7 @@
   background-color: burlywood;
 }
 
-.list_container:hover .del_btn {
+.card:hover .del_btn {
   visibility: visible;
   opacity: 1;
 }
@@ -28,6 +28,6 @@
   right: 12px;
   background-color: transparent;
 
-  /* visibility: visible;
-  opacity: 0; */
+  visibility: visible;
+  opacity: 0;
 }

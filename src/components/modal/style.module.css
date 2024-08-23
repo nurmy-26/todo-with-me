@@ -29,3 +29,14 @@
 .modal svg {
   cursor: pointer;
 }
+
+.close_modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.close_modal svg {
+  width: 32px;
+  height: 32px;
+}

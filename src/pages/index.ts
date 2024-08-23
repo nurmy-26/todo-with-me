@@ -1,4 +1,4 @@
 import MainPage from "./main";
-// import NotFound404Page from "./not-found-404";
+import NotFound404Page from "./not-found-404";
 
-export { MainPage };
+export { MainPage, NotFound404Page };

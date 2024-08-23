@@ -5,7 +5,7 @@ import { ListIcon } from '../../icons/list-icon';
 
 
 type AddBtnProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   disabled?: boolean;
   extraClass?: string;
   icon?: 'list' | 'plus';

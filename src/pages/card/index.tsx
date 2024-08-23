@@ -1,16 +1,19 @@
-import { ReactNode } from 'react';
+import TodoEntity from '../../components/todo-entity';
+import { useGetReadingQuery } from '../../redux';
 import style from './style.module.css';
+import { useParams } from 'react-router-dom';
 
-type CardPageProps = {
-  component: ReactNode;
-  title?: string;
-}
+const CardPage = () => {
+  const { id } = useParams(); // извлекаем id из url
+  const { data: listInfo, isLoading } = useGetReadingQuery(id);
 
-const CardPage = ({ component, title }: CardPageProps) => {
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className={style.page_wrapper}>
-      {title && <h1>{title}</h1>}
-      {component}
+      <TodoEntity type='details' listInfo={listInfo} />
     </div>
 
   )
