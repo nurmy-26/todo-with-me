@@ -1,7 +1,8 @@
+// поместить в lib виджета формы!
 export const initialListForm = {
-  'list-name': '',
-}
+  "list-name": "",
+};
 
 export const initialItemForm = {
-  'list-item-title': '',
-}
+  "list-item-title": "",
+};

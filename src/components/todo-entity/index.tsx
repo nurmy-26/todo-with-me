@@ -1,7 +1,7 @@
-import { TList } from '../../utils/mock-data';
 import TodoCardDetails from './todo-card-details';
 import TodoPageDetails from './todo-page-details';
 import { useDelete } from '../../hooks/rtk-query/useDelete';
+import { TList } from '../../6-shared/types';
 
 // один раз прописать логику работы карточки (onAdd, onDelete) и пробрасывать для нужного рендера (card/modal/page)
 type TodoEntityProps = {

@@ -1,11 +1,11 @@
-import { useDeleteReadingMutation } from "../../redux";
+import { useDeleteTodoListMutation } from "../../redux";
 
 // хук для удаления TodoList по id
 export const useDelete = () => {
-  const [deleteReading] = useDeleteReadingMutation();
+  const [deleteTodoList] = useDeleteTodoListMutation();
 
   const deleteList = async (id: string) => {
-    await deleteReading(id).unwrap();
+    await deleteTodoList(id).unwrap();
   };
 
   return {

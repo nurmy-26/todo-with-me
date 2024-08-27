@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { readingApi } from "./reading-api";
+import { todolistApi } from "./todolist-api";
 
 export const store = configureStore({
   reducer: {
-    [readingApi.reducerPath]: readingApi.reducer,
+    [todolistApi.reducerPath]: todolistApi.reducer,
   },
-  // добавляем к дефолтным мидлварам мидлвар из readingApi
-  // readingApi.reducer и readingApi.middleware создаются сами
+  // добавляем к дефолтным мидлварам мидлвар из todolistApi
+  // todolistApi.reducer и todolistApi.middleware создаются сами
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(readingApi.middleware),
+    getDefaultMiddleware().concat(todolistApi.middleware),
 });

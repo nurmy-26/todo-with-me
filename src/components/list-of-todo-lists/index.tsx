@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { useGetReadingsQuery } from "../../redux";
-import { TList } from '../../utils/mock-data';
+import { useGetTodoListsQuery } from "../../redux";
 import style from './style.module.css';
 import TodoEntity from "../todo-entity";
+import { TList } from "../../6-shared/types";
 
 const ListOfTodoLists = () => {
-  const { data = [], isLoading } = useGetReadingsQuery(); // get-запрос к "серверу" за данными "reading"
+  const { data = [], isLoading } = useGetTodoListsQuery(); // get-запрос к "серверу" за данными "todolist"
   const location = useLocation();
 
   return isLoading ?

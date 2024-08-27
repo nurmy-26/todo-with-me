@@ -3,7 +3,7 @@ import style from './style.module.css';
 import AddBtn from '../../ui/buttons/add-btn';
 import DeleteBtn from '../../ui/buttons/delete-btn';
 import List from '../../list';
-import { useGetReadingQuery } from '../../../redux';
+import { useGetTodoListQuery } from '../../../redux';
 import { useDelete } from '../../../hooks/rtk-query/useDelete';
 
 const TodoModalDetails = () => {
@@ -11,7 +11,7 @@ const TodoModalDetails = () => {
   const { id } = useParams(); // извлекаем id из url
   const { deleteList } = useDelete();
 
-  const { data: listInfo, isLoading } = useGetReadingQuery(id);
+  const { data: listInfo, isLoading } = useGetTodoListQuery(id);
 
   if (isLoading) {
     return <p>Loading...</p>;

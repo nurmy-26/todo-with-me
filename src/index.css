@@ -21,6 +21,7 @@
   --color-text-dark: #213547;
   --color-dark: #242424;
   --color-light: #f9f9f9;
+  --color-disabled: #2135477c;
   --color-accent: #535bf2;
   --color-error: #d91a32;
   /* --color-success: ; */
@@ -87,7 +88,13 @@ select:hover {
 }
 button:focus,
 button:focus-visible {
+  /* outline: 4px auto -webkit-focus-ring-color; */
+}
+button:active {
   outline: 4px auto -webkit-focus-ring-color;
+}
+button:disabled {
+  border: 3px solid var(--color-disabled);
 }
 
 @media (prefers-color-scheme: light) {

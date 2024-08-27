@@ -1,0 +1,21 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #464646;
+  padding: 10px;
+  border-radius: var(--border-radius-base);
+
+  /* чтоб форма не растягивалась по высоте в грид-сетке */
+  align-self: start;
+  grid-column: var(--grid-child-third);
+  background-color: lightgreen;
+}
+
+.form button {
+  width: 60%;
+  justify-self: center;
+}

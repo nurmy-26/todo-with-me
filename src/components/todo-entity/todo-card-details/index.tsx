@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import style from './style.module.css';
 import AddBtn from '../../ui/buttons/add-btn';
-import { TList } from '../../../utils/mock-data';
 import DeleteBtn from '../../ui/buttons/delete-btn';
 import List from '../../list';
+import { TList } from '../../../6-shared/types';
 
 
 type TodoCardDetailsProps = {

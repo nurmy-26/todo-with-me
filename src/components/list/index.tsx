@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import style from './style.module.css';
 import ListItem from './list-item';
-import { TItem } from '../../utils/mock-data';
+import { TItem } from '../../6-shared/types';
 
 
 type ListProps = {

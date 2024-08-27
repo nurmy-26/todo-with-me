@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import style from './style.module.css';
-import { TItem, TList } from '../../../utils/mock-data';
-import { useGetReadingsQuery, useUpdateReadingMutation } from '../../../redux';
+import { useGetTodoListsQuery, useUpdateTodoListMutation } from '../../../redux';
 import { CheckIcon } from '../../ui/icons/check-icon';
+import { TItem, TList } from '../../../6-shared/types';
 
 
 type ListItemProps = {
@@ -13,9 +13,9 @@ type ListItemProps = {
 };
 
 const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
-  // todo - вынести логику работы с data !!! (оставить в handleDeleteItem только updateReading)
-  const { data = [] } = useGetReadingsQuery();
-  const [updateReading] = useUpdateReadingMutation();
+  // todo - вынести логику работы с data !!! (оставить в handleDeleteItem только updateTodoList)
+  const { data = [] } = useGetTodoListsQuery();
+  const [updateTodoList] = useUpdateTodoListMutation();
 
   const handleComplete = async () => {
     console.log(item);
@@ -37,7 +37,7 @@ const ListItem = ({ children, extraClass, item, listId }: ListItemProps) => {
       items: updatedItems
     };
 
-    await updateReading({ listId, ...updatedList }).unwrap();
+    await updateTodoList({ listId, ...updatedList }).unwrap();
   };
 
   return (
