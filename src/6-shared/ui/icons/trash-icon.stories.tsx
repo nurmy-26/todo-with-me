@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { DeleteIcon } from "./delete-icon";
+import { TrashIcon } from "./trash-icon";
 
 const meta = {
-  title: "icons/delete-icon",
-  component: DeleteIcon,
+  title: "icons/trash-icon",
+  component: TrashIcon,
   tags: ["autodocs"],
   argTypes: {
     fill: { control: "color" },
   },
   args: { onClick: fn() },
-} satisfies Meta<typeof DeleteIcon>;
+} satisfies Meta<typeof TrashIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

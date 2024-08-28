@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import style from './style.module.css';
 import AddBtn from '../../ui/buttons/add-btn';
-import DeleteBtn from '../../ui/buttons/delete-btn';
+import TodoListDeleteBtn from '../../ui/buttons/delete-btn';
 import List from '../../list';
 import { TList } from '../../../6-shared/types';
 
@@ -23,7 +23,7 @@ const TodoCardDetails = ({
 }: TodoCardDetailsProps) => {
   return (
     <article className={cn(style.card, extraClass)}>
-      <DeleteBtn extraClass={style.del_btn} onDelete={onDelete} />
+      <TodoListDeleteBtn extraClass={style.del_btn} onDelete={onDelete} />
 
       <h2>{title}</h2>
 

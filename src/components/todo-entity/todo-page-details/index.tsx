@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import style from './style.module.css';
 import AddBtn from '../../ui/buttons/add-btn';
-import DeleteBtn from '../../ui/buttons/delete-btn';
+import TodoListDeleteBtn from '../../ui/buttons/delete-btn';
 import List from '../../list';
 import { TList } from '../../../6-shared/types';
 
@@ -37,7 +37,7 @@ const TodoPageDetails = ({
 
         <h1>{listInfo.title}</h1>
 
-        <DeleteBtn onDelete={handleDelete} extraClass={style.content_btn} />
+        <TodoListDeleteBtn onDelete={handleDelete} extraClass={style.content_btn} />
       </header>
 
       <List listItems={listInfo.items} listId={listInfo.id} extraClass={style.content_list} />

@@ -2,14 +2,14 @@ import Button from '../../../6-shared/ui/button';
 import { PlusIcon } from '../../../6-shared/ui/icons/plus-icon';
 
 
-type AddTodoBtnProps = {
+type TodoAddBtnProps = {
   disabled?: boolean;
   extraClass?: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.FormEvent) => void;
+  onClick: (event: React.FormEvent) => void;
 };
 
-const AddTodoBtn = ({ disabled, extraClass, type = 'button', onClick }: AddTodoBtnProps) => {
+const TodoAddBtn = ({ disabled, extraClass, type = 'button', onClick }: TodoAddBtnProps) => {
   return (
     <Button
       icon={<PlusIcon />}
@@ -23,4 +23,4 @@ const AddTodoBtn = ({ disabled, extraClass, type = 'button', onClick }: AddTodoB
   );
 };
 
-export default AddTodoBtn;
+export default TodoAddBtn;

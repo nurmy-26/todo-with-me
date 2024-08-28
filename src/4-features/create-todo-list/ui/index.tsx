@@ -2,14 +2,14 @@ import Button from '../../../6-shared/ui/button';
 import { ListIcon } from '../../../6-shared/ui/icons/list-icon';
 
 
-type CreateBtnProps = {
+type TodoListCreateBtnProps = {
   disabled?: boolean;
   extraClass?: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.FormEvent) => void;
+  onClick: (event: React.FormEvent) => void;
 };
 
-const CreateBtn = ({ disabled, extraClass, type = 'button', onClick }: CreateBtnProps) => {
+const TodoListCreateBtn = ({ disabled, extraClass, type = 'button', onClick }: TodoListCreateBtnProps) => {
   return (
     <Button
       icon={<ListIcon />}
@@ -23,4 +23,4 @@ const CreateBtn = ({ disabled, extraClass, type = 'button', onClick }: CreateBtn
   );
 };
 
-export default CreateBtn;
+export default TodoListCreateBtn;

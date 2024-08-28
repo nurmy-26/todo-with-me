@@ -6,7 +6,7 @@ type DeleteListBtnProps = {
   disabled?: boolean;
   extraClass?: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.FormEvent) => void;
+  onClick: (event: React.FormEvent) => void;
   size?: 's' | 'm';
 };
 

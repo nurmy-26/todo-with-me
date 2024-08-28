@@ -19,9 +19,10 @@
   --grid-child-quarter: span var(--columns-three);
 
   --color-text-dark: #213547;
-  --color-dark: #242424;
+  /* --color-brown: #242424; */
   --color-light: #f9f9f9;
-  --color-disabled: #2135477c;
+  --color-dark-disabled: #2135477c; /* более прозрачная версия #213547 */
+  --color-dark-active: #121d27; /* более темная версия #213547 */
   --color-accent: #535bf2;
   --color-error: #d91a32;
   /* --color-success: ; */
@@ -35,7 +36,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: var(--color-light);
   background-color: #242424;
 
   font-synthesis: none;
@@ -94,7 +96,7 @@ button:active {
   outline: 4px auto -webkit-focus-ring-color;
 }
 button:disabled {
-  border: 3px solid var(--color-disabled);
+  border: 3px solid var(--color-dark-disabled);
 }
 
 @media (prefers-color-scheme: light) {

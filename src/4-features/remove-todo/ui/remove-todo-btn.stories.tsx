@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import RemoveTodoBtn from './';
+import TodoRemoveBtn from './';
 
 const meta = {
-  title: 'Features/RemoveTodoBtn',
-  component: RemoveTodoBtn,
+  title: 'Features/TodoRemoveBtn',
+  component: TodoRemoveBtn,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   args: { onClick: fn() },
-} satisfies Meta<typeof RemoveTodoBtn>;
+} satisfies Meta<typeof TodoRemoveBtn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

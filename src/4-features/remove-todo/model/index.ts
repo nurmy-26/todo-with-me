@@ -18,6 +18,8 @@ export const useRemoveTodo = () => {
       // находим нужный список
       const listIndex = data.findIndex((list: TList) => list.id === listId);
 
+      if (listIndex === -1) throw new Error("List not found");
+
       // фильтруем его чтоб убрать удаляемый элемент
       const updatedItems = data[listIndex].items.filter(
         (item: TItem) => item.id !== itemId

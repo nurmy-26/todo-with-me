@@ -1,34 +1,45 @@
-// import Button from '../../../6-shared/ui/button';
-// import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
+import cn from 'classnames';
+import { useCheckbox } from '../../../6-shared/lib/useCheckbox';
+import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
 import style from './style.module.css';
+import { TItem } from '../../../5-entities/Todo/model/types';
+import { useToggleTodo } from '../model';
+import { useGetTodoLists } from '../../../5-entities/Todo/model';
 
 
-type ToggleTodoBtnProps = {
-  disabled?: boolean;
+type TodoToggleCheckboxProps = {
+  item: TItem;
   extraClass?: string;
-  type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.FormEvent) => void;
+  onChange: (event: React.FormEvent) => void;
 };
 
-const ToggleTodoBtn = ({ disabled, extraClass, type = 'button', onClick }: ToggleTodoBtnProps) => {
-  return (
-    // <Button
-    //   icon={<CheckIcon />}
-    //   disabled={disabled}
-    //   extraClass={extraClass}
-    //   type={type}
-    //   onClick={onClick}
-    // >
-    // </Button>
+const TodoToggleCheckbox = ({ item, extraClass, onChange }: TodoToggleCheckboxProps) => {
+  const { id, title, isDone } = item;
+  // todo - вынести эту логику + изменение в db выше уровнем (пробрасывать пропсом onChange)
+  // const { isChecked, toggleCheckbox } = useCheckbox();
 
-    // membership__form-label
-    // membership__radio-input membership__radio-input_type_circle
-    // text text_type_button membership__pseudo-el membership__pseudo-el_type_circle
-    <label>
-      <input className={style.checkbox} type="checkbox" name={checkboxName} value={checkboxValue} />
-      <span>онлайн</span>
+  // const handleToggle = (e) => {
+  //   console.log(e.target)
+  //   console.log(e.target.checked)
+  //   toggleCheckbox();
+  // }
+
+  const checkboxIcon = isDone ? <CheckIcon type={'white-rectangle'} /> : <CheckIcon />
+
+  return (
+    <label className={cn(style.label, extraClass)}>
+      <input
+        className={style.checkbox}
+        type="checkbox"
+        name={id}
+        value={title}
+        checked={isDone}
+        onChange={onChange}
+      />
+
+      {checkboxIcon}
     </label>
   );
 };
 
-export default ToggleTodoBtn;
+export default TodoToggleCheckbox;

@@ -3,11 +3,14 @@ import { MouseEventHandler } from "react";
 export type TItem = {
   id: string;
   title: string;
+  isDone: boolean;
+  // finishDate
 };
 
 export type TList = {
   id: string;
   title: string;
+  // color
   items: TItem[];
 };
 

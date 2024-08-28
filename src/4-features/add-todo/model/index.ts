@@ -21,11 +21,12 @@ export const useAddTodo = () => {
         id: uuidv4(),
         // title: itemValues['list-item-title'], - пример
         title: itemTitle, // todo - потом может замениться более сложным объектом (собирается из разных полей)
+        isDone: false,
       };
 
       // получаем обновленный список, чтобы передать его в updateList
       const selectedList: TList = data.find(
-        (item: TItem) => item.id === listId
+        (list: TList) => list.id === listId
       );
       const updatedList = {
         ...selectedList,

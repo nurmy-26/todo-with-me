@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import style from './style.module.css';
 import AddBtn from '../../ui/buttons/add-btn';
-import DeleteBtn from '../../ui/buttons/delete-btn';
+import TodoListDeleteBtn from '../../ui/buttons/delete-btn';
 import List from '../../list';
 import { useGetTodoListQuery } from '../../../redux';
 import { useDelete } from '../../../hooks/rtk-query/useDelete';
@@ -34,7 +34,7 @@ const TodoModalDetails = () => {
 
       <footer className={style.footer}>
         <AddBtn icon={'plus'} onClick={() => { }} extraClass={style.content_btn} />
-        <DeleteBtn onDelete={(e: React.MouseEvent<HTMLButtonElement>) => handleDelete(e)} extraClass={style.content_btn} />
+        <TodoListDeleteBtn onDelete={(e: React.MouseEvent<HTMLButtonElement>) => handleDelete(e)} extraClass={style.content_btn} />
       </footer>
     </article>
   );

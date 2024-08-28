@@ -2,14 +2,14 @@ import Button from '../../../6-shared/ui/button';
 import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
 
 
-type RemoveTodoBtnProps = {
+type TodoRemoveBtnProps = {
   disabled?: boolean;
   extraClass?: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.FormEvent) => void;
+  onClick: (event: React.FormEvent) => void;
 };
 
-const RemoveTodoBtn = ({ disabled, extraClass, type = 'button', onClick }: RemoveTodoBtnProps) => {
+const TodoRemoveBtn = ({ disabled, extraClass, type = 'button', onClick }: TodoRemoveBtnProps) => {
   return (
     <Button
       icon={<TrashIcon />}
@@ -22,4 +22,4 @@ const RemoveTodoBtn = ({ disabled, extraClass, type = 'button', onClick }: Remov
   );
 };
 
-export default RemoveTodoBtn;
+export default TodoRemoveBtn;
