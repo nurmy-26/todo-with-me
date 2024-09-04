@@ -12,7 +12,7 @@ export const useAddTodo = () => {
   const { updateList, isLoading } = useUpdateTodoList();
   const [error, setError] = useState<string | null>(null);
 
-  const addTodo = async (listId: string, itemTitle: string) => {
+  const addTodo = async (itemTitle: string, inputValue: string) => {
     setError(null); // сброс ошибки перед началом
 
     try {
@@ -20,20 +20,20 @@ export const useAddTodo = () => {
       const listItem: TItem = {
         id: uuidv4(),
         // title: itemValues['list-item-title'], - пример
-        title: itemTitle, // todo - потом может замениться более сложным объектом (собирается из разных полей)
+        title: inputValue, // todo - потом может замениться более сложным объектом (собирается из разных полей)
         isDone: false,
       };
 
       // получаем обновленный список, чтобы передать его в updateList
       const selectedList: TList = data.find(
-        (list: TList) => list.id === listId
+        (list: TList) => list.title === itemTitle
       );
       const updatedList = {
         ...selectedList,
         items: [...selectedList.items, listItem],
       };
 
-      await updateList(listId, updatedList);
+      await updateList(selectedList.id, updatedList);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     }

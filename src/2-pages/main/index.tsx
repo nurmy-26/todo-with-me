@@ -1,28 +1,56 @@
-import ItemForm from '../../components/ui/form/item-form';
-import ListForm from '../../components/ui/form/list-form';
-import ListOfTodoLists from '../../components/list-of-todo-lists';
-import Section from '../../components/section';
 import style from './style.module.css';
+import { useRouterLocation } from '../../6-shared/lib/useRouterLocation';
+import GridSection from '../../6-shared/ui/grid-section';
+import GridListLayout from '../../6-shared/ui/grid-list-layout';
+import { useGetTodoLists } from '../../5-entities/Todo/model';
+import TodoCard from '../../3-widgets/todo-card/ui';
+import { Link } from 'react-router-dom';
+import { TList } from '../../5-entities/Todo/model/types';
+import ListForm from '../../3-widgets/list-form/ui';
+import ItemForm from '../../3-widgets/item-form/ui';
+import { routes } from '../../6-shared/const/routes';
+
 
 const MainPage = () => {
-  // return (
-  //   <>
-  //     {/* todo - сделать компонент заголовка чтоб не задавать стили тут */}
-  //     <h1 className={style.header}>Читальные планы</h1>
-  //     <Section ariaLabel='Добавление и дополнение списков'>
-  //       <ListForm />
+  const { data: todolists, isLoading } = useGetTodoLists();
+  const { location } = useRouterLocation();
 
-  //       <ItemForm />
-  //     </Section>
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
 
-  //     <Section ariaLabel='Настройки'> </Section>
+  const renderTodoList = (list: TList) => {
+    return (
+      // <Link to={`/${list.id}`} state={{ background: location }}>
+      //   <TodoCard listInfo={list} />
+      // </Link>
+      <Link to={`${routes.todolist}/${list.id}`} state={{ background: location }}>
+        <TodoCard listInfo={list} />
+      </Link>
+    )
+  }
 
-  //     <Section ariaLabel='Списки'>
-  //       <ListOfTodoLists />
-  //     </Section>
-  //   </>
+  return (
+    <>
+      {/* todo - сделать компонент заголовка чтоб не задавать стили тут */}
+      <h1 className={style.header}>Читальные планы</h1>
+      <GridSection ariaLabel='Добавление и дополнение списков'>
+        <ListForm />
 
-  // )
+        <ItemForm />
+      </GridSection>
+
+      {/* <GridSection ariaLabel='Настройки'> </GridSection> */}
+
+      <GridSection ariaLabel='Списки'>
+        <GridListLayout
+          data={todolists}
+          renderItem={renderTodoList}
+        />
+      </GridSection>
+    </>
+
+  )
 }
 
 export default MainPage;

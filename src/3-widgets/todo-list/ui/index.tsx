@@ -20,15 +20,25 @@ const TodoList = ({
   const { toggleTodo } = useToggleTodo();
   const { removeTodo } = useRemoveTodo();
 
+  const toggle = (e: React.ChangeEvent<HTMLInputElement>, listId: string, itemId: string) => {
+    e.preventDefault();
+    toggleTodo(listId, itemId)
+  }
+
+  const handleRemove = (e: React.FormEvent, listId: string, itemId: string) => {
+    e.preventDefault();
+    removeTodo(listId, itemId)
+  }
+
   return (
     <ul className={cn(style.list, extraClass)}>
       {list.items.map((item: TItem, index: number) =>
         <li key={index} className={style.item}>
-          <TodoToggleCheckbox item={item} onChange={() => toggleTodo(list.id, item.id)} />
+          <TodoToggleCheckbox item={item} onChange={(e) => toggle(e, list.id, item.id)} />
 
           <TodoItem item={item} />
 
-          <TodoRemoveBtn onClick={() => removeTodo(list.id, item.id)} extraClass={style.del_btn} />
+          <TodoRemoveBtn onClick={(e) => handleRemove(e, list.id, item.id)} extraClass={style.del_btn} />
         </li>
       )}
     </ul>

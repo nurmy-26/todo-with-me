@@ -1,0 +1,9 @@
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  /* является грид-родителем для дочерних элементов */
+  display: grid;
+  grid-template-columns: var(--grid-parent-full);
+  gap: 16px;
+}

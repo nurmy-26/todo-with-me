@@ -12,7 +12,17 @@ type InputProps = {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ extraClass, type = 'text', name, placeholder, value, disabled, onChange }: InputProps) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({
+  extraClass,
+  type = 'text',
+  name,
+  placeholder,
+  value,
+  disabled,
+  onChange
+}: InputProps,
+  ref
+) => {
   return (
     <input
       className={cn(style.input, extraClass)}
@@ -22,8 +32,9 @@ const Input = ({ extraClass, type = 'text', name, placeholder, value, disabled, 
       value={value}
       disabled={disabled}
       onChange={onChange}
+      ref={ref}
     />
   );
-};
+});
 
 export default Input;

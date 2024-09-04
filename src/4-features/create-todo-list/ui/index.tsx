@@ -2,23 +2,23 @@ import Button from '../../../6-shared/ui/button';
 import { ListIcon } from '../../../6-shared/ui/icons/list-icon';
 
 
-type TodoListCreateBtnProps = {
+type TodoListCreateBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
+  isLoading?: boolean;
   extraClass?: string;
-  type?: 'button' | 'submit' | 'reset';
-  onClick: (event: React.FormEvent) => void;
+  onClick?: (event: React.FormEvent) => void;
 };
 
-const TodoListCreateBtn = ({ disabled, extraClass, type = 'button', onClick }: TodoListCreateBtnProps) => {
+const TodoListCreateBtn = ({ disabled, isLoading, extraClass, onClick, ...rest }: TodoListCreateBtnProps) => {
   return (
     <Button
       icon={<ListIcon />}
       disabled={disabled}
       extraClass={extraClass}
-      type={type}
       onClick={onClick}
+      {...rest}
     >
-      Создать список
+      {isLoading ? 'Загрузка...' : 'Создать список'}
     </Button>
   );
 };

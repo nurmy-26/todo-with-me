@@ -1,44 +1,43 @@
-import { v4 as uuidv4 } from 'uuid';
-import { useForm } from "../../hooks/useForm";
-import { useGetTodoListsQuery, useUpdateTodoListMutation } from "../../redux";
-import { initialItemForm } from "../../utils/constants";
-import AddBtn from "../../6-shared/ui/button/add-btn";
-import Form from "../../6-shared/ui/form";
-import Input from "../../6-shared/ui/input";
-import Select from '../../6-shared/ui/select';
-import CollapsibleTags from '../../../collapsible-section/collapsible-tags/collapsible-tags';
-import { useSelect } from '../../hooks/useSelect';
-import { TItem } from '../../6-shared/types';
+import { useAddTodo } from "../../../4-features/add-todo/model";
+import TodoAddBtn from "../../../4-features/add-todo/ui";
+import { useSelectTodoListTitle } from "../../../4-features/select-todo-list/model";
+import useEscape from "../../../6-shared/lib/useEscape";
+import { useForm } from "../../../6-shared/lib/useForm";
+import { useInputRef } from "../../../6-shared/lib/useInputRef";
+import Form from "../../../6-shared/ui/form";
+import Input from "../../../6-shared/ui/input";
+import Select from "../../../6-shared/ui/select";
 
 const ItemForm = () => {
-  // todo - вместо пустого массива - сделать дефолтную константу
-  const { data = [] } = useGetTodoListsQuery(); // get-запрос к "серверу" за данными "todolist"
-  const { values: itemValues, setValues: setItemValues, handleChange: handleItemChange } = useForm(initialItemForm);
-  const { selectedValue, valueList, handleSelect } = useSelect<TList>(data, "title");
-  const [updateTodoList, { isLoading }] = useUpdateTodoListMutation();
+  const initialItemForm = {
+    "list-item-title": "",
+  };
+
+  const {
+    values,
+    handleChange,
+    clearForm
+  } = useForm(initialItemForm);
+  const { inputRef: titleRef, deactivateInput: deactivateTitleInput } = useInputRef();
+  const { addTodo, isLoading } = useAddTodo();
+
+  const { selectedValue, valueList, handleSelect } = useSelectTodoListTitle();
 
   const handleAddToList = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // подготавливаем данные
-    const listItem: TItem = {
-      id: uuidv4(),
-      title: itemValues['list-item-title'],
-    }
-    const selectedList = data.find((item: TItem) => item.title === selectedValue);
-    const listId = selectedList.id;
-    const updatedList = {
-      ...selectedList,
-      items: [
-        ...selectedList.items,
-        listItem
-      ]
-    };
-
-    // обновляем список, добавляя в него новое значение
-    await updateTodoList({ listId, ...updatedList }).unwrap();
-    setItemValues(initialItemForm);
+    addTodo(selectedValue, values['list-item-title'])
+    clearForm();
   };
+
+  const handleEsc = () => { // по нажатию на Esc
+    deactivateTitleInput(); // убрать фокус с input
+    clearForm(); // очистить форму
+  };
+
+  useEscape(handleEsc); // вешаем обработчик Esc на input
+
+  const isLocked = isLoading || values['list-item-title'] === '';
 
   return (
     <Form onSubmit={handleAddToList}>
@@ -51,14 +50,15 @@ const ItemForm = () => {
       />
 
       <Input
+        ref={titleRef}
         name='list-item-title'
         placeholder="Что вы хотите добавить в список?.."
-        value={itemValues['list-item-title']}
+        value={values['list-item-title']}
         disabled={isLoading}
-        onChange={handleItemChange}
+        onChange={handleChange}
       />
-      <CollapsibleTags />
-      <AddBtn type='submit' icon='plus' disabled={isLoading}>{isLoading ? 'Загрузка...' : 'Добавить в список'}</AddBtn>
+
+      <TodoAddBtn type='submit' disabled={isLocked} />
     </Form>
   )
 }

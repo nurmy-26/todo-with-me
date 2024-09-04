@@ -1,0 +1,57 @@
+.modal {
+  z-index: 20;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* сместит на половину размера modal, чтобы окно встало ровно по центру */
+
+  box-sizing: border-box;
+  display: flex;
+  width: 720px;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+  border: 1px solid rgba(76, 76, 255, 0.2);
+  border-radius: var(--border-radius-modal);
+  box-shadow:
+    0px 0px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.04),
+    0px 16px 24px 0px rgba(0, 0, 0, 0.04),
+    0px 24px 32px 0px rgba(0, 0, 0, 0.04);
+
+  background-color: var(--color-light);
+}
+
+.modal svg {
+  cursor: pointer;
+}
+
+.close_modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.close_modal svg {
+  width: 32px;
+  height: 32px;
+}
+
+.overlay {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}

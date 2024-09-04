@@ -1,0 +1,26 @@
+.card {
+  position: relative;
+  min-height: 240px;
+  padding: 20px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: burlywood;
+}
+
+.card:hover .del_btn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.del_btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  visibility: visible;
+  opacity: 0;
+}

@@ -7,15 +7,16 @@
 .item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .del_btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background-color: transparent;
+  visibility: visible;
+  opacity: 0;
+}
 
-  /* todo - сделать появление при наведении */
-  /* visibility: visible;
-  opacity: 0; */
+.item:hover .del_btn {
+  visibility: visible;
+  opacity: 1;
 }

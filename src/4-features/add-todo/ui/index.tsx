@@ -2,23 +2,23 @@ import Button from '../../../6-shared/ui/button';
 import { PlusIcon } from '../../../6-shared/ui/icons/plus-icon';
 
 
-type TodoAddBtnProps = {
+type TodoAddBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
+  isLoading?: boolean;
   extraClass?: string;
-  type?: 'button' | 'submit' | 'reset';
-  onClick: (event: React.FormEvent) => void;
+  onClick?: (event: React.FormEvent) => void;
 };
 
-const TodoAddBtn = ({ disabled, extraClass, type = 'button', onClick }: TodoAddBtnProps) => {
+const TodoAddBtn = ({ disabled, isLoading, extraClass, onClick, ...rest }: TodoAddBtnProps) => {
   return (
     <Button
       icon={<PlusIcon />}
       disabled={disabled}
       extraClass={extraClass}
-      type={type}
       onClick={onClick}
+      {...rest}
     >
-      Добавить в список
+      {isLoading ? 'Загрузка...' : 'Добавить в список'}
     </Button>
   );
 };

@@ -3,6 +3,74 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
 
+.button svg {
+  fill: var(--color-text-dark);
+}
+
+.s {
+  padding: 0.2em 0.2em;
+}
+.m {
+  padding: 0.6em 1.2em;
+}
+
+.primary {
+  color: var(--color-light-secondary);
+  background-color: var(--color-accent);
+}
+.primary svg {
+  fill: var(--color-light-secondary);
+}
+.primary:hover {
+  background-color: var(--color-accent-active);
+  border-color: transparent;
+}
+.primary:active {
+  color: var(--color-light-secondary);
+  background-color: var(--color-accent);
+}
+
+.secondary {
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-text-dark);
+}
+.secondary:hover {
+  color: var(--color-light);
+  background-color: var(--color-text-dark);
+}
+.secondary:hover svg {
+  fill: var(--color-light);
+}
+.secondary:active {
+  border-color: var(--color-accent);
+}
+
+.tertiary {
+  color: var(--color-text-dark);
+  background-color: transparent;
+}
+.tertiary:hover {
+  color: var(--color-accent);
+}
+.tertiary:hover svg {
+  fill: var(--color-accent);
+}
+.tertiary:active {
+  color: var(--color-text-dark);
+}
+.tertiary:active svg {
+  fill: var(--color-text-dark);
+}
+
+/* стили disabled в конце чтоб корректно перезаписывать */
+.button:disabled {
+  color: var(--color-text-dark);
+  background-color: transparent;
+  border: 2px solid var(--color-dark-inactive);
+}
+.button:disabled svg {
   fill: var(--color-text-dark);
 }

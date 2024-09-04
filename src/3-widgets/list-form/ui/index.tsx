@@ -1,35 +1,52 @@
-import { v4 as uuidv4 } from 'uuid';
-import { useForm } from "../../hooks/useForm";
-import { useAddTodoListMutation } from "../../redux";
-import { initialListForm } from "../../utils/constants";
-import AddBtn from "../../6-shared/ui/button/add-btn";
-import Form from "../../6-shared/ui/form";
-import Input from "../../6-shared/ui/input";
+import { useCreateTodoList } from '../../../4-features/create-todo-list/model';
+import TodoListCreateBtn from '../../../4-features/create-todo-list/ui';
+import useEscape from '../../../6-shared/lib/useEscape';
+import { useForm } from '../../../6-shared/lib/useForm';
+import { useInputRef } from '../../../6-shared/lib/useInputRef';
+import Form from '../../../6-shared/ui/form';
+import Input from '../../../6-shared/ui/input';
 
 const ListForm = () => {
-  const { values: listValues, setValues: setListValues, handleChange: handleListChange } = useForm(initialListForm);
-  const [addTodoList, { isLoading }] = useAddTodoListMutation();
+  const initialListForm = {
+    "list-name": "",
+  };
+
+  const {
+    values,
+    handleChange,
+    clearForm
+  } = useForm(initialListForm);
+  const { inputRef: listTitleRef, deactivateInput: deactivateListTitleInput } = useInputRef();
+  const { createTodoList, isLoading } = useCreateTodoList();
 
   const handleCreateList = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (listValues) {
-      // unwrap для обработки ошибок и тп
-      await addTodoList({ id: uuidv4(), title: listValues['list-name'], items: [] }).unwrap();
-      setListValues(initialListForm); // очищаем поле ввода
-    }
+    createTodoList(values['list-name']);
+    clearForm(); // очищаем поле ввода
   };
+
+  const handleEsc = () => { // по нажатию на Esc
+    deactivateListTitleInput(); // убрать фокус с input
+    clearForm(); // очистить форму
+  };
+
+  useEscape(handleEsc); // вешаем обработчик Esc на input
+
+  const isLocked = isLoading || values['list-name'] === '';
 
   return (
     <Form onSubmit={handleCreateList}>
       <Input
         name='list-name'
         placeholder="Придумайте название списка..."
-        value={listValues['list-name']}
+        value={values['list-name']}
         disabled={isLoading}
-        onChange={handleListChange}
+        onChange={handleChange}
+        ref={listTitleRef}
       />
-      <AddBtn type="submit" icon='list' disabled={isLoading}>{isLoading ? 'Загрузка...' : 'Создать список'}</AddBtn>
+
+      <TodoListCreateBtn type="submit" disabled={isLocked} />
     </Form>
   )
 }
