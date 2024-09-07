@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { todolistApi } from "./todolist-api";
+import { todolistApi } from "../../6-shared/api/todolist-api";
 
 export const store = configureStore({
   reducer: {

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { useCreateNewTodoList } from "../../../5-entities/Todo/model";
-import { TList } from "../../../5-entities/Todo/model/types";
+import { useCreateNewTodoList } from "../../../5-entities";
+import { TList } from "../../../6-shared/types";
 
 // хук для создания нового TodoList
 export const useCreateTodoList = () => {

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import ReactDOM from "react-dom";
+import { CloseModalBtn } from "../../../4-features";
 import useEscape from "../../../6-shared/lib/useEscape";
-import CloseModalBtn from "../../../4-features/close-modal/ui";
 import style from "./style.module.css";
 
 
@@ -11,7 +11,7 @@ type Props = {
   onClose: () => void;
 }
 
-function Modal({ children, onClose }: Props) {
+const Modal = ({ children, onClose }: Props) => {
   // по Ecs закрывать модалку
   useEscape(onClose);
 

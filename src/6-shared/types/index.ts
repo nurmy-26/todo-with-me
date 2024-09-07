@@ -36,3 +36,14 @@ export type TListItemProps = {
   ) => Promise<void>;
   handleDeleteList: MouseEventHandler<HTMLButtonElement>;
 };
+
+type TGetTodoListsOptions = {
+  skip?: boolean;
+  selectFromResult?: (result: any) => any;
+  [key: string]: any;
+};
+
+export type TGetTodoListsConfig = {
+  limit: string;
+  options: TGetTodoListsOptions;
+};

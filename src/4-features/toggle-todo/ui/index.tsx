@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
-import { TItem } from '../../../5-entities/Todo/model/types';
+import { TItem } from '../../../6-shared/types';
 import style from './style.module.css';
 
 

@@ -1,18 +1,18 @@
-import React from 'react';
-import style from './style.module.css';
+import { ChangeEvent, forwardRef, InputHTMLAttributes } from 'react';
 import cn from 'classnames';
+import style from './style.module.css';
 
 type InputProps = {
   extraClass?: string;
-  type?: React.InputHTMLAttributes<HTMLInputElement>['type'];
+  type?: InputHTMLAttributes<HTMLInputElement>['type'];
   name: string;
   placeholder: string;
   value?: string;
   disabled?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({
+const Input = forwardRef<HTMLInputElement, InputProps>(({
   extraClass,
   type = 'text',
   name,

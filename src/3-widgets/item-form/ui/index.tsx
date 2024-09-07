@@ -1,6 +1,4 @@
-import { useAddTodo } from "../../../4-features/add-todo/model";
-import TodoAddBtn from "../../../4-features/add-todo/ui";
-import { useSelectTodoListTitle } from "../../../4-features/select-todo-list/model";
+import { TodoAddBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
 import useEscape from "../../../6-shared/lib/useEscape";
 import { useForm } from "../../../6-shared/lib/useForm";
 import { useInputRef } from "../../../6-shared/lib/useInputRef";

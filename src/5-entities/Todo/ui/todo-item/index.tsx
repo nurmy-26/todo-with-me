@@ -1,6 +1,6 @@
 import cn from 'classnames';
+import { TItem } from '../../../../6-shared/types';
 import style from './style.module.css';
-import { TItem } from '../../model/types';
 
 
 type TodoItemProps = {

@@ -1,9 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import { DeleteListBtn } from '../../../4-features';
+import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
 import { routes } from '../../../6-shared/const/routes';
-import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities/Todo/model';
-import { TItem, TList } from '../../../5-entities/Todo/model/types';
-
-import DeleteListBtn from '../../../4-features/delete-todo-list/ui';
+import { TItem, TList } from '../../../6-shared/types';
 import TodoList from '../../todo-list/ui';
 import style from './style.module.css';
 

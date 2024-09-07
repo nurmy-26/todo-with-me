@@ -1,14 +1,12 @@
-import style from './style.module.css';
+import { Link } from 'react-router-dom';
+import { ItemForm, ListForm, TodoCard } from '../../3-widgets';
+import { useGetTodoLists } from '../../5-entities';
 import { useRouterLocation } from '../../6-shared/lib/useRouterLocation';
 import GridSection from '../../6-shared/ui/grid-section';
 import GridListLayout from '../../6-shared/ui/grid-list-layout';
-import { useGetTodoLists } from '../../5-entities/Todo/model';
-import TodoCard from '../../3-widgets/todo-card/ui';
-import { Link } from 'react-router-dom';
-import { TList } from '../../5-entities/Todo/model/types';
-import ListForm from '../../3-widgets/list-form/ui';
-import ItemForm from '../../3-widgets/item-form/ui';
 import { routes } from '../../6-shared/const/routes';
+import { TList } from '../../6-shared/types';
+import style from './style.module.css';
 
 
 const MainPage = () => {

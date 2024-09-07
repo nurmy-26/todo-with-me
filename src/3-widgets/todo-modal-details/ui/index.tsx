@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import style from './style.module.css';
-import DeleteListBtn from '../../../4-features/delete-todo-list/ui';
-import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities/Todo/model';
-import { useMemo } from 'react';
-import { TItem, TList } from '../../../5-entities/Todo/model/types';
 import TodoList from '../../todo-list/ui';
+import { DeleteListBtn } from '../../../4-features';
+import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
+import { TItem, TList } from '../../../6-shared/types';
+import style from './style.module.css';
+
 
 const TodoModalDetails = () => {
   const navigate = useNavigate();

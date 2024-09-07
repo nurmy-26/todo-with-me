@@ -1,9 +1,9 @@
 import cn from 'classnames';
-import style from './style.module.css';
-import DeleteListBtn from '../../../4-features/delete-todo-list/ui';
 import TodoList from '../../todo-list/ui';
-import { useDeleteTodoList } from '../../../5-entities/Todo/model';
-import { TList } from '../../../5-entities/Todo/model/types';
+import { DeleteListBtn } from '../../../4-features';
+import { useDeleteTodoList } from '../../../5-entities';
+import { TList } from '../../../6-shared/types';
+import style from './style.module.css';
 
 
 type TodoCardProps = {

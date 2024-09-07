@@ -1,4 +1,4 @@
-import { TList } from "./types";
+import { TList } from "../../../6-shared/types";
 import {
   useAddTodoListMutation,
   useDeleteTodoListMutation,
@@ -6,7 +6,7 @@ import {
   useGetTodoListsQuery,
   useUpdateTodoListMutation,
 } from "../../../6-shared/api/todolist-api";
-import { getTodoListsConfig } from "../config/get-todolists";
+import { getTodoListsConfig } from "../const/get-todolists";
 
 // получение всех TodoList
 export const useGetTodoLists = (

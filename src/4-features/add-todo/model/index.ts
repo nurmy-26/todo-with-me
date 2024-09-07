@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import {
-  useGetTodoLists,
-  useUpdateTodoList,
-} from "../../../5-entities/Todo/model";
-import { TItem, TList } from "../../../5-entities/Todo/model/types";
+import { useGetTodoLists, useUpdateTodoList } from "../../../5-entities";
+import { TItem, TList } from "../../../6-shared/types";
 
 // хук для добавления нового элемента в TodoList
 export const useAddTodo = () => {

@@ -1,6 +1,6 @@
-import React from 'react';
-import style from './style.module.css';
+import { ChangeEvent } from 'react';
 import cn from 'classnames';
+import style from './style.module.css';
 
 type SelectProps = {
   extraClass?: string;
@@ -8,7 +8,7 @@ type SelectProps = {
   value: string;
   options: (string | number)[];
   disabled?: boolean;
-  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 const Select = ({ extraClass, name, value, options, disabled, onChange }: SelectProps) => {

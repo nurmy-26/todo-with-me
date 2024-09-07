@@ -1,4 +1,4 @@
-import TodoPageDetails from '../../3-widgets/todo-page-details/ui';
+import { TodoPageDetails } from '../../3-widgets';
 import style from './style.module.css';
 
 const CardPage = () => {
