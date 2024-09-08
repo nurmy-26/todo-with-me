@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import Typography from '../../../../6-shared/ui/typography';
 import { TItem } from '../../../../6-shared/types';
 import style from './style.module.css';
 
@@ -15,7 +16,7 @@ const TodoItem = ({ item, extraClass }: TodoItemProps) => {
   return (
     <div className={cn(style.todo, extraClass)}>
       {/* todo - при расширении todo-item - тут может добавиться больше строк */}
-      <p>{title}</p>
+      <Typography>{title}</Typography>
     </div>
   )
 };

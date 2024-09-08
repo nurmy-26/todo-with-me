@@ -18,18 +18,18 @@
 
 .primary {
   color: var(--color-light-secondary);
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-active);
 }
 .primary svg {
   fill: var(--color-light-secondary);
 }
 .primary:hover {
-  background-color: var(--color-accent-active);
+  background-color: var(--color-accent);
   border-color: transparent;
 }
 .primary:active {
   color: var(--color-light-secondary);
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-active);
 }
 
 .secondary {

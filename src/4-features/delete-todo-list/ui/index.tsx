@@ -5,7 +5,8 @@ import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
 type DeleteListBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   extraClass?: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  variant?: 'primary' | 'secondary' | 'tertiary';
   size?: 's' | 'm';
 };
 

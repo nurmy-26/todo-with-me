@@ -1,8 +1,11 @@
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 import TodoList from '../../todo-list/ui';
 import { DeleteListBtn } from '../../../4-features';
-import { useDeleteTodoList } from '../../../5-entities';
 import { TList } from '../../../6-shared/types';
+import { routes } from '../../../6-shared/const/routes';
+import Typography from '../../../6-shared/ui/typography';
+import { useRouterLocation } from '../../../6-shared/lib/useRouterLocation';
 import style from './style.module.css';
 
 
@@ -17,20 +20,21 @@ const TodoCard = ({
   listInfo,
   extraClass,
 }: TodoCardProps) => {
-  const { deleteList } = useDeleteTodoList();
-
-  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    deleteList(listInfo.id);
-  }
+  const { location } = useRouterLocation();
 
   return (
     <article className={cn(style.card, extraClass)}>
-      <DeleteListBtn onClick={(e) => handleDelete(e)} extraClass={style.del_btn} />
+      <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: location }}>
+        <DeleteListBtn extraClass={style.del_btn} />
+      </Link>
 
-      <h2>{listInfo.title || title}</h2>
+      <Link to={`${routes.todolist}/${listInfo.id}`} state={{ background: location }}>
+        <Typography type={'h2'}>{listInfo.title || title}</Typography>
+      </Link>
 
       <TodoList list={listInfo} />
+
+
 
       Добавить в список (нет фичи)
       {/* todo - добавить фичу для разворота поля для добавления нового пункта в список */}

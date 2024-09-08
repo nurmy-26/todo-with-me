@@ -28,6 +28,7 @@
   --color-accent-active: #646cff;
   --color-accent-inactive: #535bf291;
   --color-error: #d91a32;
+  --color-error-inactive: #d91a34b0;
   /* --color-success: ; */
 
   --font-size-base: 1em;

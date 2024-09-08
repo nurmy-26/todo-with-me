@@ -1,16 +1,17 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { DeleteListBtn } from '../../../4-features';
-import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
+import { useGetTodoLists } from '../../../5-entities';
 import { routes } from '../../../6-shared/const/routes';
+import { useRouterLocation } from '../../../6-shared/lib/useRouterLocation';
+import Typography from '../../../6-shared/ui/typography';
 import { TItem, TList } from '../../../6-shared/types';
 import TodoList from '../../todo-list/ui';
 import style from './style.module.css';
 
 
 const TodoPageDetails = () => {
-  const navigate = useNavigate();
+  const { location } = useRouterLocation();
   const { id } = useParams(); // извлекаем id из url
-  const { deleteList } = useDeleteTodoList();
   const { data, isLoading } = useGetTodoLists();
 
   // todo - доделать, убрать лишнее
@@ -22,18 +23,11 @@ const TodoPageDetails = () => {
   console.log(listInfo)
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Typography>Loading...</Typography>;
   }
 
   if (!listInfo) {
-    return <p>Error!</p>
-  }
-
-  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    deleteList(listInfo.id);
-
-    navigate(routes.home);
+    return <Typography>Error!</Typography>
   }
 
   return (
@@ -45,9 +39,11 @@ const TodoPageDetails = () => {
         {/* todo - добавить фичу для разворота поля для добавления нового пункта в список */}
         {/* todo - input "Добавить в список" */}
 
-        <h1>{listInfo.title}</h1>
+        <Typography type={'h1'} extraClass={''}>{listInfo.title}</Typography>
 
-        <DeleteListBtn onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDelete(e)} extraClass={style.content_btn} />
+        <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: location }}>
+          <DeleteListBtn extraClass={style.del_btn} />
+        </Link>
       </header>
 
       <TodoList list={listInfo} extraClass={style.content_list} />

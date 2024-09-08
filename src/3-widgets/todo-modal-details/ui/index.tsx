@@ -1,15 +1,15 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import TodoList from '../../todo-list/ui';
 import { DeleteListBtn } from '../../../4-features';
-import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
+import { useGetTodoLists } from '../../../5-entities';
+import { routes } from '../../../6-shared/const/routes';
+import Typography from '../../../6-shared/ui/typography';
 import { TItem, TList } from '../../../6-shared/types';
 import style from './style.module.css';
 
 
 const TodoModalDetails = () => {
-  const navigate = useNavigate();
   const { id } = useParams(); // извлекаем id из url
-  const { deleteList } = useDeleteTodoList();
   const { data, isLoading } = useGetTodoLists();
 
   // todo - доделать, убрать лишнее
@@ -22,24 +22,17 @@ const TodoModalDetails = () => {
   console.log(listInfo)
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Typography>Loading...</Typography>;
   }
 
   if (!listInfo) {
-    return <p>Error!</p>
-  }
-
-  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    deleteList(listInfo.id);
-
-    navigate(-1); // после удаления возврат на предыдущую
+    return <Typography>Error!</Typography>
   }
 
   return (
     <article className={style.content}>
       <header className={style.header}>
-        <h2>{listInfo.title}</h2>
+        <Typography type={'h2'}>{listInfo.title}</Typography>
       </header>
 
       <TodoList list={listInfo} extraClass={style.content_list} />
@@ -49,7 +42,10 @@ const TodoModalDetails = () => {
         {/* todo - добавить фичу для разворота поля для добавления нового пункта в список */}
         {/* todo - input "Добавить в список" */}
 
-        <DeleteListBtn onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDelete(e)} extraClass={style.content_btn} />
+        {/* routes.home нужен, т.к. иначе location считывает как todolists/:id и отображает CardPage и изображение прыгает */}
+        <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: routes.home }}>
+          <DeleteListBtn extraClass={style.del_btn} />
+        </Link>
       </footer>
     </article>
   );

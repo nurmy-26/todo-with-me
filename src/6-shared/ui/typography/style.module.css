@@ -1,0 +1,22 @@
+.common {
+  margin: 0;
+  word-wrap: anywhere;
+}
+
+.h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.h2 {
+}
+
+.text {
+  line-height: 1.5;
+}
+
+.overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
