@@ -48,6 +48,13 @@ export const Tertiary: Story = {
   },
 };
 
+export const RoundedShape: Story = {
+  args: {
+    children: 'Кнопка',
+    shape: 'rounded'
+  },
+};
+
 export const WithIcon: Story = {
   args: {
     icon: <PlusIcon />

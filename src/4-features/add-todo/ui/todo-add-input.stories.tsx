@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import TodoAddBtn from './';
+import TodoAddInput from './todo-add-input';
 
 const meta = {
-  title: 'Features/TodoAddBtn',
-  component: TodoAddBtn,
+  title: 'Features/TodoAddInput',
+  component: TodoAddInput,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   args: { onClick: fn() },
-} satisfies Meta<typeof TodoAddBtn>;
+} satisfies Meta<typeof TodoAddInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,0 +1,8 @@
+.input {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.input:active,
+.input:focus {
+  outline: transparent;
+}

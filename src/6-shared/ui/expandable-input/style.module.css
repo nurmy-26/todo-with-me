@@ -1,0 +1,48 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  /* background-color: var(--color-light); */
+  border-radius: var(--border-radius-round);
+}
+
+.btn {
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 2px;
+  /* изначально кнопка находится в центре */
+  left: calc(50% - 18px);
+  transition:
+    left 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out;
+}
+
+.input {
+  /* margin-left чтобы не наезжать на кнопку, расположенную абсолютно (равен ширине кнопки + отступу) */
+  margin-left: 26px;
+  border-radius: var(--border-radius-round);
+  opacity: 0;
+  visibility: hidden;
+  /* изначально input спрятан слева за пределами родительского блока, чтоб выехать из-за границы */
+  transform: translateX(-100%);
+  /* выезд слева происходит с задержкой 0.18s чтоб выезд происходил уже после окончания анимации кнопки*/
+  transition:
+    visibility 0s linear,
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out 0.18s;
+}
+
+/* кнопка уезжает влево, крутясь и скругляется */
+.wrapper_clicked .btn {
+  left: 0;
+  transform: rotate(360deg);
+  border-radius: var(--border-radius-round);
+}
+/* инпут выезжает слева направо */
+.wrapper_clicked .input {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}

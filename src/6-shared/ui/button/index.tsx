@@ -8,6 +8,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   extraClass?: string;
   icon?: React.ReactNode;
   size?: 's' | 'm';
+  shape?: 'default_shape' | 'rounded';
   variant?: 'primary' | 'secondary' | 'tertiary';
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
@@ -19,6 +20,7 @@ const Button = ({
   icon,
   type = 'button',
   size = 'm',
+  shape = 'default_shape',
   variant = 'secondary',
   onClick,
   ...rest
@@ -30,6 +32,7 @@ const Button = ({
       className={cn(
         style.button,
         style[size],
+        style[shape],
         style[variant],
         extraClass
       )}
