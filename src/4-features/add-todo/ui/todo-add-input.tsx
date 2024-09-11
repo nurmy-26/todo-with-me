@@ -11,15 +11,15 @@ type TodoAddInputProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const TodoAddInput = ({ disabled, isLoading, extraClass, onClick, ...rest }: TodoAddInputProps) => {
   return (
-    // <Button
-    //   icon={<PlusIcon />}
-    //   disabled={disabled}
-    //   extraClass={extraClass}
-    //   onClick={onClick}
-    //   {...rest}
-    // >
-    //   {isLoading ? 'Загрузка...' : 'Добавить в список'}
-    // </Button>
+    <Button
+      icon={<PlusIcon />}
+      disabled={disabled}
+      extraClass={extraClass}
+      onClick={onClick}
+      {...rest}
+    >
+      {isLoading ? 'Загрузка...' : 'Добавить в список'}
+    </Button>
   );
 };
 

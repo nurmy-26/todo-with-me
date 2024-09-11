@@ -75,10 +75,14 @@
 
 /* стили disabled в конце чтоб корректно перезаписывать */
 .button:disabled {
-  color: var(--color-text-dark);
+  color: var(--color-dark-inactive);
   background-color: transparent;
   border: 2px solid var(--color-dark-inactive);
 }
 .button:disabled svg {
-  fill: var(--color-text-dark);
+  fill: var(--color-dark-inactive);
 }
+
+/* .disabled svg {
+  fill: var(--color-text-dark);
+} */
