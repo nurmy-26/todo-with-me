@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { DeleteListBtn } from '../../../4-features';
+import { DeleteListBtn, TodoAddForm } from '../../../4-features';
 import { useGetTodoLists } from '../../../5-entities';
 import { routes } from '../../../6-shared/const/routes';
 import { useRouterLocation } from '../../../6-shared/lib/useRouterLocation';
@@ -32,19 +32,15 @@ const TodoPageDetails = () => {
 
   return (
     <article className={style.content}>
-
       <header className={style.header}>
-        {/* <AddBtn icon={'plus'} onClick={onAdd} extraClass={style.content_btn} /> */}
-        Добавить в список
-        {/* todo - добавить фичу для разворота поля для добавления нового пункта в список */}
-        {/* todo - input "Добавить в список" */}
-
         <Typography type={'h1'} extraClass={''}>{listInfo.title}</Typography>
 
         <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: location }}>
           <DeleteListBtn extraClass={style.del_btn} />
         </Link>
       </header>
+
+      <TodoAddForm listTitle={listInfo.title} />
 
       <TodoList list={listInfo} extraClass={style.content_list} />
     </article>

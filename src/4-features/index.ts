@@ -1,5 +1,5 @@
 // окончание на todo - манипуляция с пунктом списка, на todo-list - манипуляция с целым списком
-export { TodoAddBtn, useAddTodo } from "./add-todo";
+export { TodoAddBtn, TodoAddForm, useAddTodo } from "./add-todo";
 export { CloseModalBtn } from "./close-modal";
 export { TodoListCreateBtn, useCreateTodoList } from "./create-todo-list";
 export { DeleteListBtn } from "./delete-todo-list";

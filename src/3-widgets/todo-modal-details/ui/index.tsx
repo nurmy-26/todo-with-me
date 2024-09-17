@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import TodoList from '../../todo-list/ui';
-import { DeleteListBtn } from '../../../4-features';
+import { DeleteListBtn, TodoAddForm } from '../../../4-features';
 import { useGetTodoLists } from '../../../5-entities';
 import { routes } from '../../../6-shared/const/routes';
 import Typography from '../../../6-shared/ui/typography';
@@ -38,9 +38,7 @@ const TodoModalDetails = () => {
       <TodoList list={listInfo} extraClass={style.content_list} />
 
       <footer className={style.footer}>
-        Добавить в список
-        {/* todo - добавить фичу для разворота поля для добавления нового пункта в список */}
-        {/* todo - input "Добавить в список" */}
+        <TodoAddForm listTitle={listInfo.title} />
 
         {/* routes.home нужен, т.к. иначе location считывает как todolists/:id и отображает CardPage и изображение прыгает */}
         <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: routes.home }}>

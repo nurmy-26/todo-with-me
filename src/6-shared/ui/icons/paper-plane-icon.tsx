@@ -7,6 +7,7 @@ type PaperPlaneIconProps = {
 
 export const PaperPlaneIcon = ({ className, isDark, fill = 'var(--color-text-dark)', onClick }: PaperPlaneIconProps) => {
   return isDark ?
+    // темный
     <svg
       className={className}
       onClick={onClick}
@@ -23,6 +24,7 @@ export const PaperPlaneIcon = ({ className, isDark, fill = 'var(--color-text-dar
       </g>
     </svg>
     :
+    // светлый
     <svg
       className={className}
       onClick={onClick}

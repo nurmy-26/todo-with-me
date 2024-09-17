@@ -8,14 +8,6 @@
   align-items: center;
 }
 
-.content_btn {
-  min-width: 160px;
-}
-.content_btn svg {
-  width: 28px;
-  height: 28px;
-}
-
 .content_list li {
   font-size: 20px;
 }

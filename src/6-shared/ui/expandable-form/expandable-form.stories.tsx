@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import ExpandableInput from './';
+// import { fn } from '@storybook/test';
+import ExpandableForm from '.';
 import { TrashIcon } from '../icons/trash-icon';
 import { XMarkIcon } from '../icons/xmark-icon';
 
 const meta = {
-  title: 'UI/ExpandableInput',
-  component: ExpandableInput,
+  title: 'UI/ExpandableForm',
+  component: ExpandableForm,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    // extraClass, icon = <PlusIcon />, type = 'text', name, placeholder, value, disabled, onChange
   },
-  args: { onChange: fn() },
-} satisfies Meta<typeof ExpandableInput>;
+  // args: { onChange: fn() },
+  args: {},
+} satisfies Meta<typeof ExpandableForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -23,7 +23,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     name: 'new-todo',
-    placeholder: 'Добавить в список...'
+    placeholder: 'Добавить в список...',
+    submitCallback: () => new Promise((resolve) => setTimeout(resolve, 2000))
   },
 };
 
@@ -32,6 +33,7 @@ export const WithCustomIcons: Story = {
     baseIcon: <TrashIcon />,
     altIcon: <XMarkIcon />,
     name: 'new-todo',
-    placeholder: 'Добавить в список...'
+    placeholder: 'Добавить в список...',
+    submitCallback: () => new Promise((resolve) => setTimeout(resolve, 2000))
   },
 };

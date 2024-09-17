@@ -9,7 +9,7 @@ export const useAddTodo = () => {
   const { updateList, isLoading } = useUpdateTodoList();
   const [error, setError] = useState<string | null>(null);
 
-  const addTodo = async (itemTitle: string, inputValue: string) => {
+  const addTodo = async (listTitle: string, inputValue: string) => {
     setError(null); // сброс ошибки перед началом
 
     try {
@@ -23,8 +23,13 @@ export const useAddTodo = () => {
 
       // получаем обновленный список, чтобы передать его в updateList
       const selectedList: TList = data.find(
-        (list: TList) => list.title === itemTitle
+        (list: TList) => list.title === listTitle
       );
+      if (!selectedList) {
+        // setError(`List with title ${listTitle} was not found`);
+        throw new Error(`List with title ${listTitle} was not found`);
+      }
+
       const updatedList = {
         ...selectedList,
         items: [...selectedList.items, listItem],

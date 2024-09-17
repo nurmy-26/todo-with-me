@@ -34,7 +34,6 @@ const Button = ({
         style[size],
         style[shape],
         style[variant],
-        disabled && style.disabled,
         extraClass
       )}
       onClick={onClick}

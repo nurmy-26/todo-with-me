@@ -4,6 +4,7 @@
   align-items: center;
   gap: 8px;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .button svg {
@@ -78,11 +79,8 @@
   color: var(--color-dark-inactive);
   background-color: transparent;
   border: 2px solid var(--color-dark-inactive);
+  cursor: auto;
 }
 .button:disabled svg {
   fill: var(--color-dark-inactive);
 }
-
-/* .disabled svg {
-  fill: var(--color-text-dark);
-} */

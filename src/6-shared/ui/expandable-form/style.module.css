@@ -1,3 +1,7 @@
+.form {
+  max-width: 340px;
+}
+
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -35,13 +39,13 @@
 }
 
 /* кнопка уезжает влево, крутясь и скругляется */
-.wrapper_clicked .btn {
+.wrapper_expanded .btn {
   left: 0;
   transform: rotate(360deg);
   border-radius: var(--border-radius-round);
 }
 /* инпут выезжает слева направо */
-.wrapper_clicked .input {
+.wrapper_expanded .input {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);

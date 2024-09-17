@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef, InputHTMLAttributes } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
-type InputProps = {
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   extraClass?: string;
   type?: InputHTMLAttributes<HTMLInputElement>['type'];
   name: string;
@@ -19,7 +19,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   placeholder,
   value,
   disabled,
-  onChange
+  onChange,
+  ...rest
 }: InputProps,
   ref
 ) => {
@@ -33,6 +34,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       disabled={disabled}
       onChange={onChange}
       ref={ref}
+      {...rest}
     />
   );
 });
