@@ -1,4 +1,4 @@
-import { TodoAddBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
+import { AddTodoBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
 import useEscape from "../../../6-shared/lib/useEscape";
 import { useForm } from "../../../6-shared/lib/useForm";
 import { useInputRef } from "../../../6-shared/lib/useInputRef";
@@ -28,12 +28,13 @@ const ItemForm = () => {
     clearForm();
   };
 
-  const handleEsc = () => { // по нажатию на Esc
+  // что делать по нажатию на Esc
+  const handleEsc = () => {
     deactivateTitleInput(); // убрать фокус с input
     clearForm(); // очистить форму
   };
 
-  useEscape(handleEsc); // вешаем обработчик Esc на input
+  useEscape(handleEsc, values['list-item-title'] !== ''); // вешаем обработчик Esc на input, если есть что удалять
 
   const isLocked = isLoading || values['list-item-title'] === '';
 
@@ -56,7 +57,7 @@ const ItemForm = () => {
         onChange={handleChange}
       />
 
-      <TodoAddBtn type='submit' disabled={isLocked} />
+      <AddTodoBtn type='submit' disabled={isLocked} />
     </Form>
   )
 }

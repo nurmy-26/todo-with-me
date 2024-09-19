@@ -1,2 +1,2 @@
 export { useRemoveTodo } from "./model";
-export { default as TodoRemoveBtn } from "./ui";
+export { default as RemoveTodoBtn } from "./ui";

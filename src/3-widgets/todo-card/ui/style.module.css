@@ -11,12 +11,13 @@
   background-color: burlywood;
 }
 
-.card:hover .del_btn {
+.card:hover .menu {
   visibility: visible;
   opacity: 1;
 }
 
-.del_btn {
+/* todo - убрать эти стили, когда зафиксирую на месте!! */
+.menu {
   position: absolute;
   top: 12px;
   right: 12px;

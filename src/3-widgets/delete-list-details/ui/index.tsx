@@ -1,11 +1,12 @@
+import { FormEvent, MouseEvent } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DeleteListBtn } from '../../../4-features';
 import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
 import { routes } from '../../../6-shared/const/routes';
-import Typography from '../../../6-shared/ui/typography';
 import { TItem, TList } from '../../../6-shared/types';
-import style from './style.module.css';
+import Typography from '../../../6-shared/ui/typography';
 import Button from '../../../6-shared/ui/button';
+import style from './style.module.css';
 
 
 const DeleteListDetails = () => {
@@ -14,14 +15,7 @@ const DeleteListDetails = () => {
   const { deleteList } = useDeleteTodoList();
   const { data, isLoading } = useGetTodoLists();
 
-  // todo - доделать, убрать лишнее
-  if (!id) {
-    return null
-  }
-
   const listInfo: TList = data.find((item: TItem) => item.id === id);
-
-  console.log(listInfo)
 
   if (isLoading) {
     return <Typography>Loading...</Typography>;
@@ -31,8 +25,8 @@ const DeleteListDetails = () => {
     return <Typography>Error!</Typography>
   }
 
-  const handleDelete = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleDelete = async (event: FormEvent) => {
+    event.preventDefault();
     deleteList(listInfo.id);
 
     navigate(routes.home); // после удаления возврат на главную
@@ -52,7 +46,7 @@ const DeleteListDetails = () => {
         <DeleteListBtn
           type={'submit'}
           size='m'
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDelete(e)}
+          onClick={(event: MouseEvent<HTMLButtonElement>) => handleDelete(event)}
           extraClass={style.delete_btn}
         />
 

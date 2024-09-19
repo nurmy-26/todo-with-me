@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router-dom";
 import { CardPage, MainPage, NotFound404Page } from '../../2-pages';
-import { TodoModalDetails, DeleteListDetails } from "../../3-widgets";
+import { DeleteListDetails, TodoCard } from "../../3-widgets";
 import { routes } from "../../6-shared/const/routes";
 
 export const routesConfig: RouteObject[] = [
@@ -21,7 +21,7 @@ export const routesConfig: RouteObject[] = [
 export const modalRoutesConfig: RouteObject[] = [
   {
     path: `${routes.todolist}/:id`,
-    element: <TodoModalDetails />,
+    element: <TodoCard type={'modal'} />,
   },
   {
     path: `${routes.delete}/:id`,

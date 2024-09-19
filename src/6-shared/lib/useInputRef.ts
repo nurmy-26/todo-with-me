@@ -8,8 +8,14 @@ export const useInputRef = () => {
     inputRef.current?.blur(); // снять фокус с input
   };
 
+  // ф-я для активации input
+  const activateInput = () => {
+    inputRef.current?.focus(); // поставить фокус на input
+  };
+
   return {
     inputRef,
     deactivateInput,
+    activateInput,
   };
 };

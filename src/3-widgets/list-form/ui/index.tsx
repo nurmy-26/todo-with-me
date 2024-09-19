@@ -25,12 +25,13 @@ const ListForm = () => {
     clearForm(); // очищаем поле ввода
   };
 
-  const handleEsc = () => { // по нажатию на Esc
+  // что делать по нажатию на Esc
+  const handleEsc = () => {
     deactivateListTitleInput(); // убрать фокус с input
     clearForm(); // очистить форму
   };
 
-  useEscape(handleEsc); // вешаем обработчик Esc на input
+  useEscape(handleEsc, values['list-name'] !== ''); // вешаем обработчик Esc на input, если есть, что удалять
 
   const isLocked = isLoading || values['list-name'] === '';
 

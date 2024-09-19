@@ -1,19 +1,23 @@
 import { useEffect } from "react";
 
-const useEscape = (onEscape: () => void) => {
+const useEscape = (onEscape: () => void, isListen: boolean = true) => {
   useEffect(() => {
-    const closeByEsc = (evt: KeyboardEvent) => {
-      if (evt.key === "Escape") {
+    const closeByEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
         onEscape();
       }
     };
 
-    document.addEventListener("keydown", closeByEsc);
+    // если нам нужно, чтобы слушатель вешался только после какого-либо события, передаем изменяющийся isListen
+    // иначе перманентно true
+    if (isListen) {
+      document.addEventListener("keydown", closeByEsc);
+    }
 
     return () => {
       document.removeEventListener("keydown", closeByEsc);
     };
-  }, [onEscape]);
+  }, [onEscape, isListen]);
 };
 
 export default useEscape;

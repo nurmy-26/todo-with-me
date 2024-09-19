@@ -5,7 +5,8 @@ import { TList } from "../../../6-shared/types";
 // хук для выбора TodoList по title из списка select
 export const useSelectTodoListTitle = () => {
   const { data = [] } = useGetTodoLists();
-  const { selectedValue, valueList, handleSelect } = useSelect<TList>(
+  type TSelectValue = Omit<TList, "items">;
+  const { selectedValue, valueList, handleSelect } = useSelect<TSelectValue>(
     data,
     "title"
   );

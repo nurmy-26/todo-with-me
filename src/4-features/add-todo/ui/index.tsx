@@ -1,2 +1,2 @@
-export { default as TodoAddBtn } from './todo-add-btn';
-export { default as TodoAddForm } from './todo-add-form';
+export { default as AddTodoBtn } from './add-todo-btn';
+export { default as AddTodoForm } from './add-todo-form';

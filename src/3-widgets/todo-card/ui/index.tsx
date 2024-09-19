@@ -1,41 +1,73 @@
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
-import TodoList from '../../todo-list/ui';
-import { DeleteListBtn, TodoAddForm } from '../../../4-features';
-import { TList } from '../../../6-shared/types';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { DeleteListBtn, AddTodoForm } from '../../../4-features';
+import { useGetTodoLists } from '../../../5-entities';
+import { TItem, TList } from '../../../6-shared/types';
 import { routes } from '../../../6-shared/const/routes';
 import Typography from '../../../6-shared/ui/typography';
-import { useRouterLocation } from '../../../6-shared/lib/useRouterLocation';
+import DropdownList from '../../../6-shared/ui/dropdown-list';
+import TodoList from './todo-list';
+import TodoHeader from './todo-header';
 import style from './style.module.css';
 
 
 type TodoCardProps = {
-  title?: string;
-  listInfo: TList;
+  listInfo?: TList;
   extraClass?: string;
+  type?: 'card' | 'modal' | 'page';
 };
 
 const TodoCard = ({
-  title = 'Список',
   listInfo,
   extraClass,
+  type = 'card'
 }: TodoCardProps) => {
-  const { location } = useRouterLocation();
+  const location = useLocation();
+  const { id } = useParams(); // извлекаем id из url
+  const { data, isLoading } = useGetTodoLists();
+
+  // для модалки и отдельной страницы - загружаем инфо карточки из общей базы по id (полученному из url)
+  const loadedListInfo: TList = data.find((item: TItem) => item.id === id);
+  // для карточки инфо передается из данных родителя (списка карточек)
+  const list = type === 'card' ? listInfo : loadedListInfo;
+
+  if (isLoading) {
+    return <Typography>Loading...</Typography>;
+  }
+
+  if (!list) {
+    return <Typography>Error!</Typography>
+  }
+
+  // пункты выпадающего списка
+  const dropdownMenuComponents = [
+    // todo - перенести в фичу весь этот отрезок? (вместе с Link)
+    // переход на подтверждение удаления
+    <Link
+      to={`${routes.delete}/${list.id}`}
+      // routes.home нужен, т.к. иначе location считывает как todolists/:id и отображает CardPage и изображение прыгает
+      state={{ background: (type === 'modal' ? routes.home : location) }}
+    >
+      <DeleteListBtn size={'m'} />
+    </Link>,
+    <span>Пункт 2</span>
+  ]
+
 
   return (
+    // todo - добавить стили для card/modal/page
     <article className={cn(style.card, extraClass)}>
-      {/* переход на подтверждение удаления */}
-      <Link to={`${routes.delete}/${listInfo.id}`} state={{ background: location }}>
-        <DeleteListBtn extraClass={style.del_btn} />
-      </Link>
+      <header>
+        <TodoHeader type={type} listId={list.id} listTitle={list.title} />
 
-      <Link to={`${routes.todolist}/${listInfo.id}`} state={{ background: location }}>
-        <Typography type={'h2'}>{listInfo.title || title}</Typography>
-      </Link>
+        <div className={style.menu} >
+          <DropdownList list={dropdownMenuComponents} />
+        </div>
+      </header>
 
-      <TodoList list={listInfo} />
+      <TodoList list={list} />
 
-      <TodoAddForm listTitle={listInfo.title} />
+      <AddTodoForm listTitle={list.title} />
     </article>
   )
 };

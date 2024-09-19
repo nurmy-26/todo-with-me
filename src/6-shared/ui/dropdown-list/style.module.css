@@ -1,0 +1,37 @@
+.wrapper {
+  position: relative;
+}
+
+.btn {
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+  z-index: 1;
+}
+
+.item {
+  margin: 0;
+  padding: 0.2em 0.2em;
+
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-text-dark);
+  border-radius: var(--border-radius-base);
+
+  cursor: pointer;
+}
+
+.item:hover {
+  border-color: var(--color-accent);
+}
+.item:active {
+  border-color: var(--color-text-dark);
+}

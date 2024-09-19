@@ -24,7 +24,8 @@
   --color-light-secondary: #e2e4eb;
   --color-dark-inactive: #2135477c; /* более прозрачная версия #213547 */
   --color-dark-active: #121d27; /* более темная версия #213547 */
-  --color-accent: #535bf2;
+  /* --color-accent: #535bf2; */
+  --color-accent: #747bff;
   --color-accent-active: #646cff;
   --color-accent-inactive: #535bf291;
   --color-error: #d91a32;
@@ -36,12 +37,11 @@
   --border-radius-modal: 20px;
   --border-radius-round: 26px;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Euclid Circular A", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
 
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
   color: var(--color-light);
   background-color: #242424;
 
@@ -76,49 +76,12 @@ h1 {
   line-height: 1.1;
 }
 
-button,
-input,
-select {
-  border-radius: var(--border-radius-base);
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  /* transition: all 0.25s; */
-}
-button,
-select {
-  /* cursor: pointer; */
-}
-button:hover,
-input:hover,
-select:hover {
-  /* border-color: var(--color-accent); */
-}
-button:focus,
-button:focus-visible {
-  /* outline: 4px auto -webkit-focus-ring-color; */
-}
-button:active {
-  /* outline: 4px auto -webkit-focus-ring-color; */
-}
-button:disabled {
-  /* border: 3px solid var(--color-dark-inactive); */
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--color-text-dark);
     background-color: var(--color-light);
   }
   a:hover {
-    color: #747bff;
-  }
-  button,
-  input,
-  select {
-    background-color: var(--color-light);
+    /* color: #747bff; */
   }
 }

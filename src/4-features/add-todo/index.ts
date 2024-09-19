@@ -1,2 +1,2 @@
 export { useAddTodo } from "./model";
-export { TodoAddBtn, TodoAddForm } from "./ui";
+export { AddTodoBtn, AddTodoForm } from "./ui";

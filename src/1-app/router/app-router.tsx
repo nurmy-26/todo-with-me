@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 import { modalRoutesConfig, routesConfig } from './routes-config';
-import { Modal } from '../../3-widgets';
 import { useRouterLocation } from '../../6-shared/lib/useRouterLocation';
+import Modal from '../../6-shared/ui/modal';
 
 
 const AppRouter = () => {
@@ -19,15 +19,6 @@ const AppRouter = () => {
       {background && (
         <Modal onClose={returnToPreviousPage}>{modalRoutesElement}</Modal>
       )}
-      {/* {background &&
-        <Routes>
-          <Route path="/:id" element={
-            <Modal onClose={returnToPreviousPage}>
-              <TodoModalDetails />
-            </Modal>
-          } />
-        </Routes>
-      } */}
     </>
   )
 }

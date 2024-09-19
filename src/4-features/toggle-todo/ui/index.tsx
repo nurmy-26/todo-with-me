@@ -1,17 +1,25 @@
+import { ChangeEvent } from 'react';
 import cn from 'classnames';
 import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
 import { TItem } from '../../../6-shared/types';
+import { useToggleTodo } from '../model';
 import style from './style.module.css';
 
 
-type TodoToggleCheckboxProps = {
+type ToggleTodoCheckboxProps = {
   item: TItem;
+  listId: string;
   extraClass?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const TodoToggleCheckbox = ({ item, extraClass, onChange }: TodoToggleCheckboxProps) => {
+const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProps) => {
   const { id, title, isDone } = item;
+  const { toggleTodo } = useToggleTodo();
+
+  const toggle = (event: ChangeEvent<HTMLInputElement>, listId: string, itemId: string) => {
+    event.preventDefault();
+    toggleTodo(listId, itemId)
+  }
 
   const checkboxIcon = isDone ? <CheckIcon type={'white-rectangle'} /> : <CheckIcon />
 
@@ -23,7 +31,7 @@ const TodoToggleCheckbox = ({ item, extraClass, onChange }: TodoToggleCheckboxPr
         name={id}
         value={title}
         checked={isDone}
-        onChange={onChange}
+        onChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
       />
 
       {checkboxIcon}
@@ -31,4 +39,4 @@ const TodoToggleCheckbox = ({ item, extraClass, onChange }: TodoToggleCheckboxPr
   );
 };
 
-export default TodoToggleCheckbox;
+export default ToggleTodoCheckbox;

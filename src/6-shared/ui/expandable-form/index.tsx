@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode, useRef, useState } from 'react';
+import { FormEvent, forwardRef, ReactNode, useRef, useState } from 'react';
 import cn from 'classnames';
 import { PlusIcon } from '../icons/plus-icon';
 import { PaperPlaneIcon } from '../icons/paper-plane-icon';
@@ -40,12 +40,14 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
   const [icon, setIcon] = useState(baseIcon); // хранит текущую иконку
   const [isDisabled, setIsDisabled] = useState(false); // состояние блокировки во время асинхронных действий
   const wrapperRef = useRef<HTMLElement>(null);
-  const { inputRef: innerRef, deactivateInput } = useInputRef();
+  const { inputRef: innerRef, activateInput } = useInputRef();
   const commonInputRef = useCombinedRefs<HTMLInputElement>(innerRef, forwardedRef);
 
   const expand = () => {
     setIsExpanded(true);
     setIcon(altIcon);
+    // задержка нужна из-за анимации выезда инпута
+    setTimeout(activateInput, 500);
   }
   const collapse = () => {
     setIsExpanded(false);
@@ -73,8 +75,8 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
     // если еще не развернуто, фиксируем состояние "развернуто" и altIcon
     if (!isExpanded) {
       expand();
@@ -85,15 +87,14 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
   };
 
   const handleEsc = () => { // по нажатию на Esc
-    deactivateInput(); // убрать фокус с input
-    collapse(); // свернуть
+    collapse(); // свернуть (фокус с инпута снимается сам)
     clear();
   };
 
-  useEscape(handleEsc); // вешаем обработчик Esc на input
+  useEscape(handleEsc, isExpanded); // вешаем обработчик Esc на input
 
   // обработчик кликов, который проверяет, был ли клик за пределами wrapper (вызовет collapse - свернуть)
-  useOutsideClick(wrapperRef, collapse);
+  useOutsideClick(wrapperRef, collapse, isExpanded);
 
   // кнопка блокируется если компонент развернут и инпут пуст или по состоянию isDisabled
   const btnDisabledCondition = (isExpanded && inputValue === '') || isDisabled;
@@ -111,7 +112,7 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
           placeholder={placeholder}
           value={inputValue}
           disabled={inputDisabledCondition}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(event) => setInputValue(event.target.value)}
           ref={commonInputRef}
         />
       </div>

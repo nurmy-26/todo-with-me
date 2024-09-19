@@ -5,6 +5,10 @@
   gap: 8px;
   border: 1px solid transparent;
   cursor: pointer;
+
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  font-family: inherit;
 }
 
 .button svg {
@@ -83,4 +87,10 @@
 }
 .button:disabled svg {
   fill: var(--color-dark-inactive);
+}
+
+/* todo - поправить или удалить блок если будет не нужен */
+@media (prefers-color-scheme: dark) {
+  .button {
+  }
 }

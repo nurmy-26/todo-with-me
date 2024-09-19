@@ -8,11 +8,7 @@ export const useToggleTodo = () => {
   const { updateList, isLoading } = useUpdateTodoList();
   const [error, setError] = useState<string | null>(null);
 
-  const toggleTodo = async (
-    // todolists: TList[], // todo - решить, заменить data на аргумент или вызывать тут
-    listId: string,
-    itemId: string
-  ) => {
+  const toggleTodo = async (listId: string, itemId: string) => {
     setError(null); // сброс ошибки перед началом
 
     try {

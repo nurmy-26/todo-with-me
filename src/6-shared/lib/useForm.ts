@@ -5,8 +5,8 @@ export const useForm = (initialInputValues: { [key: string]: string } = {}) => {
   const [values, setValues] = useState(initialInputValues);
 
   // управление содержимым input
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   // ф-я сброса формы до начальных значений
