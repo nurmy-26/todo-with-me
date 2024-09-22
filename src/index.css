@@ -45,6 +45,12 @@
   --border-radius-modal: 20px;
   --border-radius-round: 26px;
 
+  --indent-desktop: 40px;
+  --indent-mobile: 20px;
+  --section-indent: var(
+    --indent-desktop
+  ); /* большой отступ между/внутри секций */
+
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Euclid Circular A", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
@@ -64,6 +70,7 @@
 }
 
 a {
+  color: inherit;
   text-decoration: inherit;
 }
 a:hover {
@@ -88,5 +95,11 @@ body {
   }
   a:hover {
     /* color: #747bff; */
+  }
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --section-indent: var(--indent-mobile);
   }
 }

@@ -9,7 +9,7 @@
 
 .main {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: var(--section-indent) auto;
 
   /* является грид-родителем для дочерних элементов */
   display: grid;
@@ -19,12 +19,12 @@
 
 @media screen and (max-width: 1480px) {
   .main {
-    margin: 0 40px;
+    margin: var(--section-indent);
   }
 }
 
 @media screen and (max-width: 550px) {
   .main {
-    margin: 0 20px;
+    margin: var(--section-indent);
   }
 }

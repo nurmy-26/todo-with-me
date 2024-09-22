@@ -1,16 +1,13 @@
 import { BrowserRouter as Router } from 'react-router-dom';
+import { AppHeader } from '../../3-widgets/app-header';
 import MainLayout from '../../6-shared/ui/main-layout';
 import { AppRouter } from '../router';
-// import styles from './app.module.css';
-
-// import Header from '../header/header';
 
 const App = () => {
   return (
     <Router>
+      <AppHeader />
       <MainLayout>
-        {/* виджет Header */}
-
         <AppRouter />
       </MainLayout>
     </Router>

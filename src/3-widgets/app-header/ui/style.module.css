@@ -1,0 +1,61 @@
+.app_header {
+  padding: 30px;
+  background-color: var(--color-text-dark);
+}
+
+.overlay {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  /* является грид-родителем для дочерних элементов */
+  display: grid;
+  grid-template-columns: var(--grid-parent-full);
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  grid-column: var(--grid-child-third);
+}
+.nav {
+  /* если между logo и nav появятся другие компоненты - уменьшить число колонок, занимаемых nav */
+  grid-column: span 8; /* потенциально может занять до 8 колонок */
+  justify-self: end;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 34px;
+}
+
+.item {
+}
+
+@media screen and (max-width: 550px) {
+  .app_header {
+    padding: 20px;
+  }
+
+  .logo {
+    grid-column: var(--grid-child-full);
+  }
+  .nav {
+    grid-column: var(--grid-child-full);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .app_header {
+    padding: 12px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .app_header {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
