@@ -1,14 +1,64 @@
-# React + TypeScript + Vite
+# Todo with Me
+❗ *Статус: в разработке*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Todo with Me** — это минималистичное и интуитивно понятное SPA-приложение для управления списками дел (создание, изменение, удаление), разработанное с использованием современных технологий.
 
-Currently, two official plugins are available:
+## 🛠️ Стек технологий
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 
-## Expanding the ESLint configuration
+- **Feature-Sliced Design**: приложение спроектировано в соответствии с принципами FSD архитектуры.
+- **TypeScript**: в качестве основного языка проекта.
+- **React**: для декларативной разработки переиспользуемых пользовательских интерфейсов.
+- **React Router**: для маршрутизации между страницами.
+- **RTK Query**: для эффективного управления состоянием приложения.
+- **Vite**: в качестве инструмента сборки, обеспечивающего быструю разработку.
+- **json-server**: для имитации REST API на основе JSON-файлов.
+- **Storybook**: для создания документации, ускорения разработки и тестирования компонентов.
 
+### 🚧 Обратите внимание
+Проект находится в активной стадии разработки. В данный момент ведется работа над добавлением новых фичей и улучшением старых, чтобы сделать опыт использования приложения еще более приятным и эффективным.
+
+## 🚀 Инструкция по запуску
+1. Клонируйте репозиторий с помощью команды
+
+```shell
+git clone git@github.com:nurmy-26/todo-with-me.git
+```
+
+2. Установите зависимости
+
+```shell
+npm i
+```
+
+3. Запустите приложение на локальном сервере
+```shell
+npm run api
+```
+
+4. Откройте в браузере ссылку для просмотра приложения
+```shell
+http://localhost:5173/
+```
+
+### Storybook
+Для запуска Storybook используйте команду
+```shell
+npm run sb
+```
+
+Документация Storybook будет доступна по адресу 
+```shell
+http://localhost:6006/
+```
+
+<!--
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
 - Configure the top-level `parserOptions` property like this:
@@ -28,3 +78,4 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-->
