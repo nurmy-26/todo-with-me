@@ -1,4 +1,11 @@
 .todo {
   width: 100%;
   text-align: left;
+
+  /* чтоб содержимое отображалось максимум на 2 строках, остальное - троеточие */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

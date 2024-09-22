@@ -30,19 +30,19 @@
 }
 
 .primary {
-  color: var(--color-light-secondary);
-  background-color: var(--color-accent-active);
+  color: var(--color-light);
+  background-color: var(--color-accent);
 }
 .primary svg {
-  fill: var(--color-light-secondary);
+  fill: var(--color-light);
 }
 .primary:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-hover);
   border-color: transparent;
 }
 .primary:active {
-  color: var(--color-light-secondary);
-  background-color: var(--color-accent-active);
+  color: var(--color-light);
+  background-color: var(--color-accent);
 }
 
 .secondary {
@@ -78,6 +78,10 @@
   fill: var(--color-text-dark);
 }
 
+.inline {
+  display: inline;
+}
+
 /* стили disabled в конце чтоб корректно перезаписывать */
 .button:disabled {
   color: var(--color-dark-inactive);
@@ -90,7 +94,7 @@
 }
 
 /* todo - поправить или удалить блок если будет не нужен */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .button {
   }
-}
+} */

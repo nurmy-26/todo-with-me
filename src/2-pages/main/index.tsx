@@ -22,7 +22,7 @@ const MainPage = () => {
 
   return (
     <>
-      {/* todo - сделать компонент заголовка header чтоб не задавать стили тут */}
+      {/* todo - сделать компонент заголовка header чтоб не задавать стили тут (вынести в app ?) */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 
       <GridSection ariaLabel='Добавление и дополнение списков'>

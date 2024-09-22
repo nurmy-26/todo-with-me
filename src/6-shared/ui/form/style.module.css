@@ -12,10 +12,22 @@
   /* чтоб форма не растягивалась по высоте в грид-сетке */
   align-self: start;
   grid-column: var(--grid-child-third);
-  background-color: lightgreen;
+  background-color: var(--color-light-transparent);
 }
 
 .form button {
   width: 60%;
   justify-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .form {
+    grid-column: var(--grid-child-half);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .form {
+    grid-column: var(--grid-child-full);
+  }
 }

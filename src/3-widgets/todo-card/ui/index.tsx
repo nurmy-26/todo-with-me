@@ -7,7 +7,7 @@ import { routes } from '../../../6-shared/const/routes';
 import Typography from '../../../6-shared/ui/typography';
 import DropdownList from '../../../6-shared/ui/dropdown-list';
 import TodoList from './todo-list';
-import TodoHeader from './todo-header';
+import TodoTitle from './todo-title';
 import style from './style.module.css';
 
 
@@ -55,19 +55,22 @@ const TodoCard = ({
 
 
   return (
-    // todo - добавить стили для card/modal/page
-    <article className={cn(style.card, extraClass)}>
-      <header>
-        <TodoHeader type={type} listId={list.id} listTitle={list.title} />
+    <article className={cn(
+      style.article,
+      style[type],
+      extraClass
+    )}>
+      <header className={style.header}>
+        <TodoTitle type={type} listId={list.id} listTitle={list.title} />
 
         <div className={style.menu} >
           <DropdownList list={dropdownMenuComponents} />
         </div>
       </header>
 
-      <TodoList list={list} />
+      <TodoList list={list} type={type} />
 
-      <AddTodoForm listTitle={list.title} />
+      <AddTodoForm listTitle={list.title} extraClass={cn(style.todo_btn, style[`todo_btn_${type}`])} />
     </article>
   )
 };

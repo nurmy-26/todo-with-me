@@ -6,9 +6,11 @@ type MainLayoutProps = {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <main className={style.main}>
-      {children}
-    </main >
+    <div className={style.overlay}>
+      <main className={style.main}>
+        {children}
+      </main >
+    </div>
   )
 }
 

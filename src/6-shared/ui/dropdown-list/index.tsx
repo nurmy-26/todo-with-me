@@ -30,7 +30,7 @@ const DropdownList = ({
 
   return (
     <div className={cn(style.wrapper, extraClass)} ref={wrapperRef as React.RefObject<HTMLDivElement>}>
-      <Button icon={<MenuIcon />} size={'s'} extraClass={style.btn} onClick={toggleMenu} />
+      <Button variant={'tertiary'} icon={<MenuIcon />} size={'s'} extraClass={style.btn} onClick={toggleMenu} />
 
       {/* выпадающий список */}
       {isShown &&

@@ -1,4 +1,3 @@
 .header {
   grid-column: var(--grid-child-full); /* занимает 12 колонок */
-  background-color: lightblue;
 }

@@ -21,3 +21,21 @@
   grid-column: var(--grid-child-quarter);
   align-self: start;
 }
+
+@media screen and (max-width: 1440px) {
+  .list_item {
+    grid-column: var(--grid-child-third);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .list_item {
+    grid-column: var(--grid-child-half);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .list_item {
+    grid-column: var(--grid-child-full);
+  }
+}

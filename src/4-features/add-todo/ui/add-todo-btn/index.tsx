@@ -1,5 +1,5 @@
-import Button from '../../../6-shared/ui/button';
-import { PlusIcon } from '../../../6-shared/ui/icons/plus-icon';
+import Button from '../../../../6-shared/ui/button';
+import { PlusIcon } from '../../../../6-shared/ui/icons/plus-icon';
 
 
 type AddTodoBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {

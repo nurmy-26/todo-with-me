@@ -3,10 +3,12 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+
+  cursor: pointer;
 }
 
 .label:hover svg {
-  fill: var(--color-dark-active);
+  fill: var(--color-dark-hover);
 }
 
 .label:active svg {

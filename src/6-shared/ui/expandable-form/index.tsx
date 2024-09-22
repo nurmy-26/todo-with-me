@@ -20,6 +20,7 @@ type ExpandableFormProps = {
   disabled?: boolean;
   submitCallback: (inpValue: string) => Promise<void>;
   initValue?: string;
+  btnVariant?: 'primary' | 'secondary' | 'tertiary';
 };
 
 const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
@@ -31,6 +32,7 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
   disabled,
   submitCallback = () => new Promise((resolve) => setTimeout(resolve, 2000)),
   initValue = '',
+  btnVariant = 'secondary'
 }: ExpandableFormProps,
   forwardedRef
 ) => {
@@ -104,7 +106,7 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
   return (
     <form onSubmit={handleSubmit} className={cn(style.form, extraClass)}>
       <div className={cn(style.wrapper, (isExpanded && style.wrapper_expanded))} ref={wrapperRef as React.RefObject<HTMLDivElement>}>
-        <Button type={'submit'} disabled={btnDisabledCondition} icon={icon} size={'s'} extraClass={style.btn} />
+        <Button variant={btnVariant} type={'submit'} disabled={btnDisabledCondition} icon={icon} size={'s'} extraClass={style.btn} />
 
         <Input
           extraClass={style.input}

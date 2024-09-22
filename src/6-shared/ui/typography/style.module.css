@@ -4,19 +4,31 @@
 }
 
 .h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2em;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .h2 {
+  font-size: 1.4em;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .text {
+  font-size: 1em;
   line-height: 1.5;
+  font-weight: 100;
 }
 
 .overflow {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 550px) {
+  .h1 {
+    font-size: 1.6em;
+  }
 }

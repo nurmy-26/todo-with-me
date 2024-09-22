@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .item {
@@ -9,6 +13,24 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  border-radius: var(--border-radius-base);
+}
+
+.item:hover {
+  /* background-color: var(--color-light); */
+  /* косой светлый бекграунд */
+  background: linear-gradient(
+    135deg,
+    transparent 8%,
+    var(--color-light) 13%,
+    var(--color-light) 87%,
+    transparent 92%
+  );
+  cursor: default;
+}
+
+.page:hover {
+  background-color: var(--color-light);
 }
 
 .del_btn {

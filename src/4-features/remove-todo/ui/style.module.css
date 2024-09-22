@@ -1,0 +1,3 @@
+.remove_btn:hover svg {
+  fill: var(--color-error);
+}

@@ -1,5 +1,5 @@
-import ExpandableForm from '../../../6-shared/ui/expandable-form';
-import { useAddTodo } from '../model';
+import ExpandableForm from '../../../../6-shared/ui/expandable-form';
+import { useAddTodo } from '../../model';
 
 
 type AddTodoFormProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -22,6 +22,7 @@ const AddTodoForm = ({ disabled, extraClass, listTitle }: AddTodoFormProps) => {
       submitCallback={submitCallback}
       disabled={disabled || isLoading}
       extraClass={extraClass}
+      btnVariant={'tertiary'}
     />
   );
 };

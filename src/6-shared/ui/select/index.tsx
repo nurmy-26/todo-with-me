@@ -1,8 +1,8 @@
-import { ChangeEvent, forwardRef, SelectHTMLAttributes } from 'react';
+import { ChangeEvent } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectProps = {
   extraClass?: string;
   name: string;
   value: string;
@@ -11,12 +11,10 @@ type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
 
-const Select = forwardRef<HTMLSelectElement, SelectProps>((
-  { extraClass, name, value, options, disabled, onChange, ...rest }: SelectProps,
-  ref) => {
+const Select = (
+  { extraClass, name, value, options, disabled, onChange, ...rest }: SelectProps) => {
   return (
     <select
-      ref={ref}
       className={cn(style.select, extraClass)}
       name={name}
       value={value}
@@ -31,6 +29,6 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((
       ))}
     </select>
   );
-});
+};
 
 export default Select;

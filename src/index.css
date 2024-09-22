@@ -8,29 +8,37 @@
 :root {
   /* для использования внутри css-переменных */
   --columns-max: 12;
-  --columns-four: 4;
-  --columns-three: 3;
+  --columns-four: calc(var(--columns-max) / 3);
+  --columns-three: calc(var(--columns-max) / 4);
+  --columns-half: calc(var(--columns-max) / 2);
+
+  --accent-default: #747bff;
+  --accent-default-hover: #646cff;
+  --accent-warm: #e65b31;
+  --accent-warm-hover: #cf4318;
+  /* todo - сюда нужно будет подставлять разные значения в зависимости от темы: */
+  --color-accent: var(--accent-warm);
+  /* более темная версия для hover на акцентные элементы: */
+  --color-accent-hover: var(--accent-warm-hover);
+
+  --error-default: #d91a32; /* #d91a34b0 - более бледная версия*/
+  --error-warm: #b10a20;
+  /* todo - сюда нужно будет подставлять разные значения в зависимости от темы: */
+  --color-error: var(--error-warm);
 
   --grid-parent-full: repeat(var(--columns-max), 1fr);
   --grid-child-full: span var(--columns-max);
-  /* third - треть так как 12/4 */
-  --grid-child-third: span var(--columns-four);
-  /* quarter - четверть так как 12/3 */
-  --grid-child-quarter: span var(--columns-three);
+  --grid-child-half: span var(--columns-half);
+  --grid-child-third: span var(--columns-four); /* third - треть так как 12/4 */
+  --grid-child-quarter: span var(--columns-three); /* quarter - четверть так как 12/3 */
 
   --color-text-dark: #213547;
-  /* --color-brown: #242424; */
   --color-light: #f9f9f9;
-  --color-light-secondary: #e2e4eb;
-  --color-dark-inactive: #2135477c; /* более прозрачная версия #213547 */
-  --color-dark-active: #121d27; /* более темная версия #213547 */
-  /* --color-accent: #535bf2; */
-  --color-accent: #747bff;
-  --color-accent-active: #646cff;
-  --color-accent-inactive: #535bf291;
-  --color-error: #d91a32;
-  --color-error-inactive: #d91a34b0;
-  /* --color-success: ; */
+  --color-light-transparent: #f9f9f9a1; /* для фона карточек, чтоб просвечивал фон */
+  /* --color-light-secondary: #e2e4eb; */
+  --color-dark-inactive: #2135477c; /* более прозрачная версия #213547 для disabled */
+  --color-dark-hover: #080f16; /* более темная версия #213547 для hover на такие элементы */
+  --color-visited: #9932cc;
 
   --font-size-base: 1em;
   --border-radius-base: 8px;
@@ -56,8 +64,6 @@
 }
 
 a {
-  font-weight: 500;
-  color: var(--color-accent-active);
   text-decoration: inherit;
 }
 a:hover {
@@ -69,11 +75,10 @@ body {
   /* display: flex; */
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  background: radial-gradient(500px at 23% 8%, #e09470c7, transparent),
+    /*   более четкий круг за счет blue в переходе:   */
+      radial-gradient(600px at 83vw 60vh, #f0b5ebbe, transparent),
+    /*   основной цвет фона:   */ #fff8e3;
 }
 
 @media (prefers-color-scheme: light) {

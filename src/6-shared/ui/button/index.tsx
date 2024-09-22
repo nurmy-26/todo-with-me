@@ -10,6 +10,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: 's' | 'm';
   shape?: 'default_shape' | 'rounded';
   variant?: 'primary' | 'secondary' | 'tertiary';
+  isInline?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -22,6 +23,7 @@ const Button = ({
   size = 'm',
   shape = 'default_shape',
   variant = 'secondary',
+  isInline,
   onClick,
   ...rest
 }: ButtonProps) => {
@@ -34,6 +36,7 @@ const Button = ({
         style[size],
         style[shape],
         style[variant],
+        isInline && style.inline,
         extraClass
       )}
       onClick={onClick}

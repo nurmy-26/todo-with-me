@@ -6,16 +6,13 @@ import { AppRouter } from '../router';
 // import Header from '../header/header';
 
 const App = () => {
-
   return (
     <Router>
-
       <MainLayout>
         {/* виджет Header */}
 
         <AppRouter />
       </MainLayout>
-
     </Router>
   )
 }

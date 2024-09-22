@@ -8,16 +8,18 @@ import style from './style.module.css';
 type TodoListProps = {
   list: TList;
   extraClass?: string;
+  type?: 'card' | 'modal' | 'page';
 };
 
 const TodoList = ({
   list,
   extraClass,
+  type = 'card'
 }: TodoListProps) => {
   return (
     <ul className={cn(style.list, extraClass)}>
       {list.items.map((item: TItem, index: number) =>
-        <li key={index} className={style.item}>
+        <li key={index} className={cn(style.item, style[type])}>
           <ToggleTodoCheckbox item={item} listId={list.id} />
 
           <TodoItem item={item} />

@@ -1,7 +1,9 @@
 import { FormEvent } from 'react';
+import cn from 'classnames';
 import Button from '../../../6-shared/ui/button';
 import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
 import { useRemoveTodo } from '../model';
+import style from './style.module.css';
 
 
 type RemoveTodoBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -22,7 +24,7 @@ const RemoveTodoBtn = ({ itemId, listId, disabled, extraClass, ...rest }: Remove
     <Button
       icon={<TrashIcon />}
       disabled={disabled}
-      extraClass={extraClass}
+      extraClass={cn(style.remove_btn, extraClass)}
       size={'s'}
       variant={'tertiary'}
       onClick={(event: FormEvent<Element>) => handleRemove(event, listId, itemId)}

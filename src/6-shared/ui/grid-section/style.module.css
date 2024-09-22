@@ -7,5 +7,5 @@
 /* сколько занимает колонок как дочерний элемент грид-сетки, в которой расположен */
 .grid_child_full {
   grid-column: var(--grid-child-full);
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }

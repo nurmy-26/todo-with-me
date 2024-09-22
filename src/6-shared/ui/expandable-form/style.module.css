@@ -1,11 +1,11 @@
 .form {
+  /* todo - разобраться со стилями */
   max-width: 340px;
 }
 
 .wrapper {
   position: relative;
   overflow: hidden;
-  /* background-color: var(--color-light); */
   border-radius: var(--border-radius-round);
 }
 
@@ -17,9 +17,7 @@
   top: 2px;
   /* изначально кнопка находится в центре */
   left: calc(50% - 18px);
-  transition:
-    left 0.3s ease-in-out,
-    transform 0.3s ease-in-out,
+  transition: left 0.3s ease-in-out, transform 0.3s ease-in-out,
     border-radius 0.3s ease-in-out;
 }
 
@@ -32,9 +30,7 @@
   /* изначально input спрятан слева за пределами родительского блока, чтоб выехать из-за границы */
   transform: translateX(-100%);
   /* выезд слева происходит с задержкой 0.18s чтоб выезд происходил уже после окончания анимации кнопки*/
-  transition:
-    visibility 0s linear,
-    opacity 0.3s ease-in-out,
+  transition: visibility 0s linear, opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out 0.18s;
 }
 
