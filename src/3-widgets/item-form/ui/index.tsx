@@ -39,7 +39,7 @@ const ItemForm = () => {
   const isLocked = isLoading || values['list-item-title'] === '';
 
   return (
-    <Form onSubmit={handleAddToList}>
+    <Form onSubmit={handleAddToList} title={'Добавление в список'}>
       <Select
         name='list-name'
         value={selectedValue}

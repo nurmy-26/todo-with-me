@@ -36,7 +36,7 @@ const ListForm = () => {
   const isLocked = isLoading || values['list-name'] === '';
 
   return (
-    <Form onSubmit={handleCreateList}>
+    <Form onSubmit={handleCreateList} title={'Создание нового списка'}>
       <Input
         name='list-name'
         placeholder="Придумайте название списка..."

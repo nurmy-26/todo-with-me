@@ -2,10 +2,11 @@
   width: 100%;
   text-align: left;
 
-  /* чтоб содержимое отображалось максимум на 2 строках, остальное - троеточие */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
+  /* todo - добавить, когда будет подробный просмотр списка */
+  /* чтоб содержимое отображалось максимум на 3 строках, остальное - троеточие */
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }

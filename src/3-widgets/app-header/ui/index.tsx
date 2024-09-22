@@ -21,6 +21,7 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
       path: '12345'
     },
   ]
+
   return (
     <header className={cn(style.app_header, extraClass)}>
       <div className={style.overlay}>

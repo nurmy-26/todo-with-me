@@ -1,4 +1,6 @@
-.form {
+.wrapper {
+  padding: 28px 12px;
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
@@ -6,13 +8,31 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #464646;
-  padding: 10px;
   border-radius: var(--border-radius-base);
 
   /* чтоб форма не растягивалась по высоте в грид-сетке */
   align-self: start;
   grid-column: var(--grid-child-third);
   background-color: var(--color-light-transparent);
+}
+
+.title {
+  margin: 0 16px;
+  border-bottom: 1px dotted var(--color-text-dark);
+
+  font-style: italic;
+  text-align: left;
+  opacity: 0.6;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius-base);
 }
 
 .form button {
