@@ -8,7 +8,7 @@
 }
 
 .label:hover svg {
-  fill: var(--color-dark-hover);
+  fill: var(--color-accent-hover);
 }
 
 .label:active svg {

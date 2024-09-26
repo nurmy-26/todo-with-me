@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .form {
     grid-column: var(--grid-child-full);
   }

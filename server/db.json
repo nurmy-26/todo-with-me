@@ -12,12 +12,12 @@
         {
           "id": "bf91a774-bd8f-4f97-9953-8f0e2158d2a4",
           "title": "Приготовить вкусный завтрак",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "dcb78676-e8c4-4db4-bec6-2832a574b516",
           "title": "Погулять в парке или соседнем районе",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "7b3f1076-b01a-44b2-8f21-9e675f711f35",

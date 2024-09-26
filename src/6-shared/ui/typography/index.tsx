@@ -1,22 +1,6 @@
-import { ElementType, ReactNode } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
-
-
-type TType = 'h1' | 'h2' | 'h3' | 'text';
-
-type TypographyProps = {
-  hasMarginBottom?: boolean;
-  hasOverflow?: boolean;
-  children: ReactNode;
-  extraClass?: string;
-  marginBottom?: string;
-  tag?: ElementType | string;
-  type?: TType;
-  typeArray?: {
-    [key: string]: ElementType | string;
-  };
-};
+import { TypographyProps } from './types';
 
 const Typography = ({
   hasMarginBottom = false,

@@ -4,7 +4,7 @@
 }
 
 .overlay {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 
   /* является грид-родителем для дочерних элементов */
@@ -35,11 +35,19 @@
 .item {
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1360px) {
   .app_header {
-    padding: 20px;
+    padding: 30px var(--section-indent);
   }
+}
 
+@media screen and (max-width: 1024px) {
+  .app_header {
+    padding: 20px var(--section-indent);
+  }
+}
+
+@media screen and (max-width: 768px) {
   .logo {
     grid-column: var(--grid-child-full);
   }

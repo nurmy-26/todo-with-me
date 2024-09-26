@@ -21,7 +21,9 @@ const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProp
     toggleTodo(listId, itemId)
   }
 
-  const checkboxIcon = isDone ? <CheckIcon type={'white-rectangle'} /> : <CheckIcon />
+  const checkboxIcon = isDone
+    ? <CheckIcon type={'white-rectangle'} fill={'var(--color-accent'} />
+    : <CheckIcon />
 
   return (
     <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>

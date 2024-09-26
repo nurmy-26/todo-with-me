@@ -22,7 +22,7 @@
   align-self: start;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1280px) {
   .list_item {
     grid-column: var(--grid-child-third);
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .list_item {
     grid-column: var(--grid-child-full);
   }

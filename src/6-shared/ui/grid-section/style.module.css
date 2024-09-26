@@ -14,20 +14,3 @@
 .grid_child_full {
   grid-column: var(--grid-child-full);
 }
-
-.header {
-  grid-column: var(--grid-child-full);
-  justify-self: start;
-
-  display: flex;
-}
-
-.title {
-  margin: 0 12px;
-  padding: 0 16px;
-
-  background-color: var(--color-dark-inactive);
-  color: var(--color-light);
-  font-weight: 100;
-  border-radius: var(--border-radius-base);
-}

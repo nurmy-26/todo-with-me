@@ -6,6 +6,11 @@
 }
 
 :root {
+  --mobile-width: 550px;
+  --tablet-width: 768px;
+  --laptop-width: 1024px;
+  --desktop-width: 1280px;
+  --content-width: var(--desktop-width);
   /* для использования внутри css-переменных */
   --columns-max: 12;
   --columns-four: calc(var(--columns-max) / 3);
@@ -51,9 +56,9 @@
     --indent-desktop
   ); /* большой отступ между/внутри секций */
 
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Euclid Circular A", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
+  /* font-family: Rubik, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 
   color-scheme: light dark;
   color: var(--color-light);

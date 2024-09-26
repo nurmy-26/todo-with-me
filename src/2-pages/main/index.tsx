@@ -25,7 +25,7 @@ const MainPage = () => {
       {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 
-      <GridSection ariaLabel='Добавление и дополнение списков' title={'панель управления'}>
+      <GridSection ariaLabel='Добавление и дополнение списков'>
         <ListForm />
 
         <ItemForm />
