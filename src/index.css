@@ -40,7 +40,9 @@
   --color-text-dark: #213547;
   --color-light: #f9f9f9;
   --color-light-transparent: #f9f9f9a1; /* для фона карточек, чтоб просвечивал фон */
-  /* --color-secondary: #6e8294; */
+  --color-secondary: #888;
+  --color-secondary-hover: #555;
+  --color-secondary-light: #f1f1f1;
   --color-dark-inactive: #2135477c; /* более прозрачная версия #213547 для disabled */
   --color-dark-hover: #080f16; /* более темная версия #213547 для hover на такие элементы */
   --color-visited: #9932cc;

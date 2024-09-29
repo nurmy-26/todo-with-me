@@ -41,8 +41,6 @@ const TodoCard = ({
 
   // пункты выпадающего списка
   const dropdownMenuComponents = [
-    // todo - перенести в фичу весь этот отрезок? (вместе с Link)
-    // переход на подтверждение удаления
     <Link
       to={`${routes.delete}/${list.id}`}
       // routes.home нужен, т.к. иначе location считывает как todolists/:id и отображает CardPage и изображение прыгает
@@ -50,7 +48,7 @@ const TodoCard = ({
     >
       <DeleteListBtn size={'m'} />
     </Link>,
-    <span>Пункт 2</span>
+    // todo - сюда могут добавиться и другие
   ]
 
 
@@ -70,7 +68,7 @@ const TodoCard = ({
         </div>
       </header>
 
-      <TodoList list={list} type={type} />
+      <TodoList list={list} type={type} extraClass={style.article_list} />
 
       <AddTodoForm listTitle={list.title} extraClass={cn(style.todo_btn, style[`todo_btn_${type}`])} />
     </article>

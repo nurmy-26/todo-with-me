@@ -1,16 +1,16 @@
 .content {
   position: relative;
   max-width: var(--content-width);
-  margin: var(--section-indent) auto;
+  padding: var(--section-indent) 0;
+  margin: auto;
 
-  /* является грид-родителем для дочерних элементов */
-  display: grid;
-  grid-template-columns: var(--grid-parent-full);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
 @media screen and (max-width: 1360px) {
   .content {
-    margin: var(--section-indent);
+    padding: var(--section-indent);
   }
 }

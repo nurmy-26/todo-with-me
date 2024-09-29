@@ -19,24 +19,53 @@
   padding: 28px;
   border: 1px solid var(--color-text-dark);
   background-color: var(--color-light-transparent);
+
+  /* todo - реализовать варианты отображения в зависимости от выбора */
+  /* height: 600px; */
+  max-height: 70vh;
 }
 
 .modal {
+  height: 100vh;
 }
 .page {
 }
 
 .header {
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
 
-  /* border-bottom: 1px solid var(--color-text-dark); */
   border-bottom: 1px dashed var(--color-text-dark);
 }
 
+.article_list {
+  flex: 6;
+  overflow: auto;
+}
+/* стили для всей полосы прокрутки */
+.article_list::-webkit-scrollbar {
+  width: 6px; /* ширина вертикального скроллбара */
+}
+/* стили для ползунка внутри полосы прокрутки */
+.article_list::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-base);
+}
+/* цвет ползунка при наведении */
+.article_list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary-hover);
+}
+/* фон скроллбара */
+.article_list::-webkit-scrollbar-track {
+  background: var(--color-secondary-light);
+  border-radius: var(--border-radius-base);
+}
+
 .todo_btn {
+  flex: 1;
   max-width: 100%;
   align-self: center;
 }

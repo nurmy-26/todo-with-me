@@ -29,24 +29,21 @@ const MainPage = () => {
       {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 
-
       {/* todo - сделать из внутренностей этой секции виджет настроек */}
-      <GridSection ariaLabel='Формы'>
-        <Link to={routes["add-new-list"]} state={{ background: location }} className={style.btn}>
+      <aside>
+        <Link to={routes["add-new-list"]} state={{ background: location }}>
           <TodoListCreateBtn />
         </Link>
 
-        <Link to={routes["add-new-item"]} state={{ background: location }} className={style.btn}>
+        <Link to={routes["add-new-item"]} state={{ background: location }}>
           <AddTodoBtn />
         </Link>
-      </GridSection>
+      </aside>
 
-      <GridSection ariaLabel='Списки'>
-        <GridListLayout
-          data={todolists}
-          renderItem={renderTodoList}
-        />
-      </GridSection>
+      <GridListLayout
+        data={todolists}
+        renderItem={renderTodoList}
+      />
     </>
   )
 }

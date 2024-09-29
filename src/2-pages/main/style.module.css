@@ -2,15 +2,3 @@
   grid-column: var(--grid-child-full); /* занимает 12 колонок */
   text-align: left;
 }
-
-/* todo - в виджете будет flex */
-.btn {
-  /* grid-column: var(--grid-child-quarter); */
-  grid-column: span 1;
-}
-
-@media screen and (max-width: 768px) {
-  .btn {
-    grid-column: span 3;
-  }
-}

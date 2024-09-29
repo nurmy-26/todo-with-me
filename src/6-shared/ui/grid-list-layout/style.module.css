@@ -1,7 +1,10 @@
 .list {
   list-style: none;
-  padding: 0;
+  /* padding: 0; */
   margin: 0;
+  padding: 16px 0;
+  border-radius: var(--border-radius-base);
+  background-color: rgba(255, 255, 255, 0.5);
 
   /* список занимает всё пространство родительской сетки */
   grid-column: var(--grid-child-full);
