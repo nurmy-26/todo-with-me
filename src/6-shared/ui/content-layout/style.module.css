@@ -3,10 +3,6 @@
   max-width: var(--content-width);
   padding: var(--section-indent) 0;
   margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 @media screen and (max-width: 1360px) {

@@ -1,10 +1,22 @@
-.list {
-  list-style: none;
-  /* padding: 0; */
-  margin: 0;
-  padding: 16px 0;
+.wrapper {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
   border-radius: var(--border-radius-base);
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: var(--border-radius-base);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   /* список занимает всё пространство родительской сетки */
   grid-column: var(--grid-child-full);
@@ -40,5 +52,17 @@
 @media screen and (max-width: 768px) {
   .list_item {
     grid-column: var(--grid-child-full);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    padding: 12px 0;
+    background-color: transparent;
+    flex-direction: column;
+  }
+  .aside {
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }

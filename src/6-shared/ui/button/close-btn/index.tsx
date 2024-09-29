@@ -1,10 +1,11 @@
+import { ButtonHTMLAttributes, FormEvent } from "react";
 import Button from "..";
 import { XMarkIcon } from "../../icons/xmark-icon";
 
 
-type CloseBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type CloseBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   extraClass?: string;
-  onClick?: (event: React.FormEvent) => void;
+  onClick?: (event: FormEvent) => void;
 };
 
 const CloseBtn = ({ extraClass, onClick, ...rest }: CloseBtnProps) => {

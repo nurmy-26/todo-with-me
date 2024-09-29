@@ -1,14 +1,15 @@
+import { ReactNode } from "react";
 import style from "./style.module.css";
 
 type ContentLayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const ContentLayout = ({ children }: ContentLayoutProps) => {
   return (
-    <main className={style.content}>
+    <div className={style.content}>
       {children}
-    </main >
+    </div >
   )
 }
 

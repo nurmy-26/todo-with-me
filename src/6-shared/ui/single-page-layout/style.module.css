@@ -1,28 +1,13 @@
-.page_wrapper {
-  position: relative;
-  grid-column: 3/11;
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.main {
+  max-width: var(--tablet-width);
+  margin: auto;
+  padding: 0 var(--section-indent);
 }
 
 .btn_back {
   position: fixed;
   bottom: 20px;
   left: 20px;
-}
-
-@media screen and (max-width: 1024px) {
-  .page_wrapper {
-    grid-column: 2/12;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .page_wrapper {
-    grid-column: var(--grid-child-full);
-  }
 }
 
 @media screen and (max-width: 550px) {

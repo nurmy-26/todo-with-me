@@ -1,11 +1,12 @@
+import { ButtonHTMLAttributes, MouseEvent } from 'react';
 import Button from '../../../6-shared/ui/button';
 import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
 
 
-type DeleteListBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type DeleteListBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   extraClass?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   variant?: 'primary' | 'secondary' | 'tertiary';
   size?: 's' | 'm';
 };

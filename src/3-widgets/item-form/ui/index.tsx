@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { AddTodoBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
 import useEscape from "../../../6-shared/lib/useEscape";
 import { useForm } from "../../../6-shared/lib/useForm";
@@ -21,7 +22,7 @@ const ItemForm = () => {
 
   const { selectedValue, valueList, handleSelect } = useSelectTodoListTitle();
 
-  const handleAddToList = async (event: React.FormEvent) => {
+  const handleAddToList = async (event: FormEvent) => {
     event.preventDefault();
 
     addTodo(selectedValue, values['list-item-title'])

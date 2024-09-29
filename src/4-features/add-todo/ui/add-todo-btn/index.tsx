@@ -1,17 +1,19 @@
+import { ButtonHTMLAttributes, FormEvent } from 'react';
 import Button from '../../../../6-shared/ui/button';
 import { LoadingIcon } from '../../../../6-shared/ui/icons/loading-icon';
 import { PlusIcon } from '../../../../6-shared/ui/icons/plus-icon';
 
 
-type AddTodoBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type AddTodoBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   isLoading?: boolean;
   extraClass?: string;
-  onClick?: (event: React.FormEvent) => void;
+  onClick?: (event: FormEvent) => void;
   withText?: boolean;
+  variant?: 'primary' | 'secondary' | 'tertiary';
 };
 
-const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, ...rest }: AddTodoBtnProps) => {
+const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, variant, ...rest }: AddTodoBtnProps) => {
   return (
     <Button
       icon={isLoading ? <LoadingIcon /> : <PlusIcon />}
@@ -19,6 +21,7 @@ const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, ...res
       extraClass={extraClass}
       onClick={onClick}
       title={withText ? '' : 'Добавить в список'}
+      variant={variant}
       {...rest}
     >
       {withText && 'Добавить в список'}

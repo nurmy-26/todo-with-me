@@ -8,6 +8,7 @@ import GridListLayout from '../../6-shared/ui/grid-list-layout';
 import Typography from '../../6-shared/ui/typography';
 import { TList } from '../../6-shared/types';
 import style from './style.module.css';
+import MainPageLayout from '../../6-shared/ui/main-page-layout';
 
 
 const MainPage = () => {
@@ -25,26 +26,28 @@ const MainPage = () => {
   }
 
   return (
-    <>
+    <MainPageLayout>
+
       {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
-
-      {/* todo - сделать из внутренностей этой секции виджет настроек */}
-      <aside>
-        <Link to={routes["add-new-list"]} state={{ background: location }}>
-          <TodoListCreateBtn />
-        </Link>
-
-        <Link to={routes["add-new-item"]} state={{ background: location }}>
-          <AddTodoBtn />
-        </Link>
-      </aside>
 
       <GridListLayout
         data={todolists}
         renderItem={renderTodoList}
+        // todo - сделать из внутренностей этой секции виджет настроек
+        asideContent={
+          <>
+            <Link to={routes["add-new-list"]} state={{ background: location }}>
+              <TodoListCreateBtn variant={'tertiary'} />
+            </Link>
+
+            <Link to={routes["add-new-item"]} state={{ background: location }}>
+              <AddTodoBtn variant={'tertiary'} />
+            </Link>
+          </>
+        }
       />
-    </>
+    </MainPageLayout>
   )
 }
 

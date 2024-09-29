@@ -1,8 +1,9 @@
+import { ButtonHTMLAttributes } from 'react';
 import ExpandableForm from '../../../../6-shared/ui/expandable-form';
 import { useAddTodo } from '../../model';
 
 
-type AddTodoFormProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type AddTodoFormProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   extraClass?: string;
   listTitle: string; // имя списка чтобы знать, куда добавлять Todo

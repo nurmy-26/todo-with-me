@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef, InputHTMLAttributes } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   extraClass?: string;
   type?: InputHTMLAttributes<HTMLInputElement>['type'];
   name: string;

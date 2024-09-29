@@ -1,17 +1,18 @@
+import { ButtonHTMLAttributes, MouseEvent, ReactNode } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: React.ReactNode;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children?: ReactNode;
   disabled?: boolean;
   extraClass?: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   size?: 's' | 'm';
   shape?: 'default_shape' | 'rounded';
   variant?: 'primary' | 'secondary' | 'tertiary';
   isInline?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({

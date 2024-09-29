@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { ButtonHTMLAttributes, FormEvent } from 'react';
 import cn from 'classnames';
 import Button from '../../../6-shared/ui/button';
 import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
@@ -6,7 +6,7 @@ import { useRemoveTodo } from '../model';
 import style from './style.module.css';
 
 
-type RemoveTodoBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type RemoveTodoBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   itemId: string;
   listId: string;
   disabled?: boolean;

@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { RefObject, useEffect } from "react";
 
 // хук для отслеживания кликов вне wrapper и вызова функции в этот момент
 export const useOutsideClick = (
-  wrapperRef: React.RefObject<HTMLElement>,
+  wrapperRef: RefObject<HTMLElement>,
   outsideClickCallback: () => void,
   isListen: boolean = true
 ) => {

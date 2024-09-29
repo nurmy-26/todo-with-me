@@ -1,9 +1,10 @@
+import { ReactNode } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
 
 type CollapsibleSectionProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   extraClass?: string;
   title?: string;
   titleOverlay?: 'light' | 'dark' | 'none';

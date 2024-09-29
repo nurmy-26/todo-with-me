@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { FormEvent, MouseEvent, MouseEventHandler } from "react";
 
 export type TItem = {
   id: string;
@@ -28,9 +28,9 @@ export type TListItemProps = {
   listId: string;
   extraClass?: string;
   list?: TItem[];
-  onClick?: (event: React.FormEvent) => void;
+  onClick?: (event: FormEvent) => void;
   handleDeleteItem: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     deletedItem: TItem,
     listTitle: string
   ) => Promise<void>;

@@ -1,9 +1,11 @@
+import { ReactNode } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
 
+
 type GridSectionProps = {
   ariaLabel: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const GridSection = ({ ariaLabel, children }: GridSectionProps) => {

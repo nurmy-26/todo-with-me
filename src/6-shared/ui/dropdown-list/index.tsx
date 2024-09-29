@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { MouseEvent, ReactNode, RefObject, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useOutsideClick } from '../../lib/useOutsideClick';
 import { MenuIcon } from '../icons/menu-icon';
@@ -20,7 +20,7 @@ const DropdownList = ({
   const wrapperRef = useRef<HTMLElement>(null);
 
 
-  const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleMenu = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setIsShown(!isShown);
   };
@@ -29,7 +29,7 @@ const DropdownList = ({
   useOutsideClick(wrapperRef, () => setIsShown(initialState), isShown);
 
   return (
-    <div className={cn(style.wrapper, extraClass)} ref={wrapperRef as React.RefObject<HTMLDivElement>}>
+    <div className={cn(style.wrapper, extraClass)} ref={wrapperRef as RefObject<HTMLDivElement>}>
       <Button variant={'tertiary'} icon={<MenuIcon />} size={'s'} extraClass={style.btn} onClick={toggleMenu} />
 
       {/* выпадающий список */}
