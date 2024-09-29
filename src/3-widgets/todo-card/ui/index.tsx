@@ -55,11 +55,13 @@ const TodoCard = ({
 
 
   return (
-    <article className={cn(
-      style.article,
-      style[type],
-      extraClass
-    )}>
+    <article
+      id={list.id}
+      className={cn(
+        style.article,
+        style[type],
+        extraClass
+      )}>
       <header className={style.header}>
         <TodoTitle type={type} listId={list.id} listTitle={list.title} />
 

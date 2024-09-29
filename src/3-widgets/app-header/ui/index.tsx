@@ -1,9 +1,9 @@
 import cn from 'classnames';
-import style from './style.module.css';
 import Logo from '../../../6-shared/ui/logo';
-import Typography from '../../../6-shared/ui/typography';
+import Nav from '../../../6-shared/ui/nav';
 import { routes } from '../../../6-shared/const/routes';
-import { Link } from 'react-router-dom';
+import style from './style.module.css';
+
 
 type AppHeaderProps = {
   extraClass?: string;
@@ -20,6 +20,10 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
       title: '404',
       path: '12345'
     },
+    {
+      title: 'Настройки',
+      path: '12345'
+    },
   ]
 
   return (
@@ -27,21 +31,7 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
       <div className={style.overlay}>
         <Logo size={'xl'} extraClass={style.logo} />
 
-        <nav className={style.nav}>
-          <ul className={style.list}>
-            {
-              navList.map((item, index) => (
-                <li key={index}>
-                  <Link to={item.path}>
-                    <Typography extraClass={style.item}>
-                      {item.title}
-                    </Typography>
-                  </Link>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+        <Nav navList={navList} extraClass={style.nav} />
       </div>
 
     </header>

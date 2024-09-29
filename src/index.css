@@ -51,7 +51,8 @@
   --border-radius-round: 26px;
 
   --indent-desktop: 40px;
-  --indent-mobile: 20px;
+  --indent-tablet: 20px;
+  --indent-mobile: 12px;
   --section-indent: var(
     --indent-desktop
   ); /* большой отступ между/внутри секций */
@@ -100,6 +101,12 @@ body {
   }
   a:hover {
     /* color: #747bff; */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --section-indent: var(--indent-tablet);
   }
 }
 

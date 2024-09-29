@@ -1,0 +1,23 @@
+.nav {
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.horizontal {
+  gap: 34px;
+}
+.vertical {
+  flex-direction: column;
+  gap: 4px;
+}
+.hasPow {
+  list-style-image: url("/pow-orange-16.png");
+}
+
+.item {
+}

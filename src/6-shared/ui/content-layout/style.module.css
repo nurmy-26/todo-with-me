@@ -1,4 +1,5 @@
-.main {
+.content {
+  position: relative;
   max-width: var(--content-width);
   margin: var(--section-indent) auto;
 
@@ -9,7 +10,7 @@
 }
 
 @media screen and (max-width: 1360px) {
-  .main {
+  .content {
     margin: var(--section-indent);
   }
 }

@@ -57,7 +57,7 @@ const ItemForm = () => {
         onChange={handleChange}
       />
 
-      <AddTodoBtn type='submit' disabled={isLocked} />
+      <AddTodoBtn withText type='submit' disabled={isLocked} />
     </Form>
   )
 }

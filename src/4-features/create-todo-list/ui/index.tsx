@@ -1,5 +1,6 @@
 import Button from '../../../6-shared/ui/button';
 import { ListIcon } from '../../../6-shared/ui/icons/list-icon';
+import { LoadingIcon } from '../../../6-shared/ui/icons/loading-icon';
 
 
 type TodoListCreateBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -7,18 +8,20 @@ type TodoListCreateBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   extraClass?: string;
   onClick?: (event: React.FormEvent) => void;
+  withText?: boolean;
 };
 
-const TodoListCreateBtn = ({ disabled, isLoading, extraClass, onClick, ...rest }: TodoListCreateBtnProps) => {
+const TodoListCreateBtn = ({ disabled, isLoading, extraClass, onClick, withText, ...rest }: TodoListCreateBtnProps) => {
   return (
     <Button
-      icon={<ListIcon />}
+      icon={isLoading ? <LoadingIcon /> : <ListIcon />}
       disabled={disabled}
       extraClass={extraClass}
       onClick={onClick}
+      title={withText ? '' : 'Создать список'}
       {...rest}
     >
-      {isLoading ? 'Загрузка...' : 'Создать список'}
+      {withText && 'Создать список'}
     </Button>
   );
 };

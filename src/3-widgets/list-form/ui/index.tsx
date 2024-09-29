@@ -46,7 +46,7 @@ const ListForm = () => {
         ref={listTitleRef}
       />
 
-      <TodoListCreateBtn type="submit" disabled={isLocked} />
+      <TodoListCreateBtn withText type="submit" disabled={isLocked} />
     </Form>
   )
 }

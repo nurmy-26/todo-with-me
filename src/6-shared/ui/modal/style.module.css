@@ -1,6 +1,11 @@
 .modal {
   z-index: 20;
   position: fixed;
+  box-sizing: border-box;
+  background-color: var(--color-light);
+}
+
+.center {
   top: 50%;
   left: 50%;
   transform: translate(
@@ -8,22 +13,16 @@
     -50%
   ); /* сместит на половину размера modal, чтобы окно встало ровно по центру */
 
-  box-sizing: border-box;
-  display: flex;
+  padding: 40px;
   width: 720px;
+  display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 40px;
   border: 1px solid rgba(76, 76, 255, 0.2);
   border-radius: var(--border-radius-modal);
-  box-shadow:
-    0px 0px 1px 0px rgba(0, 0, 0, 0.04),
-    0px 4px 8px 0px rgba(0, 0, 0, 0.04),
-    0px 16px 24px 0px rgba(0, 0, 0, 0.04),
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 16px 24px 0px rgba(0, 0, 0, 0.04),
     0px 24px 32px 0px rgba(0, 0, 0, 0.04);
-
-  background-color: var(--color-light);
 }
 
 .modal svg {
@@ -31,15 +30,41 @@
 }
 
 .close_modal {
+  z-index: 30;
   position: absolute;
   top: 20px;
-  right: 20px;
-  opacity: 0.7;
 }
-
 .close_modal svg {
   width: 32px;
   height: 32px;
+}
+
+.center .close_modal {
+  right: 20px;
+}
+
+.aside {
+  top: 0;
+  width: 30vw;
+  height: 100vh;
+  border-right: 1px solid rgba(76, 76, 255, 0.2);
+}
+
+.left {
+  padding: 40px 60px 40px 20px;
+  left: 0;
+}
+.left .close_modal {
+  right: -20px;
+}
+
+.right {
+  padding: 40px 20px 40px 60px;
+  right: 0;
+}
+.right .close_modal {
+  right: auto;
+  left: -20px;
 }
 
 .overlay {
@@ -55,4 +80,41 @@
   align-items: center;
 
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.light {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+  .aside {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    overflow: auto;
+  }
+  .center {
+    width: 85vw;
+  }
+  .aside {
+    width: 100vw;
+    height: 50vh;
+    padding: 40px 60px 20px;
+  }
+  .left .close_modal {
+    right: 20px;
+  }
+  .right .close_modal {
+    left: auto;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .center {
+    width: 92vw;
+  }
 }
