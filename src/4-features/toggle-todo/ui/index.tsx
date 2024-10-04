@@ -4,15 +4,17 @@ import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
 import { TItem } from '../../../6-shared/types';
 import { useToggleTodo } from '../model';
 import style from './style.module.css';
+import { PawIcon } from '../../../6-shared/ui/icons/paw-icon';
 
 
 type ToggleTodoCheckboxProps = {
   item: TItem;
   listId: string;
+  type?: 'default' | 'paw';
   extraClass?: string;
 };
 
-const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProps) => {
+const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTodoCheckboxProps) => {
   const { id, title, isDone } = item;
   const { toggleTodo } = useToggleTodo();
 
@@ -21,17 +23,29 @@ const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProp
     toggleTodo(listId, itemId)
   }
 
-  // квадратик чекбокса с цветной галкой внутри
-  const coloredCheckbox = (
-    <div className={style.svg_checkbox}>
-      <CheckIcon fill={'var(--color-text-primary'} />
-      <CheckIcon className={style.svg_check} type={'check'} fill={'var(--color-accent'} />
-    </div>
-  )
+  // пустой чекбокс (дефолтный или в виде лапки)
+  const emptyCheckbox = type === 'default' ?
+    <CheckIcon fill={'var(--color-text-primary'} />
+    :
+    <PawIcon className={style.paw} fill={'var(--color-text-primary'} />
 
+  // отмеченный чекбокс
+  const coloredCheckbox = type === 'default' ?
+    // квадратик чекбокса с цветной галкой внутри
+    (
+      <div className={style.svg_checkbox}>
+        <CheckIcon fill={'var(--color-text-primary'} />
+        <CheckIcon className={style.svg_check} type={'check'} fill={'var(--color-accent'} />
+      </div>
+    )
+    :
+    // лапка
+    <PawIcon className={style.paw} fill={'var(--color-accent'} />
+
+  // иконка отображается в зависимости от статуса isDone
   const checkboxIcon = isDone
     ? coloredCheckbox
-    : <CheckIcon fill={'var(--color-text-primary'} />
+    : emptyCheckbox
 
   return (
     <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>

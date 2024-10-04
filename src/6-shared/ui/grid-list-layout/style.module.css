@@ -3,7 +3,7 @@
   display: flex;
   gap: 16px;
   border-radius: var(--border-radius-base);
-  background-color: var(--color-overlay);
+  background-color: var(--section-overlay);
 }
 
 .aside {
@@ -12,16 +12,15 @@
   gap: 8px;
   border-radius: var(--border-radius-base);
 }
+/* стили кнопок */
 .aside button svg {
   fill: var(--color-accent);
 }
-/* todo - выбрать вариант */
-.aside button:hover svg {
-  /* fill: var(--color-accent-hover); */
-}
 .aside button:hover {
-  background-color: var(--color-background);
-  background-color: var(--color-text-primary);
+  background-color: var(--card-overlay);
+}
+.aside button:active svg {
+  fill: var(--color-accent-hover);
 }
 
 .list {
@@ -72,6 +71,6 @@
   }
   .aside {
     flex-direction: row;
-    background-color: var(--color-overlay);
+    background-color: var(--section-overlay);
   }
 }

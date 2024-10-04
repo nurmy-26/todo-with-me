@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { TodoCard } from '../../3-widgets';
-import { AddTodoBtn, ThemeSelector, TodoListCreateBtn } from '../../4-features';
+import { AddTodoBtn, ThemeSelector, ThemeToggler, TodoListCreateBtn } from '../../4-features';
 import { useGetTodoLists } from '../../5-entities';
 import { routes } from '../../6-shared/const/routes';
 import GridListLayout from '../../6-shared/ui/grid-list-layout';
@@ -27,6 +27,7 @@ const MainPage = () => {
   return (
     <MainPageLayout>
       <ThemeSelector />
+      <ThemeToggler />
       {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 

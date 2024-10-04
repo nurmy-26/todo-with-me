@@ -1,6 +1,6 @@
 .app_header {
   padding: 30px;
-  background-color: var(--color-overlay);
+  background-color: var(--section-overlay);
 }
 
 .overlay {

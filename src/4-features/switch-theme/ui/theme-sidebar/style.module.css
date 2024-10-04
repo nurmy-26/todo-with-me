@@ -1,4 +1,4 @@
-.list {
+.sidebar {
   margin: 0;
   padding: 4px;
   list-style-type: none;
@@ -39,6 +39,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  border: 1px solid var(--color-text-primary);
 }
 .fake_radio {
   position: absolute;

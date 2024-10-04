@@ -45,21 +45,24 @@
 }
 
 .secondary {
-  color: var(--color-background);
-  background-color: var(--color-text-primary);
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-text-dark);
 }
 .secondary:hover {
-  /* темный фон с ярким текстом */
-  color: var(--color-accent);
-}
-.secondary svg {
-  fill: var(--color-background);
+  color: var(--color-light);
+  background-color: var(--color-text-dark);
+  border-color: var(--color-accent);
 }
 .secondary:hover svg {
-  fill: var(--color-accent);
+  fill: var(--color-light);
 }
 .secondary:active {
-  border-color: var(--color-accent);
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+}
+.secondary:active svg {
+  fill: var(--color-text-dark);
 }
 
 .tertiary {
@@ -74,9 +77,6 @@
 }
 .tertiary:active {
   color: var(--color-text-dark);
-}
-.tertiary:active svg {
-  fill: var(--color-text-dark);
 }
 
 .inline {

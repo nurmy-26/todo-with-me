@@ -1,21 +1,39 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import ThemeToggler from ".";
+import { todolistsApi } from "../../../../6-shared/api/todolists";
+import { settingsApi } from "../../../../6-shared/api/settings";
 
-const meta = {
-  title: "features/ThemeToggler",
+// todo - заменить на реально моковый store (сейчас меняется состояние в реальном)
+const mockStore = configureStore({
+  reducer: {
+    [todolistsApi.reducerPath]: todolistsApi.reducer,
+    [settingsApi.reducerPath]: settingsApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(todolistsApi.middleware)
+      .concat(settingsApi.middleware),
+});
+
+// метаданные истории
+const meta: Meta<typeof ThemeToggler> = {
+  title: 'features/ThemeToggler',
   component: ThemeToggler,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
   },
-  args: { onClick: fn() },
-} satisfies Meta<typeof ThemeToggler>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-
-  },
+  args: {},
+  render: () => (
+    <Provider store={mockStore}>
+      <ThemeToggler />
+    </Provider>
+  ),
 };

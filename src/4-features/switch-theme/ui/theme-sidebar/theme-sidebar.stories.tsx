@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import ThemeSelector from ".";
+import ThemeSidebar from ".";
 import { todolistsApi } from "../../../../6-shared/api/todolists";
 import { settingsApi } from "../../../../6-shared/api/settings";
 
@@ -18,9 +18,9 @@ const mockStore = configureStore({
 });
 
 // метаданные истории
-const meta: Meta<typeof ThemeSelector> = {
-  title: 'features/ThemeSelector',
-  component: ThemeSelector,
+const meta: Meta<typeof ThemeSidebar> = {
+  title: 'features/ThemeSidebar',
+  component: ThemeSidebar,
   tags: ['autodocs'],
   argTypes: {
   },
@@ -33,7 +33,7 @@ export const Default: Story = {
   args: {},
   render: () => (
     <Provider store={mockStore}>
-      <ThemeSelector />
+      <ThemeSidebar />
     </Provider>
   ),
 };

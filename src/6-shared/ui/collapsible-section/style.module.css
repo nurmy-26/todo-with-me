@@ -12,7 +12,7 @@
 }
 
 .light {
-  background-color: var(--color-overlay);
+  background-color: var(--section-overlay);
 }
 
 .dark {

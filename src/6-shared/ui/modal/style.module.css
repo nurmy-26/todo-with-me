@@ -94,7 +94,7 @@
 
 /* светлый вариант подложки для модалок, занимающих много места */
 .light {
-  background-color: var(--color-overlay);
+  background-color: var(--section-overlay);
 }
 
 @media screen and (max-width: 1280px) {

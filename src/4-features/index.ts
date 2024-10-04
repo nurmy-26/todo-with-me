@@ -5,4 +5,4 @@ export { DeleteListBtn } from "./delete-todo-list";
 export { RemoveTodoBtn, useRemoveTodo } from "./remove-todo";
 export { useSelectTodoListTitle } from "./select-todo-list";
 export { ToggleTodoCheckbox } from "./toggle-todo";
-export { ThemeToggler, ThemeSelector } from "./switch-theme";
+export { ThemeToggler, ThemeSidebar, ThemeSelector } from "./switch-theme";

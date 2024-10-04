@@ -8,7 +8,7 @@ import { applyThemeAttribute } from "../lib/utils";
 export const useTheme = () => {
   const { theme: serverTheme } = useGetThemeSetting(); // получаем тему с сервера
   const { updateThemeSetting } = useUpdateThemeSetting();
-  const [theme, setTheme] = useState<TTheme>(THEME.LIGHT); // фолбек на случай отсутствия данных (light по умолчанию)
+  const [theme, setTheme] = useState<TTheme>(THEME.WARM); // фолбек на случай отсутствия данных (light по умолчанию)
 
   const privateSwitchTheme = (
     newTheme: TTheme,
@@ -24,7 +24,7 @@ export const useTheme = () => {
   };
 
   useEffect(() => {
-    // пытаемся достать тему из LocalStorage
+    // изначально пытаемся достать тему из LocalStorage
     const storedTheme = localStorage.getItem("theme") as TTheme;
 
     // если тема есть в localStorage, используем её
@@ -43,12 +43,19 @@ export const useTheme = () => {
     updateThemeSetting(newTheme); // обновляем тему на сервере
   };
 
-  // переключатель light/dark
+  // переключатель light/dark и warm/night
   const toggleTheme = () => {
-    if (theme === THEME.DARK) {
-      switchTheme(THEME.LIGHT);
-    } else {
+    if (theme === THEME.LIGHT) {
       switchTheme(THEME.DARK);
+    } else if (theme === THEME.DARK) {
+      switchTheme(THEME.LIGHT);
+    } else if (theme === THEME.WARM) {
+      switchTheme(THEME.NIGHT);
+    } else if (theme === THEME.NIGHT) {
+      switchTheme(THEME.WARM);
+    } else {
+      // если добавится больше тем - переключит на warm по умолчанию
+      switchTheme(THEME.WARM);
     }
   };
 
