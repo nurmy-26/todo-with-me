@@ -1,28 +1,21 @@
 .wrapper {
-  padding: 28px 12px;
+  padding: 28px 16px;
 
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #464646;
+  border: 1px solid var(--color-secondary);
   border-radius: var(--border-radius-base);
-
-  /* чтоб форма не растягивалась по высоте в грид-сетке */
-  align-self: start;
-  grid-column: var(--grid-child-third);
-  background-color: var(--color-light-transparent);
+  background-color: var(--card-overlay);
 }
 
 .title {
-  margin: 0 16px;
+  padding-bottom: 8px;
   border-bottom: 1px dotted var(--color-text-dark);
 
   font-style: italic;
   text-align: left;
-  opacity: 0.6;
 }
 
 .form {
@@ -30,8 +23,6 @@
   grid-template-columns: 1fr;
   gap: 16px;
 
-  justify-content: space-between;
-  align-items: center;
   border-radius: var(--border-radius-base);
 }
 
@@ -40,14 +31,13 @@
   justify-self: center;
 }
 
-@media screen and (max-width: 1024px) {
-  .form {
-    grid-column: var(--grid-child-half);
+@media screen and (max-width: 1440px) {
+  .form button {
+    width: 85%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .form {
-    grid-column: var(--grid-child-full);
   }
 }

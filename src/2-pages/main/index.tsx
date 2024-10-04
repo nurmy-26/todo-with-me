@@ -1,9 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { TodoCard } from '../../3-widgets';
-import { AddTodoBtn, TodoListCreateBtn } from '../../4-features';
+import { AddTodoBtn, ThemeSelector, TodoListCreateBtn } from '../../4-features';
 import { useGetTodoLists } from '../../5-entities';
 import { routes } from '../../6-shared/const/routes';
-import GridSection from '../../6-shared/ui/grid-section';
 import GridListLayout from '../../6-shared/ui/grid-list-layout';
 import Typography from '../../6-shared/ui/typography';
 import { TList } from '../../6-shared/types';
@@ -27,14 +26,14 @@ const MainPage = () => {
 
   return (
     <MainPageLayout>
-
+      <ThemeSelector />
       {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
       <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 
       <GridListLayout
         data={todolists}
         renderItem={renderTodoList}
-        // todo - сделать из внутренностей этой секции виджет настроек
+        // todo - сделать из внутренностей этой секции виджет
         asideContent={
           <>
             <Link to={routes["add-new-list"]} state={{ background: location }}>

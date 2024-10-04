@@ -1,4 +1,7 @@
 {
+  "settings": {
+    "theme": "light"
+  },
   "todolists": [
     {
       "id": "8958f074-ec17-461b-ac81-4a1743ad37a2",
@@ -22,26 +25,16 @@
         {
           "id": "7b3f1076-b01a-44b2-8f21-9e675f711f35",
           "title": "Посмотреть любимый фильм или сериал",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "8723aba0-6d4a-430c-a5b8-34c4383ad794",
           "title": "Почитать книгу перед сном",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "94de08a0-81e4-4471-b757-0c7e28c73eba",
           "title": "dsdfss",
-          "isDone": false
-        },
-        {
-          "id": "1748bdd2-ff48-4c48-a2ce-d83c9579d4ef",
-          "title": "sfdfd",
-          "isDone": false
-        },
-        {
-          "id": "47eea715-4673-415b-8f4e-f3f634ded6fc",
-          "title": "sdfsdf",
           "isDone": false
         },
         {
@@ -158,7 +151,7 @@
         {
           "id": "197e82c9-b770-495d-9b4e-fe1be43ce358",
           "title": "Пробовать приготовить новое блюдо каждую неделю",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "2b164dc3-136d-4a8c-92c8-9b0254cbfaed",
@@ -194,18 +187,23 @@
       ]
     },
     {
-      "id": "f5d46af1-bfae-4fd8-8031-ee75727da12d",
-      "title": "dasdsad",
+      "id": "b9dfab65-053f-4340-ba16-c98006ebbd96",
+      "title": "ddddddddddddddddddddddddddddddddddd  dddddddd ddddddddddddddddddddddddddd",
       "items": []
     },
     {
-      "id": "6f1cf5a1-84eb-46b2-960e-6451cec548ab",
-      "title": "dasdads",
+      "id": "526f0b5f-d530-490a-a315-aaf3c9e59808",
+      "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "items": []
     },
     {
-      "id": "b950b9c7-e807-420b-987c-b07e18bba45d",
-      "title": "asdasdd",
+      "id": "c78a0577-3c6e-40c7-97a2-f12f01dff696",
+      "title": "aaa",
+      "items": []
+    },
+    {
+      "id": "f8b4b8a0-9a4b-4481-9dc1-a477fc7ffa1d",
+      "title": "aaaaaaaa",
       "items": []
     }
   ]

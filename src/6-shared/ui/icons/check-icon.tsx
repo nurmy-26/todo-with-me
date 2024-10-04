@@ -2,7 +2,7 @@ type CheckIconProps = {
   className?: string;
   fill?: string;
   onClick?: () => void;
-  type?: 'white-circle' | 'black-circle' | 'white-rectangle' | 'black-rectangle' | 'empty-white' | 'empty-black';
+  type?: 'white-circle' | 'black-circle' | 'white-rectangle' | 'black-rectangle' | 'empty-white' | 'empty-black' | 'check';
 }
 
 export const CheckIcon = ({ className, fill = 'var(--color-text-dark)', onClick, type = 'empty-white' }: CheckIconProps) => {
@@ -36,6 +36,11 @@ export const CheckIcon = ({ className, fill = 'var(--color-text-dark)', onClick,
     viewBox: "0 0 448 512"
   };
 
+  const check = {
+    path: <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />,
+    viewBox: "0 0 448 512"
+  }
+
   const xmarkType = {
     'white-circle': whiteCircle,
     'black-circle': blackCircle,
@@ -43,6 +48,7 @@ export const CheckIcon = ({ className, fill = 'var(--color-text-dark)', onClick,
     'black-rectangle': blackRectangle,
     'empty-white': emptyWhite,
     'empty-black': emptyBlack,
+    'check': check,
   }
 
   return (

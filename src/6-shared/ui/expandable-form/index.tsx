@@ -106,7 +106,14 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
   return (
     <form onSubmit={handleSubmit} className={cn(style.form, extraClass)}>
       <div className={cn(style.wrapper, (isExpanded && style.wrapper_expanded))} ref={wrapperRef as RefObject<HTMLDivElement>}>
-        <Button variant={btnVariant} type={'submit'} disabled={btnDisabledCondition} icon={icon} size={'s'} extraClass={style.btn} />
+        <Button
+          variant={btnVariant}
+          type={'submit'}
+          disabled={btnDisabledCondition}
+          icon={icon}
+          size={'s'}
+          extraClass={style.btn}
+        />
 
         <Input
           extraClass={style.input}

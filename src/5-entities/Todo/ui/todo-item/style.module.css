@@ -10,3 +10,9 @@
   overflow: hidden;
   text-overflow: ellipsis; */
 }
+
+/* todo - настроить варианты отображения (с линией, без, цветная, обычная, opacity */
+.done_crossed {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent);
+}

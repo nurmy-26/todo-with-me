@@ -1,0 +1,72 @@
+.wrapper {
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid var(--color-text-primary);
+  border-radius: 28px;
+  color: var(--color-text-primary);
+  background-color: var(--card-overlay);
+}
+.horizontal {
+  padding: 4px;
+  width: 68px;
+  height: 28px;
+}
+.vertical {
+  padding: 2px;
+  width: 28px;
+  height: 68px;
+  flex-direction: column;
+}
+.wrapper:hover {
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+}
+
+.theme_btn {
+  z-index: 10;
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+}
+.horizontal .theme_btn {
+  top: 2;
+  transition: left 0.3s ease-in-out;
+}
+.vertical .theme_btn {
+  left: 1px;
+  transition: top 0.3s ease-in-out;
+}
+
+/* светлая тема - кнопка справа / внизу */
+.horizontal .btn_light {
+  left: calc(100% - 24px);
+}
+.vertical .btn_light {
+  top: calc(100% - 24px);
+}
+
+/* темная тема - кнопка слева / вверху */
+.horizontal .btn_dark {
+  left: 2px;
+}
+.vertical .btn_dark {
+  top: 2px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon path,
+circle {
+  fill: currentColor;
+  /* fill: none; если обе иконки нужны незаполненными */
+  stroke: currentColor;
+}

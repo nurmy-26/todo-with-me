@@ -13,19 +13,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  border-radius: var(--border-radius-base);
+  padding: 0 4px;
 }
 
 .item:hover {
-  /* background-color: var(--color-light); */
-  /* косой светлый бекграунд */
-  background: linear-gradient(
-    135deg,
-    transparent 8%,
-    var(--color-light) 13%,
-    var(--color-light) 87%,
-    transparent 92%
-  );
+  border-left: 3px solid var(--color-text-primary);
   cursor: default;
 }
 

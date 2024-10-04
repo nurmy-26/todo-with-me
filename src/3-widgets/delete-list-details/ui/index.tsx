@@ -38,7 +38,8 @@ const DeleteListDetails = () => {
 
   return (
     <form onSubmit={handleDelete}>
-      <Typography type={'h2'} hasMarginBottom>
+      {/* todo - выделить в компонент подтверждения ? (Вы уверены, что *** *** ?) */}
+      <Typography tag={'p'} type={'h2'} extraClass={style.text} hasMarginBottom>
         Вы уверены, что хотите удалить список <span className={style.title}>&laquo;{listInfo.title}&raquo;</span>?
       </Typography>
 

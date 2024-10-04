@@ -1,3 +1,9 @@
+.text {
+  text-align: center;
+  line-height: 1.5;
+  text-wrap: balance; /* для гармоничного переноса текста */
+}
+
 .title {
   color: var(--color-accent);
 }

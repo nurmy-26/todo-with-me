@@ -21,9 +21,17 @@ const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProp
     toggleTodo(listId, itemId)
   }
 
+  // квадратик чекбокса с цветной галкой внутри
+  const coloredCheckbox = (
+    <div className={style.svg_checkbox}>
+      <CheckIcon fill={'var(--color-text-primary'} />
+      <CheckIcon className={style.svg_check} type={'check'} fill={'var(--color-accent'} />
+    </div>
+  )
+
   const checkboxIcon = isDone
-    ? <CheckIcon type={'white-rectangle'} fill={'var(--color-accent'} />
-    : <CheckIcon />
+    ? coloredCheckbox
+    : <CheckIcon fill={'var(--color-text-primary'} />
 
   return (
     <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>

@@ -1,10 +1,15 @@
+/* общие стили для модального окна */
 .modal {
   z-index: 20;
   position: fixed;
   box-sizing: border-box;
-  background-color: var(--color-light);
+  background-color: var(--background-base);
+
+  display: flex;
+  flex-direction: column;
 }
 
+/* стили для центральной модалки */
 .center {
   top: 50%;
   left: 50%;
@@ -13,7 +18,7 @@
     -50%
   ); /* сместит на половину размера modal, чтобы окно встало ровно по центру */
 
-  padding: 40px;
+  padding: 40px 60px;
   width: 720px;
   display: flex;
   flex-direction: column;
@@ -29,6 +34,7 @@
   cursor: pointer;
 }
 
+/* стили кнопки закрытия */
 .close_modal {
   z-index: 30;
   position: absolute;
@@ -43,6 +49,7 @@
   right: 20px;
 }
 
+/* общие стили боковых модалок */
 .aside {
   top: 0;
   width: 30vw;
@@ -50,6 +57,7 @@
   border-right: 1px solid rgba(76, 76, 255, 0.2);
 }
 
+/* стили левой модалки */
 .left {
   padding: 40px 60px 40px 20px;
   left: 0;
@@ -58,6 +66,7 @@
   right: -20px;
 }
 
+/* стили правой модалки */
 .right {
   padding: 40px 20px 40px 60px;
   right: 0;
@@ -67,6 +76,7 @@
   left: -20px;
 }
 
+/* полупрозрачная подложка между модалкой и сайтом */
 .overlay {
   z-index: 10;
   position: fixed;
@@ -82,39 +92,63 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+/* светлый вариант подложки для модалок, занимающих много места */
 .light {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-overlay);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   .aside {
     width: 40vw;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .modal {
-    overflow: auto;
+@media screen and (max-width: 1024px) {
+  .aside {
+    width: 50vw;
   }
+}
+
+@media screen and (max-width: 768px) {
   .center {
     width: 85vw;
   }
   .aside {
+    top: 10%;
     width: 100vw;
-    height: 50vh;
+    height: 80vh;
     padding: 40px 60px 20px;
   }
-  .left .close_modal {
-    right: 20px;
+  .aside .left {
+    align-items: center;
   }
-  .right .close_modal {
+  .aside .close_modal {
     left: auto;
-    right: 20px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .aside {
+    padding: 24px 44px;
+  }
+  .close_modal svg {
+    width: 24px;
+    height: 24px;
+  }
+  .aside .close_modal {
+    top: -12px;
+    right: 50%;
+    transform: translate(50%);
   }
 }
 
 @media screen and (max-width: 420px) {
   .center {
     width: 92vw;
+  }
+  .aside {
+    padding: 20px;
   }
 }

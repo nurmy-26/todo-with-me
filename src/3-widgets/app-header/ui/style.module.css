@@ -1,26 +1,24 @@
 .app_header {
   padding: 30px;
-  background-color: var(--color-text-dark);
+  background-color: var(--color-overlay);
 }
 
 .overlay {
   max-width: 1280px;
   margin: 0 auto;
 
-  /* является грид-родителем для дочерних элементов */
   display: grid;
-  grid-template-columns: var(--grid-parent-full);
-  justify-content: space-between;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: end;
   align-items: center;
   gap: 16px;
 }
 
 .logo {
-  grid-column: var(--grid-child-third);
+  grid-row: span 2;
 }
 .nav {
-  /* если между logo и nav появятся другие компоненты - уменьшить число колонок, занимаемых nav */
-  grid-column: span 8; /* потенциально может занять до 8 колонок */
   justify-self: end;
 }
 
@@ -37,22 +35,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  .logo {
-    grid-column: var(--grid-child-full);
+  .overlay {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo theme"
+      "logo nav";
   }
   .nav {
-    grid-column: var(--grid-child-full);
+    grid-area: nav;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 550px) {
   .app_header {
     padding: 12px;
   }
-}
 
-@media (prefers-color-scheme: light) {
-  .app_header {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+  /* todo - бургер-меню для этого разрешения */
 }

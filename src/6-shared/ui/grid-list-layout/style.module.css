@@ -3,7 +3,7 @@
   display: flex;
   gap: 16px;
   border-radius: var(--border-radius-base);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-overlay);
 }
 
 .aside {
@@ -11,6 +11,17 @@
   flex-direction: column;
   gap: 8px;
   border-radius: var(--border-radius-base);
+}
+.aside button svg {
+  fill: var(--color-accent);
+}
+/* todo - выбрать вариант */
+.aside button:hover svg {
+  /* fill: var(--color-accent-hover); */
+}
+.aside button:hover {
+  background-color: var(--color-background);
+  background-color: var(--color-text-primary);
 }
 
 .list {
@@ -27,21 +38,19 @@
   gap: 16px;
 }
 
-.list a {
-  color: var(--color-text-dark);
-}
-
 .list_item {
   /* каждый элемент списка занимает четверть от общего числа колонок и прижат к верхней части*/
-  grid-column: var(--grid-child-quarter);
+  /* grid-column: var(--grid-child-quarter); */
+  /* todo - определиться, сколько будет занимать (сейчас - треть) */
+  grid-column: var(--grid-child-third);
   align-self: start;
 }
 
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
   .list_item {
     grid-column: var(--grid-child-third);
   }
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .list_item {
@@ -63,6 +72,6 @@
   }
   .aside {
     flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-overlay);
   }
 }

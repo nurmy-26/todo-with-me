@@ -1,4 +1,7 @@
 import { FormEvent, MouseEvent, MouseEventHandler } from "react";
+import { THEME } from "../const/theme";
+
+export type TTheme = THEME;
 
 export type TItem = {
   id: string;
@@ -37,13 +40,13 @@ export type TListItemProps = {
   handleDeleteList: MouseEventHandler<HTMLButtonElement>;
 };
 
-type TGetTodoListsOptions = {
+type TQueryOptions = {
   skip?: boolean;
   selectFromResult?: (result: any) => any;
   [key: string]: any;
 };
 
-export type TGetTodoListsConfig = {
+export type TQueryConfig = {
   limit: string;
-  options: TGetTodoListsOptions;
+  options: TQueryOptions;
 };

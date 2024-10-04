@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// import { fn } from '@storybook/test';
 import ExpandableForm from '.';
 import { TrashIcon } from '../icons/trash-icon';
 import { XMarkIcon } from '../icons/xmark-icon';
@@ -13,7 +12,6 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
   },
-  // args: { onChange: fn() },
   args: {},
 } satisfies Meta<typeof ExpandableForm>;
 

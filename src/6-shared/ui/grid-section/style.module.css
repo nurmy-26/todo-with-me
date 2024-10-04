@@ -7,7 +7,7 @@
   grid-template-columns: var(--grid-parent-full);
   gap: 16px;
 
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-overlay);
 }
 
 /* сколько занимает колонок как дочерний элемент грид-сетки, в которой расположен */

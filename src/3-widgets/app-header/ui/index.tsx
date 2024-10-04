@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { ThemeToggler } from '../../../4-features';
 import Logo from '../../../6-shared/ui/logo';
 import Nav from '../../../6-shared/ui/nav';
 import { routes } from '../../../6-shared/const/routes';
@@ -32,6 +33,7 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
         <Logo size={'xl'} extraClass={style.logo} />
 
         <Nav navList={navList} extraClass={style.nav} />
+        {/* <ThemeToggler /> */}
       </div>
 
     </header>

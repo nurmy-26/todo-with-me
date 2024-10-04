@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // RTK-query
-// создали редьюсер todolistApi с доп-возможностями (свои fetch писать не нужно)
-export const todolistApi = createApi({
-  // отображение в общем store
-  reducerPath: "todolistApi",
+// создали редьюсер todolistsApi с доп-возможностями (свои fetch писать не нужно)
+export const todolistsApi = createApi({
+  // название редьюсера в общем store
+  reducerPath: "todolistsApi",
   // магия изменений в реальном времени (отображение актуального состояния на фронтенде)
-  tagTypes: ["TodoList"], // сущности могут иметь любые имена (указали сущность TodoList)
+  tagTypes: ["TodoLists"], // сущности могут иметь любые имена (указали сущность TodoList)
 
   // базовый url (все запросы будет делать сама библиотека)
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
@@ -21,10 +21,10 @@ export const todolistApi = createApi({
         // если результат есть - вернем массив со всеми эл-ми результата
         result
           ? [
-              ...result.map(({ id }) => ({ type: "TodoList" as const, id })),
-              { type: "TodoList", id: "LIST" },
+              ...result.map(({ id }) => ({ type: "TodoLists" as const, id })),
+              { type: "TodoLists", id: "LIST" },
             ]
-          : [{ type: "TodoList", id: "LIST" }],
+          : [{ type: "TodoLists", id: "LIST" }],
     }),
 
     // запрос на добавление нового (мутацией будет всё, кроме простого получения данных)
@@ -36,13 +36,13 @@ export const todolistApi = createApi({
         body,
       }),
       // указываем, что при добавлении меняется этот список сущностей TodoList
-      invalidatesTags: [{ type: "TodoList", id: "LIST" }],
+      invalidatesTags: [{ type: "TodoLists", id: "LIST" }],
     }),
 
     // получение конкретного списка
     getTodoList: build.query({
       query: (id) => `todolists/${id}`,
-      providesTags: (result, error, id) => [{ type: "TodoList", id }],
+      providesTags: (result, error, id) => [{ type: "TodoLists", id }],
     }),
 
     // запрос на обновление списка
@@ -54,14 +54,14 @@ export const todolistApi = createApi({
       }),
       onQueryStarted({ listId, ...updatedList }, { dispatch, queryFulfilled }) {
         const patchResult = dispatch(
-          todolistApi.util.updateQueryData("getTodoList", listId, (draft) => {
+          todolistsApi.util.updateQueryData("getTodoList", listId, (draft) => {
             Object.assign(draft, updatedList);
           })
         );
         queryFulfilled.catch(patchResult.undo);
       },
       // указываем, что при добавлении меняется этот список сущностей TodoList
-      invalidatesTags: (result, error, { id }) => [{ type: "TodoList", id }],
+      invalidatesTags: (result, error, { id }) => [{ type: "TodoLists", id }],
     }),
 
     // запрос на удаление списка
@@ -70,7 +70,7 @@ export const todolistApi = createApi({
         url: `todolists/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, id) => [{ type: "TodoList", id }],
+      invalidatesTags: (result, error, id) => [{ type: "TodoLists", id }],
     }),
   }),
 });
@@ -83,4 +83,4 @@ export const {
   useGetTodoListQuery,
   useUpdateTodoListMutation,
   useDeleteTodoListMutation,
-} = todolistApi;
+} = todolistsApi;
