@@ -1,0 +1,16 @@
+:root[data-theme="warm"] {
+  --color-text-primary: var(--color-text-dark);
+  --color-background: var(--color-light);
+  --color-accent: var(--accent-warm);
+  --color-accent-hover: var(--accent-warm-hover);
+  --color-error: var(--error-warm);
+
+  --background-base: var(--background-base-warm);
+  --card-overlay: var(--card-overlay-warm);
+  --body-color: var(--body-warm);
+  --section-overlay: var(--section-overlay-warm);
+  --color-secondary: var(--secondary-light);
+  --color-secondary-hover: var(--secondary-hover-light);
+  --color-secondary-background: var(--secondary-background-light);
+  color-scheme: light;
+}

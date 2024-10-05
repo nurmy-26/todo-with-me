@@ -1,21 +1,14 @@
 type PawIconProps = {
   className?: string;
   fill?: string;
+  hasShadow?: boolean;
+  shadowColor?: string;
   onClick?: () => void;
 }
 
-export const PawIcon = ({ className, fill = 'var(--color-text-dark)', onClick }: PawIconProps) => {
-  return (
-    <svg
-      className={className}
-      onClick={onClick}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
-      width="16"
-      height="16"
-      fill={fill}
-    >
-      {/* !Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
+export const PawIcon = ({ className, fill = 'var(--color-text-primary)', hasShadow, shadowColor = 'var(--color-text-primary)', onClick }: PawIconProps) => {
+  const paw = (
+    <>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
       <g id="SVGRepo_iconCarrier">
@@ -27,6 +20,32 @@ export const PawIcon = ({ className, fill = 'var(--color-text-dark)', onClick }:
           <path d="M304.511,268.059c-3.58-24.773-18.766-47.366-43.039-58.824c-24.268-11.45-51.365-8.807-72.758,4.169 c-23.646,14.35-38.772,33.096-59.138,41.29c-20.363,8.193-77.4-16.209-112.912,48.278c-25.081,45.548-2.057,103.128,44.962,125.315 c35.738,16.864,64.023,14.981,84.788,24.774c20.762,9.793,37.29,32.83,73.025,49.692c47.018,22.188,106.1,3.362,125.315-44.957 c27.206-68.407-27.897-96.922-34.522-117.85C303.613,319.021,308.47,295.426,304.511,268.059z"></path>
         </g>
       </g>
+    </>
+  );
+  const pawWithShadow = (
+    <g filter="url(#drop-shadow)">
+      {paw}
+    </g>
+  );
+
+
+  return (
+    <svg
+      className={className}
+      onClick={onClick}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      width="16"
+      height="16"
+      fill={fill}
+    >
+      <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+        <feDropShadow stdDeviation="0 0" in="SourceGraphic" dx="16" dy="-5" flood-color={shadowColor} flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="dropShadow" />
+      </filter>
+
+      {/* !Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
+
+      {hasShadow ? pawWithShadow : paw}
     </svg>
   )
 }

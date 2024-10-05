@@ -1,6 +1,6 @@
 {
   "settings": {
-    "theme": "night"
+    "theme": "dark"
   },
   "todolists": [
     {
@@ -60,11 +60,6 @@
         {
           "id": "f05ed424-64b2-41de-b5ec-76d22ec20de9",
           "title": "ss",
-          "isDone": false
-        },
-        {
-          "id": "5b47140a-cc63-4480-9495-cfcc70ba9c53",
-          "title": "d",
           "isDone": false
         },
         {
@@ -141,7 +136,7 @@
         {
           "id": "18e8eb3c-37be-4d43-b4f2-6d2172ad94e7",
           "title": "Прочитать как минимум две книги из списка \"хочу прочитать\"",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "94d97965-a650-4995-8658-13399cddb543",
@@ -374,6 +369,11 @@
     {
       "id": "2be3a894-bd1a-4575-8cfa-cb45eca4209f",
       "title": "sssssssss",
+      "items": []
+    },
+    {
+      "id": "6a60f800-c1a3-4c9f-a808-77988fee6357",
+      "title": "ssfsf",
       "items": []
     }
   ]

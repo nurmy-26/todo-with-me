@@ -17,6 +17,7 @@
 
 .logo {
   grid-row: span 2;
+  justify-self: self-start;
 }
 .nav {
   justify-self: end;

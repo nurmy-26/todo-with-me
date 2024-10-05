@@ -1,0 +1,101 @@
+:root {
+  /* todo - почистить от неиспользуемых */
+  --mobile-width: 550px;
+  --tablet-width: 768px;
+  --laptop-width: 1024px;
+  --desktop-width: 1280px;
+  --content-width: var(--desktop-width);
+  /* для использования внутри css-переменных */
+  --columns-max: 12;
+  --columns-four: calc(var(--columns-max) / 3);
+  --columns-three: calc(var(--columns-max) / 4);
+  --columns-half: calc(var(--columns-max) / 2);
+
+  --accent-default: #747bff;
+  --accent-default-hover: #646cff;
+  --accent-dark: #74f2ff;
+  --accent-dark-hover: #3fdef0;
+  --accent-warm: #e65b31;
+  --accent-warm-hover: #cf4318;
+  --accent-night: #ffaffe;
+  --accent-night-hover: #f797f5;
+
+  --error-warm: #b10a20;
+  --error-night: #da6e6e;
+
+  --grid-parent-full: repeat(var(--columns-max), 1fr);
+  --grid-child-full: span var(--columns-max);
+  --grid-child-half: span var(--columns-half);
+  --grid-child-third: span var(--columns-four); /* third - треть так как 12/4 */
+  --grid-child-quarter: span var(--columns-three); /* quarter - четверть так как 12/3 */
+
+  --color-text-dark: #213547;
+  --color-light: #f9f9f9;
+  /* --color-light-purple: #d8cfd9; - оставить для менее контрастного варианта*/
+  --color-light-purple: #e8e0e9;
+  --secondary-light: #888;
+  --secondary-dark: rgb(187, 183, 201);
+  --secondary-hover-light: #555;
+  --secondary-hover-dark: rgba(248, 248, 248, 0.8);
+  --secondary-background-light: #f1f1f1;
+  --secondary-background-dark: rgba(248, 248, 248, 0.2);
+  --color-dark-inactive: #2135477c; /* более прозрачная версия #213547 для disabled */
+
+  /* для фона карточек, чтоб просвечивал фон */
+  --card-overlay-light: var(--color-light);
+  --card-overlay-dark: rgba(187, 183, 201, 0.3);
+  --card-overlay-warm: #f9f9f9a1;
+  --card-overlay-night: rgba(155 139 173 / 50%);
+
+  /* фон header, section */
+  --section-overlay-light: rgba(187, 183, 201, 0.6);
+  --section-overlay-dark: rgba(187, 183, 201, 0.2);
+  --section-overlay-warm: rgba(255, 255, 255, 0.5);
+  --section-overlay-night: rgb(71 47 97 / 50%);
+
+  --background-base-light: var(--color-light);
+  --background-base-dark: #4a5b6b;
+  --background-base-warm: #fff8e3;
+  --background-base-night: #716289;
+
+  --body-warm: radial-gradient(500px at 23% 8%, #f8a883c7, transparent),
+    /*   более четкий круг за счет blue в переходе:   */
+      radial-gradient(600px at 83vw 60vh, #f0b5ebbe, transparent),
+    /* radial-gradient(800px at bottom, #f1e28abe, transparent), */
+      var(--background-base-warm);
+  --body-night: radial-gradient(500px at 23% 8%, #b269cfc7, transparent),
+    /* более четкий круг за счет blue в переходе: */
+      radial-gradient(600px at 83vw 60vh, #557ea9be, transparent),
+    radial-gradient(800px at bottom, #5b55a9be, transparent),
+    /* основной цвет фона */ #45375b;
+  --body-light: #f9f9f9;
+  --body-dark: #213547;
+
+  --font-size-base: 1rem;
+  --border-radius-base: 8px;
+  --border-radius-modal: 20px;
+  --border-radius-round: 26px;
+
+  --indent-desktop: 40px;
+  --indent-tablet: 20px;
+  --indent-mobile: 12px;
+  --section-indent: var(
+    --indent-desktop
+  ); /* большой отступ между/внутри секций */
+
+  /* значения основных css-переменных по умолчанию, иначе нечего будет переназначать (theme="warm") */
+  --color-text-primary: var(--color-text-dark);
+  --color-background: var(--color-light);
+  --color-accent: var(--accent-warm);
+  /* более темная версия для hover на акцентные элементы: */
+  --color-accent-hover: var(--accent-warm-hover);
+  --color-error: var(--error-warm);
+  --background-base: var(--background-base-warm);
+  --card-overlay: var(--card-overlay-warm);
+  --body-color: var(--body-warm);
+  --section-overlay: var(--section-overlay-warm);
+  /* для элементов (например, ползунок скролла) */
+  --color-secondary: var(--secondary-light);
+  --color-secondary-hover: var(--secondary-hover-light);
+  --color-secondary-background: var(--secondary-background-light);
+}

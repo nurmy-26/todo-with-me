@@ -43,6 +43,7 @@
 
 .article_list {
   overflow: auto;
+  flex-grow: 1; /* занимает всё доступное пространство */
 }
 /* стили для всей полосы прокрутки */
 .article_list::-webkit-scrollbar {

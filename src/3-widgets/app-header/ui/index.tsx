@@ -5,6 +5,7 @@ import Nav from '../../../6-shared/ui/nav';
 import { routes } from '../../../6-shared/const/routes';
 import style from './style.module.css';
 import useResponsive from '../../../6-shared/lib/useResponsive';
+import LogoWithText from '../../../6-shared/ui/logo/logo-with-text.tsx';
 
 
 type AppHeaderProps = {
@@ -34,7 +35,8 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
   return (
     <header className={cn(style.app_header, extraClass)}>
       <div className={style.overlay}>
-        <Logo size={'xl'} extraClass={style.logo} />
+        {/* <Logo size={'xl'} extraClass={style.logo} /> */}
+        <LogoWithText size={'l'} extraClass={style.logo} />
 
         <Nav navList={navList} extraClass={style.nav} />
         {isMobile ? <ThemeToggler /> : <ThemeSidebar />}

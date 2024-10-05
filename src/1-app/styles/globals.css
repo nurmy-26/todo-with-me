@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light dark;
+
+  font-family: "Euclid Circular A", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  /* font-family: Rubik, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-accent);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  color: var(--color-text-primary);
+  background: var(--body-color);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --section-indent: var(--indent-tablet);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --section-indent: var(--indent-mobile);
+  }
+  html {
+    font-size: 12px;
+  }
+}

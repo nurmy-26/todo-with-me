@@ -1,0 +1,35 @@
+:root[data-theme="dark"] {
+  --color-text-primary: var(--color-light);
+  --color-background: var(--color-text-dark);
+  --color-accent: var(--accent-dark);
+  --color-accent-hover: var(--accent-dark-hover);
+  --color-error: var(--error-night);
+
+  --background-base: var(--background-base-dark);
+  --body-color: var(--color-text-dark);
+  --card-overlay: var(--card-overlay-dark);
+  --section-overlay: var(--section-overlay-dark);
+  --color-secondary: var(--secondary-dark);
+  --color-secondary-hover: var(--secondary-hover-dark);
+  --color-secondary-background: var(--secondary-background-dark);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: var(--color-light);
+    --color-background: var(--color-text-dark);
+    --color-accent: var(--accent-dark);
+    --color-accent-hover: var(--accent-dark-hover);
+    --color-error: var(--error-night);
+
+    --background-base: var(--background-base-dark);
+    --body-color: var(--color-text-dark);
+    --card-overlay: var(--card-overlay-dark);
+    --section-overlay: var(--section-overlay-dark);
+    --color-secondary: var(--secondary-dark);
+    --color-secondary-hover: var(--secondary-hover-dark);
+    --color-secondary-background: var(--secondary-background-dark);
+    color-scheme: dark;
+  }
+}

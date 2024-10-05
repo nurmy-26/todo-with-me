@@ -25,3 +25,10 @@ export const Custom: Story = {
     fill: "var(--color-accent)",
   },
 };
+
+export const WithShadow: Story = {
+  args: {
+    fill: "var(--color-accent)",
+    hasShadow: true
+  },
+};
