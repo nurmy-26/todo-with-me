@@ -1,6 +1,6 @@
 import { MouseEvent, ReactNode, RefObject, useRef, useState } from 'react';
 import cn from 'classnames';
-import { useOutsideClick } from '../../lib/useOutsideClick';
+import { useOutsideClick } from '../../lib/hooks/useOutsideClick';
 import { MenuIcon } from '../icons/menu-icon';
 import Button from '../button';
 import style from './style.module.css';

@@ -1,5 +1,5 @@
 import { useGetTodoLists } from "../../../5-entities";
-import { useSelect } from "../../../6-shared/lib/useSelect";
+import { useSelect } from "../../../6-shared/lib/hooks/useSelect";
 import { TList } from "../../../6-shared/types";
 
 // хук для выбора TodoList по title из списка select

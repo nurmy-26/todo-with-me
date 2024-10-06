@@ -1,8 +1,8 @@
 import { FormEvent } from "react";
 import { AddTodoBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
-import useEscape from "../../../6-shared/lib/useEscape";
-import { useForm } from "../../../6-shared/lib/useForm";
-import { useInputRef } from "../../../6-shared/lib/useInputRef";
+import useEscape from "../../../6-shared/lib/hooks/useEscape";
+import { useForm } from "../../../6-shared/lib/hooks/useForm";
+import { useInputRef } from "../../../6-shared/lib/hooks/useInputRef";
 import Form from "../../../6-shared/ui/form";
 import Input from "../../../6-shared/ui/input";
 import Select from "../../../6-shared/ui/select";

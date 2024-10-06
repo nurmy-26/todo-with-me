@@ -11,6 +11,6 @@ type TNavList = TNavItem[];
 export type NavProps = {
   extraClass?: string;
   navList: TNavList;
-  hasPow?: boolean;
+  hasPaw?: boolean;
   type?: "horizontal" | "vertical";
 };

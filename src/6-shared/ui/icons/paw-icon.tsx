@@ -39,8 +39,8 @@ export const PawIcon = ({ className, fill = 'var(--color-text-primary)', hasShad
       height="16"
       fill={fill}
     >
-      <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
-        <feDropShadow stdDeviation="0 0" in="SourceGraphic" dx="16" dy="-5" flood-color={shadowColor} flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="dropShadow" />
+      <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" colorInterpolationFilters="linearRGB">
+        <feDropShadow stdDeviation="0 0" in="SourceGraphic" dx="16" dy="-5" floodColor={shadowColor} floodOpacity="1" x="0%" y="0%" width="100%" height="100%" result="dropShadow" />
       </filter>
 
       {/* !Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}

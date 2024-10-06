@@ -52,7 +52,7 @@ export const Vertical: Story = {
   },
 };
 
-export const VerticalWithPow: Story = {
+export const VerticalWithPaw: Story = {
   render: (args) => (
     <MemoryRouter>
       <Nav {...args} />
@@ -65,7 +65,7 @@ export const VerticalWithPow: Story = {
       { title: 'Delete', path: routes.delete },
     ],
     type: 'vertical',
-    hasPow: true
+    hasPaw: true
   },
 };
 

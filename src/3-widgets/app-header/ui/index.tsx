@@ -4,7 +4,7 @@ import Logo from '../../../6-shared/ui/logo';
 import Nav from '../../../6-shared/ui/nav';
 import { routes } from '../../../6-shared/const/routes';
 import style from './style.module.css';
-import useResponsive from '../../../6-shared/lib/useResponsive';
+import useResponsive from '../../../6-shared/lib/hooks/useResponsive';
 import LogoWithText from '../../../6-shared/ui/logo/logo-with-text.tsx';
 
 

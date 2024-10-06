@@ -1,6 +1,6 @@
 {
   "settings": {
-    "theme": "dark"
+    "theme": "night"
   },
   "todolists": [
     {
@@ -222,11 +222,6 @@
       "items": []
     },
     {
-      "id": "6a9a3143-f6ed-4645-b506-db86b2c56165",
-      "title": "dsdsd",
-      "items": []
-    },
-    {
       "id": "0694f1b3-5e97-4153-9aa9-0a1ea05c3802",
       "title": "dsdsd",
       "items": []
@@ -374,6 +369,11 @@
     {
       "id": "6a60f800-c1a3-4c9f-a808-77988fee6357",
       "title": "ssfsf",
+      "items": []
+    },
+    {
+      "id": "dd4e6595-00ac-41e8-9171-9e1b4eb175e2",
+      "title": "ккк",
       "items": []
     }
   ]
