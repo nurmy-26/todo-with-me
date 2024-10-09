@@ -4,12 +4,12 @@ import style from './style.module.css';
 import Typography from '../../typography';
 import { PawIcon } from '../../icons/paw-icon';
 
-type LogoWithTextProps = {
+type MainLogoProps = {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   extraClass?: string;
 };
 
-const LogoWithText = ({ size = 'm', extraClass }: LogoWithTextProps) => {
+const MainLogo = ({ size = 'm', extraClass }: MainLogoProps) => {
   return (
     <div className={cn(style.wrapper, extraClass)}>
       <img
@@ -22,15 +22,15 @@ const LogoWithText = ({ size = 'm', extraClass }: LogoWithTextProps) => {
       />
 
       <Typography type={'h1'} extraClass={style.text}>
-        <span>todo</span>
-        <PawIcon className={style.paw} hasShadow />
-        <span>with</span>
-        <PawIcon className={style.paw} hasShadow />
-        <span>me</span>
+        <span className={style.todo}>todo</span>
+        <PawIcon className={cn(style.paw, style.paw_1)} hasShadow />
+        <span className={style.with}>with</span>
+        <PawIcon className={cn(style.paw, style.paw_2)} hasShadow />
+        <span className={style.me}>me</span>
       </Typography>
     </div>
 
   );
 };
 
-export default LogoWithText;
+export default MainLogo;

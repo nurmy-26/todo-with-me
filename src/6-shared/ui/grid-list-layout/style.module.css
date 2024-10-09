@@ -1,7 +1,7 @@
 .wrapper {
-  padding: 16px;
+  padding: var(--16px);
   display: flex;
-  gap: 16px;
+  gap: var(--16px);
   border-radius: var(--border-radius-base);
   background-color: var(--section-overlay);
 }
@@ -9,7 +9,7 @@
 .aside {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--8px);
   border-radius: var(--border-radius-base);
 }
 /* стили кнопок */
@@ -34,7 +34,7 @@
   /* и состоит из стольки же колонок для размещения дочерних элементов  */
   display: grid;
   grid-template-columns: var(--grid-parent-full);
-  gap: 16px;
+  gap: var(--16px);
 }
 
 .list_item {
@@ -45,27 +45,31 @@
   align-self: start;
 }
 
-/* @media screen and (max-width: 1280px) {
+/* 1280px */
+/* @media screen and (max-width: 80rem) {
   .list_item {
     grid-column: var(--grid-child-third);
   }
 } */
 
-@media screen and (max-width: 1024px) {
+/* 1024px */
+@media screen and (max-width: 64rem) {
   .list_item {
     grid-column: var(--grid-child-half);
   }
 }
 
-@media screen and (max-width: 768px) {
+/* 768px */
+@media screen and (max-width: 48rem) {
   .list_item {
     grid-column: var(--grid-child-full);
   }
 }
 
-@media screen and (max-width: 550px) {
+/* 550px */
+@media screen and (max-width: 34.375rem) {
   .wrapper {
-    padding: 12px 0;
+    padding: var(--12px) 0;
     background-color: transparent;
     flex-direction: column;
   }

@@ -1,7 +1,7 @@
 .label {
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: var(--20px);
+  height: var(--20px);
   border-radius: 50%;
 
   cursor: pointer;
@@ -35,8 +35,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: var(--12px);
+  height: var(--12px);
   transform: translate(-50%, -50%);
 }
 

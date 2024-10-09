@@ -9,15 +9,15 @@
 }
 
 .horizontal {
-  gap: 34px;
+  gap: 2rem;
 }
 .vertical {
   flex-direction: column;
-  gap: 4px;
+  gap: var(--4px);
 }
 
 .item {
   display: flex;
-  gap: 4px;
+  gap: var(--4px);
   align-items: center;
 }

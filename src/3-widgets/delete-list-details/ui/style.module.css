@@ -11,7 +11,7 @@
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: var(--8px);
 }
 
 .delete_btn:hover {

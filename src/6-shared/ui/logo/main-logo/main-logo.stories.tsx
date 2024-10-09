@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LogoWithText from ".";
+import MainLogo from ".";
 
 const meta = {
-  title: "UI/LogoWithText",
-  component: LogoWithText,
+  title: "UI/MainLogo",
+  component: MainLogo,
   tags: ["autodocs"],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof LogoWithText>;
+} satisfies Meta<typeof MainLogo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,6 +1,5 @@
 .form {
-  /* todo - разобраться со стилями */
-  max-width: 340px;
+  width: min(100%, 30rem);
 }
 
 .wrapper {
@@ -11,10 +10,10 @@
 
 .btn {
   z-index: 3;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   position: absolute;
-  top: 2px;
+  top: 0.25rem;
   /* изначально кнопка находится в центре */
   left: calc(50% - 18px);
   transition: left 0.3s ease-in-out, transform 0.3s ease-in-out,
@@ -22,8 +21,7 @@
 }
 
 .input {
-  /* margin-left чтобы не наезжать на кнопку, расположенную абсолютно (равен ширине кнопки + отступу) */
-  margin-left: 26px;
+  padding-left: 2.75rem;
   border-radius: var(--border-radius-round);
   opacity: 0;
   visibility: hidden;
@@ -36,7 +34,7 @@
 
 /* кнопка уезжает влево, крутясь и скругляется */
 .wrapper_expanded .btn {
-  left: 0;
+  left: 0.25rem;
   transform: rotate(360deg);
   border-radius: var(--border-radius-round);
 }

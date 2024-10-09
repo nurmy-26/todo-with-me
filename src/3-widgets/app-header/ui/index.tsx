@@ -5,7 +5,8 @@ import Nav from '../../../6-shared/ui/nav';
 import { routes } from '../../../6-shared/const/routes';
 import style from './style.module.css';
 import useResponsive from '../../../6-shared/lib/hooks/useResponsive';
-import LogoWithText from '../../../6-shared/ui/logo/logo-with-text.tsx';
+import MainLogo from '../../../6-shared/ui/logo/main-logo/index.tsx';
+import { Link } from 'react-router-dom';
 
 
 type AppHeaderProps = {
@@ -16,11 +17,11 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
   // todo - передавать 768 ?
   const isMobile = useResponsive(); // isMobile=true для <=550px по умолчанию
 
-  // todo - вынести в константу в shared, когда появится стабильное меню навигации
+  // todo - вынести в константу?, когда появится стабильное меню навигации
   const navList = [
     {
-      title: 'Главная',
-      path: routes.home
+      title: 'Идеи для списка',
+      path: '12345'
     },
     {
       title: '404',
@@ -36,7 +37,9 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
     <header className={cn(style.app_header, extraClass)}>
       <div className={style.overlay}>
         {/* <Logo size={'xl'} extraClass={style.logo} /> */}
-        <LogoWithText size={'l'} extraClass={style.logo} />
+        <Link to={routes.home} className={style.logo}>
+          <MainLogo size={'l'} />
+        </Link>
 
         <Nav navList={navList} extraClass={style.nav} />
         {isMobile ? <ThemeToggler /> : <ThemeSidebar />}

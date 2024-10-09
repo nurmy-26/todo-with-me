@@ -1,0 +1,12 @@
+.digit {
+  font-size: 12rem;
+  color: var(--color-accent);
+  opacity: 0.6;
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .digit {
+    font-size: 8rem;
+  }
+}

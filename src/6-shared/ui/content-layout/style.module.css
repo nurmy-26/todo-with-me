@@ -5,7 +5,8 @@
   margin: auto;
 }
 
-@media screen and (max-width: 1360px) {
+/* 1360px */
+@media screen and (max-width: 85rem) {
   .content {
     padding: var(--section-indent);
   }

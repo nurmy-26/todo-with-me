@@ -1,0 +1,87 @@
+/* todo - навести порядок в стилях и компоненте */
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--8px);
+}
+
+.logo {
+  /* width: 100%; */
+  width: clamp(40px, 7vw, 5rem);
+  object-fit: cover;
+}
+
+/* .xs {
+  width: 1.25rem;
+}
+.s {
+  width: 2.5rem;
+}
+.m {
+  width: 3.15rem;
+}
+.l {
+  width: 5rem;
+}
+.xl {
+  width: 100%;
+} */
+
+.text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  /* gap: var(--8px); */
+  gap: clamp(4px, 0.6vw, 0.5rem);
+
+  /* font-size: 2.7rem !important; */
+  font-size: clamp(20px, 3vw, 2.7rem) !important;
+}
+
+.paw {
+  fill: var(--color-accent);
+  /* width: 1.4rem;
+  height: 1.4rem; */
+  width: clamp(16px, 2.2vw, 1.4rem);
+  height: clamp(16px, 2vw, 1.4rem);
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .logo {
+    width: 5rem;
+  }
+  .text {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "todo todo todo paw-1 paw-1"
+      ". with with with ."
+      "paw-2 paw-2 me me me";
+  }
+  .todo {
+    grid-area: todo;
+    /* justify-self: center; */
+    justify-self: start;
+  }
+  .paw_1 {
+    grid-area: paw-1;
+    justify-self: center;
+  }
+  .with {
+    grid-area: with;
+    justify-self: center;
+  }
+  .paw_2 {
+    grid-area: paw-2;
+    justify-self: center;
+    /* justify-self: end; */
+  }
+  .me {
+    grid-area: me;
+    /* justify-self: end; */
+    justify-self: center;
+  }
+}

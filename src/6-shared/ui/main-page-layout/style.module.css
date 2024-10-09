@@ -1,12 +1,12 @@
 .wrapper {
   display: flex;
-  gap: 16px;
+  gap: var(--16px);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--16px);
 }
 
 .aside {

@@ -18,8 +18,8 @@
     -50%
   ); /* сместит на половину размера modal, чтобы окно встало ровно по центру */
 
-  padding: 40px 60px;
-  width: 720px;
+  padding: 2.5rem 3.75rem;
+  width: 45rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,15 +38,15 @@
 .close_modal {
   z-index: 30;
   position: absolute;
-  top: 20px;
+  top: var(--20px);
 }
 .close_modal svg {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .center .close_modal {
-  right: 20px;
+  right: var(--20px);
 }
 
 /* общие стили боковых модалок */
@@ -59,21 +59,21 @@
 
 /* стили левой модалки */
 .left {
-  padding: 40px 60px 40px 20px;
+  padding: 2.5rem 3.75rem 2.5rem var(--20px);
   left: 0;
 }
 .left .close_modal {
-  right: -20px;
+  right: calc(var(--20px) * -1);
 }
 
 /* стили правой модалки */
 .right {
-  padding: 40px 20px 40px 60px;
+  padding: 2.5rem var(--20px) 2.5rem 3.75rem;
   right: 0;
 }
 .right .close_modal {
   right: auto;
-  left: -20px;
+  left: calc(var(--20px) * -1);
 }
 
 /* полупрозрачная подложка между модалкой и сайтом */
@@ -97,19 +97,22 @@
   background-color: var(--section-overlay);
 }
 
-@media screen and (max-width: 1280px) {
+/* 1280px */
+@media screen and (max-width: 80rem) {
   .aside {
     width: 40vw;
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* 1024px */
+@media screen and (max-width: 64rem) {
   .aside {
     width: 50vw;
   }
 }
 
-@media screen and (max-width: 768px) {
+/* 768px */
+@media screen and (max-width: 48rem) {
   .center {
     width: 85vw;
   }
@@ -117,38 +120,40 @@
     top: 10%;
     width: 100vw;
     height: 80vh;
-    padding: 40px 60px 20px;
+    padding: 2.5rem 3.75rem var(--20px);
   }
   .aside .left {
     align-items: center;
   }
   .aside .close_modal {
     left: auto;
-    top: 12px;
-    right: 12px;
+    top: var(--12px);
+    right: var(--12px);
   }
 }
 
-@media screen and (max-width: 550px) {
+/* 550px */
+@media screen and (max-width: 34.375rem) {
   .aside {
-    padding: 24px 44px;
+    padding: var(--24px) 2.75rem;
   }
   .close_modal svg {
-    width: 24px;
-    height: 24px;
+    width: var(--24px);
+    height: var(--24px);
   }
   .aside .close_modal {
-    top: -12px;
+    top: calc(var(--12px) * -1);
     right: 50%;
     transform: translate(50%);
   }
 }
 
-@media screen and (max-width: 420px) {
+/* 420px */
+@media screen and (max-width: 26.25rem) {
   .center {
     width: 92vw;
   }
   .aside {
-    padding: 20px;
+    padding: var(--20px);
   }
 }

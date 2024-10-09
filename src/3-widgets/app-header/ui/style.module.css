@@ -1,41 +1,47 @@
 .app_header {
-  padding: 30px;
+  padding: 2rem;
   background-color: var(--section-overlay);
 }
 
 .overlay {
-  max-width: 1280px;
+  max-width: var(--content-width);
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-items: end;
   align-items: center;
-  gap: 16px;
+  gap: var(--16px);
 }
 
 .logo {
   grid-row: span 2;
   justify-self: self-start;
 }
+.logo:hover {
+  color: inherit;
+}
 .nav {
   justify-self: end;
 }
 
-@media screen and (max-width: 1360px) {
+/* 1360px */
+@media screen and (max-width: 85rem) {
   .app_header {
-    padding: 30px var(--section-indent);
+    padding: 2rem var(--section-indent);
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* 1280px */
+@media screen and (max-width: 80rem) {
   .app_header {
-    padding: 20px var(--section-indent);
+    padding: var(--20px) var(--section-indent);
   }
 }
 
-@media screen and (max-width: 768px) {
+/* 1024px */
+@media screen and (max-width: 64rem) {
   .overlay {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -47,9 +53,10 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+/* 550px */
+@media screen and (max-width: 34.375rem) {
   .app_header {
-    padding: 12px;
+    padding: var(--12px);
   }
 
   /* todo - бургер-меню для этого разрешения */

@@ -1,10 +1,18 @@
 :root {
-  /* todo - почистить от неиспользуемых */
-  --mobile-width: 550px;
-  --tablet-width: 768px;
-  --laptop-width: 1024px;
-  --desktop-width: 1280px;
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --12px: 0.75rem;
+  --16px: 1rem;
+  --20px: 1.25rem;
+  --24px: 1.5rem;
+  --28px: 1.75rem;
+
+  --mobile-width: 34.375rem; /* 550px */
+  --tablet-width: 48rem; /* 768px */
+  --laptop-width: 64rem; /* 1024px */
+  --desktop-width: 80rem; /* 1280px */
   --content-width: var(--desktop-width);
+
   /* для использования внутри css-переменных */
   --columns-max: 12;
   --columns-four: calc(var(--columns-max) / 3);
@@ -72,13 +80,13 @@
   --body-dark: #213547;
 
   --font-size-base: 1rem;
-  --border-radius-base: 8px;
-  --border-radius-modal: 20px;
-  --border-radius-round: 26px;
+  --border-radius-base: var(--8px);
+  --border-radius-modal: var(--20px);
+  --border-radius-round: var(--28px);
 
-  --indent-desktop: 40px;
-  --indent-tablet: 20px;
-  --indent-mobile: 12px;
+  --indent-desktop: 2.5rem;
+  --indent-tablet: var(--20px);
+  --indent-mobile: var(--12px);
   --section-indent: var(
     --indent-desktop
   ); /* большой отступ между/внутри секций */

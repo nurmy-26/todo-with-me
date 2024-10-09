@@ -1,11 +1,11 @@
 .grid_parent {
   position: relative;
-  padding: 16px 0;
+  padding: var(--16px) 0;
   border-radius: var(--border-radius-base);
 
   display: grid;
   grid-template-columns: var(--grid-parent-full);
-  gap: 16px;
+  gap: var(--16px);
 
   background-color: var(--section-overlay);
 }

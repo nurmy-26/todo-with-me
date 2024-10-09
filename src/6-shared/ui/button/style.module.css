@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: var(--8px);
   border: 1px solid transparent;
   cursor: pointer;
 

@@ -7,19 +7,19 @@
   justify-content: space-between;
 
   border: 2px solid var(--color-text-primary);
-  border-radius: 28px;
+  border-radius: var(--border-radius-round);
   color: var(--color-text-primary);
   background-color: var(--card-overlay);
 }
 .horizontal {
   padding: 4px;
-  width: 68px;
-  height: 28px;
+  width: 4.25rem;
+  height: var(--28px);
 }
 .vertical {
   padding: 2px;
-  width: 28px;
-  height: 68px;
+  width: var(--28px);
+  height: 4.25rem;
   flex-direction: column;
 }
 .wrapper:hover {
@@ -31,8 +31,8 @@
   z-index: 10;
   position: absolute;
 
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 }
 .horizontal .theme_btn {
   top: 2;
@@ -45,10 +45,10 @@
 
 /* светлая тема - кнопка справа / внизу */
 .horizontal .btn_light {
-  left: calc(100% - 24px);
+  left: calc(100% - 1.5rem);
 }
 .vertical .btn_light {
-  top: calc(100% - 24px);
+  top: calc(100% - 1.5rem);
 }
 
 /* темная тема - кнопка слева / вверху */
@@ -60,8 +60,8 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .icon path,

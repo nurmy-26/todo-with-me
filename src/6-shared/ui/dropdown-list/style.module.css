@@ -14,7 +14,7 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  min-width: 240px;
+  min-width: 15rem;
   z-index: 1;
 }
 
@@ -45,8 +45,9 @@
   fill: var(--color-text-dark);
 }
 
-@media screen and (max-width: 550px) {
+/* 550px */
+@media screen and (max-width: 34.375rem) {
   .list {
-    min-width: 120px;
+    min-width: 7.5rem;
   }
 }

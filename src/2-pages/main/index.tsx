@@ -28,8 +28,6 @@ const MainPage = () => {
     <MainPageLayout>
       <ThemeSelector />
       <ThemeToggler />
-      {/* todo - сделать компонент заголовка Title чтоб не задавать стили тут ? */}
-      <Typography type={'h1'} extraClass={style.header}>Тестовая версия</Typography>
 
       <GridListLayout
         data={todolists}
