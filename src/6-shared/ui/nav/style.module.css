@@ -21,3 +21,19 @@
   gap: var(--4px);
   align-items: center;
 }
+
+.link {
+  text-decoration: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.link:hover svg {
+  fill: var(--color-accent);
+}
+.active_link {
+  color: var(--color-accent-hover);
+}
+.active_link svg {
+  fill: var(--color-accent-hover);
+}

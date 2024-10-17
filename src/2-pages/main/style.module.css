@@ -1,6 +1,0 @@
-.header {
-  grid-column: var(--grid-child-full); /* занимает 12 колонок */
-  text-align: left;
-
-  margin-left: var(--16px);
-}

@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-base);
+
+  opacity: 0.8;
+}
+.card {
+  padding: var(--28px);
+  border: 1px solid grey;
+  background-color: var(--card-overlay);
+}
+.modal {
+  height: 100vh;
+}
+.modal .list_container {
+  flex: 1;
+}
+
+.header_container {
+  /* flex: 1; */
+  padding-bottom: var(--16px);
+  border-bottom: 1px dashed grey;
+}
+
+.list_container {
+  margin: var(--20px) 0 var(--12px);
+}
+
+.list_row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  gap: var(--12px);
+  margin-bottom: var(--8px);
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}

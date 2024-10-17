@@ -4,12 +4,13 @@
   --12px: 0.75rem;
   --16px: 1rem;
   --20px: 1.25rem;
+  --22px: 1.375rem;
   --24px: 1.5rem;
   --28px: 1.75rem;
 
   --mobile-width: 34.375rem; /* 550px */
   --tablet-width: 48rem; /* 768px */
-  --laptop-width: 64rem; /* 1024px */
+  --laptop-width: 75rem; /* 1200px */
   --desktop-width: 80rem; /* 1280px */
   --content-width: var(--desktop-width);
 
@@ -30,12 +31,6 @@
 
   --error-warm: #b10a20;
   --error-night: #da6e6e;
-
-  --grid-parent-full: repeat(var(--columns-max), 1fr);
-  --grid-child-full: span var(--columns-max);
-  --grid-child-half: span var(--columns-half);
-  --grid-child-third: span var(--columns-four); /* third - треть так как 12/4 */
-  --grid-child-quarter: span var(--columns-three); /* quarter - четверть так как 12/3 */
 
   --color-text-dark: #213547;
   --color-light: #f9f9f9;
@@ -84,12 +79,7 @@
   --border-radius-modal: var(--20px);
   --border-radius-round: var(--28px);
 
-  --indent-desktop: 2.5rem;
-  --indent-tablet: var(--20px);
-  --indent-mobile: var(--12px);
-  --section-indent: var(
-    --indent-desktop
-  ); /* большой отступ между/внутри секций */
+  --section-indent: 2.5rem; /* большой отступ между/внутри секций */
 
   /* значения основных css-переменных по умолчанию, иначе нечего будет переназначать (theme="warm") */
   --color-text-primary: var(--color-text-dark);

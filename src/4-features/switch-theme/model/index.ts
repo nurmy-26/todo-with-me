@@ -6,9 +6,12 @@ import { useUpdateThemeSetting } from "../lib/useUpdateThemeSetting";
 import { applyThemeAttribute } from "../lib/utils";
 
 export const useTheme = () => {
+  // изначально пытаемся достать тему из LocalStorage
+  const storedTheme = localStorage.getItem("theme") as TTheme;
+  const initialTheme = storedTheme || THEME.LIGHT; // фолбек на случай отсутствия данных (light по умолчанию)
+  const [theme, setTheme] = useState<TTheme>(initialTheme);
   const { theme: serverTheme } = useGetThemeSetting(); // получаем тему с сервера
   const { updateThemeSetting } = useUpdateThemeSetting();
-  const [theme, setTheme] = useState<TTheme>(THEME.WARM); // фолбек на случай отсутствия данных (light по умолчанию)
 
   const privateSwitchTheme = (
     newTheme: TTheme,
@@ -24,9 +27,6 @@ export const useTheme = () => {
   };
 
   useEffect(() => {
-    // изначально пытаемся достать тему из LocalStorage
-    const storedTheme = localStorage.getItem("theme") as TTheme;
-
     // если тема есть в localStorage, используем её
     if (storedTheme) {
       privateSwitchTheme(storedTheme); // не обновляем LS и сервер при загрузке из localStorage
@@ -35,7 +35,7 @@ export const useTheme = () => {
     } else if (serverTheme) {
       privateSwitchTheme(serverTheme, true); // записываем в LS при первой загрузке с сервера
     }
-  }, [serverTheme]);
+  }, [serverTheme, storedTheme]);
 
   // при обновлении в компоненте мы всегда обновляем LS и значение на сервере -> экспортируем отдельную функцию
   const switchTheme = (newTheme: TTheme) => {

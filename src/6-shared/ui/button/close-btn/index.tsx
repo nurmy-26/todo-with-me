@@ -11,6 +11,7 @@ type CloseBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const CloseBtn = ({ extraClass, onClick, ...rest }: CloseBtnProps) => {
   return (
     <Button
+      aria-label={'Закрыть'}
       icon={<XMarkIcon />}
       size={'s'}
       extraClass={extraClass}

@@ -14,6 +14,7 @@ type DeleteListBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const DeleteListBtn = ({ disabled, extraClass, onClick, size = 's', ...rest }: DeleteListBtnProps) => {
   return (
     <Button
+      aria-label={'Удалить список'}
       icon={<TrashIcon />}
       disabled={disabled}
       extraClass={extraClass}

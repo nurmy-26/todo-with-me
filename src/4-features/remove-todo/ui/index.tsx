@@ -22,6 +22,7 @@ const RemoveTodoBtn = ({ itemId, listId, disabled, extraClass, ...rest }: Remove
 
   return (
     <Button
+      aria-label={'Удалить элемент списка'}
       icon={<TrashIcon />}
       disabled={disabled}
       extraClass={cn(style.remove_btn, extraClass)}

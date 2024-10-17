@@ -13,13 +13,13 @@
 }
 .horizontal {
   padding: 4px;
-  width: 4.25rem;
+  width: 4rem;
   height: var(--28px);
 }
 .vertical {
   padding: 2px;
   width: var(--28px);
-  height: 4.25rem;
+  height: 4rem;
   flex-direction: column;
 }
 .wrapper:hover {
@@ -31,8 +31,8 @@
   z-index: 10;
   position: absolute;
 
-  width: 1.375rem;
-  height: 1.375rem;
+  width: var(--22px);
+  height: var(--22px);
 }
 .horizontal .theme_btn {
   top: 2;
@@ -69,4 +69,14 @@ circle {
   fill: currentColor;
   /* fill: none; если обе иконки нужны незаполненными */
   stroke: currentColor;
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .horizontal {
+    height: 2rem;
+  }
+  .vertical {
+    width: 2rem;
+  }
 }

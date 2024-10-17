@@ -11,6 +11,7 @@ const ThemeSelector = () => {
 
   return (
     <Select
+      aria-label={"Выбрать тему"}
       name={'theme'}
       value={serverTheme}
       options={themeList}

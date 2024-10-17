@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { todolistsApi } from "../../6-shared/api/todolists";
 import { settingsApi } from "../../6-shared/api/settings";
+import { todolistsLengthMiddleware } from "../middlewares/todolists-length-middleware";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(todolistsApi.middleware)
-      .concat(settingsApi.middleware),
+      .concat(settingsApi.middleware)
+      .concat(todolistsLengthMiddleware),
 });

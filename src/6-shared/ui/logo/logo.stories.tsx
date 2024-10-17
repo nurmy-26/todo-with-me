@@ -12,37 +12,33 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const withBackground = (StoryComponent: any, context: any) => {
-  let backgroundColor;
-
-  switch (context.name) {
-    case 'Dark':
-      backgroundColor = 'var(--color-text-dark)' || 'black';
-      break;
-    case 'Light':
-      backgroundColor = 'var(--color-light)' || 'white';
-      break;
-    default:
-      backgroundColor = 'transparent'; // или любой другой цвет по умолчанию
-  }
-
-  return (
-    <div style={{ backgroundColor, padding: '20px' }}>
-      <StoryComponent />
-    </div>
-  );
-};
-
 export const Default: Story = {
   args: {},
 };
 
-export const Dark: Story = {
-  args: {},
-  decorators: [withBackground],
-};
+export const BothTypesTogether = () => (
+  <div>
+    <p>Дефолтный вариант</p>
+    <Logo />
 
-export const Light: Story = {
+    <p>isAlwaysCompact: true</p>
+    <Logo isAlwaysCompact />
+  </div>
+);
+
+export const LightDark: Story = {
   args: {},
-  decorators: [withBackground],
+  decorators: [(Story) => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ backgroundColor: 'var(--color-light)', color: 'var(--color-text-dark)', padding: '20px' }}>
+        <p>Light</p>
+        <Story />
+      </div>
+
+      <div style={{ backgroundColor: 'var(--color-text-dark)', color: 'var(--color-light)', padding: '20px' }}>
+        <p>Dark</p>
+        <Story />
+      </div>
+    </div>
+  )]
 };

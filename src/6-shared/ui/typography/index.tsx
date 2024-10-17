@@ -16,7 +16,7 @@ const Typography = ({
     h2: 'h2',
     h3: 'h3',
     text: 'p',
-    // subtitle: 'p'
+    inline: 'span'
   }
 }: TypographyProps) => {
   // если тег должен отличаться от визуального представления, можно прямо его указать (приоритетнее, чем type)

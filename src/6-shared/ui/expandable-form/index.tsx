@@ -107,6 +107,7 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
     <form onSubmit={handleSubmit} className={cn(style.form, extraClass)}>
       <div className={cn(style.wrapper, (isExpanded && style.wrapper_expanded))} ref={wrapperRef as RefObject<HTMLDivElement>}>
         <Button
+          aria-label={'Добавить в список'}
           variant={btnVariant}
           type={'submit'}
           disabled={btnDisabledCondition}

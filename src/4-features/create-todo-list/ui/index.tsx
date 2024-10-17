@@ -16,6 +16,7 @@ type TodoListCreateBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const TodoListCreateBtn = ({ disabled, isLoading, extraClass, onClick, withText, variant, ...rest }: TodoListCreateBtnProps) => {
   return (
     <Button
+      aria-label={'Создать список'}
       icon={isLoading ? <LoadingIcon /> : <ListIcon />}
       disabled={disabled}
       extraClass={extraClass}

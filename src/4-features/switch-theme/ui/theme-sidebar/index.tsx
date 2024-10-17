@@ -22,6 +22,7 @@ const ThemeSidebar = ({ type = 'horizontal' }: ThemeSidebarProps) => {
 
           <label className={style.label}>
             <input
+              aria-label={`Включить ${theme}-тему`}
               className={style.radio}
               type="radio"
               name={'theme'}

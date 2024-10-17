@@ -6,6 +6,7 @@ import { TItem, TList } from '../../../6-shared/types';
 import { routes } from '../../../6-shared/const/routes';
 import Typography from '../../../6-shared/ui/typography';
 import DropdownList from '../../../6-shared/ui/dropdown-list';
+import SkeletonLoaderCard from './skeleton-loader-card';
 import TodoList from './todo-list';
 import TodoTitle from './todo-title';
 import style from './style.module.css';
@@ -24,7 +25,7 @@ const TodoCard = ({
 }: TodoCardProps) => {
   const location = useLocation();
   const { id } = useParams(); // извлекаем id из url
-  const { data, isLoading } = useGetTodoLists();
+  const { data, isLoading, isError } = useGetTodoLists();
 
   // для модалки и отдельной страницы - загружаем инфо карточки из общей базы по id (полученному из url)
   const loadedListInfo: TList = data.find((item: TItem) => item.id === id);
@@ -32,10 +33,10 @@ const TodoCard = ({
   const list = type === 'card' ? listInfo : loadedListInfo;
 
   if (isLoading) {
-    return <Typography>Loading...</Typography>;
+    return <SkeletonLoaderCard type={type} />;
   }
 
-  if (!list) {
+  if (isError || !list) {
     return <Typography>Error!</Typography>
   }
 
@@ -49,6 +50,7 @@ const TodoCard = ({
       <DeleteListBtn size={'m'} />
     </Link>,
     // todo - сюда могут добавиться и другие
+    // добавить фичу "Редактировать список"
   ]
 
 

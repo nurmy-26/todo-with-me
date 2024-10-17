@@ -24,45 +24,27 @@
 }
 
 .list {
+  width: 100%;
   list-style: none;
   padding: 0;
   margin: 0;
 
-  /* список занимает всё пространство родительской сетки */
-  grid-column: var(--grid-child-full);
-
-  /* и состоит из стольки же колонок для размещения дочерних элементов  */
   display: grid;
-  grid-template-columns: var(--grid-parent-full);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--16px);
 }
 
-.list_item {
-  /* каждый элемент списка занимает четверть от общего числа колонок и прижат к верхней части*/
-  /* grid-column: var(--grid-child-quarter); */
-  /* todo - определиться, сколько будет занимать (сейчас - треть) */
-  grid-column: var(--grid-child-third);
-  align-self: start;
-}
-
 /* 1280px */
-/* @media screen and (max-width: 80rem) {
-  .list_item {
-    grid-column: var(--grid-child-third);
+@media screen and (max-width: 80rem) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
   }
-} */
+}
 
 /* 1024px */
 @media screen and (max-width: 64rem) {
-  .list_item {
-    grid-column: var(--grid-child-half);
-  }
-}
-
-/* 768px */
-@media screen and (max-width: 48rem) {
-  .list_item {
-    grid-column: var(--grid-child-full);
+  .list {
+    grid-template-columns: 1fr;
   }
 }
 

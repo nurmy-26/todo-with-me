@@ -1,0 +1,21 @@
+.form {
+  width: 100%;
+}
+
+.text {
+  text-align: center;
+  line-height: 1.5;
+  text-wrap: balance; /* для гармоничного переноса текста */
+}
+
+.title {
+  color: var(--color-accent);
+}
+
+.buttons {
+  margin-top: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  gap: var(--8px);
+}

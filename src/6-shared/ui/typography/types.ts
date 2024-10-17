@@ -1,6 +1,6 @@
 import { ElementType, ReactNode } from "react";
 
-export type TType = "h1" | "h2" | "h3" | "text";
+export type TType = "h1" | "h2" | "h3" | "text" | "inline";
 
 export type TypographyProps = {
   hasMarginBottom?: boolean;

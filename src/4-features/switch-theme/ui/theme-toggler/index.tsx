@@ -23,6 +23,7 @@ const ThemeToggler = ({ type = 'horizontal' }: ThemeTogglerProps) => {
       onClick={toggleTheme}
     >
       <Button
+        aria-label={'Переключатель темы'}
         size={'s'}
         shape={'rounded'}
         variant={'primary'}

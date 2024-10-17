@@ -42,6 +42,7 @@ const ItemForm = () => {
   return (
     <Form onSubmit={handleAddToList} title={'Добавление в список'}>
       <Select
+        aria-label={'Выбрать список для добавления элементов'}
         name='list-name'
         value={selectedValue}
         options={valueList}

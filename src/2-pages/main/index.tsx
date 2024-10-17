@@ -1,12 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
-import { TodoCard } from '../../3-widgets';
+import { SkeletonLoaderCard, TodoCard } from '../../3-widgets';
 import { AddTodoBtn, ThemeSelector, ThemeToggler, TodoListCreateBtn } from '../../4-features';
 import { useGetTodoLists } from '../../5-entities';
 import { routes } from '../../6-shared/const/routes';
 import GridListLayout from '../../6-shared/ui/grid-list-layout';
-import Typography from '../../6-shared/ui/typography';
 import { TList } from '../../6-shared/types';
-import style from './style.module.css';
 import MainPageLayout from '../../6-shared/ui/main-page-layout';
 
 
@@ -14,9 +12,15 @@ const MainPage = () => {
   const { data: todolists, isLoading } = useGetTodoLists();
   const location = useLocation();
 
-  if (isLoading) {
-    return <Typography>Loading...</Typography>
-  }
+  // сколько рендерить заглушек для карточек во время загрузки 
+  // в идеале - фактическое количество; минимум 3, максимум 10 т.к. больше всё равно не видно
+  const storedListsLength = Number(localStorage.getItem("todolists-length"));
+  const defaultSkeletonCards = 3;
+  const maxSkeletonCards = 10;
+  const skeletonCards = storedListsLength !== null ?
+    (storedListsLength >= maxSkeletonCards ?
+      maxSkeletonCards : storedListsLength
+    ) : defaultSkeletonCards;
 
   const renderTodoList = (list: TList) => {
     return (
@@ -30,6 +34,8 @@ const MainPage = () => {
       <ThemeToggler />
 
       <GridListLayout
+        isLoading={isLoading}
+        skeletonLoader={{ component: <SkeletonLoaderCard />, count: skeletonCards }}
         data={todolists}
         renderItem={renderTodoList}
         // todo - сделать из внутренностей этой секции виджет

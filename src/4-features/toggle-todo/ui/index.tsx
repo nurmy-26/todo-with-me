@@ -50,6 +50,7 @@ const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTo
   return (
     <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>
       <input
+        aria-label={(isDone ? 'Убрать' : 'Поставить') + 'галочку'}
         className={style.checkbox}
         type="checkbox"
         name={id}

@@ -16,6 +16,7 @@ type AddTodoBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, variant, ...rest }: AddTodoBtnProps) => {
   return (
     <Button
+      aria-label={'Добавить в список'}
       icon={isLoading ? <LoadingIcon /> : <PlusIcon />}
       disabled={disabled}
       extraClass={extraClass}
