@@ -1,12 +1,11 @@
-.app_header {
-  margin: 0 auto;
-  padding: 2rem 0;
+.header_overlay {
   background-color: var(--section-overlay);
 }
 
-.overlay {
+.header_grid {
   max-width: var(--content-width);
   margin: 0 auto;
+  padding: 2rem 0;
 
   display: grid;
   grid-template-columns: 420px 1fr;
@@ -29,20 +28,15 @@
 
 /* 1440px */
 @media screen and (max-width: 90rem) {
-  .overlay {
-    max-width: 75rem;
-  }
-  .app_header {
+  .header_grid {
     padding: 2rem var(--section-indent);
   }
 }
 
 /* 1024px */
 @media screen and (max-width: 64rem) {
-  .app_header {
+  .header_grid {
     padding: var(--20px) var(--section-indent);
-  }
-  .overlay {
     grid-template-columns: 270px 1fr;
     grid-template-areas:
       "logo theme"
@@ -55,18 +49,16 @@
 
 /* 768px */
 @media screen and (max-width: 48rem) {
-  .overlay {
+  .header_grid {
     grid-template-columns: 170px 1fr;
   }
 }
 
 /* 550px */
 @media screen and (max-width: 34.375rem) {
-  .overlay {
-    grid-template-columns: 140px 1fr;
-  }
-  .app_header {
+  .header_grid {
     padding: var(--12px);
+    grid-template-columns: 140px 1fr;
   }
 
   /* todo - бургер-меню для этого разрешения */

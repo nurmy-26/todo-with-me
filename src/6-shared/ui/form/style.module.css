@@ -27,13 +27,7 @@
 }
 
 .form button {
-  width: 60%;
+  width: fit-content;
+  max-width: 85%;
   justify-self: center;
-}
-
-/* 1440px */
-@media screen and (max-width: 90rem) {
-  .form button {
-    width: 85%;
-  }
 }

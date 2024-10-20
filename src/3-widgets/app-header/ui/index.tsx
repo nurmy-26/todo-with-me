@@ -32,8 +32,8 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
   ]
 
   return (
-    <header className={cn(style.app_header, extraClass)}>
-      <div className={style.overlay}>
+    <header className={cn(style.header_overlay, extraClass)}>
+      <div className={style.header_grid}>
         <Link to={routes.home} className={style.logo}>
           <Logo />
         </Link>

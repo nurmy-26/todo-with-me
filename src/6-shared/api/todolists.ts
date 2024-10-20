@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { TList } from "../types";
 
 // RTK-query
 // создали редьюсер todolistsApi с доп-возможностями (свои fetch писать не нужно)
@@ -12,16 +13,15 @@ export const todolistsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
   endpoints: (build) => ({
     // запрос на получение
-    getTodoLists: build.query({
+    getTodoLists: build.query<TList[], string>({
       // что добавить к baseUrl (можно писать со слешем или без - разницы нет)
       // query: () => 'todolist',
       query: (limit = "") => `todolists?${limit && `_limit=${limit}`}`,
-      // указываем, с чем работаем (со списком сущностей TodoList) и добавляем уникальный id:
+      // указываем, с чем работаем (со списком сущностей TodoList) и уникальным id:
       providesTags: (result) =>
-        // если результат есть - вернем массив со всеми эл-ми результата
         result
           ? [
-              ...result.map(({ id }) => ({ type: "TodoLists" as const, id })),
+              ...result.map(({ id }) => ({ type: "TodoLists", id } as const)),
               { type: "TodoLists", id: "LIST" },
             ]
           : [{ type: "TodoLists", id: "LIST" }],
@@ -35,7 +35,7 @@ export const todolistsApi = createApi({
         method: "POST",
         body,
       }),
-      // указываем, что при добавлении меняется этот список сущностей TodoList
+      // указываем, что при добавлении меняется список сущностей TodoList (данные кеша становятся неактуальными)
       invalidatesTags: [{ type: "TodoLists", id: "LIST" }],
     }),
 
@@ -47,20 +47,19 @@ export const todolistsApi = createApi({
 
     // запрос на обновление списка
     updateTodoList: build.mutation({
-      query: ({ listId, ...updatedList }) => ({
-        url: `todolists/${listId}`,
+      query: ({ id, ...updatedList }) => ({
+        url: `todolists/${id}`,
         method: "PUT",
         body: updatedList,
       }),
-      onQueryStarted({ listId, ...updatedList }, { dispatch, queryFulfilled }) {
+      onQueryStarted({ id, ...updatedList }, { dispatch, queryFulfilled }) {
         const patchResult = dispatch(
-          todolistsApi.util.updateQueryData("getTodoList", listId, (draft) => {
+          todolistsApi.util.updateQueryData("getTodoList", id, (draft) => {
             Object.assign(draft, updatedList);
           })
         );
         queryFulfilled.catch(patchResult.undo);
       },
-      // указываем, что при добавлении меняется этот список сущностей TodoList
       invalidatesTags: (result, error, { id }) => [{ type: "TodoLists", id }],
     }),
 

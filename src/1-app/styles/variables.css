@@ -61,12 +61,12 @@
   --background-base-warm: #fff8e3;
   --background-base-night: #716289;
 
-  --body-warm: radial-gradient(500px at 23% 8%, #f8a883c7, transparent),
+  --body-warm: radial-gradient(500px at 23vw 44vh, #f8a883c7, transparent),
     /*   более четкий круг за счет blue в переходе:   */
       radial-gradient(600px at 83vw 60vh, #f0b5ebbe, transparent),
     /* radial-gradient(800px at bottom, #f1e28abe, transparent), */
       var(--background-base-warm);
-  --body-night: radial-gradient(500px at 23% 8%, #b269cfc7, transparent),
+  --body-night: radial-gradient(500px at 23vw 44vh, #b269cfc7, transparent),
     /* более четкий круг за счет blue в переходе: */
       radial-gradient(600px at 83vw 60vh, #557ea9be, transparent),
     radial-gradient(800px at bottom, #5b55a9be, transparent),
