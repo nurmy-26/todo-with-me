@@ -41,7 +41,7 @@ export const CheckIcon = ({ className, fill = 'var(--color-text-dark)', onClick,
     viewBox: "0 0 448 512"
   }
 
-  const xmarkType = {
+  const checkboxType = {
     'white-circle': whiteCircle,
     'black-circle': blackCircle,
     'white-rectangle': whiteRectangle,
@@ -56,12 +56,12 @@ export const CheckIcon = ({ className, fill = 'var(--color-text-dark)', onClick,
       className={className}
       onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={xmarkType[type].viewBox}
+      viewBox={checkboxType[type].viewBox}
       width="20"
       height="20"
       fill={fill}
     >
-      {xmarkType[type].path}
+      {checkboxType[type].path}
     </svg>
   )
 }

@@ -26,7 +26,7 @@ const RemoveTodoBtn = ({ itemId, listId, disabled, extraClass, ...rest }: Remove
       icon={<TrashIcon />}
       disabled={disabled}
       extraClass={cn(style.remove_btn, extraClass)}
-      size={'s'}
+      size={'xs'}
       variant={'tertiary'}
       onClick={(event: FormEvent<Element>) => handleRemove(event, listId, itemId)}
       {...rest}

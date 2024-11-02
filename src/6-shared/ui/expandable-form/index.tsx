@@ -7,7 +7,6 @@ import { useInputRef } from '../../lib/hooks/useInputRef';
 import useEscape from '../../lib/hooks/useEscape';
 import useCombinedRefs from '../../lib/hooks/useCombinedRefs';
 import { useOutsideClick } from '../../lib/hooks/useOutsideClick';
-import Input from '../input';
 import Button from '../button';
 import style from './style.module.css';
 
@@ -112,12 +111,12 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
           type={'submit'}
           disabled={btnDisabledCondition}
           icon={icon}
-          size={'s'}
+          size={'xs'}
           extraClass={style.btn}
         />
 
-        <Input
-          extraClass={style.input}
+        <input
+          className={style.input}
           name={name}
           placeholder={placeholder}
           value={inputValue}

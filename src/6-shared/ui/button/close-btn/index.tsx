@@ -13,7 +13,7 @@ const CloseBtn = ({ extraClass, onClick, ...rest }: CloseBtnProps) => {
     <Button
       aria-label={'Закрыть'}
       icon={<XMarkIcon />}
-      size={'s'}
+      size={'xs'}
       extraClass={extraClass}
       onClick={onClick}
       {...rest}

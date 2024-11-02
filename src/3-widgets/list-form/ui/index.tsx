@@ -39,6 +39,7 @@ const ListForm = () => {
   return (
     <Form onSubmit={handleCreateList} title={'Создание нового списка'}>
       <Input
+        shape={'line'}
         name='list-name'
         placeholder="Придумайте название списка..."
         value={values['list-name']}

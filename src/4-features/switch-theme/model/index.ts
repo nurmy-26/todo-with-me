@@ -8,7 +8,7 @@ import { applyThemeAttribute } from "../lib/utils";
 export const useTheme = () => {
   // изначально пытаемся достать тему из LocalStorage
   const storedTheme = localStorage.getItem("theme") as TTheme;
-  const initialTheme = storedTheme || THEME.LIGHT; // фолбек на случай отсутствия данных (light по умолчанию)
+  const initialTheme = storedTheme || THEME.WARM; // фолбек на случай отсутствия данных (warm по умолчанию)
   const [theme, setTheme] = useState<TTheme>(initialTheme);
   const { theme: serverTheme } = useGetThemeSetting(); // получаем тему с сервера
   const { updateThemeSetting } = useUpdateThemeSetting();

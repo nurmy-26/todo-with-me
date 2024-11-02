@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FormEvent } from 'react';
 import Button from '../../../../6-shared/ui/button';
 import { LoadingIcon } from '../../../../6-shared/ui/icons/loading-icon';
-import { PlusIcon } from '../../../../6-shared/ui/icons/plus-icon';
+import { ListIcon } from '../../../../6-shared/ui/icons/list-icon';
 
 
 type AddTodoBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -13,11 +13,12 @@ type AddTodoBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'tertiary';
 };
 
+// todo - удалить этот ui (будет не нужен, так как уже есть AddTodoForm)
 const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, variant, ...rest }: AddTodoBtnProps) => {
   return (
     <Button
       aria-label={'Добавить в список'}
-      icon={isLoading ? <LoadingIcon /> : <PlusIcon />}
+      icon={isLoading ? <LoadingIcon /> : <ListIcon />}
       disabled={disabled}
       extraClass={extraClass}
       onClick={onClick}

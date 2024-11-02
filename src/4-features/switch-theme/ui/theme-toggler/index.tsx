@@ -24,7 +24,7 @@ const ThemeToggler = ({ type = 'horizontal' }: ThemeTogglerProps) => {
     >
       <Button
         aria-label={'Переключатель темы'}
-        size={'s'}
+        size={'xs'}
         shape={'rounded'}
         variant={'primary'}
         extraClass={cn(style.theme_btn, (isLight ? style.btn_light : style.btn_dark))}

@@ -1,5 +1,5 @@
 import { Route, Routes, useRoutes } from 'react-router-dom';
-import { modalRoutesConfig, routesConfig } from './routes-config';
+import { routesConfig } from './routes-config';
 import { useRouterLocation } from '../../6-shared/lib/hooks/useRouterLocation';
 import Modal from '../../6-shared/ui/modal';
 import { routes } from '../../6-shared/const/routes';

@@ -18,17 +18,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    name: 'list-name',
-    placeholder: "Придумайте название списка..."
+    name: 'search',
+    placeholder: "Поиск"
   },
 };
 
-export const InFlexDiv: Story = {
+export const LongString: Story = {
   args: {
-    name: 'list-name',
-    placeholder: "Придумайте название списка..."
+    name: 'list-title',
+    placeholder: "Введите название списка..."
   },
-  decorators: (Story) =>
-    <div style={{ width: '800px', display: 'flex' }}><Story /></div>
+};
 
+export const WithError: Story = {
+  args: {
+    name: 'search',
+    placeholder: "Поиск",
+    error: "Поиск не выполнен!"
+  },
 };

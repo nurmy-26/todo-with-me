@@ -99,7 +99,7 @@
 /* 550px */
 @media screen and (max-width: 34.375rem) {
   .adaptive {
-    width: 68px;
+    width: 4.25rem; /*68px*/
     display: grid;
     grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);

@@ -18,15 +18,15 @@ const AppHeader = ({ extraClass }: AppHeaderProps) => {
   // todo - вынести в константу?, если вообще  будет стабильное меню навигации
   const navList = [
     {
-      title: 'Главная',
+      title: 'Тут',
       path: '/'
     },
     {
-      title: 'Идеи для списка',
+      title: 'Возможно будет',
       path: '12345'
     },
     {
-      title: 'Настройки',
+      title: 'Навигация',
       path: '12345'
     },
   ]

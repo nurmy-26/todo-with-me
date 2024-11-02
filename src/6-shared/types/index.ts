@@ -12,6 +12,7 @@ export type TItem = {
 
 export type TList = {
   id: string;
+  creationDate: Date;
   title: string;
   // color
   items: TItem[];
@@ -42,8 +43,7 @@ export type TListItemProps = {
 
 type TQueryOptions = {
   skip?: boolean;
-  selectFromResult?: (result: any) => any;
-  [key: string]: any;
+  selectFromResult?: (result: any) => any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
 export type TQueryConfig = {

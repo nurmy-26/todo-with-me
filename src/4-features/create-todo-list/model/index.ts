@@ -10,7 +10,7 @@ export const useCreateTodoList = () => {
     // формируем новый список (title будем получать из инпута)
     const newList: TList = {
       id: uuidv4(),
-      // title: listValues["list-name"], - пример
+      creationDate: new Date(),
       title: listTitle,
       items: [],
     };

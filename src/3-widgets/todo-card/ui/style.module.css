@@ -41,6 +41,12 @@
   border-bottom: 1px dashed var(--color-text-dark);
 }
 
+.date {
+  text-align: right;
+  font-style: italic;
+  opacity: 0.7;
+}
+
 .article_list {
   overflow: auto;
   flex-grow: 1; /* занимает всё доступное пространство */

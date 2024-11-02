@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FormEvent } from 'react';
 import Button from '../../../6-shared/ui/button';
-import { ListIcon } from '../../../6-shared/ui/icons/list-icon';
+import { PlusIcon } from '../../../6-shared/ui/icons/plus-icon';
 import { LoadingIcon } from '../../../6-shared/ui/icons/loading-icon';
 
 
@@ -17,7 +17,7 @@ const TodoListCreateBtn = ({ disabled, isLoading, extraClass, onClick, withText,
   return (
     <Button
       aria-label={'Создать список'}
-      icon={isLoading ? <LoadingIcon /> : <ListIcon />}
+      icon={isLoading ? <LoadingIcon /> : <PlusIcon />}
       disabled={disabled}
       extraClass={extraClass}
       onClick={onClick}

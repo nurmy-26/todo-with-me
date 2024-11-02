@@ -11,3 +11,10 @@
     padding: var(--section-indent);
   }
 }
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .content {
+    padding: var(--section-indent) 0;
+  }
+}

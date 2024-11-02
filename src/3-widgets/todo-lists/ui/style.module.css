@@ -1,0 +1,71 @@
+.control_btn {
+  position: absolute;
+  top: 3rem;
+  left: -4rem;
+
+  transition: top 0.6s ease-in-out;
+}
+
+.control_btn svg {
+  fill: var(--color-text-primary);
+}
+
+.control_btn_closed svg {
+  fill: var(--color-secondary);
+}
+
+.control_bar_opened {
+  max-height: 150px;
+  padding: var(--16px);
+  opacity: 1;
+
+  /* при открытии сначала плавно увеличиваются max-height и паддинги  */
+  /* затем (через 0.35s от старта анимации) - opacity, чтоб содержимое плавно проявилось */
+  transition: max-height 0.6s ease-in-out, padding 0.35s ease-in-out,
+    opacity 0.35s linear 0.35s;
+}
+.control_bar_closed {
+  height: auto;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  /* при сворачивании сначала плавно уменьшаются max-height и вертикальные паддинги  */
+  /* затем (через 0.35s от старта анимации) - opacity, чтоб содержимое плавно потухло */
+  /* и в конце (чтоб верстка не дергалась) пропадают горизониальные паддинги */
+  transition: max-height 0.6s ease-in-out, padding-top 0.6s ease-in-out,
+    padding-bottom 0.6s ease-in-out, padding-left 0.35s ease-in-out 0.6s,
+    padding-right 0.35s ease-in-out 0.6s, opacity 0.35s linear 0.35s;
+}
+
+/* 1440px */
+@media screen and (max-width: 90rem) {
+  .control_btn {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    transform: translateX(50%);
+  }
+  .control_btn_opened {
+    top: 8rem;
+  }
+}
+
+/* 768px */
+@media screen and (max-width: 48rem) {
+  .control_btn {
+    top: 0;
+  }
+
+  .control_btn_opened {
+    top: 8rem;
+  }
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .control_btn_opened {
+    top: 2.25rem;
+  }
+}

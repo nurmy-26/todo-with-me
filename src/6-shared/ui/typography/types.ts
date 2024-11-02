@@ -8,6 +8,7 @@ export type TypographyProps = {
   children: ReactNode;
   extraClass?: string;
   marginBottom?: string;
+  isError?: boolean;
   tag?: ElementType | string;
   type?: TType;
   typeArray?: {

@@ -1,10 +1,7 @@
 import { ChangeEvent } from 'react';
-import cn from 'classnames';
-import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
 import { TItem } from '../../../6-shared/types';
+import Checkbox from '../../../6-shared/ui/input/checkbox';
 import { useToggleTodo } from '../model';
-import style from './style.module.css';
-import { PawIcon } from '../../../6-shared/ui/icons/paw-icon';
 
 
 type ToggleTodoCheckboxProps = {
@@ -23,44 +20,17 @@ const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTo
     toggleTodo(listId, itemId)
   }
 
-  // пустой чекбокс (дефолтный или в виде лапки)
-  const emptyCheckbox = type === 'default' ?
-    <CheckIcon fill={'var(--color-text-primary'} />
-    :
-    <PawIcon className={style.paw} fill={'var(--color-text-primary'} />
-
-  // отмеченный чекбокс
-  const coloredCheckbox = type === 'default' ?
-    // квадратик чекбокса с цветной галкой внутри
-    (
-      <div className={style.svg_checkbox}>
-        <CheckIcon fill={'var(--color-text-primary'} />
-        <CheckIcon className={style.svg_check} type={'check'} fill={'var(--color-accent'} />
-      </div>
-    )
-    :
-    // лапка
-    <PawIcon className={style.paw} fill={'var(--color-accent'} />
-
-  // иконка отображается в зависимости от статуса isDone
-  const checkboxIcon = isDone
-    ? coloredCheckbox
-    : emptyCheckbox
+  // todo - добавить сюда назначение type из Settings
 
   return (
-    <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>
-      <input
-        aria-label={(isDone ? 'Убрать' : 'Поставить') + 'галочку'}
-        className={style.checkbox}
-        type="checkbox"
-        name={id}
-        value={title}
-        checked={isDone}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
-      />
-
-      {checkboxIcon}
-    </label>
+    <Checkbox
+      extraClass={extraClass}
+      type={type}
+      name={id}
+      value={title}
+      isChecked={isDone}
+      handleChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
+    />
   );
 };
 

@@ -10,6 +10,7 @@ import SkeletonLoaderCard from './skeleton-loader-card';
 import TodoList from './todo-list';
 import TodoTitle from './todo-title';
 import style from './style.module.css';
+import { getFormattedDate } from '../lib/getFormattedDate';
 
 
 type TodoCardProps = {
@@ -40,6 +41,9 @@ const TodoCard = ({
     return <Typography>Error!</Typography>
   }
 
+  // todo - менять тип формата из настроек
+  const creationDate = getFormattedDate(list.creationDate, 'short'); // "narrow" | "short" | "long"
+
   // пункты выпадающего списка
   const dropdownMenuComponents = [
     <Link
@@ -69,6 +73,8 @@ const TodoCard = ({
           <DropdownList list={dropdownMenuComponents} />
         </div>
       </header>
+
+      {type !== 'card' && <Typography extraClass={style.date}>{creationDate}</Typography>}
 
       <TodoList list={list} type={type} extraClass={style.article_list} />
 

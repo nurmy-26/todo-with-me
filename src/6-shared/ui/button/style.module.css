@@ -15,14 +15,17 @@
   fill: var(--color-text-dark);
 }
 
-.s {
+.xs {
   padding: 0.2rem 0.2rem;
+}
+.s {
+  padding: 0.2rem 0.6rem;
 }
 .m {
   padding: 0.6rem 1.2rem;
 }
 
-.default_shape {
+.default {
   border-radius: var(--border-radius-base);
 }
 .rounded {
@@ -30,11 +33,11 @@
 }
 
 .primary {
-  color: var(--color-light);
+  color: var(--color-background);
   background-color: var(--color-accent);
 }
 .primary svg {
-  fill: var(--color-light);
+  fill: var(--color-background);
 }
 .primary:hover {
   background-color: var(--color-accent-hover);

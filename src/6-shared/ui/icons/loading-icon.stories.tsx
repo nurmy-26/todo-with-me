@@ -17,14 +17,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    className: "",
-    fill: "#000000",
-    onClick: undefined,
   },
 };
 
-export const WithFillColor: Story = {
+export const Custom: Story = {
   args: {
-    fill: "#ff0000",
+    fill: "var(--color-accent)",
   },
 };

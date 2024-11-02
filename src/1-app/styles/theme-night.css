@@ -1,5 +1,5 @@
 :root[data-theme="night"] {
-  --color-text-primary: var(--color-light-purple);
+  --color-text-primary: var(--color-light);
   --color-background: var(--color-text-dark);
   --color-accent: var(--accent-night);
   --color-accent-hover: var(--accent-night-hover);

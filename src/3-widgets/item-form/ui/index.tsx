@@ -52,6 +52,7 @@ const ItemForm = () => {
 
       <Input
         ref={titleRef}
+        shape={'line'}
         name='list-item-title'
         placeholder="Что вы хотите добавить в список?.."
         value={values['list-item-title']}

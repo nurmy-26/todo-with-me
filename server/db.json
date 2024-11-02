@@ -1,16 +1,17 @@
 {
   "settings": {
-    "theme": "warm"
+    "theme": "light"
   },
   "todolists": [
     {
-      "id": "8958f074-ec17-461b-ac81-4a1743ad37a2",
+      "listId": "8958f074-ec17-461b-ac81-4a1743ad37a2",
+      "creationDate": "2024-06-10T10:55:18.086Z",
       "title": "Список дел для идеального выходного",
       "items": [
         {
           "id": "3894e2f8-ca00-4d1b-a10b-e759ab73aa5a",
           "title": "Проснуться без будильника",
-          "isDone": true
+          "isDone": false
         },
         {
           "id": "bf91a774-bd8f-4f97-9953-8f0e2158d2a4",
@@ -127,10 +128,12 @@
           "title": "aaaaaaaaaaaaaaaa",
           "isDone": false
         }
-      ]
+      ],
+      "id": "8958f074-ec17-461b-ac81-4a1743ad37a2"
     },
     {
       "listId": "54763742-e213-45cb-a45a-f3996604976d",
+      "creationDate": "2024-07-12T10:55:18.086Z",
       "title": "Цели на ближайший месяц",
       "items": [
         {
@@ -161,7 +164,7 @@
         {
           "id": "72241dd9-9ba4-4c4e-860c-74ddba832ff2",
           "title": "dfsdgdg",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "6c08776f-6459-4574-8d80-241613f46eba",
@@ -208,6 +211,7 @@
     },
     {
       "id": "472b0f08-7b93-47a1-bcdc-6159403d394b",
+      "creationDate": "2024-07-21T10:55:18.086Z",
       "title": "Заполнить дневник благодарности",
       "items": [
         {
@@ -234,22 +238,19 @@
     },
     {
       "id": "b9dfab65-053f-4340-ba16-c98006ebbd96",
+      "creationDate": "2024-07-25T10:55:18.086Z",
       "title": "ddddddddddddddddddddddddddddddddddd  dddddddd ddddddddddddddddddddddddddd",
       "items": []
     },
     {
-      "id": "526f0b5f-d530-490a-a315-aaf3c9e59808",
-      "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "items": []
-    },
-    {
       "listId": "f8b4b8a0-9a4b-4481-9dc1-a477fc7ffa1d",
+      "creationDate": "2024-07-28T10:55:18.086Z",
       "title": "aaaaaaaa",
       "items": [
         {
           "id": "47002b9d-afb7-4c29-97d7-220bfa6517a7",
           "title": "аыаы",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "ba0489e8-ff42-42b9-9b48-03ede0be8c50",
@@ -262,11 +263,6 @@
           "isDone": false
         },
         {
-          "id": "0b069250-9ca7-4ecd-92b6-f591d43dd7b8",
-          "title": "ыыааа",
-          "isDone": false
-        },
-        {
           "id": "ee85b976-d8b4-4e9d-8818-1486b9768bcb",
           "title": "dfsdfsdf",
           "isDone": false
@@ -274,244 +270,220 @@
         {
           "id": "73c22bf1-7509-4519-b6be-832b75075634",
           "title": "afasfsf",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "ecfa7e1f-2037-491a-9a90-f0ec3fe1e5ce",
           "title": "ffffffff",
+          "isDone": false
+        },
+        {
+          "id": "f813e526-35e6-4a5f-9eaf-1b4c9b7a5856",
+          "title": "поапоапо",
           "isDone": false
         }
       ],
       "id": "f8b4b8a0-9a4b-4481-9dc1-a477fc7ffa1d"
     },
     {
-      "id": "879ab514-55c2-4258-a649-2c9f64185ea9",
-      "title": "dffafafaf",
-      "items": []
-    },
-    {
       "id": "40af9f46-899a-4f69-b681-c01aa3dfcfbe",
+      "creationDate": "2024-07-29T10:55:18.086Z",
       "title": "sdsdd",
       "items": [
         {
           "id": "f973a10f-2ebf-4a56-8ce6-15c85ed822a3",
           "title": "sssssss",
-          "isDone": false
+          "isDone": true
         },
         {
           "id": "1f9b1562-c65e-40a6-b618-6c036ef43fad",
           "title": "sssssss",
           "isDone": true
+        },
+        {
+          "id": "5679896f-8350-4054-b10c-a648d9374472",
+          "title": "ddd",
+          "isDone": false
         }
       ]
     },
     {
-      "listId": "57324ae3-6400-4873-8d25-09bcae379f45",
-      "title": "sddsdsd",
+      "id": "062f61cf-b057-4bff-8913-86af1a2106f3",
+      "creationDate": "2024-08-16T10:55:18.086Z",
+      "title": "AS",
+      "items": []
+    },
+    {
+      "id": "b6cd564e-96e5-4131-b081-eed0b7ef4ef1",
+      "creationDate": "2024-08-17T10:55:18.086Z",
+      "title": "ZZZ",
+      "items": []
+    },
+    {
+      "id": "6e24edcd-f516-418d-a2f3-e34e41aca3c9",
+      "creationDate": "2024-10-23T19:15:18.086Z",
+      "title": "яЯ",
+      "items": []
+    },
+    {
+      "id": "235cd2fd-5b81-4092-ac59-40c339169aad",
+      "creationDate": "2024-10-23T19:16:18.086Z",
+      "title": "Яя",
+      "items": []
+    },
+    {
+      "id": "c624cd30-7f18-4f70-b092-d01bd51ed4cb",
+      "creationDate": "2024-09-15T10:55:18.086Z",
+      "title": "123",
+      "items": []
+    },
+    {
+      "id": "416b7eb2-ef73-4023-8780-be263708caef",
+      "creationDate": "2024-09-17T10:55:18.086Z",
+      "title": "234",
+      "items": []
+    },
+    {
+      "id": "f37ee556-61b6-4006-ade9-3d52bf283706",
+      "creationDate": "2024-10-16T10:55:18.086Z",
+      "title": "345",
+      "items": []
+    },
+    {
+      "id": "c6445000-3cc7-4424-b3ae-194a69cbf5d7",
+      "creationDate": "2024-10-17T10:55:18.086Z",
+      "title": "aw",
+      "items": []
+    },
+    {
+      "id": "0489a9e1-21de-4769-a659-49c7589705d4",
+      "creationDate": "2024-10-18T10:55:18.086Z",
+      "title": "bc",
+      "items": []
+    },
+    {
+      "id": "4eaca6ae-a7f8-4ec6-818a-6fef5ab304fe",
+      "creationDate": "2024-10-19T10:55:18.086Z",
+      "title": "cddd",
+      "items": []
+    },
+    {
+      "id": "6868d6e7-acbb-4b6e-adcb-bc83cd796cef",
+      "creationDate": "2024-10-19T18:55:18.086Z",
+      "title": "df",
+      "items": []
+    },
+    {
+      "id": "9909f6c0-98c8-4796-97b5-66a4709c36f7",
+      "creationDate": "2024-10-20T17:00:18.086Z",
+      "title": "абв",
+      "items": []
+    },
+    {
+      "id": "a6d8e426-06b6-4510-9b46-d2f2fe1440e9",
+      "creationDate": "2024-10-20T17:55:18.086Z",
+      "title": "бвг",
+      "items": []
+    },
+    {
+      "id": "3a15cd71-33f7-4b6f-8982-89d0cd126919",
+      "creationDate": "2024-10-20T18:55:18.086Z",
+      "title": "вгд",
+      "items": []
+    },
+    {
+      "id": "947e37fa-417e-4996-9580-0145872ef55d",
+      "creationDate": "2024-10-21T18:55:18.086Z",
+      "title": "гдеееф",
+      "items": []
+    },
+    {
+      "id": "327a8d6f-c7c8-4b7e-be90-57a281da411d",
+      "creationDate": "2024-10-22T18:55:18.086Z",
+      "title": "ч",
+      "items": []
+    },
+    {
+      "id": "7885f830-47a4-4952-8679-f357c882befd",
+      "creationDate": "2024-10-23T18:55:18.086Z",
+      "title": "jjj",
+      "items": []
+    },
+    {
+      "id": "c26d14bc-5dfe-49af-90f1-a2653069c0a1",
+      "creationDate": "2024-10-23T18:55:22.519Z",
+      "title": "jj",
+      "items": []
+    },
+    {
+      "listId": "97343cd8-8728-415a-a291-1051d8999111",
+      "creationDate": "2024-10-31T14:49:05.218Z",
+      "title": "asfasf",
       "items": [
         {
-          "id": "4f1e5640-2667-4a9c-8eea-e8d87e827723",
-          "title": "wwrwrqr",
+          "id": "94ff7de7-2d5a-4a13-8376-8ebd7481d828",
+          "title": "вывывы",
+          "isDone": false
+        },
+        {
+          "id": "e385efc2-d9e8-4b37-b409-f229326541f1",
+          "title": "ывывв",
+          "isDone": true
+        },
+        {
+          "id": "265edc22-986d-4b59-b5d6-28886a32a23a",
+          "title": "ыыыыыыыы",
+          "isDone": false
+        },
+        {
+          "id": "d2c14c14-7b63-4fc1-99b7-18433ec65113",
+          "title": "ууу",
           "isDone": false
         }
       ],
-      "id": "57324ae3-6400-4873-8d25-09bcae379f45"
+      "id": "97343cd8-8728-415a-a291-1051d8999111"
     },
     {
-      "listId": "fc4b3661-425c-4187-ba35-e8986799c7f4",
-      "title": "sdsdsdsd",
+      "id": "ff6a6d70-61ce-43ae-847a-d86a6ef37382",
+      "creationDate": "2024-10-31T19:44:29.178Z",
+      "title": "раньше",
+      "items": []
+    },
+    {
+      "id": "9b08078b-40b3-4ce6-ac18-b20b40cc8ec3",
+      "creationDate": "2024-10-31T19:44:31.850Z",
+      "title": "середина",
+      "items": []
+    },
+    {
+      "id": "1e54024e-22e8-4825-bc37-a927aec46326",
+      "creationDate": "2024-10-31T19:44:34.642Z",
+      "title": "позже",
+      "items": []
+    },
+    {
+      "listId": "ecb7d1bc-7d08-45a5-b4f2-cb9190fd63a8",
+      "creationDate": "2024-10-31T21:18:26.480Z",
+      "title": "GJKE",
       "items": [
         {
-          "id": "9acd7f31-d541-4d32-b198-4f0bd62e3d24",
-          "title": "safasf",
+          "id": "1168a3a6-b354-46a7-bcaa-75e510681960",
+          "title": "fdfdfdffdf",
           "isDone": false
         }
       ],
-      "id": "fc4b3661-425c-4187-ba35-e8986799c7f4"
+      "id": "ecb7d1bc-7d08-45a5-b4f2-cb9190fd63a8"
     },
     {
-      "id": "d16bf368-93c9-4dca-a2fc-341a46ca9e81",
-      "title": "dddddddd",
+      "id": "858a6c18-6aa2-4329-a980-978e1b064530",
+      "creationDate": "2024-10-31T21:55:46.441Z",
+      "title": "заыва",
       "items": []
     },
     {
-      "id": "c6992694-fd36-4252-9903-338cf3efba84",
-      "title": "ddfdfdfdf",
-      "items": []
-    },
-    {
-      "id": "3b4a694a-7fc4-4227-9540-13bea573b90d",
-      "title": "dsdsdsd",
-      "items": []
-    },
-    {
-      "id": "4248b861-197b-4687-ac34-0df4c31d1ff3",
-      "title": "sdsdsd",
-      "items": []
-    },
-    {
-      "id": "6b4be2e3-9319-4fb3-ae6e-9143f34adf2b",
-      "title": "sssssssss",
-      "items": []
-    },
-    {
-      "id": "3987e20c-2902-45eb-88d9-4f5685a3ba6d",
-      "title": "sdddd",
-      "items": []
-    },
-    {
-      "id": "20d2bb5f-c6d7-434e-b13c-635f3e220409",
-      "title": "dddddd",
-      "items": []
-    },
-    {
-      "id": "2be3a894-bd1a-4575-8cfa-cb45eca4209f",
-      "title": "sssssssss",
-      "items": []
-    },
-    {
-      "id": "6a60f800-c1a3-4c9f-a808-77988fee6357",
-      "title": "ssfsf",
-      "items": []
-    },
-    {
-      "id": "dd4e6595-00ac-41e8-9171-9e1b4eb175e2",
-      "title": "ккк",
-      "items": []
-    },
-    {
-      "id": "a0dc340d-6864-47cf-b821-76a8bdad47df",
-      "title": "ssssssss",
-      "items": []
-    },
-    {
-      "id": "6a65e775-7c29-43a4-b93f-1faefaed16f4",
-      "title": "ssssssssssssssssssssss",
-      "items": []
-    },
-    {
-      "id": "4958e0ed-5a4a-442a-81ed-a5d1f562a07e",
-      "title": "wewewew",
-      "items": []
-    },
-    {
-      "id": "388e0ab2-3473-4c66-9bfb-db1b7e28d99c",
-      "title": "dsdsdsd",
-      "items": []
-    },
-    {
-      "id": "d09d1b55-e5b3-4030-a007-c495fe1ed12d",
-      "title": "sdsd",
-      "items": []
-    },
-    {
-      "id": "ff2c2d15-fd71-4408-8c26-20da02f043bd",
-      "title": "asdasdasd",
-      "items": []
-    },
-    {
-      "id": "1ab07e14-8f08-4aa5-bf5e-0e22560daa0f",
-      "title": "asdasd",
-      "items": []
-    },
-    {
-      "id": "4d3e8526-0f3a-4adb-ac70-64ce6da81aaf",
-      "title": "фывфывфывфвыв",
-      "items": []
-    },
-    {
-      "id": "0b7a2bdc-c773-4cfc-8069-fe0b0ae0dc6f",
-      "title": "фывыв",
-      "items": []
-    },
-    {
-      "id": "119af979-6140-43d0-a0b9-9794b2b6f79e",
-      "title": "уцццццццццццццц",
-      "items": []
-    },
-    {
-      "id": "92753aa6-cede-4166-b06d-ee54a7bb76d9",
-      "title": "уууууууу",
-      "items": []
-    },
-    {
-      "id": "b25d5bbc-d563-4d9a-9888-f93ff024a0d9",
-      "title": "sfsfsf",
-      "items": []
-    },
-    {
-      "id": "461db7fb-66da-4651-9e55-9b5e32cf2657",
-      "title": "asas",
-      "items": []
-    },
-    {
-      "id": "2ab566c6-d01d-43be-b5c1-a454604a9487",
-      "title": "asdasdasd",
-      "items": []
-    },
-    {
-      "id": "6caff33c-91ef-4c14-9ff1-dec1acbe6f70",
-      "title": "asasd",
-      "items": []
-    },
-    {
-      "id": "2dcd75ab-a34f-4df0-870d-ff98aa0b596c",
-      "title": "sadasd",
-      "items": []
-    },
-    {
-      "id": "eba7a089-951e-4d7f-955e-a18e737d2eeb",
-      "title": "dsdsd",
-      "items": []
-    },
-    {
-      "id": "507b9f25-c485-4ab1-996b-bd548a1a495e",
-      "title": "asdasd",
-      "items": []
-    },
-    {
-      "id": "b2762b76-f0b1-4ee4-815e-710cc4634194",
-      "title": "asd",
-      "items": []
-    },
-    {
-      "id": "dbfa9fbd-5aef-42bd-8904-b443de0795c3",
-      "title": "sdsd",
-      "items": []
-    },
-    {
-      "id": "b71f8b5f-3a72-4164-bcee-1a66f6ffd50d",
-      "title": "sddsgdg",
-      "items": []
-    },
-    {
-      "id": "7abbca51-36b7-4348-bb3b-73fba4de9312",
-      "title": "dfdfdfdf",
-      "items": []
-    },
-    {
-      "id": "734df1a5-e6ec-4048-b8bf-911346bb9c4d",
-      "title": "вавава",
-      "items": []
-    },
-    {
-      "id": "a5f9304a-ee4f-4ccd-996a-b3044b547501",
-      "title": "ыааыаыа",
-      "items": []
-    },
-    {
-      "id": "c61e985e-b6b1-4a4e-a7ad-81ce075f9742",
-      "title": "ssfsf",
-      "items": []
-    },
-    {
-      "id": "3a52d42a-3d49-459d-a595-5c938443849f",
-      "title": "ыфаафыа",
-      "items": []
-    },
-    {
-      "id": "ba966e18-5f11-44a8-95d9-173609a1619b",
-      "title": "sdfsdfsf",
+      "id": "11e022df-11d5-4a87-9ce3-ce7f46c62d32",
+      "creationDate": "2024-11-02T19:32:08.037Z",
+      "title": "аваывыва",
       "items": []
     }
   ]

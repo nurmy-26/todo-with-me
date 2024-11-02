@@ -8,6 +8,7 @@ const Typography = ({
   children,
   extraClass,
   marginBottom,
+  isError,
   tag,
   type = 'text',
   // соотнесение с тегами для стандартных стилей (можно передать своё соотнесение)
@@ -26,6 +27,7 @@ const Typography = ({
     style.common,
     style[type],
     hasOverflow && style.overflow,
+    isError && style.error,
     extraClass
   );
 

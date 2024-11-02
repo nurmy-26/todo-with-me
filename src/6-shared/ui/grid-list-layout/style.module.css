@@ -4,9 +4,18 @@
   gap: var(--16px);
   border-radius: var(--border-radius-base);
   background-color: var(--section-overlay);
+
+  max-width: 100%;
+}
+
+.content {
+  flex: 1 1 auto; /* растягивается на оставшееся место */
+  min-width: 0; /* иначе содержимое вылезает за границы блока */
 }
 
 .aside {
+  flex: 0 0 auto; /* занимает столько места, сколько необходимо контенту внутри */
+
   display: flex;
   flex-direction: column;
   gap: var(--8px);
@@ -23,40 +32,15 @@
   fill: var(--color-accent-hover);
 }
 
-.list {
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--16px);
-}
-
-/* 1280px */
-@media screen and (max-width: 80rem) {
-  .list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 1024px */
-@media screen and (max-width: 64rem) {
-  .list {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* 550px */
 @media screen and (max-width: 34.375rem) {
   .wrapper {
-    padding: var(--12px) 0;
-    background-color: transparent;
+    padding: var(--12px);
     flex-direction: column;
+    border-radius: 0;
   }
   .aside {
     flex-direction: row;
-    background-color: var(--section-overlay);
+    justify-content: center;
   }
 }

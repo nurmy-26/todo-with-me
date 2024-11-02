@@ -21,7 +21,22 @@
 }
 
 .input {
+  padding: 0.6rem 1rem;
+  width: 100%;
+
+  font-size: calc(var(--font-size-base) * 1);
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  min-height: 2.75rem;
   padding-left: 2.75rem;
+  border: 2px solid var(--color-secondary);
   border-radius: var(--border-radius-round);
   opacity: 0;
   visibility: hidden;
@@ -30,6 +45,14 @@
   /* выезд слева происходит с задержкой 0.18s чтоб выезд происходил уже после окончания анимации кнопки*/
   transition: visibility 0s linear, opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out 0.18s;
+}
+.input::placeholder {
+  color: var(--color-secondary);
+}
+.input:active,
+.input:focus {
+  outline: transparent;
+  border: 2px solid var(--color-accent);
 }
 
 /* кнопка уезжает влево, крутясь и скругляется */
@@ -43,4 +66,11 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+}
+
+/* 768px */
+@media screen and (max-width: 48rem) {
+  .btn {
+    top: 0.3rem;
+  }
 }

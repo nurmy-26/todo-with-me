@@ -8,10 +8,10 @@ type DeleteListBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   extraClass?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 's' | 'm';
+  size?: 'xs' | 's' | 'm';
 };
 
-const DeleteListBtn = ({ disabled, extraClass, onClick, size = 's', ...rest }: DeleteListBtnProps) => {
+const DeleteListBtn = ({ disabled, extraClass, onClick, size = 'xs', ...rest }: DeleteListBtnProps) => {
   return (
     <Button
       aria-label={'Удалить список'}

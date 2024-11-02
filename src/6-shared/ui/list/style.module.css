@@ -1,0 +1,24 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--16px);
+
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 1280px */
+@media screen and (max-width: 80rem) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1024px */
+@media screen and (max-width: 64rem) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

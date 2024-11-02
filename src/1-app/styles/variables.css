@@ -64,13 +64,12 @@
   --body-warm: radial-gradient(500px at 23vw 44vh, #f8a883c7, transparent),
     /*   более четкий круг за счет blue в переходе:   */
       radial-gradient(600px at 83vw 60vh, #f0b5ebbe, transparent),
-    /* radial-gradient(800px at bottom, #f1e28abe, transparent), */
-      var(--background-base-warm);
+    var(--background-base-warm);
   --body-night: radial-gradient(500px at 23vw 44vh, #b269cfc7, transparent),
     /* более четкий круг за счет blue в переходе: */
       radial-gradient(600px at 83vw 60vh, #557ea9be, transparent),
     radial-gradient(800px at bottom, #5b55a9be, transparent),
-    /* основной цвет фона */ #45375b;
+    /* основной цвет фона */ #715d8f;
   --body-light: #f9f9f9;
   --body-dark: #213547;
 
@@ -79,9 +78,9 @@
   --border-radius-modal: var(--20px);
   --border-radius-round: var(--28px);
 
-  --section-indent: 2.5rem; /* большой отступ между/внутри секций */
+  --section-indent: 1.25rem; /* большой отступ между/внутри секций */
 
-  /* значения основных css-переменных по умолчанию, иначе нечего будет переназначать (theme="warm") */
+  /* значения основных css-переменных по умолчанию (theme="warm"), иначе нечего будет переназначать */
   --color-text-primary: var(--color-text-dark);
   --color-background: var(--color-light);
   --color-accent: var(--accent-warm);

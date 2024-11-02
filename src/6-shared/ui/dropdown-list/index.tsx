@@ -34,7 +34,7 @@ const DropdownList = ({
         aria-label={'Открыть выпадающее меню'}
         variant={'tertiary'}
         icon={<MenuIcon />}
-        size={'s'}
+        size={'xs'}
         extraClass={style.btn}
         onClick={toggleMenu}
       />

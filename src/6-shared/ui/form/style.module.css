@@ -11,6 +11,7 @@
 }
 
 .title {
+  padding-left: var(--16px);
   padding-bottom: var(--8px);
   border-bottom: 1px dotted var(--color-text-dark);
 
