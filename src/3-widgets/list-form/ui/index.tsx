@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { TodoListCreateBtn, useCreateTodoList } from '../../../4-features';
+import { CreateTodoListBtn, useCreateTodoList } from '../../../4-features';
 import useEscape from '../../../6-shared/lib/hooks/useEscape';
 import { useForm } from '../../../6-shared/lib/hooks/useForm';
 import { useInputRef } from '../../../6-shared/lib/hooks/useInputRef';
@@ -48,7 +48,7 @@ const ListForm = () => {
         ref={listTitleRef}
       />
 
-      <TodoListCreateBtn withText type="submit" disabled={isLocked} />
+      <CreateTodoListBtn withText type="submit" disabled={isLocked} />
     </Form>
   )
 }

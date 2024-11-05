@@ -1,0 +1,6 @@
+.delete_btn:hover {
+  color: var(--color-error);
+}
+.delete_btn:hover svg {
+  fill: var(--color-error);
+}

@@ -1,490 +1,150 @@
 {
   "settings": {
-    "theme": "light"
+    "theme": "warm"
   },
   "todolists": [
     {
-      "listId": "8958f074-ec17-461b-ac81-4a1743ad37a2",
-      "creationDate": "2024-06-10T10:55:18.086Z",
-      "title": "Список дел для идеального выходного",
+      "listId": "62a85f04-f613-4e76-949a-525dfd10f034",
+      "creationDate": "2024-11-05T13:57:32.160Z",
+      "title": "План по созданию новогоднего настроения",
       "items": [
         {
-          "id": "3894e2f8-ca00-4d1b-a10b-e759ab73aa5a",
-          "title": "Проснуться без будильника",
+          "id": "951b7027-b2fb-4f8f-b055-20abca685e40",
+          "title": "Украсить дом гирляндами и огоньками",
           "isDone": false
         },
         {
-          "id": "bf91a774-bd8f-4f97-9953-8f0e2158d2a4",
-          "title": "Приготовить вкусный завтрак",
-          "isDone": true
-        },
-        {
-          "id": "dcb78676-e8c4-4db4-bec6-2832a574b516",
-          "title": "Погулять в парке или соседнем районе",
+          "id": "026b8f36-74fc-4e14-a335-fc18d05c7fee",
+          "title": "Составить новогодний плейлист",
           "isDone": false
         },
         {
-          "id": "7b3f1076-b01a-44b2-8f21-9e675f711f35",
-          "title": "Посмотреть любимый фильм или сериал",
-          "isDone": true
-        },
-        {
-          "id": "8723aba0-6d4a-430c-a5b8-34c4383ad794",
-          "title": "Почитать книгу перед сном",
-          "isDone": true
-        },
-        {
-          "id": "94de08a0-81e4-4471-b757-0c7e28c73eba",
-          "title": "dsdfss",
+          "id": "d67e287f-58bf-4d04-be7a-be01a53223c3",
+          "title": "Устроить марафон по просмотру картин с духом праздника",
           "isDone": false
         },
         {
-          "id": "d09d644c-2f2a-4fe8-baf8-5d0ed3c2d737",
-          "title": "sfsdfds",
+          "id": "3419cc97-2beb-40ff-b797-115f6cf624ae",
+          "title": "Купить ароматные мандарины",
           "isDone": false
         },
         {
-          "id": "cc6497f9-f0be-47d2-a498-2b0a64e95024",
-          "title": "sdfsdfd",
+          "id": "67c4e8d8-ee19-449e-b050-d4cb13d8756e",
+          "title": "Попробовать испечь имбирное печенье",
           "isDone": false
         },
         {
-          "id": "d5d479ed-e142-4755-b06b-401f53a939d6",
-          "title": "dgsgsg",
+          "id": "08dae184-aaf8-4359-aee7-fc8625b57b51",
+          "title": "Купить и упаковать близким подарки",
           "isDone": false
         },
         {
-          "id": "dc3f0bdc-a03d-4b8c-aed5-81f493009c69",
-          "title": "dfafaf",
+          "id": "5f5e87d0-e87f-4a3f-a992-a200606c98cb",
+          "title": "Купить новогодний свитер",
           "isDone": false
         },
         {
-          "id": "f05ed424-64b2-41de-b5ec-76d22ec20de9",
-          "title": "ss",
+          "id": "4d785cb3-01d5-4351-9a1b-1fdd0c643426",
+          "title": "Отправить близким новогодние открытки",
           "isDone": false
         },
         {
-          "id": "6bb90c2b-0189-42d5-8c6b-4633e40c3223",
-          "title": "e",
-          "isDone": false
-        },
-        {
-          "id": "48e75298-b0f6-4feb-9a84-fa6eb31f9006",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "ab4ee4f3-7393-442e-aa6c-913fc52d415a",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "f36d4f8c-669b-4f2b-959e-7fbc49c9be3f",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "a68d5b9f-754f-430a-b168-d33d2570431b",
-          "title": "e",
-          "isDone": false
-        },
-        {
-          "id": "3a6725e4-6f7e-4b72-8783-e0c09aec2e85",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "a90bf461-5444-48a1-b224-e37595411c66",
-          "title": "e",
-          "isDone": false
-        },
-        {
-          "id": "f084a7d9-7b94-4a4a-92a0-1b300541306e",
-          "title": "e",
-          "isDone": false
-        },
-        {
-          "id": "cf370f8f-c7b7-412e-ab64-c350130f1fb7",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "65d90eb8-721b-451d-b699-016284e10269",
-          "title": "e",
-          "isDone": false
-        },
-        {
-          "id": "c80e71df-0064-489f-8ec2-a57fb7b73283",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "1e1453fc-951b-43f8-88e0-5bb8bac33875",
-          "title": "w",
-          "isDone": false
-        },
-        {
-          "id": "a73dc6f4-e2e7-4474-a2e2-233be2b5031c",
-          "title": "aaaaaaaaaaaaaaaa",
+          "id": "5b860759-fd41-4a70-b375-8532293fecab",
+          "title": "Нарядить елку",
           "isDone": false
         }
       ],
-      "id": "8958f074-ec17-461b-ac81-4a1743ad37a2"
+      "id": "62a85f04-f613-4e76-949a-525dfd10f034"
     },
     {
-      "listId": "54763742-e213-45cb-a45a-f3996604976d",
-      "creationDate": "2024-07-12T10:55:18.086Z",
-      "title": "Цели на ближайший месяц",
+      "listId": "93caceba-8ac4-4513-ac89-e438a604756d",
+      "creationDate": "2024-11-05T13:57:32.161Z",
+      "title": "Поиск работы",
       "items": [
         {
-          "id": "0c22812a-0a05-4a1f-9701-e35560a88a8c",
-          "title": "Начать изучать новый язык",
+          "id": "ced91316-47e5-48fd-81b8-bc006808b128",
+          "title": "Проверить почту на наличие ответов от работодателей",
+          "isDone": false
+        },
+        {
+          "id": "8804e608-a7e3-45bd-8c00-0471cf0cf99e",
+          "title": "Проверить сообщения в Telegram от рекрутеров",
+          "isDone": false
+        },
+        {
+          "id": "ad6cadda-11a5-40ea-b01a-608af7dab9ff",
+          "title": "Проверить новые вакансии на HeadHunter и в других источниках",
           "isDone": true
         },
         {
-          "id": "18e8eb3c-37be-4d43-b4f2-6d2172ad94e7",
-          "title": "Прочитать как минимум две книги из списка \"хочу прочитать\"",
+          "id": "0c568f7e-5b69-4604-8c69-9b02d8e8ce52",
+          "title": "Повторить теоретические вопросы для интервью",
           "isDone": true
         },
         {
-          "id": "94d97965-a650-4995-8658-13399cddb543",
-          "title": "Заниматься спортом минимум три раза в неделю",
-          "isDone": false
-        },
-        {
-          "id": "197e82c9-b770-495d-9b4e-fe1be43ce358",
-          "title": "Пробовать приготовить новое блюдо каждую неделю",
+          "id": "1c481559-b427-41f8-aac0-df20f481b2df",
+          "title": "Практиковаться в решении алгоритмических задач",
           "isDone": true
         },
         {
-          "id": "2b164dc3-136d-4a8c-92c8-9b0254cbfaed",
-          "title": "Начать вести дневник благодарности",
-          "isDone": true
-        },
-        {
-          "id": "72241dd9-9ba4-4c4e-860c-74ddba832ff2",
-          "title": "dfsdgdg",
-          "isDone": true
-        },
-        {
-          "id": "6c08776f-6459-4574-8d80-241613f46eba",
-          "title": "asasfasfasf",
+          "id": "c6adab75-8331-4704-b87e-e514264793e8",
+          "title": "Минимум один коммит в пет-проект для улучшения практических навыков",
           "isDone": false
         },
         {
-          "id": "9c982016-2079-4c26-aec6-e975489485e6",
-          "title": "asfasfasf",
-          "isDone": false
-        },
-        {
-          "id": "29d30c7e-aac0-4ab1-877a-bfeea0afeb8b",
-          "title": "fasfaf",
-          "isDone": false
-        },
-        {
-          "id": "5349ef43-2039-4700-ab0c-86d831c37e5e",
-          "title": "fafaf",
-          "isDone": false
-        },
-        {
-          "id": "3bb33cc2-207c-4ac1-840b-8fb472251b17",
-          "title": "123",
-          "isDone": false
-        },
-        {
-          "id": "9a12f47d-74db-4974-a12d-d5918a3d5e33",
-          "title": "123",
-          "isDone": false
-        },
-        {
-          "id": "0e3c4331-6349-413f-a75a-6a178ffa3808",
-          "title": "123",
-          "isDone": false
-        },
-        {
-          "id": "820cb8a8-3ba2-4c21-9f61-da64fa2d639b",
-          "title": "123",
+          "id": "a7ef2757-42bb-4c40-977b-8cced5caecbd",
+          "title": "Всё получится!",
           "isDone": false
         }
       ],
-      "id": "54763742-e213-45cb-a45a-f3996604976d"
+      "id": "93caceba-8ac4-4513-ac89-e438a604756d"
     },
     {
-      "id": "472b0f08-7b93-47a1-bcdc-6159403d394b",
-      "creationDate": "2024-07-21T10:55:18.086Z",
-      "title": "Заполнить дневник благодарности",
+      "id": "e4bb5784-b5c2-484b-92d5-9360fe847cab",
+      "creationDate": "2024-11-05T13:57:32.162Z",
+      "title": "План уборки на выходных",
       "items": [
         {
-          "id": "4a70eeb2-5513-4de6-92e8-fbcd6cb7bbbe",
-          "title": "Что заставило меня улыбнуться сегодня?",
-          "isDone": true
-        },
-        {
-          "id": "e3962f97-fb01-46fa-a039-22be90f7a29c",
-          "title": "Кому я могу выразить свою благодарность на этой неделе?",
-          "isDone": true
-        },
-        {
-          "id": "07d938bd-28a3-450f-b8f4-4e8c053d45e0",
-          "title": "Какое маленькое достижение я сделал(а) сегодня?",
+          "id": "bbca07ef-d8b8-4cb9-9a6b-49a88d692945",
+          "title": "Раковина на кухне",
           "isDone": false
         },
         {
-          "id": "6b434fe8-8b44-45ff-a8f0-154a9c5881ae",
-          "title": "Какие моменты я особенно ценю в своём дне?",
+          "id": "887cb827-d05b-4f35-ade9-81d9a175160c",
+          "title": "Кухонная стойка",
+          "isDone": false
+        },
+        {
+          "id": "4a0b9949-9319-4835-882c-d82a2f4cc977",
+          "title": "Плита и стены рядом",
+          "isDone": false
+        },
+        {
+          "id": "1848ab7e-08e3-4d53-8c86-e9bc26bf6ef3",
+          "title": "Ванная комната",
+          "isDone": false
+        },
+        {
+          "id": "267219ec-4534-4862-be0d-c921774dfcb1",
+          "title": "Туалет",
+          "isDone": false
+        },
+        {
+          "id": "aeb87a6d-21da-4c38-a527-056e12970431",
+          "title": "Пропылесосить",
+          "isDone": false
+        },
+        {
+          "id": "4f63ae59-78b9-4b8d-a9ce-b2784f57d784",
+          "title": "Вынести коробки",
+          "isDone": false
+        },
+        {
+          "id": "4095013b-1670-4d3d-bbd9-44d039623310",
+          "title": "Помыть окна и зеркала",
           "isDone": false
         }
       ]
-    },
-    {
-      "id": "b9dfab65-053f-4340-ba16-c98006ebbd96",
-      "creationDate": "2024-07-25T10:55:18.086Z",
-      "title": "ddddddddddddddddddddddddddddddddddd  dddddddd ddddddddddddddddddddddddddd",
-      "items": []
-    },
-    {
-      "listId": "f8b4b8a0-9a4b-4481-9dc1-a477fc7ffa1d",
-      "creationDate": "2024-07-28T10:55:18.086Z",
-      "title": "aaaaaaaa",
-      "items": [
-        {
-          "id": "47002b9d-afb7-4c29-97d7-220bfa6517a7",
-          "title": "аыаы",
-          "isDone": true
-        },
-        {
-          "id": "ba0489e8-ff42-42b9-9b48-03ede0be8c50",
-          "title": "ыыыыыы",
-          "isDone": true
-        },
-        {
-          "id": "54a3b896-2fba-4d1a-ad4e-542f9427f5cf",
-          "title": "ыыаыа",
-          "isDone": false
-        },
-        {
-          "id": "ee85b976-d8b4-4e9d-8818-1486b9768bcb",
-          "title": "dfsdfsdf",
-          "isDone": false
-        },
-        {
-          "id": "73c22bf1-7509-4519-b6be-832b75075634",
-          "title": "afasfsf",
-          "isDone": true
-        },
-        {
-          "id": "ecfa7e1f-2037-491a-9a90-f0ec3fe1e5ce",
-          "title": "ffffffff",
-          "isDone": false
-        },
-        {
-          "id": "f813e526-35e6-4a5f-9eaf-1b4c9b7a5856",
-          "title": "поапоапо",
-          "isDone": false
-        }
-      ],
-      "id": "f8b4b8a0-9a4b-4481-9dc1-a477fc7ffa1d"
-    },
-    {
-      "id": "40af9f46-899a-4f69-b681-c01aa3dfcfbe",
-      "creationDate": "2024-07-29T10:55:18.086Z",
-      "title": "sdsdd",
-      "items": [
-        {
-          "id": "f973a10f-2ebf-4a56-8ce6-15c85ed822a3",
-          "title": "sssssss",
-          "isDone": true
-        },
-        {
-          "id": "1f9b1562-c65e-40a6-b618-6c036ef43fad",
-          "title": "sssssss",
-          "isDone": true
-        },
-        {
-          "id": "5679896f-8350-4054-b10c-a648d9374472",
-          "title": "ddd",
-          "isDone": false
-        }
-      ]
-    },
-    {
-      "id": "062f61cf-b057-4bff-8913-86af1a2106f3",
-      "creationDate": "2024-08-16T10:55:18.086Z",
-      "title": "AS",
-      "items": []
-    },
-    {
-      "id": "b6cd564e-96e5-4131-b081-eed0b7ef4ef1",
-      "creationDate": "2024-08-17T10:55:18.086Z",
-      "title": "ZZZ",
-      "items": []
-    },
-    {
-      "id": "6e24edcd-f516-418d-a2f3-e34e41aca3c9",
-      "creationDate": "2024-10-23T19:15:18.086Z",
-      "title": "яЯ",
-      "items": []
-    },
-    {
-      "id": "235cd2fd-5b81-4092-ac59-40c339169aad",
-      "creationDate": "2024-10-23T19:16:18.086Z",
-      "title": "Яя",
-      "items": []
-    },
-    {
-      "id": "c624cd30-7f18-4f70-b092-d01bd51ed4cb",
-      "creationDate": "2024-09-15T10:55:18.086Z",
-      "title": "123",
-      "items": []
-    },
-    {
-      "id": "416b7eb2-ef73-4023-8780-be263708caef",
-      "creationDate": "2024-09-17T10:55:18.086Z",
-      "title": "234",
-      "items": []
-    },
-    {
-      "id": "f37ee556-61b6-4006-ade9-3d52bf283706",
-      "creationDate": "2024-10-16T10:55:18.086Z",
-      "title": "345",
-      "items": []
-    },
-    {
-      "id": "c6445000-3cc7-4424-b3ae-194a69cbf5d7",
-      "creationDate": "2024-10-17T10:55:18.086Z",
-      "title": "aw",
-      "items": []
-    },
-    {
-      "id": "0489a9e1-21de-4769-a659-49c7589705d4",
-      "creationDate": "2024-10-18T10:55:18.086Z",
-      "title": "bc",
-      "items": []
-    },
-    {
-      "id": "4eaca6ae-a7f8-4ec6-818a-6fef5ab304fe",
-      "creationDate": "2024-10-19T10:55:18.086Z",
-      "title": "cddd",
-      "items": []
-    },
-    {
-      "id": "6868d6e7-acbb-4b6e-adcb-bc83cd796cef",
-      "creationDate": "2024-10-19T18:55:18.086Z",
-      "title": "df",
-      "items": []
-    },
-    {
-      "id": "9909f6c0-98c8-4796-97b5-66a4709c36f7",
-      "creationDate": "2024-10-20T17:00:18.086Z",
-      "title": "абв",
-      "items": []
-    },
-    {
-      "id": "a6d8e426-06b6-4510-9b46-d2f2fe1440e9",
-      "creationDate": "2024-10-20T17:55:18.086Z",
-      "title": "бвг",
-      "items": []
-    },
-    {
-      "id": "3a15cd71-33f7-4b6f-8982-89d0cd126919",
-      "creationDate": "2024-10-20T18:55:18.086Z",
-      "title": "вгд",
-      "items": []
-    },
-    {
-      "id": "947e37fa-417e-4996-9580-0145872ef55d",
-      "creationDate": "2024-10-21T18:55:18.086Z",
-      "title": "гдеееф",
-      "items": []
-    },
-    {
-      "id": "327a8d6f-c7c8-4b7e-be90-57a281da411d",
-      "creationDate": "2024-10-22T18:55:18.086Z",
-      "title": "ч",
-      "items": []
-    },
-    {
-      "id": "7885f830-47a4-4952-8679-f357c882befd",
-      "creationDate": "2024-10-23T18:55:18.086Z",
-      "title": "jjj",
-      "items": []
-    },
-    {
-      "id": "c26d14bc-5dfe-49af-90f1-a2653069c0a1",
-      "creationDate": "2024-10-23T18:55:22.519Z",
-      "title": "jj",
-      "items": []
-    },
-    {
-      "listId": "97343cd8-8728-415a-a291-1051d8999111",
-      "creationDate": "2024-10-31T14:49:05.218Z",
-      "title": "asfasf",
-      "items": [
-        {
-          "id": "94ff7de7-2d5a-4a13-8376-8ebd7481d828",
-          "title": "вывывы",
-          "isDone": false
-        },
-        {
-          "id": "e385efc2-d9e8-4b37-b409-f229326541f1",
-          "title": "ывывв",
-          "isDone": true
-        },
-        {
-          "id": "265edc22-986d-4b59-b5d6-28886a32a23a",
-          "title": "ыыыыыыыы",
-          "isDone": false
-        },
-        {
-          "id": "d2c14c14-7b63-4fc1-99b7-18433ec65113",
-          "title": "ууу",
-          "isDone": false
-        }
-      ],
-      "id": "97343cd8-8728-415a-a291-1051d8999111"
-    },
-    {
-      "id": "ff6a6d70-61ce-43ae-847a-d86a6ef37382",
-      "creationDate": "2024-10-31T19:44:29.178Z",
-      "title": "раньше",
-      "items": []
-    },
-    {
-      "id": "9b08078b-40b3-4ce6-ac18-b20b40cc8ec3",
-      "creationDate": "2024-10-31T19:44:31.850Z",
-      "title": "середина",
-      "items": []
-    },
-    {
-      "id": "1e54024e-22e8-4825-bc37-a927aec46326",
-      "creationDate": "2024-10-31T19:44:34.642Z",
-      "title": "позже",
-      "items": []
-    },
-    {
-      "listId": "ecb7d1bc-7d08-45a5-b4f2-cb9190fd63a8",
-      "creationDate": "2024-10-31T21:18:26.480Z",
-      "title": "GJKE",
-      "items": [
-        {
-          "id": "1168a3a6-b354-46a7-bcaa-75e510681960",
-          "title": "fdfdfdffdf",
-          "isDone": false
-        }
-      ],
-      "id": "ecb7d1bc-7d08-45a5-b4f2-cb9190fd63a8"
-    },
-    {
-      "id": "858a6c18-6aa2-4329-a980-978e1b064530",
-      "creationDate": "2024-10-31T21:55:46.441Z",
-      "title": "заыва",
-      "items": []
-    },
-    {
-      "id": "11e022df-11d5-4a87-9ce3-ce7f46c62d32",
-      "creationDate": "2024-11-02T19:32:08.037Z",
-      "title": "аваывыва",
-      "items": []
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TList } from "../types";
+import { BASE_URL } from "../const/base-url";
 
 // RTK-query
 // создали редьюсер todolistsApi с доп-возможностями (свои fetch писать не нужно)
@@ -10,7 +11,7 @@ export const todolistsApi = createApi({
   tagTypes: ["TodoLists"], // сущности могут иметь любые имена (указали сущность TodoList)
 
   // базовый url (все запросы будет делать сама библиотека)
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (build) => ({
     // запрос на получение
     getTodoLists: build.query<TList[], string>({

@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TTheme } from "../types";
+import { BASE_URL } from "../const/base-url";
 
 export const settingsApi = createApi({
   // название редьюсера в общем store
   reducerPath: "settingsApi",
   // базовый URL для всех запросов
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   // типы тегов для автоматического обновления данных в реальном времени
   tagTypes: ["Settings"],
 

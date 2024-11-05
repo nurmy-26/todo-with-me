@@ -22,9 +22,6 @@
 .logo:hover {
   color: inherit;
 }
-.nav {
-  justify-self: end;
-}
 
 /* 1440px */
 @media screen and (max-width: 90rem) {
@@ -39,11 +36,8 @@
     padding: var(--20px) var(--section-indent);
     grid-template-columns: 270px 1fr;
     grid-template-areas:
-      "logo theme"
-      "logo nav";
-  }
-  .nav {
-    grid-area: nav;
+      "logo ."
+      "logo .";
   }
 }
 
@@ -60,6 +54,4 @@
     padding: var(--12px);
     grid-template-columns: 140px 1fr;
   }
-
-  /* todo - бургер-меню для этого разрешения */
 }

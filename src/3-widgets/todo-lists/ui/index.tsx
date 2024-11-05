@@ -1,39 +1,30 @@
 import { useState } from 'react';
-import cn from 'classnames';
+import { CreateTodoListForm } from '../../../4-features';
 import { useGetTodoLists } from '../../../5-entities';
 import { useFilter } from '../../../6-shared/lib/hooks/useFilter';
 import GridSectionLayout from '../../../6-shared/ui/grid-list-layout';
 import { TList } from '../../../6-shared/types';
-import List from '../../../6-shared/ui/list';
 import Button from '../../../6-shared/ui/button';
 import { XMarkIcon } from '../../../6-shared/ui/icons/xmark-icon';
-import { FilterIcon } from '../../../6-shared/ui/icons/filter-icon';
-import { MenuIcon } from '../../../6-shared/ui/icons/menu-icon';
-import { SkeletonLoaderCard, TodoCard } from '../../todo-card';
-import { getAverageSkeletonNumber } from '../lib/getAverageSkeletonNumber';
+import useResponsive from '../../../6-shared/lib/hooks/useResponsive';
 import { useSortTodolists } from '../lib/useSortTodolists';
 import { filterByCheckboxes } from '../lib/filterByCheckboxes';
+import ListOfTodolists from './list-of-todolists';
+import TodolistsStub from './todolists-stub';
 import ControlBar from './control-bar';
 import Sidebar from './sidebar';
-import useResponsive from '../../../6-shared/lib/hooks/useResponsive';
-import style from './style.module.css';
 
 
 const TodoLists = () => {
   const { data: todolists, isLoading } = useGetTodoLists();
-  const skeletonCards = getAverageSkeletonNumber(); // сколько рендерить во время загрузки
-  const isNarrowDesktop = useResponsive(1440);
+  const isDataEmpty = todolists.length === 0;
   const isMobile = useResponsive();
 
-  const renderTodoList = (list: TList) => {
-    return (
-      <TodoCard listInfo={list} />
-    )
-  }
-
   // поиск в зависимости от выбранных чекбоксов (по названию и/или элементам списков)
-  const [isTitleChecked, setIsTitleChecked] = useState(true);
-  const [isItemsChecked, setIsItemsChecked] = useState(true)
+  const initialTitleCheckbox = true;
+  const [isTitleChecked, setIsTitleChecked] = useState(initialTitleCheckbox);
+  const initialItemsCheckbox = true;
+  const [isItemsChecked, setIsItemsChecked] = useState(initialItemsCheckbox)
 
   // общий фильтр
   const { searchValue, setSearchValue, filteredItems, resetSearch } = useFilter(
@@ -50,6 +41,8 @@ const TodoLists = () => {
   // при сбросе вернутся стартовые значения ("по дате создания", sortMode - "asc")
   const handleReset = () => {
     setSortField(initialSortField);
+    setIsTitleChecked(initialTitleCheckbox);
+    setIsItemsChecked(initialItemsCheckbox);
     resetSort();
     resetSearch();
   }
@@ -67,29 +60,12 @@ const TodoLists = () => {
     </Button>
   );
 
-  const [isControlBarOpened, setIsControlBarOpened] = useState(false);
-  const toggleControlBar = () => {
-    setIsControlBarOpened(!isControlBarOpened);
-  };
-
-  const MenuIconType = isControlBarOpened ?
-    (isNarrowDesktop ? 'caret-up' : 'caret-left') :
-    (isNarrowDesktop ? 'caret-down' : 'caret-right');
-
 
   return (
     <>
-      <Button
-        aria-label={"Развернуть секцию фортировки и фильтров"}
-        title={"Развернуть секцию фортировки и фильтров"}
-        icon={<FilterIcon />}
-        size={'s'}
-        variant={'tertiary'}
-        onClick={toggleControlBar}
-        extraClass={cn(style.control_btn, style[`control_btn_${isControlBarOpened ? "opened" : "closed"}`])}
-      ><MenuIcon type={MenuIconType} /></Button>
+      <CreateTodoListForm />
 
-      <GridSectionLayout
+      {!isDataEmpty && <GridSectionLayout
         label={"Сортировка и фильтры"}
         mainContent={
           <ControlBar
@@ -110,21 +86,16 @@ const TodoLists = () => {
           />
         }
         asideContent={resetBtn}
-        extraClass={cn(style.control_bar, style[`control_bar_${isControlBarOpened ? "opened" : "closed"}`])}
-      />
-
+      />}
 
       <GridSectionLayout
         label={"Мои списки"}
+        isStubNeeded={isDataEmpty}
+        stubComponent={<TodolistsStub />}
         mainContent={
-          <List
-            isLoading={isLoading}
-            skeletonLoader={{ component: <SkeletonLoaderCard />, count: skeletonCards }}
-            data={sortedItems}
-            renderItem={renderTodoList}
-          />
+          <ListOfTodolists isLoading={isLoading} data={sortedItems} />
         }
-        asideContent={<Sidebar />}
+        asideContent={<Sidebar isDataEmpty={isDataEmpty} />}
       />
     </>
   );

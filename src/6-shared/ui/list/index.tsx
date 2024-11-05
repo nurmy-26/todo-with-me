@@ -40,7 +40,6 @@ const List = <T extends Identifiable,>({
         </ul>
       )
     :
-    // если данные (data) загрузились, они рендерятся
     (
       <ul className={cn(style.list, extraClass)}>
         {data.map((item) => (

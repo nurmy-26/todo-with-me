@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import ReactDOM from "react-dom";
 import cn from "classnames";
-import { MODALS_ROOT_SELECTOR } from "../../../6-shared/const/routes";
+import { MODALS_ROOT_SELECTOR } from "../../../6-shared/const/selectors";
 import useEscape from "../../../6-shared/lib/hooks/useEscape";
 import CloseBtn from "../button/close-btn";
 import style from "./style.module.css";

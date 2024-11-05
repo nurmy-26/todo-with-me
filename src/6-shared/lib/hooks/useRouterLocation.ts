@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { routes } from "../../const/routes";
 
 export const useRouterLocation = () => {
   const navigate = useNavigate();
@@ -11,7 +12,10 @@ export const useRouterLocation = () => {
   // при закрытии модалки возвращаемся на роут, с которого её открывали (и который записан в background)
   const returnToPreviousPage = () => {
     navigate(-1);
-    // window.history.back();
+  };
+
+  const returnToHomePage = () => {
+    navigate(routes.home);
   };
 
   return {
@@ -19,5 +23,6 @@ export const useRouterLocation = () => {
     location,
     background,
     returnToPreviousPage,
+    returnToHomePage,
   };
 };

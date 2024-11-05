@@ -1,16 +1,15 @@
 import cn from 'classnames';
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { DeleteListBtn, AddTodoForm } from '../../../4-features';
+import { useParams } from 'react-router-dom';
+import { AddTodoForm } from '../../../4-features';
 import { useGetTodoLists } from '../../../5-entities';
 import { TItem, TList } from '../../../6-shared/types';
-import { routes } from '../../../6-shared/const/routes';
 import Typography from '../../../6-shared/ui/typography';
-import DropdownList from '../../../6-shared/ui/dropdown-list';
+import { getFormattedDate } from '../lib/getFormattedDate';
+import TodolistDropdownMenu from './dropdown-menu';
 import SkeletonLoaderCard from './skeleton-loader-card';
 import TodoList from './todo-list';
 import TodoTitle from './todo-title';
 import style from './style.module.css';
-import { getFormattedDate } from '../lib/getFormattedDate';
 
 
 type TodoCardProps = {
@@ -24,7 +23,6 @@ const TodoCard = ({
   extraClass,
   type = 'card'
 }: TodoCardProps) => {
-  const location = useLocation();
   const { id } = useParams(); // извлекаем id из url
   const { data, isLoading, isError } = useGetTodoLists();
 
@@ -44,19 +42,6 @@ const TodoCard = ({
   // todo - менять тип формата из настроек
   const creationDate = getFormattedDate(list.creationDate, 'short'); // "narrow" | "short" | "long"
 
-  // пункты выпадающего списка
-  const dropdownMenuComponents = [
-    <Link
-      to={`${routes.delete}/${list.id}`}
-      // routes.home нужен, т.к. иначе location считывает как todolists/:id и отображает CardPage и изображение прыгает
-      state={{ background: (type === 'modal' ? routes.home : location) }}
-    >
-      <DeleteListBtn size={'m'} />
-    </Link>,
-    // todo - сюда могут добавиться и другие
-    // добавить фичу "Редактировать список"
-  ]
-
 
   return (
     <article
@@ -70,7 +55,7 @@ const TodoCard = ({
         <TodoTitle type={type} listId={list.id} listTitle={list.title} />
 
         <div className={style.menu} >
-          <DropdownList list={dropdownMenuComponents} />
+          <TodolistDropdownMenu listId={list.id} type={type} />
         </div>
       </header>
 

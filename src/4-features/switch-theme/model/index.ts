@@ -3,7 +3,7 @@ import { TTheme } from "../../../6-shared/types";
 import { THEME } from "../../../6-shared/const/theme";
 import { useGetThemeSetting } from "../lib/useGetThemeSetting";
 import { useUpdateThemeSetting } from "../lib/useUpdateThemeSetting";
-import { applyThemeAttribute } from "../lib/utils";
+import { applyThemeAttribute } from "../lib/applyThemeAttribute";
 
 export const useTheme = () => {
   // изначально пытаемся достать тему из LocalStorage

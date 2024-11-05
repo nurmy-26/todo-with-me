@@ -1,4 +1,4 @@
-import { FormEvent, MouseEvent } from 'react';
+import { FormEvent } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DeleteListBtn } from '../../../4-features';
 import { useDeleteTodoList, useGetTodoLists } from '../../../5-entities';
@@ -8,7 +8,7 @@ import ConfirmationForm from '../../../6-shared/ui/confirmation-form';
 import style from './style.module.css';
 
 
-const DeleteListDetails = () => {
+const DeleteListConfirmation = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // извлекаем id из url
   const { deleteList } = useDeleteTodoList();
@@ -32,7 +32,6 @@ const DeleteListDetails = () => {
         <DeleteListBtn
           type={'submit'}
           size='m'
-          onClick={(event: MouseEvent<HTMLButtonElement>) => handleDelete(event, listInfo.id)}
           extraClass={style.delete_btn}
         />
       }
@@ -41,4 +40,4 @@ const DeleteListDetails = () => {
   );
 };
 
-export default DeleteListDetails;
+export default DeleteListConfirmation;

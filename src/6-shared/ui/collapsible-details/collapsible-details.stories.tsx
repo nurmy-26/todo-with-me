@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import CollapsibleSection from ".";
+import CollapsibleDetails from ".";
 
 const mockChildren = (
   <div>
@@ -10,13 +10,13 @@ const mockChildren = (
 );
 
 const meta = {
-  title: "UI/CollapsibleSection",
-  component: CollapsibleSection,
+  title: "UI/CollapsibleDetails",
+  component: CollapsibleDetails,
   tags: ["autodocs"],
   argTypes: {
   },
   args: {},
-} satisfies Meta<typeof CollapsibleSection>;
+} satisfies Meta<typeof CollapsibleDetails>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

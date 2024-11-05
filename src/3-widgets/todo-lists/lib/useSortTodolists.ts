@@ -15,6 +15,19 @@ export const useSortTodolists = (items: TList[], sortProp: keyof TList) => {
   };
 
   const sortedItems = useMemo(() => {
+    // вспомогательная ф-я чтоб не дублировать код
+    const compareValues = (
+      aComparedValue: string | number,
+      bComparedValue: string | number
+    ) => {
+      if (aComparedValue < bComparedValue) {
+        return sortMode === "asc" ? -1 : 1;
+      } else if (aComparedValue > bComparedValue) {
+        return sortMode === "asc" ? 1 : -1;
+      }
+      return 0;
+    };
+
     return !sortMode || !sortProp
       ? items
       : items.slice().sort((a: TList, b: TList) => {
@@ -23,50 +36,37 @@ export const useSortTodolists = (items: TList[], sortProp: keyof TList) => {
 
           // если сравниваются строковые значения (например, сортировка по title)
           if (typeof aValue === "string" && typeof bValue === "string") {
-            const aStringValue = String(aValue).toLowerCase();
-            const bStringValue = String(bValue).toLowerCase();
+            const aComparedValue = String(aValue).toLowerCase();
+            const bComparedValue = String(bValue).toLowerCase();
 
-            if (sortMode === "asc" && aStringValue > bStringValue) {
-              return 1;
-            } else if (sortMode === "desc" && aStringValue > bStringValue) {
-              return -1;
-            }
+            return compareValues(aComparedValue, bComparedValue);
           }
 
           // сравнение выполненных дел - сколько isDone в todolists[items]
-          if (
+          else if (
             Array.isArray(aValue) &&
             Array.isArray(bValue) &&
             sortProp === "items"
           ) {
-            const aFinishedCount = aValue.filter((item) => item.isDone).length;
-            const bFinishedCount = bValue.filter((item) => item.isDone).length;
+            const aComparedValue = aValue.filter((item) => item.isDone).length;
+            const bComparedValue = bValue.filter((item) => item.isDone).length;
 
-            if (sortMode === "asc" && aFinishedCount > bFinishedCount) {
-              return 1;
-            } else if (sortMode === "desc" && aFinishedCount > bFinishedCount) {
-              return -1;
-            }
+            return compareValues(aComparedValue, bComparedValue);
           }
 
           // если поле - массивами, то сравниваем их длину
-          if (Array.isArray(aValue) && Array.isArray(bValue)) {
-            const aItemsCount = aValue.length;
-            const bItemsCount = bValue.length;
+          else if (Array.isArray(aValue) && Array.isArray(bValue)) {
+            const aComparedValue = aValue.length;
+            const bComparedValue = bValue.length;
 
-            if (sortMode === "asc" && aItemsCount > bItemsCount) {
-              return 1;
-            } else if (sortMode === "desc" && aItemsCount > bItemsCount) {
-              return -1;
-            }
+            return compareValues(aComparedValue, bComparedValue);
           }
 
           // иначе обычная сортировка
-          if (sortMode === "asc") {
-            return -1;
-          } else {
-            return 1;
+          else if (typeof aValue === "number" && typeof bValue === "number") {
+            return sortMode === "asc" ? aValue - bValue : bValue - aValue;
           }
+          return 0;
         });
   }, [items, sortProp, sortMode]);
 

@@ -20,6 +20,12 @@ export const Default: Story = {
   },
 };
 
+export const Add: Story = {
+  args: {
+    type: 'add'
+  },
+};
+
 export const Custom: Story = {
   args: {
     fill: "var(--color-accent)",

@@ -17,13 +17,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    isDark: false,
+    type: 'light',
   },
 };
 
 export const Dark: Story = {
   args: {
-    isDark: true,
+    type: 'dark',
+  },
+};
+
+export const Fillfilled: Story = {
+  args: {
+    type: 'fullfilled',
   },
 };
 

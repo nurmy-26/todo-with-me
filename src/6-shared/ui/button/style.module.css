@@ -88,11 +88,14 @@
 
 /* стили disabled в конце чтоб корректно перезаписывать */
 .button:disabled {
-  color: var(--color-dark-inactive);
+  color: var(--color-secondary);
   background-color: transparent;
-  border: 2px solid var(--color-dark-inactive);
   cursor: auto;
 }
+.primary:disabled,
+.secondary:disabled {
+  border: 2px solid var(--color-secondary);
+}
 .button:disabled svg {
-  fill: var(--color-dark-inactive);
+  fill: var(--color-secondary);
 }

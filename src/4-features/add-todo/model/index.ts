@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { useGetTodoLists, useUpdateTodoList } from "../../../5-entities";
-import { TItem, TList } from "../../../6-shared/types";
+import { TList } from "../../../6-shared/types";
+import { generateTodoItem } from "../../../6-shared/lib/utils/generateTodoItem";
 
 // хук для добавления нового элемента в TodoList
 export const useAddTodo = () => {
@@ -9,24 +9,22 @@ export const useAddTodo = () => {
   const { updateList, isLoading } = useUpdateTodoList();
   const [error, setError] = useState<string | null>(null);
 
-  const addTodo = async (listTitle: string, inputValue: string) => {
+  const addTodo = async (
+    listTitle: string,
+    inputValue: string,
+    isDone?: boolean
+  ) => {
     setError(null); // сброс ошибки перед началом
 
     try {
-      // формируем новый пункт списка из информации, полученной из инпута(ов)
-      const listItem: TItem = {
-        id: uuidv4(),
-        // title: itemValues['list-item-title'], - пример
-        title: inputValue, // todo - потом может замениться более сложным объектом (собирается из разных полей)
-        isDone: false,
-      };
+      // формируем новый пункт списка с id из полученной информации
+      const listItem = generateTodoItem(inputValue, isDone);
 
       // получаем обновленный список, чтобы передать его в updateList
       const selectedList: TList = data.find(
         (list: TList) => list.title === listTitle
       );
       if (!selectedList) {
-        // setError(`List with title ${listTitle} was not found`);
         throw new Error(`List with title ${listTitle} was not found`);
       }
 

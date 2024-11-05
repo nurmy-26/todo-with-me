@@ -3,14 +3,14 @@ import cn from 'classnames';
 import style from './style.module.css';
 
 
-type CollapsibleSectionProps = {
+type CollapsibleDetailsProps = {
   children: ReactNode;
   extraClass?: string;
   title?: string;
   titleOverlay?: 'light' | 'dark' | 'none';
 };
 
-const CollapsibleSection = ({ title, children, titleOverlay = 'none', extraClass }: CollapsibleSectionProps) => {
+const CollapsibleDetails = ({ title, children, titleOverlay = 'none', extraClass }: CollapsibleDetailsProps) => {
 
   return (
     <details className={cn(style.details, extraClass)}>
@@ -20,4 +20,4 @@ const CollapsibleSection = ({ title, children, titleOverlay = 'none', extraClass
   )
 };
 
-export default CollapsibleSection;
+export default CollapsibleDetails;
