@@ -4,27 +4,31 @@ import { useGetTodoLists } from '../../../5-entities';
 import { useFilter } from '../../../6-shared/lib/hooks/useFilter';
 import GridSectionLayout from '../../../6-shared/ui/grid-list-layout';
 import { TList } from '../../../6-shared/types';
-import Button from '../../../6-shared/ui/button';
-import { XMarkIcon } from '../../../6-shared/ui/icons/xmark-icon';
-import useResponsive from '../../../6-shared/lib/hooks/useResponsive';
 import { useSortTodolists } from '../lib/useSortTodolists';
 import { filterByCheckboxes } from '../lib/filterByCheckboxes';
 import ListOfTodolists from './list-of-todolists';
-import TodolistsStub from './todolists-stub';
 import ControlBar from './control-bar';
-import Sidebar from './sidebar';
+import ControlSidebar from './control-sidebar';
+import { useToggle } from '../../../6-shared/lib/hooks/useToggle';
+import ResetBtn from './reset-btn';
 
 
 const TodoLists = () => {
   const { data: todolists, isLoading } = useGetTodoLists();
   const isDataEmpty = todolists.length === 0;
-  const isMobile = useResponsive();
 
   // поиск в зависимости от выбранных чекбоксов (по названию и/или элементам списков)
   const initialTitleCheckbox = true;
-  const [isTitleChecked, setIsTitleChecked] = useState(initialTitleCheckbox);
+  const { state: isTitleChecked, toggle: toggleTitleCheckbox, reset: resetTitleCheckbox } = useToggle(initialTitleCheckbox);
   const initialItemsCheckbox = true;
-  const [isItemsChecked, setIsItemsChecked] = useState(initialItemsCheckbox)
+  const { state: isItemsChecked, toggle: toggleItemsCheckbox, reset: resetItemsCheckbox } = useToggle(initialItemsCheckbox);
+
+  // видимость формы добавления списка и секции сортировки и фильтрации
+  const initialAddFormVisibility = true;
+  const { state: isAddFormVisible, toggle: toggleAddFormVisibility } = useToggle(initialAddFormVisibility);
+  const initialControlBarVisibility = false;
+  const { state: isControlBarVisible, toggle: toggleControlBarVisibility } = useToggle(initialControlBarVisibility);
+
 
   // общий фильтр
   const { searchValue, setSearchValue, filteredItems, resetSearch } = useFilter(
@@ -41,39 +45,26 @@ const TodoLists = () => {
   // при сбросе вернутся стартовые значения ("по дате создания", sortMode - "asc")
   const handleReset = () => {
     setSortField(initialSortField);
-    setIsTitleChecked(initialTitleCheckbox);
-    setIsItemsChecked(initialItemsCheckbox);
+    resetTitleCheckbox();
+    resetItemsCheckbox();
     resetSort();
     resetSearch();
   }
 
-  // от 550px и ниже будет отображаться с текстом
-  const resetBtn = (
-    <Button
-      aria-label={'Сбросить сортировку и фильтры'}
-      title={'Сбросить сортировку и фильтры'}
-      variant={'tertiary'}
-      icon={<XMarkIcon />}
-      onClick={handleReset}
-    >
-      {isMobile ? "Сбросить" : ""}
-    </Button>
-  );
-
 
   return (
     <>
-      <CreateTodoListForm />
+      {isAddFormVisible && <CreateTodoListForm />}
 
-      {!isDataEmpty && <GridSectionLayout
+      {!isDataEmpty && isControlBarVisible && <GridSectionLayout
         label={"Сортировка и фильтры"}
         mainContent={
           <ControlBar
             filterOptions={{
               isTitleChecked,
-              setIsTitleChecked,
+              toggleTitleCheckbox,
               isItemsChecked,
-              setIsItemsChecked,
+              toggleItemsCheckbox,
               searchValue,
               setSearchValue
             }}
@@ -85,17 +76,20 @@ const TodoLists = () => {
             }}
           />
         }
-        asideContent={resetBtn}
+        asideContent={<ResetBtn handleReset={handleReset} />}
       />}
 
       <GridSectionLayout
         label={"Мои списки"}
-        isStubNeeded={isDataEmpty}
-        stubComponent={<TodolistsStub />}
         mainContent={
-          <ListOfTodolists isLoading={isLoading} data={sortedItems} />
+          <ListOfTodolists isLoading={isLoading} initialData={todolists} renderedData={sortedItems} />
         }
-        asideContent={<Sidebar isDataEmpty={isDataEmpty} />}
+        asideContent={
+          <ControlSidebar
+            isDataEmpty={isDataEmpty}
+            addBtn={{ isActive: isAddFormVisible, handleClick: toggleAddFormVisibility }}
+            filterBtn={{ isActive: isControlBarVisible, handleClick: toggleControlBarVisibility }} />
+        }
       />
     </>
   );

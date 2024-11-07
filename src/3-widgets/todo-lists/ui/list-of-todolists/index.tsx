@@ -2,15 +2,18 @@ import List from '../../../../6-shared/ui/list';
 import { TList } from '../../../../6-shared/types';
 import { SkeletonLoaderCard, TodoCard } from '../../../todo-card';
 import { getAverageSkeletonNumber } from '../../lib/getAverageSkeletonNumber';
+import TodolistsStub from '../todolists-stub';
 
 
 type ListOfTodolistsProps = {
   isLoading?: boolean;
-  data: TList[];
+  initialData: TList[];
+  renderedData: TList[];
 };
 
-const ListOfTodolists = ({ isLoading, data }: ListOfTodolistsProps) => {
+const ListOfTodolists = ({ isLoading, initialData, renderedData }: ListOfTodolistsProps) => {
   const skeletonCards = getAverageSkeletonNumber(); // сколько рендерить во время загрузки
+  const isInitialDataEmpty = initialData.length === 0; // если список пуст, рендерим другую заглушку
 
   const renderTodoList = (list: TList) => {
     return (
@@ -21,8 +24,10 @@ const ListOfTodolists = ({ isLoading, data }: ListOfTodolistsProps) => {
   return (
     <List
       isLoading={isLoading}
+      isStubNeeded={isInitialDataEmpty}
+      stubComponent={<TodolistsStub />}
       skeletonLoader={{ component: <SkeletonLoaderCard />, count: skeletonCards }}
-      data={data}
+      data={renderedData}
       renderItem={renderTodoList}
     />
   );

@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { MouseEvent } from 'react';
 import Button from '../../../../6-shared/ui/button';
 import { PlusIcon } from '../../../../6-shared/ui/icons/plus-icon';
 import { LoadingIcon } from '../../../../6-shared/ui/icons/loading-icon';
@@ -6,14 +6,15 @@ import { ButtonProps } from '../../../../6-shared/ui/button/type';
 
 
 type CreateTodoListBtnProps = ButtonProps & {
+  isActive?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
   extraClass?: string;
-  onClick?: (event: FormEvent) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   withText?: boolean;
 };
 
-const CreateTodoListBtn = ({ disabled, isLoading, extraClass, onClick, withText, ...rest }: CreateTodoListBtnProps) => {
+const CreateTodoListBtn = ({ isActive, disabled, isLoading, extraClass, onClick, withText, ...rest }: CreateTodoListBtnProps) => {
   const text = 'Создать список';
 
 
@@ -24,7 +25,8 @@ const CreateTodoListBtn = ({ disabled, isLoading, extraClass, onClick, withText,
       disabled={disabled}
       extraClass={extraClass}
       onClick={onClick}
-      title={withText ? '' : text}
+      // подсказка при наведении нужна только если у кнопки svg без текста
+      title={withText ? '' : (isActive ? 'Скрыть форму добавления списка' : 'Показать форму добавления списка')}
       {...rest}
     >
       {withText && text}

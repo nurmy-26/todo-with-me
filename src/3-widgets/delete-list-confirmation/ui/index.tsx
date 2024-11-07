@@ -11,14 +11,14 @@ import style from './style.module.css';
 const DeleteListConfirmation = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // извлекаем id из url
-  const { deleteList } = useDeleteTodoList();
+  const { deleteList, isLoading: isDeleteLoading } = useDeleteTodoList();
   const { data, isLoading } = useGetTodoLists();
 
   const listInfo: TList = data.find((item: TItem) => item.id === id);
 
   const handleDelete = async (event: FormEvent, listId: string) => {
     event.preventDefault();
-    deleteList(listId);
+    await deleteList(listId);
 
     navigate(routes.home); // после удаления возврат на главную
   }
@@ -30,6 +30,7 @@ const DeleteListConfirmation = () => {
       subjectText={listInfo?.title}
       submitButton={
         <DeleteListBtn
+          isLoading={isDeleteLoading}
           type={'submit'}
           size='m'
           extraClass={style.delete_btn}

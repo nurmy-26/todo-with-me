@@ -10,6 +10,8 @@ interface Identifiable {
 // объект T должен включать свойство id: string
 type ListProps<T extends Identifiable> = {
   isLoading?: boolean;
+  isStubNeeded?: boolean;
+  stubComponent?: ReactNode;
   skeletonLoader?: { component: ReactNode, count: number };
   data: T[]; // массив объектов для рендера
   renderItem: (item: T) => ReactNode; // ф-я получает на вход информацию об объекте и возвращает компонент
@@ -18,11 +20,15 @@ type ListProps<T extends Identifiable> = {
 
 const List = <T extends Identifiable,>({
   isLoading,
+  isStubNeeded,
+  stubComponent,
   skeletonLoader,
   data,
   renderItem,
   extraClass
 }: ListProps<T>) => {
+  const stub = stubComponent || null; // если заглушка не передана, на месте списка ничего не рендерится
+
   // если данные еще грузятся, а skeletonLoader не передан, то будет просто <p>Loading...</p>
   // todo - заменить <p>Loading...</p> на какой-то дефолтный кружок загрузки
   const listContent = isLoading ?
@@ -40,7 +46,9 @@ const List = <T extends Identifiable,>({
         </ul>
       )
     :
-    (
+    // загрузка закончена - можно отрендерить заглушку (например, если список пуст и надо отобразить подсказку)
+    (isStubNeeded ? stub : (
+      // или рендерим переданный список (может быть отфильтрован на уровне выше)
       <ul className={cn(style.list, extraClass)}>
         {data.map((item) => (
           <li key={item.id}>
@@ -50,6 +58,7 @@ const List = <T extends Identifiable,>({
           </li>
         ))}
       </ul>
+    )
     );
 
   return listContent;

@@ -16,9 +16,9 @@ import style from './style.module.css';
 type ControlBarProps = {
   filterOptions: {
     isTitleChecked: boolean;
-    setIsTitleChecked: (value: SetStateAction<boolean>) => void;
+    toggleTitleCheckbox: (event: ChangeEvent<HTMLInputElement>) => void;
     isItemsChecked: boolean;
-    setIsItemsChecked: (value: SetStateAction<boolean>) => void;
+    toggleItemsCheckbox: (event: ChangeEvent<HTMLInputElement>) => void;
     searchValue: string;
     setSearchValue: Dispatch<SetStateAction<string>>;
   };
@@ -34,7 +34,7 @@ const ControlBar = forwardRef<HTMLDivElement, ControlBarProps>(({
   filterOptions, sortOptions
 }: ControlBarProps,
   forwardedRef) => {
-  const { isTitleChecked, setIsTitleChecked, isItemsChecked, setIsItemsChecked, searchValue, setSearchValue } = filterOptions;
+  const { isTitleChecked, toggleTitleCheckbox, isItemsChecked, toggleItemsCheckbox, searchValue, setSearchValue } = filterOptions;
   const { sortField, setSortField, sortMode, toggleSortMode } = sortOptions;
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   // если не выбран ни один checkbox и курсор стоит в поле поиска - отобразит предупреждение
@@ -138,7 +138,7 @@ const ControlBar = forwardRef<HTMLDivElement, ControlBarProps>(({
           label={'Среди имен списков'}
           value={'title-checkbox'}
           isChecked={isTitleChecked}
-          handleChange={() => setIsTitleChecked(!isTitleChecked)}
+          handleChange={toggleTitleCheckbox}
           extraClass={style.search_checkbox}
         />
         <Checkbox
@@ -146,7 +146,7 @@ const ControlBar = forwardRef<HTMLDivElement, ControlBarProps>(({
           label={'Среди элементов списков'}
           value={'items-checkbox'}
           isChecked={isItemsChecked}
-          handleChange={() => setIsItemsChecked(!isItemsChecked)}
+          handleChange={toggleItemsCheckbox}
           extraClass={style.search_checkbox}
         />
       </div>

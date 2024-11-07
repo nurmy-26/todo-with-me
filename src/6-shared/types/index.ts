@@ -18,15 +18,6 @@ export type TList = {
   items: TItem[];
 };
 
-// todo - удалить, если не пригодится
-export type TBook = TItem & {
-  pages: number; // кол-во страниц
-  cover: string; // ссылка на обложку
-  grade: number; // оценка
-  review: string; // ссылка на рецензию
-  tile?: string; // ход по карте (клетка)
-};
-
 export type TListItemProps = {
   title?: string;
   listId: string;

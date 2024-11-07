@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import { TItem } from '../../../6-shared/types';
 import Checkbox from '../../../6-shared/ui/input/checkbox';
+import { LoadingIcon } from '../../../6-shared/ui/icons/loading-icon';
 import { useToggleTodo } from '../model';
 
 
@@ -13,7 +14,7 @@ type ToggleTodoCheckboxProps = {
 
 const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTodoCheckboxProps) => {
   const { id, title, isDone } = item;
-  const { toggleTodo } = useToggleTodo();
+  const { toggleTodo, isLoading } = useToggleTodo();
 
   const toggle = (event: ChangeEvent<HTMLInputElement>, listId: string, itemId: string) => {
     event.preventDefault();
@@ -23,14 +24,15 @@ const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTo
   // todo - добавить сюда назначение type из Settings
 
   return (
-    <Checkbox
-      extraClass={extraClass}
-      type={type}
-      name={id}
-      value={title}
-      isChecked={isDone}
-      handleChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
-    />
+    isLoading ? <LoadingIcon /> :
+      <Checkbox
+        extraClass={extraClass}
+        type={type}
+        name={id}
+        value={title}
+        isChecked={isDone}
+        handleChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
+      />
   );
 };
 

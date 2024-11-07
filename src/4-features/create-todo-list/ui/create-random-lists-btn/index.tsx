@@ -25,9 +25,9 @@ const CreateRandomListsBtn = ({ customText, disabled, extraClass, withText, ...r
   const randomList = shuffleArray(defaultTodolists).slice(0, 2);
   const lists = seasonList.concat(...randomList).map(item => generateTodoListFromData(item));
 
-  // сохраняем их в стор
-  const handleCreateLists = () => {
-    lists.map(item => createTodoList(item.title, item.items));
+  // сохраняем их на сервер
+  const handleCreateLists = async () => {
+    await Promise.all(lists.map(item => createTodoList(item.title, item.items)));
   };
 
   const text = customText || 'Создать несколько списков';

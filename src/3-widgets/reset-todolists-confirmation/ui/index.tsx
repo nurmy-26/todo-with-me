@@ -12,13 +12,13 @@ type ResetTodolistsConfirmationProps = {
 
 const ResetTodolistsConfirmation = ({ step }: ResetTodolistsConfirmationProps) => {
   const navigate = useNavigate();
-  const { deleteAllTodoLists } = useDeleteAllTodoLists();
+  const { deleteAllTodoLists, isLoading } = useDeleteAllTodoLists();
 
 
   const handleDelete = async (event: FormEvent) => {
     event.preventDefault();
 
-    deleteAllTodoLists();
+    await deleteAllTodoLists();
     navigate(routes.home); // после удаления возврат на главную
   }
 
@@ -26,6 +26,7 @@ const ResetTodolistsConfirmation = ({ step }: ResetTodolistsConfirmationProps) =
   const actionText = isFirstStep ? "удалить" : "удалит";
 
   const btn = <DeleteAllTodoListsBtn
+    isLoading={isLoading}
     type={isFirstStep ? 'button' : 'submit'}
     variant={'tertiary'}
     withText

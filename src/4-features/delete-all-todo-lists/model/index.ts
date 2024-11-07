@@ -18,8 +18,8 @@ export const useDeleteAllTodoLists = () => {
 
   const listsIds: string[] = data.map((item: TList) => item.id);
 
-  const deleteAllTodoLists = () => {
-    listsIds.map((id) => deleteList(id));
+  const deleteAllTodoLists = async () => {
+    await Promise.all(listsIds.map((id) => deleteList(id)));
   };
 
   return {
