@@ -23,8 +23,25 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      # Очистка кэша гарантирует, что все зависимости будут загружены заново из реестра npm, а не из локального кэша
+      - name: 🔄 Clear npm cache
+        run: npm cache clean --force
+
       - name: 📦 Install modules
         run: npm install
+
+      # Логируем список установленных npm-пакетов и их версии на верхнем уровне, чтобы удостовериться в точности устанавливаемых версий
+      - name: 📝 Log package versions
+        run: npm list --depth=0
+
+      # Отображаем содержимое конфигурационных файлов TypeScript (диагностика возможных расхождений между средами)
+      - name: 🔍 Show TypeScript configs
+        run: cat tsconfig.json && echo && cat tsconfig.app.json && echo && cat
+          tsconfig.node.json
+
+      # Логируем переменные окружения
+      - name: 🔧 Debug environment variables
+        run: env
 
       - name: 🛠️ Build project
         run: npm run build
@@ -38,7 +55,9 @@ jobs:
       - name: 👾 E2E tests by Cypress
         run: npm run cypress
 
-      - name: 💻 Lint code
-        run: npm run lint
+      # Запуск ESLint с дополнительными данными отладки
+      - name: 💻 Lint code with debug info
+        run: npm run lint -- --debug
 
-      - run: echo "✨ This job's status is ${{ job.status }}."
+      - name: ✨ Job status
+        run: echo "This job's status is ${{ job.status }}."
