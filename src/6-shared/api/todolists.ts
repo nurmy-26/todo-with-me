@@ -43,7 +43,7 @@ export const todolistsApi = createApi({
     // получение конкретного списка
     getTodoList: build.query({
       query: (id) => `todolists/${id}`,
-      providesTags: (result, error, id) => [{ type: "TodoLists", id }],
+      providesTags: (_result, _error, id) => [{ type: "TodoLists", id }],
     }),
 
     // запрос на обновление списка
@@ -61,7 +61,7 @@ export const todolistsApi = createApi({
         );
         queryFulfilled.catch(patchResult.undo);
       },
-      invalidatesTags: (result, error, { id }) => [{ type: "TodoLists", id }],
+      invalidatesTags: (_result, _error, { id }) => [{ type: "TodoLists", id }],
     }),
 
     // запрос на удаление списка
@@ -70,7 +70,7 @@ export const todolistsApi = createApi({
         url: `todolists/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, id) => [{ type: "TodoLists", id }],
+      invalidatesTags: (_result, _error, id) => [{ type: "TodoLists", id }],
     }),
   }),
 });

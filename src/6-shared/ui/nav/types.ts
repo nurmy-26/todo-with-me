@@ -1,10 +1,6 @@
-import { routes } from "../../const/routes";
-
-export type RoutePaths = (typeof routes)[keyof typeof routes];
-
 type TNavItem = {
   title: string;
-  path: RoutePaths;
+  path: string;
 };
 type TNavList = TNavItem[];
 
