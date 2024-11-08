@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: 📦 Install modules
-        run: npm install
+        run: npm ci
 
       - name: 🛠️ Build project
         run: npm run build
@@ -40,6 +40,6 @@ jobs:
 
       # Запуск ESLint с дополнительными данными отладки
       - name: 💻 Lint code
-        run: npm run lint
+        run: npm run lint -- --no-cache
 
       - run: echo "✨ This job's status is ${{ job.status }}."
