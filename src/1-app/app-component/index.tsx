@@ -6,6 +6,7 @@ import { AppRouter } from '../router';
 const App = () => {
   return (
     <Router
+      basename='/todo-with-me'
       future={{
         v7_startTransition: true,
         v7_relativeSplatPath: true,
