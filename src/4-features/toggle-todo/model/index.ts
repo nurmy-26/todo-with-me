@@ -28,7 +28,7 @@ export const useToggleTodo = () => {
       };
 
       // обновляем в БД
-      await updateList(listId, updatedList);
+      await updateList(updatedList);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     }

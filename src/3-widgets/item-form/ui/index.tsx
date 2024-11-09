@@ -20,12 +20,12 @@ const ItemForm = () => {
   const { inputRef: titleRef, deactivateInput: deactivateTitleInput } = useInputRef();
   const { addTodo, isLoading } = useAddTodo();
 
-  const { selectedValue, valueList, handleSelect } = useSelectTodoListTitle();
+  const { selectedId, valueList, handleSelect } = useSelectTodoListTitle();
 
   const handleAddToList = async (event: FormEvent) => {
     event.preventDefault();
 
-    addTodo(selectedValue, values['list-item-title'])
+    addTodo(selectedId, values['list-item-title'])
     clearForm();
   };
 
@@ -44,8 +44,8 @@ const ItemForm = () => {
       <Select
         aria-label={'Выбрать список для добавления элементов'}
         name='list-name'
-        value={selectedValue}
-        options={valueList}
+        value={selectedId} // id списка для значения select
+        options={valueList} // передаем массив объектов с id и title
         disabled={isLoading}
         onChange={handleSelect}
       />

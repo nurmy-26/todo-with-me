@@ -63,7 +63,7 @@ const TodoCard = ({
 
       <TodoList list={list} type={type} extraClass={style.article_list} />
 
-      <AddTodoForm listTitle={list.title} extraClass={cn(style.todo_btn, style[`todo_btn_${type}`])} />
+      <AddTodoForm listId={list.id} extraClass={cn(style.todo_btn, style[`todo_btn_${type}`])} />
     </article>
   )
 };

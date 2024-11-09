@@ -1,5 +1,5 @@
 name: PR & PUSH Actions
-run-name: ${{ github.actor }} is testing out PR & PUSH Actions 🚀
+run-name: ${{ github.actor }} is running PR & PUSH Actions 🚀
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event in ${GITHUB_REF#refs/heads/} brunch."
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
       - name: 🚀 Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4

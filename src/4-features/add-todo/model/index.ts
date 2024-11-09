@@ -10,7 +10,7 @@ export const useAddTodo = () => {
   const [error, setError] = useState<string | null>(null);
 
   const addTodo = async (
-    listTitle: string,
+    listId: string,
     inputValue: string,
     isDone?: boolean
   ) => {
@@ -22,10 +22,10 @@ export const useAddTodo = () => {
 
       // получаем обновленный список, чтобы передать его в updateList
       const selectedList: TList = data.find(
-        (list: TList) => list.title === listTitle
+        (list: TList) => list.id === listId
       );
       if (!selectedList) {
-        throw new Error(`List with title ${listTitle} was not found`);
+        throw new Error(`List with title ${listId} was not found`);
       }
 
       const updatedList = {
@@ -33,7 +33,7 @@ export const useAddTodo = () => {
         items: [...selectedList.items, listItem],
       };
 
-      await updateList(selectedList.id, updatedList);
+      await updateList(updatedList);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     }

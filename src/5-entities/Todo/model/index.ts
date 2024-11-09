@@ -57,8 +57,9 @@ export const useCreateNewTodoList = () => {
 export const useUpdateTodoList = () => {
   const [updateTodoList, { isLoading, isError }] = useUpdateTodoListMutation();
 
-  const updateList = async (listId: string, updatedList: TList) => {
-    await updateTodoList({ listId, ...updatedList }).unwrap();
+  const updateList = async (updatedList: TList) => {
+    // id обновляемого списка попадает в updateTodoList автоматически с помощью spread
+    await updateTodoList({ ...updatedList }).unwrap();
   };
   return {
     updateList,

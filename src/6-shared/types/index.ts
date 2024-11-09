@@ -1,4 +1,4 @@
-import { FormEvent, MouseEvent, MouseEventHandler } from "react";
+// import { FormEvent, MouseEvent, MouseEventHandler } from "react";
 import { THEME } from "../const/theme";
 
 export type TTheme = THEME;
@@ -18,19 +18,19 @@ export type TList = {
   items: TItem[];
 };
 
-export type TListItemProps = {
-  title?: string;
-  listId: string;
-  extraClass?: string;
-  list?: TItem[];
-  onClick?: (event: FormEvent) => void;
-  handleDeleteItem: (
-    event: MouseEvent<HTMLButtonElement>,
-    deletedItem: TItem,
-    listTitle: string
-  ) => Promise<void>;
-  handleDeleteList: MouseEventHandler<HTMLButtonElement>;
-};
+// export type TListItemProps = {
+//   title?: string;
+//   listId: string;
+//   extraClass?: string;
+//   list?: TItem[];
+//   onClick?: (event: FormEvent) => void;
+//   handleDeleteItem: (
+//     event: MouseEvent<HTMLButtonElement>,
+//     deletedItem: TItem,
+//     listTitle: string
+//   ) => Promise<void>;
+//   handleDeleteList: MouseEventHandler<HTMLButtonElement>;
+// };
 
 type TQueryOptions = {
   skip?: boolean;
