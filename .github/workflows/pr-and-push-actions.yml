@@ -1,17 +1,13 @@
-name: PR & PUSH Actions
-run-name: ${{ github.actor }} is running PR & PUSH Actions 🚀
+name: PUSH Actions
+run-name: ${{ github.actor }} is running PUSH Actions 🚀
 
 on:
   push:
     branches:
       - "**"
-  pull_request:
-    branches:
-      - main
-      - develop
 
 jobs:
-  PR-and-PUSH-Actions:
+  PUSH-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
