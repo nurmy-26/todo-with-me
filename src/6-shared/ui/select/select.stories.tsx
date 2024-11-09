@@ -15,7 +15,7 @@ const SelectStory = () => {
     <Select
       name='list-name'
       value={selected}
-      options={['Пункт 1', 'Пункт 2', 'Пункт 3']}
+      options={[{ id: '1', title: 'Пункт 1' }, { id: '2', title: 'Пункт 2' }, { id: '3', title: 'Пункт 3' }]}
       onChange={handleSelect}
     />
   );

@@ -6,7 +6,7 @@ type SelectProps = {
   extraClass?: string;
   name: string;
   value: string;
-  options: { id: string; title: string | number }[];
+  options: { id: string; title: string }[];
   disabled?: boolean;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 };

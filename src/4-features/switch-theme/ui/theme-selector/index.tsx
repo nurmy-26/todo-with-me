@@ -5,8 +5,11 @@ import Select from '../../../../6-shared/ui/select';
 
 const ThemeSelector = () => {
   const { theme: serverTheme, switchTheme } = useTheme();
-  // генерируем список всех тем из перечисления THEME, чтоб менять в одном месте
-  const themeList = Object.values(THEME);
+  // генерируем объект всех тем из перечисления THEME, чтоб менять в одном месте
+  const themeList = Object.values(THEME).map((theme) => ({
+    id: theme,
+    title: theme.charAt(0).toUpperCase() + theme.slice(1), // 'light' -> 'Light'
+  }));
 
 
   return (
