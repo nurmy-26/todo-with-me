@@ -1,0 +1,66 @@
+# Деплой на GitHub Pages
+name: Deploy static content to Pages
+run-name: ${{ github.actor }} is running deploy 💻
+
+on:
+  # Запускается по пушу или пулл-реквесту в дефолтную ветку (main)
+  push:
+    branches: [$default-branch]
+  pull_request:
+    branches: [$default-branch]
+
+  # И позволяет запустить вручную из панели экшенов
+  workflow_dispatch:
+
+# Разрешения для GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: 🚀 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📦 Install modules
+        run: npm ci
+
+      - name: 🛠️ Build project
+        run: npm run build
+
+      - name: ⚙️ Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: 💾 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Какую именно папку загружаем
+          path: "./dist"
+
+      - name: 💻 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - run: echo "✨ This job's status is ${{ job.status }}."
