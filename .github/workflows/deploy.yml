@@ -5,9 +5,11 @@ run-name: ${{ github.actor }} is running deploy 💻
 on:
   # Запускается по пушу или пулл-реквесту в дефолтную ветку (main)
   push:
-    branches: [$default-branch]
+    branches:
+      - main
   pull_request:
-    branches: [$default-branch]
+    branches:
+      - main
 
   # И позволяет запустить вручную из панели экшенов
   workflow_dispatch:
