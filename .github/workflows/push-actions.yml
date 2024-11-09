@@ -4,7 +4,8 @@ run-name: ${{ github.actor }} is running PUSH Actions 🚀
 on:
   push:
     branches:
-      - "**"
+      - "**" # все ветки
+      - "!main" # исключая main
 
 jobs:
   PUSH-Actions:
