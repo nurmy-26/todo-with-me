@@ -1,0 +1,7 @@
+@import "./styles/fonts.css";
+@import "./styles/variables.css";
+@import "./styles/globals.css";
+@import "./styles/theme-light.css";
+@import "./styles/theme-dark.css";
+@import "./styles/theme-warm.css";
+@import "./styles/theme-night.css";

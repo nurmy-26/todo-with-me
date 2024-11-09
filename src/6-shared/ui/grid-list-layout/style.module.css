@@ -1,41 +1,46 @@
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.wrapper {
+  padding: var(--16px);
+  display: flex;
+  gap: var(--16px);
+  border-radius: var(--border-radius-base);
+  background-color: var(--section-overlay);
 
-  /* список занимает всё пространство родительской сетки */
-  grid-column: var(--grid-child-full);
-
-  /* и состоит из стольки же колонок для размещения дочерних элементов  */
-  display: grid;
-  grid-template-columns: var(--grid-parent-full);
-  gap: 16px;
+  max-width: 100%;
 }
 
-.list a {
-  color: var(--color-text-dark);
+.content {
+  flex: 1 1 auto; /* растягивается на оставшееся место */
+  min-width: 0; /* иначе содержимое вылезает за границы блока */
 }
 
-.list_item {
-  /* каждый элемент списка занимает четверть от общего числа колонок и прижат к верхней части*/
-  grid-column: var(--grid-child-quarter);
-  align-self: start;
+.aside {
+  flex: 0 0 auto; /* занимает столько места, сколько необходимо контенту внутри */
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--8px);
+  border-radius: var(--border-radius-base);
+}
+/* стили кнопок */
+.aside button svg {
+  fill: var(--color-accent);
+}
+.aside button:hover {
+  background-color: var(--card-overlay);
+}
+.aside button:active svg {
+  fill: var(--color-accent-hover);
 }
 
-@media screen and (max-width: 1440px) {
-  .list_item {
-    grid-column: var(--grid-child-third);
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .wrapper {
+    padding: var(--12px);
+    flex-direction: column;
+    border-radius: 0;
   }
-}
-
-@media screen and (max-width: 1024px) {
-  .list_item {
-    grid-column: var(--grid-child-half);
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .list_item {
-    grid-column: var(--grid-child-full);
+  .aside {
+    flex-direction: row;
+    justify-content: center;
   }
 }

@@ -5,14 +5,14 @@ import {
   useGetTodoListQuery,
   useGetTodoListsQuery,
   useUpdateTodoListMutation,
-} from "../../../6-shared/api/todolist-api";
-import { getTodoListsConfig } from "../const/get-todolists";
+} from "../../../6-shared/api/todolists";
+import { queryConfig } from "../../../6-shared/config/query";
 
 // получение всех TodoList
 export const useGetTodoLists = (
   // значения по умолчанию, но при желании можно будет передать другие
-  limit = getTodoListsConfig.limit,
-  options = getTodoListsConfig.options
+  limit = queryConfig.limit,
+  options = queryConfig.options
 ) => {
   const {
     data = [],
@@ -57,8 +57,9 @@ export const useCreateNewTodoList = () => {
 export const useUpdateTodoList = () => {
   const [updateTodoList, { isLoading, isError }] = useUpdateTodoListMutation();
 
-  const updateList = async (listId: string, updatedList: TList) => {
-    await updateTodoList({ listId, ...updatedList }).unwrap();
+  const updateList = async (updatedList: TList) => {
+    // id обновляемого списка попадает в updateTodoList автоматически с помощью spread
+    await updateTodoList({ ...updatedList }).unwrap();
   };
   return {
     updateList,

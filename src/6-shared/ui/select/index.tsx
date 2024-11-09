@@ -6,7 +6,7 @@ type SelectProps = {
   extraClass?: string;
   name: string;
   value: string;
-  options: (string | number)[];
+  options: { id: string; title: string }[];
   disabled?: boolean;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
@@ -22,9 +22,9 @@ const Select = (
       onChange={onChange}
       {...rest}
     >
-      {options.map((option, index) => (
-        <option key={index} value={option}>
-          {option}
+      {options.map((option) => (
+        <option key={option.id} value={option.id}>
+          {option.title}
         </option>
       ))}
     </select>

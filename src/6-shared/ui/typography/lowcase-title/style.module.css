@@ -1,0 +1,13 @@
+.title {
+  padding: 0 var(--16px);
+  border-radius: var(--border-radius-base);
+}
+
+.light {
+  background-color: var(--section-overlay);
+}
+
+.dark {
+  background-color: var(--color-dark-inactive);
+  color: var(--color-light);
+}

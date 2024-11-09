@@ -1,8 +1,14 @@
 export const routes = {
   home: "/",
-  todolist: "/todolist",
-  delete: "/delete",
+  todolists: {
+    todolists: "/todolists",
+    deleteList: "/todolists/delete",
+    resetAllListsConfirmation: "/todolists/reset-confirmation",
+    resetAllLists: "/todolists/reset-confirmation/reset",
+  },
+  forms: {
+    addList: "/forms/new-list",
+    // todo - addItem заменить на editList и заменить форму
+    addItem: "/forms/new-item",
+  },
 };
-
-// todo - перенести в другой файл ?
-export const MODALS_ROOT_SELECTOR = "#react-modals";

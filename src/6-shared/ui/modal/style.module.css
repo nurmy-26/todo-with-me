@@ -1,6 +1,16 @@
+/* общие стили для модального окна */
 .modal {
   z-index: 20;
   position: fixed;
+  box-sizing: border-box;
+  background-color: var(--background-base);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* стили для центральной модалки */
+.center {
   top: 50%;
   left: 50%;
   transform: translate(
@@ -8,40 +18,65 @@
     -50%
   ); /* сместит на половину размера modal, чтобы окно встало ровно по центру */
 
-  box-sizing: border-box;
+  padding: 2.5rem 3.75rem;
+  width: 45rem;
   display: flex;
-  width: 720px;
   flex-direction: column;
   align-items: center;
-
-  padding: 40px;
   border: 1px solid rgba(76, 76, 255, 0.2);
   border-radius: var(--border-radius-modal);
-  box-shadow:
-    0px 0px 1px 0px rgba(0, 0, 0, 0.04),
-    0px 4px 8px 0px rgba(0, 0, 0, 0.04),
-    0px 16px 24px 0px rgba(0, 0, 0, 0.04),
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 16px 24px 0px rgba(0, 0, 0, 0.04),
     0px 24px 32px 0px rgba(0, 0, 0, 0.04);
-
-  background-color: var(--color-light);
 }
 
 .modal svg {
   cursor: pointer;
 }
 
+/* стили кнопки закрытия */
 .close_modal {
+  z-index: 30;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  opacity: 0.7;
+  top: var(--20px);
 }
-
 .close_modal svg {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
+.center .close_modal {
+  right: var(--20px);
+}
+
+/* общие стили боковых модалок */
+.aside {
+  top: 0;
+  width: 30vw;
+  height: 100vh;
+  border-right: 1px solid rgba(76, 76, 255, 0.2);
+}
+
+/* стили левой модалки */
+.left {
+  padding: 2.5rem 3.75rem 2.5rem var(--20px);
+  left: 0;
+}
+.left .close_modal {
+  right: calc(var(--20px) * -1);
+}
+
+/* стили правой модалки */
+.right {
+  padding: 2.5rem var(--20px) 2.5rem 3.75rem;
+  right: 0;
+}
+.right .close_modal {
+  right: auto;
+  left: calc(var(--20px) * -1);
+}
+
+/* полупрозрачная подложка между модалкой и сайтом */
 .overlay {
   z-index: 10;
   position: fixed;
@@ -55,4 +90,70 @@
   align-items: center;
 
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* светлый вариант подложки для модалок, занимающих много места */
+.light {
+  background-color: var(--section-overlay);
+}
+
+/* 1280px */
+@media screen and (max-width: 80rem) {
+  .aside {
+    width: 40vw;
+  }
+}
+
+/* 1024px */
+@media screen and (max-width: 64rem) {
+  .aside {
+    width: 50vw;
+  }
+}
+
+/* 768px */
+@media screen and (max-width: 48rem) {
+  .center {
+    width: 85vw;
+  }
+  .aside {
+    top: 10%;
+    width: 100vw;
+    height: 80vh;
+    padding: 2.5rem 3.75rem var(--20px);
+  }
+  .aside .left {
+    align-items: center;
+  }
+  .aside .close_modal {
+    left: auto;
+    top: var(--12px);
+    right: var(--12px);
+  }
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .aside {
+    padding: var(--24px) 2.75rem;
+  }
+  .close_modal svg {
+    width: var(--24px);
+    height: var(--24px);
+  }
+  .aside .close_modal {
+    top: calc(var(--12px) * -1);
+    right: 50%;
+    transform: translate(50%);
+  }
+}
+
+/* 420px */
+@media screen and (max-width: 26.25rem) {
+  .center {
+    width: 92vw;
+  }
+  .aside {
+    padding: var(--20px);
+  }
 }

@@ -1,13 +1,12 @@
-import { FormEvent, forwardRef, ReactNode, useRef, useState } from 'react';
+import { FormEvent, forwardRef, ReactNode, RefObject, useRef, useState } from 'react';
 import cn from 'classnames';
 import { PlusIcon } from '../icons/plus-icon';
 import { PaperPlaneIcon } from '../icons/paper-plane-icon';
 import { LoadingIcon } from '../icons/loading-icon';
-import { useInputRef } from '../../lib/useInputRef';
-import useEscape from '../../lib/useEscape';
-import useCombinedRefs from '../../lib/useCombinedRefs';
-import { useOutsideClick } from '../../lib/useOutsideClick';
-import Input from '../input';
+import { useInputRef } from '../../lib/hooks/useInputRef';
+import useEscape from '../../lib/hooks/useEscape';
+import useCombinedRefs from '../../lib/hooks/useCombinedRefs';
+import { useOutsideClick } from '../../lib/hooks/useOutsideClick';
 import Button from '../button';
 import style from './style.module.css';
 
@@ -105,11 +104,19 @@ const ExpandableForm = forwardRef<HTMLInputElement, ExpandableFormProps>(({
 
   return (
     <form onSubmit={handleSubmit} className={cn(style.form, extraClass)}>
-      <div className={cn(style.wrapper, (isExpanded && style.wrapper_expanded))} ref={wrapperRef as React.RefObject<HTMLDivElement>}>
-        <Button variant={btnVariant} type={'submit'} disabled={btnDisabledCondition} icon={icon} size={'s'} extraClass={style.btn} />
+      <div className={cn(style.wrapper, (isExpanded && style.wrapper_expanded))} ref={wrapperRef as RefObject<HTMLDivElement>}>
+        <Button
+          aria-label={'Добавить в список'}
+          variant={btnVariant}
+          type={'submit'}
+          disabled={btnDisabledCondition}
+          icon={icon}
+          size={'xs'}
+          extraClass={style.btn}
+        />
 
-        <Input
-          extraClass={style.input}
+        <input
+          className={style.input}
           name={name}
           placeholder={placeholder}
           value={inputValue}

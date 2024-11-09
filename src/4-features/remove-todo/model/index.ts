@@ -27,7 +27,7 @@ export const useRemoveTodo = () => {
         items: updatedItems,
       };
 
-      await updateList(listId, updatedList);
+      await updateList(updatedList);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     }

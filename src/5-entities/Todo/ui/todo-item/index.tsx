@@ -11,12 +11,12 @@ type TodoItemProps = {
 
 const TodoItem = ({ item, extraClass }: TodoItemProps) => {
   // todo - при расширении todo-item тут будет больше свойств
-  const { title } = item;
+  const { title, isDone } = item;
 
   return (
     <div className={cn(style.todo, extraClass)}>
       {/* todo - при расширении todo-item - тут может добавиться больше строк */}
-      <Typography>{title}</Typography>
+      <Typography extraClass={isDone ? style.done_crossed : ''}>{title}</Typography>
     </div>
   )
 };

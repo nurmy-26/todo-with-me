@@ -1,21 +1,70 @@
-.input {
-  border: 1px solid transparent;
+.label {
+  width: 100%;
+}
 
-  border-radius: var(--border-radius-base);
-  border: 1px solid transparent;
-  padding: 0.6em 1em;
-  font-size: var(--font-size-base);
+.input {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  border: none;
+
+  font-size: calc(var(--font-size-base) * 1);
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.input::placeholder {
+  color: var(--color-secondary);
 }
 .input:active,
 .input:focus {
   outline: transparent;
 }
 
-@media (prefers-color-scheme: light) {
-  .input {
-    background-color: var(--color-light);
-  }
+.default {
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--border-radius-base);
+}
+
+.rounded {
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--border-radius-round);
+}
+
+.default:active,
+.default:focus,
+.rounded:active,
+.rounded:focus {
+  border: 2px solid var(--color-accent);
+}
+
+.line {
+  background-color: transparent;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.line:active,
+.line:focus {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.error {
+  width: 100%;
+
+  display: block;
+  min-height: 1rem;
+  padding: 0 1rem;
+  margin-top: 0.25rem;
+
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-error);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

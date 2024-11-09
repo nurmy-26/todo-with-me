@@ -11,15 +11,16 @@
   list-style-type: none;
 
   position: absolute;
+  right: 0;
   display: flex;
   flex-direction: column;
-  min-width: 240px;
+  min-width: 15rem;
   z-index: 1;
 }
 
 .item {
   margin: 0;
-  padding: 0.2em 0.2em;
+  /* padding: 0.2rem 0.2rem; */
 
   color: var(--color-text-dark);
   background-color: var(--color-light);
@@ -32,6 +33,21 @@
 .item:hover {
   border-color: var(--color-accent);
 }
+.item:hover * {
+  color: var(--color-accent);
+  fill: var(--color-accent);
+}
 .item:active {
   border-color: var(--color-text-dark);
+}
+.item:active * {
+  color: var(--color-text-dark);
+  fill: var(--color-text-dark);
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .list {
+    min-width: 7.5rem;
+  }
 }

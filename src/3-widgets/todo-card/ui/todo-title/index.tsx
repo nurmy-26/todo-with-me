@@ -24,7 +24,7 @@ const TodoTitle = ({
 
   return type === 'card' ? (
     // заголовок карточки h1 рендерится со ссылкой на отдельную страницу
-    <Link to={`${routes.todolist}/${listId}`} state={{ background: location }}>
+    <Link to={`${routes.todolists.todolists}/${listId}`} state={{ background: location }}>
       {headerTitle}
     </Link>
   ) : (

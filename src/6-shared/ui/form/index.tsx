@@ -1,12 +1,13 @@
+import { FormEvent, ReactNode } from 'react';
 import cn from 'classnames';
 import Typography from '../typography';
 import style from './style.module.css';
 
 
 type FormProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   extraClass?: string;
-  onSubmit?: (event: React.FormEvent) => void;
+  onSubmit?: (event: FormEvent) => void;
   title?: string;
 };
 

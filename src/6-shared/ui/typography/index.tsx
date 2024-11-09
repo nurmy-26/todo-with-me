@@ -1,22 +1,6 @@
-import { ElementType, ReactNode } from 'react';
 import cn from 'classnames';
 import style from './style.module.css';
-
-
-type TType = 'h1' | 'h2' | 'h3' | 'text';
-
-type TypographyProps = {
-  hasMarginBottom?: boolean;
-  hasOverflow?: boolean;
-  children: ReactNode;
-  extraClass?: string;
-  marginBottom?: string;
-  tag?: ElementType | string;
-  type?: TType;
-  typeArray?: {
-    [key: string]: ElementType | string;
-  };
-};
+import { TypographyProps } from './types';
 
 const Typography = ({
   hasMarginBottom = false,
@@ -24,6 +8,7 @@ const Typography = ({
   children,
   extraClass,
   marginBottom,
+  isError,
   tag,
   type = 'text',
   // соотнесение с тегами для стандартных стилей (можно передать своё соотнесение)
@@ -32,7 +17,7 @@ const Typography = ({
     h2: 'h2',
     h3: 'h3',
     text: 'p',
-    // subtitle: 'p'
+    inline: 'span'
   }
 }: TypographyProps) => {
   // если тег должен отличаться от визуального представления, можно прямо его указать (приоритетнее, чем type)
@@ -42,6 +27,7 @@ const Typography = ({
     style.common,
     style[type],
     hasOverflow && style.overflow,
+    isError && style.error,
     extraClass
   );
 

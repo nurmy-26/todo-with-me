@@ -1,41 +1,38 @@
 import { ChangeEvent } from 'react';
-import cn from 'classnames';
-import { CheckIcon } from '../../../6-shared/ui/icons/check-icon';
 import { TItem } from '../../../6-shared/types';
+import Checkbox from '../../../6-shared/ui/input/checkbox';
+import { LoadingIcon } from '../../../6-shared/ui/icons/loading-icon';
 import { useToggleTodo } from '../model';
-import style from './style.module.css';
 
 
 type ToggleTodoCheckboxProps = {
   item: TItem;
   listId: string;
+  type?: 'default' | 'paw';
   extraClass?: string;
 };
 
-const ToggleTodoCheckbox = ({ item, listId, extraClass }: ToggleTodoCheckboxProps) => {
+const ToggleTodoCheckbox = ({ item, listId, type = 'paw', extraClass }: ToggleTodoCheckboxProps) => {
   const { id, title, isDone } = item;
-  const { toggleTodo } = useToggleTodo();
+  const { toggleTodo, isLoading } = useToggleTodo();
 
   const toggle = (event: ChangeEvent<HTMLInputElement>, listId: string, itemId: string) => {
     event.preventDefault();
     toggleTodo(listId, itemId)
   }
 
-  const checkboxIcon = isDone ? <CheckIcon type={'white-rectangle'} /> : <CheckIcon />
+  // todo - добавить сюда назначение type из Settings
 
   return (
-    <label className={cn(style.label, extraClass)} onClick={(e) => e.stopPropagation()}>
-      <input
-        className={style.checkbox}
-        type="checkbox"
+    isLoading ? <LoadingIcon /> :
+      <Checkbox
+        extraClass={extraClass}
+        type={type}
         name={id}
         value={title}
-        checked={isDone}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
+        isChecked={isDone}
+        handleChange={(event: ChangeEvent<HTMLInputElement>) => toggle(event, listId, id)}
       />
-
-      {checkboxIcon}
-    </label>
   );
 };
 

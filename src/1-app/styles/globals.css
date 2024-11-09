@@ -1,0 +1,77 @@
+:root {
+  color-scheme: light dark;
+
+  font-family: "Euclid Circular A", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  /* font-family: Rubik, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* стили для всей полосы прокрутки */
+::-webkit-scrollbar {
+  width: 0.375rem; /* ширина вертикального скроллбара */
+  height: 0.375rem; /* высота горизонтального скроллбара */
+}
+/* стили для ползунка внутри полосы прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-base);
+}
+/* цвет ползунка при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary-hover);
+}
+/* фон скроллбара */
+::-webkit-scrollbar-track {
+  background: var(--color-secondary-background);
+  border-radius: var(--border-radius-base);
+}
+
+html {
+  font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-accent);
+}
+a:active {
+  color: var(--color-text-primary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  color: var(--color-text-primary);
+  background: var(--body-color);
+}
+
+/* 768px */
+@media screen and (max-width: 48rem) {
+  :root {
+    --section-indent: 1rem;
+  }
+  html {
+    font-size: 0.85rem;
+  }
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  html {
+    font-size: 0.75rem;
+  }
+}

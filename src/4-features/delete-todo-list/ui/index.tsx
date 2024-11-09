@@ -1,19 +1,24 @@
+import { MouseEvent } from 'react';
 import Button from '../../../6-shared/ui/button';
 import { TrashIcon } from '../../../6-shared/ui/icons/trash-icon';
+import { LoadingIcon } from '../../../6-shared/ui/icons/loading-icon';
+import { ButtonProps } from '../../../6-shared/ui/button/type';
 
 
-type DeleteListBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type DeleteListBtnProps = ButtonProps & {
+  isLoading?: boolean;
   disabled?: boolean;
   extraClass?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 's' | 'm';
+  size?: 'xs' | 's' | 'm';
 };
 
-const DeleteListBtn = ({ disabled, extraClass, onClick, size = 's', ...rest }: DeleteListBtnProps) => {
+const DeleteListBtn = ({ isLoading, disabled, extraClass, onClick, size = 'xs', ...rest }: DeleteListBtnProps) => {
   return (
     <Button
-      icon={<TrashIcon />}
+      aria-label={'Удалить список'}
+      icon={isLoading ? <LoadingIcon /> : <TrashIcon />}
       disabled={disabled}
       extraClass={extraClass}
       size={size}

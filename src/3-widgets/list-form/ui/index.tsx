@@ -1,7 +1,8 @@
-import { TodoListCreateBtn, useCreateTodoList } from '../../../4-features';
-import useEscape from '../../../6-shared/lib/useEscape';
-import { useForm } from '../../../6-shared/lib/useForm';
-import { useInputRef } from '../../../6-shared/lib/useInputRef';
+import { FormEvent } from 'react';
+import { CreateTodoListBtn, useCreateTodoList } from '../../../4-features';
+import useEscape from '../../../6-shared/lib/hooks/useEscape';
+import { useForm } from '../../../6-shared/lib/hooks/useForm';
+import { useInputRef } from '../../../6-shared/lib/hooks/useInputRef';
 import Form from '../../../6-shared/ui/form';
 import Input from '../../../6-shared/ui/input';
 
@@ -18,7 +19,7 @@ const ListForm = () => {
   const { inputRef: listTitleRef, deactivateInput: deactivateListTitleInput } = useInputRef();
   const { createTodoList, isLoading } = useCreateTodoList();
 
-  const handleCreateList = async (event: React.FormEvent) => {
+  const handleCreateList = async (event: FormEvent) => {
     event.preventDefault();
 
     createTodoList(values['list-name']);
@@ -38,6 +39,7 @@ const ListForm = () => {
   return (
     <Form onSubmit={handleCreateList} title={'Создание нового списка'}>
       <Input
+        shape={'line'}
         name='list-name'
         placeholder="Придумайте название списка..."
         value={values['list-name']}
@@ -46,7 +48,7 @@ const ListForm = () => {
         ref={listTitleRef}
       />
 
-      <TodoListCreateBtn type="submit" disabled={isLocked} />
+      <CreateTodoListBtn withText type="submit" disabled={isLocked} />
     </Form>
   )
 }

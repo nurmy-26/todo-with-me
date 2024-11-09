@@ -1,0 +1,16 @@
+:root[data-theme="night"] {
+  --color-text-primary: var(--color-light);
+  --color-background: var(--color-text-dark);
+  --color-accent: var(--accent-night);
+  --color-accent-hover: var(--accent-night-hover);
+  --color-error: var(--error-night);
+
+  --background-base: var(--background-base-night);
+  --card-overlay: var(--card-overlay-night);
+  --body-color: var(--body-night);
+  --section-overlay: var(--section-overlay-night);
+  --color-secondary: var(--secondary-dark);
+  --color-secondary-hover: var(--secondary-hover-dark);
+  --color-secondary-background: var(--secondary-background-dark);
+  color-scheme: dark;
+}

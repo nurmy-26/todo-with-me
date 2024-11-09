@@ -1,7 +1,8 @@
+import { FormEvent } from "react";
 import { AddTodoBtn, useAddTodo, useSelectTodoListTitle } from "../../../4-features";
-import useEscape from "../../../6-shared/lib/useEscape";
-import { useForm } from "../../../6-shared/lib/useForm";
-import { useInputRef } from "../../../6-shared/lib/useInputRef";
+import useEscape from "../../../6-shared/lib/hooks/useEscape";
+import { useForm } from "../../../6-shared/lib/hooks/useForm";
+import { useInputRef } from "../../../6-shared/lib/hooks/useInputRef";
 import Form from "../../../6-shared/ui/form";
 import Input from "../../../6-shared/ui/input";
 import Select from "../../../6-shared/ui/select";
@@ -19,12 +20,12 @@ const ItemForm = () => {
   const { inputRef: titleRef, deactivateInput: deactivateTitleInput } = useInputRef();
   const { addTodo, isLoading } = useAddTodo();
 
-  const { selectedValue, valueList, handleSelect } = useSelectTodoListTitle();
+  const { selectedId, valueList, handleSelect } = useSelectTodoListTitle();
 
-  const handleAddToList = async (event: React.FormEvent) => {
+  const handleAddToList = async (event: FormEvent) => {
     event.preventDefault();
 
-    addTodo(selectedValue, values['list-item-title'])
+    addTodo(selectedId, values['list-item-title'])
     clearForm();
   };
 
@@ -41,15 +42,17 @@ const ItemForm = () => {
   return (
     <Form onSubmit={handleAddToList} title={'Добавление в список'}>
       <Select
+        aria-label={'Выбрать список для добавления элементов'}
         name='list-name'
-        value={selectedValue}
-        options={valueList}
+        value={selectedId} // id списка для значения select
+        options={valueList} // передаем массив объектов с id и title
         disabled={isLoading}
         onChange={handleSelect}
       />
 
       <Input
         ref={titleRef}
+        shape={'line'}
         name='list-item-title'
         placeholder="Что вы хотите добавить в список?.."
         value={values['list-item-title']}
@@ -57,7 +60,7 @@ const ItemForm = () => {
         onChange={handleChange}
       />
 
-      <AddTodoBtn type='submit' disabled={isLocked} />
+      <AddTodoBtn withText type='submit' disabled={isLocked} />
     </Form>
   )
 }

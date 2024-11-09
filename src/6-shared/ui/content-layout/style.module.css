@@ -1,0 +1,20 @@
+.content {
+  position: relative;
+  max-width: var(--content-width);
+  padding: var(--section-indent) 0;
+  margin: auto;
+}
+
+/* 1440px */
+@media screen and (max-width: 90rem) {
+  .content {
+    padding: var(--section-indent);
+  }
+}
+
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .content {
+    padding: var(--section-indent) 0;
+  }
+}

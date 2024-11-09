@@ -33,12 +33,6 @@ export const Bars: Story = {
   },
 };
 
-export const CaretDown: Story = {
-  args: {
-    type: "caret-down",
-  },
-};
-
 export const CircleChevronDown: Story = {
   args: {
     type: "circle-chevron-down",
@@ -54,5 +48,29 @@ export const CircleCaretDown: Story = {
 export const Custom: Story = {
   args: {
     fill: "var(--color-accent)",
+  },
+};
+
+export const CaretUp: Story = {
+  args: {
+    type: "caret-up",
+  },
+};
+
+export const CaretDown: Story = {
+  args: {
+    type: "caret-down",
+  },
+};
+
+export const CaretLeft: Story = {
+  args: {
+    type: "caret-left",
+  },
+};
+
+export const CaretRight: Story = {
+  args: {
+    type: "caret-right",
   },
 };

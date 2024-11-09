@@ -1,6 +1,5 @@
 .form {
-  /* todo - разобраться со стилями */
-  max-width: 340px;
+  width: min(100%, 30rem);
 }
 
 .wrapper {
@@ -11,10 +10,10 @@
 
 .btn {
   z-index: 3;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   position: absolute;
-  top: 2px;
+  top: 0.25rem;
   /* изначально кнопка находится в центре */
   left: calc(50% - 18px);
   transition: left 0.3s ease-in-out, transform 0.3s ease-in-out,
@@ -22,8 +21,22 @@
 }
 
 .input {
-  /* margin-left чтобы не наезжать на кнопку, расположенную абсолютно (равен ширине кнопки + отступу) */
-  margin-left: 26px;
+  padding: 0.6rem 1rem;
+  width: 100%;
+
+  font-size: calc(var(--font-size-base) * 1);
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  min-height: 2.75rem;
+  padding-left: 2.75rem;
+  border: 2px solid var(--color-secondary);
   border-radius: var(--border-radius-round);
   opacity: 0;
   visibility: hidden;
@@ -33,10 +46,18 @@
   transition: visibility 0s linear, opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out 0.18s;
 }
+.input::placeholder {
+  color: var(--color-secondary);
+}
+.input:active,
+.input:focus {
+  outline: transparent;
+  border: 2px solid var(--color-accent);
+}
 
 /* кнопка уезжает влево, крутясь и скругляется */
 .wrapper_expanded .btn {
-  left: 0;
+  left: 0.25rem;
   transform: rotate(360deg);
   border-radius: var(--border-radius-round);
 }
@@ -45,4 +66,11 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+}
+
+/* 768px */
+@media screen and (max-width: 48rem) {
+  .btn {
+    top: 0.3rem;
+  }
 }

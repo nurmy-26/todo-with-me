@@ -1,0 +1,3 @@
+.inactive svg {
+  fill: var(--color-secondary) !important;
+}

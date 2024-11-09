@@ -1,53 +1,34 @@
 .wrapper {
-  padding: 28px 12px;
+  padding: var(--28px) var(--16px);
 
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: var(--16px);
 
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #464646;
+  border: 1px solid var(--color-secondary);
   border-radius: var(--border-radius-base);
-
-  /* чтоб форма не растягивалась по высоте в грид-сетке */
-  align-self: start;
-  grid-column: var(--grid-child-third);
-  background-color: var(--color-light-transparent);
+  background-color: var(--card-overlay);
 }
 
 .title {
-  margin: 0 16px;
+  padding-left: var(--16px);
+  padding-bottom: var(--8px);
   border-bottom: 1px dotted var(--color-text-dark);
 
   font-style: italic;
   text-align: left;
-  opacity: 0.6;
 }
 
 .form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: var(--16px);
 
-  justify-content: space-between;
-  align-items: center;
   border-radius: var(--border-radius-base);
 }
 
 .form button {
-  width: 60%;
+  width: fit-content;
+  max-width: 85%;
   justify-self: center;
-}
-
-@media screen and (max-width: 1024px) {
-  .form {
-    grid-column: var(--grid-child-half);
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .form {
-    grid-column: var(--grid-child-full);
-  }
 }

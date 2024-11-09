@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--20px);
 }
 
 .article:hover .menu {
@@ -16,12 +16,17 @@
 }
 
 .card {
-  padding: 28px;
+  padding: var(--28px);
   border: 1px solid var(--color-text-dark);
-  background-color: var(--color-light-transparent);
+  background-color: var(--card-overlay);
+
+  /* todo - реализовать варианты отображения в зависимости от выбора */
+  /* height: 600px; */
+  max-height: 70vh;
 }
 
 .modal {
+  height: 100vh;
 }
 .page {
 }
@@ -30,10 +35,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: var(--8px);
 
-  /* border-bottom: 1px solid var(--color-text-dark); */
+  padding-bottom: var(--12px);
   border-bottom: 1px dashed var(--color-text-dark);
+}
+
+.date {
+  text-align: right;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.article_list {
+  overflow: auto;
+  flex-grow: 1; /* занимает всё доступное пространство */
 }
 
 .todo_btn {
@@ -41,18 +57,16 @@
   align-self: center;
 }
 
-.todo_btn_page input {
-  width: 480px;
-}
-
-@media screen and (max-width: 550px) {
-  .todo_btn_page input {
-    width: 80vw;
+/* 550px */
+@media screen and (max-width: 34.375rem) {
+  .card {
+    padding: var(--20px);
   }
 }
 
-@media screen and (max-width: 420px) {
-  .todo_btn_page input {
-    width: 70vw;
+/* 420px */
+@media screen and (max-width: 26.25rem) {
+  .card {
+    padding: var(--16px);
   }
 }

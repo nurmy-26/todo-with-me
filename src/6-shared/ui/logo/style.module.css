@@ -1,20 +1,5 @@
-.logo {
-  width: 100%;
-  object-fit: cover;
-}
-
-.xs {
-  width: 64px;
-}
-.s {
-  width: 120px;
-}
-.m {
-  width: 200px;
-}
-.l {
-  width: 280px;
-}
-.xl {
-  width: 100%;
+.wrapper {
+  display: flex;
+  gap: var(--8px);
+  align-items: center;
 }

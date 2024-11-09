@@ -1,24 +1,34 @@
+import { FormEvent } from 'react';
 import Button from '../../../../6-shared/ui/button';
-import { PlusIcon } from '../../../../6-shared/ui/icons/plus-icon';
+import { LoadingIcon } from '../../../../6-shared/ui/icons/loading-icon';
+import { ListIcon } from '../../../../6-shared/ui/icons/list-icon';
+import { ButtonProps } from '../../../../6-shared/ui/button/type';
 
 
-type AddTodoBtnProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type AddTodoBtnProps = ButtonProps & {
   disabled?: boolean;
   isLoading?: boolean;
   extraClass?: string;
-  onClick?: (event: React.FormEvent) => void;
+  onClick?: (event: FormEvent) => void;
+  withText?: boolean;
 };
 
-const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, ...rest }: AddTodoBtnProps) => {
+// todo - удалить этот ui (будет не нужен, так как уже есть AddTodoForm)
+const AddTodoBtn = ({ disabled, isLoading, extraClass, onClick, withText, ...rest }: AddTodoBtnProps) => {
+  const text = 'Добавить в список';
+
+
   return (
     <Button
-      icon={<PlusIcon />}
+      aria-label={text}
+      icon={isLoading ? <LoadingIcon /> : <ListIcon />}
       disabled={disabled}
       extraClass={extraClass}
       onClick={onClick}
+      title={withText ? '' : text}
       {...rest}
     >
-      {isLoading ? 'Загрузка...' : 'Добавить в список'}
+      {withText && text}
     </Button>
   );
 };

@@ -1,17 +1,18 @@
+import { ButtonHTMLAttributes } from 'react';
 import ExpandableForm from '../../../../6-shared/ui/expandable-form';
 import { useAddTodo } from '../../model';
 
 
-type AddTodoFormProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type AddTodoFormProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   extraClass?: string;
-  listTitle: string; // имя списка чтобы знать, куда добавлять Todo
+  listId: string; // id списка чтобы знать, куда добавлять Todo
 };
 
-const AddTodoForm = ({ disabled, extraClass, listTitle }: AddTodoFormProps) => {
+const AddTodoForm = ({ disabled, extraClass, listId }: AddTodoFormProps) => {
   const { addTodo, isLoading } = useAddTodo();
   const submitCallback = async (value: string) => {
-    await addTodo(listTitle, value);
+    await addTodo(listId, value);
   }
 
 

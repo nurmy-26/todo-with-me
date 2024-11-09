@@ -1,18 +1,7 @@
 import cn from 'classnames';
+import { ButtonProps } from './type';
 import style from './style.module.css';
 
-
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: React.ReactNode;
-  disabled?: boolean;
-  extraClass?: string;
-  icon?: React.ReactNode;
-  size?: 's' | 'm';
-  shape?: 'default_shape' | 'rounded';
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  isInline?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-};
 
 const Button = ({
   children,
@@ -21,7 +10,7 @@ const Button = ({
   icon,
   type = 'button',
   size = 'm',
-  shape = 'default_shape',
+  shape = 'default',
   variant = 'secondary',
   isInline,
   onClick,

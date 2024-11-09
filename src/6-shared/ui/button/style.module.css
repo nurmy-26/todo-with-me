@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: var(--8px);
   border: 1px solid transparent;
   cursor: pointer;
 
-  font-size: var(--font-size-base);
+  font-size: calc(var(--font-size-base) * 1);
   font-weight: 500;
   font-family: inherit;
 }
@@ -15,14 +15,17 @@
   fill: var(--color-text-dark);
 }
 
+.xs {
+  padding: 0.2rem 0.2rem;
+}
 .s {
-  padding: 0.2em 0.2em;
+  padding: 0.2rem 0.6rem;
 }
 .m {
-  padding: 0.6em 1.2em;
+  padding: 0.6rem 1.2rem;
 }
 
-.default_shape {
+.default {
   border-radius: var(--border-radius-base);
 }
 .rounded {
@@ -30,18 +33,17 @@
 }
 
 .primary {
-  color: var(--color-light);
+  color: var(--color-background);
   background-color: var(--color-accent);
 }
 .primary svg {
-  fill: var(--color-light);
+  fill: var(--color-background);
 }
 .primary:hover {
   background-color: var(--color-accent-hover);
   border-color: transparent;
 }
 .primary:active {
-  color: var(--color-light);
   background-color: var(--color-accent);
 }
 
@@ -53,12 +55,17 @@
 .secondary:hover {
   color: var(--color-light);
   background-color: var(--color-text-dark);
+  border-color: var(--color-accent);
 }
 .secondary:hover svg {
   fill: var(--color-light);
 }
 .secondary:active {
-  border-color: var(--color-accent);
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+}
+.secondary:active svg {
+  fill: var(--color-text-dark);
 }
 
 .tertiary {
@@ -74,9 +81,6 @@
 .tertiary:active {
   color: var(--color-text-dark);
 }
-.tertiary:active svg {
-  fill: var(--color-text-dark);
-}
 
 .inline {
   display: inline;
@@ -84,17 +88,14 @@
 
 /* стили disabled в конце чтоб корректно перезаписывать */
 .button:disabled {
-  color: var(--color-dark-inactive);
+  color: var(--color-secondary);
   background-color: transparent;
-  border: 2px solid var(--color-dark-inactive);
   cursor: auto;
 }
-.button:disabled svg {
-  fill: var(--color-dark-inactive);
+.primary:disabled,
+.secondary:disabled {
+  border: 2px solid var(--color-secondary);
 }
-
-/* todo - поправить или удалить блок если будет не нужен */
-/* @media (prefers-color-scheme: dark) {
-  .button {
-  }
-} */
+.button:disabled svg {
+  fill: var(--color-secondary);
+}

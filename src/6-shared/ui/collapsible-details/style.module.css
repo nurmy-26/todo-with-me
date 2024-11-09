@@ -1,0 +1,21 @@
+.details {
+  border-radius: var(--border-radius-base);
+}
+
+.title {
+  font-size: calc(var(--font-size-base) * 1.2);
+  line-height: 1.2;
+  font-weight: 100;
+
+  padding: 0 var(--16px);
+  border-radius: var(--border-radius-base);
+}
+
+.light {
+  background-color: var(--section-overlay);
+}
+
+.dark {
+  background-color: var(--color-dark-inactive);
+  color: var(--color-light);
+}
