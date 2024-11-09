@@ -56,28 +56,29 @@ const TodoLists = () => {
     <>
       {isAddFormVisible && <CreateTodoListForm />}
 
-      {!isDataEmpty && isControlBarVisible && <GridSectionLayout
-        label={"Сортировка и фильтры"}
-        mainContent={
-          <ControlBar
-            filterOptions={{
-              isTitleChecked,
-              toggleTitleCheckbox,
-              isItemsChecked,
-              toggleItemsCheckbox,
-              searchValue,
-              setSearchValue
-            }}
-            sortOptions={{
-              sortField,
-              setSortField,
-              sortMode,
-              toggleSortMode
-            }}
-          />
-        }
-        asideContent={<ResetBtn handleReset={handleReset} />}
-      />}
+      {!isDataEmpty && isControlBarVisible &&
+        <GridSectionLayout
+          label={"Сортировка и фильтры"}
+          mainContent={
+            <ControlBar
+              filterOptions={{
+                isTitleChecked,
+                toggleTitleCheckbox,
+                isItemsChecked,
+                toggleItemsCheckbox,
+                searchValue,
+                setSearchValue
+              }}
+              sortOptions={{
+                sortField,
+                setSortField,
+                sortMode,
+                toggleSortMode
+              }}
+            />
+          }
+          asideContent={<ResetBtn handleReset={handleReset} />}
+        />}
 
       <GridSectionLayout
         label={"Мои списки"}
