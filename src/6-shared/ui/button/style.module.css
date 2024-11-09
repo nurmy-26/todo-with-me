@@ -69,7 +69,7 @@
 }
 
 .tertiary {
-  color: var(--color-text-dark);
+  color: var(--color-text-primary);
   background-color: transparent;
 }
 .tertiary:hover {
@@ -79,7 +79,7 @@
   fill: var(--color-accent);
 }
 .tertiary:active {
-  color: var(--color-text-dark);
+  color: var(--color-text-primary);
 }
 
 .inline {
