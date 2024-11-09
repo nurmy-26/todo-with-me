@@ -7,9 +7,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
   # И позволяет запустить вручную из панели экшенов
   workflow_dispatch:
